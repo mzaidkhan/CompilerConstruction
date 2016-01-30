@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>CodeHTML</title>
+    <meta name="keywords" content="org.apache.bcel.util.CodeHTML,CodeHTML class" />
+    <meta name="generator" content="SinjDoc 0.5" />
+    <link href="../../../../stylesheet.css" rel="stylesheet" type="text/css" />
+    <link rel="Index" href="../../../../index-all.html" />
+    <link rel="Start" href="../../../../overview-summary.html" />
+    <link rel="Up" href="package-summary.html" />
+    <link rel="Help" href="../../../../help-doc.html" />
+  </head>
+  <body class="classPage bigframe">
+   <div class="navbar">
+    <p class="nav navtop">
+      <span class="over"><a href="../../../../overview-summary.html">Overview</a></span>
+      <span class="package"><a href="package-summary.html">Package</a></span>
+      <span class="class selected">Class</span>
+      <span class="use"><a href="class-use/CodeHTML.html">Use</a></span>
+      <span class="tree"><a href="package-tree.html">Tree</a></span>
+      <span class="deprecated"><a href="../../../../deprecated-list.html">Deprecated</a></span>
+      <span class="index"><a href="../../../../index-all.html">Index</a></span>
+      <span class="help"><a href="../../../../help-doc.html">Help</a></span>
+    </p>
+    <p class="nav navmid">
+      <span class="prevnext">
+       <span class="prev">Prev Class</span>
+       <span class="next">Next Class</span>
+      </span>
+      <span class="framesel">
+       <span class="frames"><a href="../../../../index.html" target="_top">Frames</a></span>
+       <span class="noframes"><a href="CodeHTML.html" target="_top">NoFrames</a></span>
+      </span>
+      <span class="allclasses"><a href="../../../../allclasses-noframe.html">All Classes</a></span>
+   </p>
+   <p class="nav navbot">
+      <span class="summary">Summary:
+       <span class="nested">Nested</span>
+       <span class="field"><a href="#field_summary">Field</a></span>
+       <span class="constr"><a href="#constructor_summary">Constr</a></span>
+       <span class="method"><a href="#method_summary">Method</a></span>
+      </span>
+      <span class="detail">Detail:
+       <span class="field"><a href="#field_detail">Field</a></span>
+       <span class="constr"><a href="#constructor_detail">Constr</a></span>
+       <span class="method"><a href="#method_detail">Method</a></span>
+      </span>
+   </p>
+    <div class="navtitle">
+     
+    </div>
+    <p class="clear"><!--empty--></p>
+   </div>
+   <p class="packageName">org.apache.bcel.util</p>
+   <h1>  Class  CodeHTML</h1>
+<!--
+   <p class="enclosing">
+   Enclosing class/interface: @OUTER@
+   </p>
+-->
+
+
+   <!-- XXX class hierarchy diagram goes here -->
+<!--
+   
+   <p class="implementedInterfaces">
+   All implemented interfaces: @ALL_SUPERINTERFACES@
+   </p>
+   
+   <p class="directSubclasses">
+   Direct known subclasses: @ALL_SUBCLASSES@
+   </p>
+-->
+
+
+   <p class="declaration">final
+     class 
+   <span class="className">CodeHTML</span>
+   
+   
+      
+      <span class="extends">extends Object</span>
+      
+      
+        <span class="implements">implements <a href="../Constants.html" class="interfaceRef">Constants</a></span>
+      
+   
+   </p>
+
+   <div class="description">
+   
+ Convert code into HTML file.
+<p class="tag tag_version"><span class="tagName">Version:</span> <span class="tagContents">$Id: CodeHTML.java 386056 2006-03-15 11:31:56Z tcurdt $</span> </p>
+<p class="tag tag_author"><span class="tagName">Author:</span> <span class="tagContents"><A HREF="mailto:m.dahm@gmx.de">M. Dahm</A>
+</span> </p>
+
+   </div>
+
+
+
+
+   <table class="field_summary summary">
+     <tr><th colspan="2"><a name="field_summary" id="field_summary">Field Summary</a></th></tr>
+
+     <tr><td> String</td><td><span class="memberName"><a href="#class_name" class="fieldRef">class_name</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td> <a href="ConstantHTML.html" class="classRef">ConstantHTML</a></td><td><span class="memberName"><a href="#constant_html" class="fieldRef">constant_html</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td> <a href="../classfile/ConstantPool.html" class="classRef">ConstantPool</a></td><td><span class="memberName"><a href="#constant_pool" class="fieldRef">constant_pool</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td> PrintWriter</td><td><span class="memberName"><a href="#file" class="fieldRef">file</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td> BitSet</td><td><span class="memberName"><a href="#goto_set" class="fieldRef">goto_set</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td> <a href="../classfile/Method.html" class="classRef">Method</a>[]</td><td><span class="memberName"><a href="#methods" class="fieldRef">methods</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static boolean</td><td><span class="memberName"><a href="#wide" class="fieldRef">wide</a></span><div class="memberDescription"></div></td></tr>
+
+   </table>
+
+
+
+
+   <table class="constructor_summary summary">
+     <tr><th colspan="2"><a name="constructor_summary" id="constructor_summary">Constructor Summary</a></th></tr>
+
+     <tr><td> </td><td><span class="memberName"><a href="#CodeHTML(<unknown>.String,<unknown>.String,org.apache.bcel.classfile.Method[],org.apache.bcel.classfile.ConstantPool,org.apache.bcel.util.ConstantHTML)" class="constructorRef">CodeHTML</a>(String dir, String class_name, <a href="../classfile/Method.html" class="classRef">Method</a>[] methods, <a href="../classfile/ConstantPool.html" class="classRef">ConstantPool</a> constant_pool, <a href="ConstantHTML.html" class="classRef">ConstantHTML</a> constant_html)</span><div class="memberDescription"></div></td></tr>
+
+   </table>
+
+
+
+
+   <table class="method_summary summary">
+     <tr><th colspan="2"><a name="method_summary" id="method_summary">Method Summary</a></th></tr>
+
+     <tr><td>  String</td><td><span class="memberName"><a href="#codeToHTML(org.apache.bcel.util.ByteSequence,int)" class="methodRef">codeToHTML</a>(<a href="ByteSequence.html" class="classRef">ByteSequence</a> bytes, int method_number)</span><div class="memberDescription">
+ Disassemble a stream of byte codes and return the
+ string representation.
+</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#findGotos(org.apache.bcel.util.ByteSequence,org.apache.bcel.classfile.Method,org.apache.bcel.classfile.Code)" class="methodRef">findGotos</a>(<a href="ByteSequence.html" class="classRef">ByteSequence</a> bytes, <a href="../classfile/Method.html" class="classRef">Method</a> method, <a href="../classfile/Code.html" class="classRef">Code</a> code)</span><div class="memberDescription">
+ Find all target addresses in code, so that they can be marked
+ with &lt;A NAME = ...&gt;. </div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#writeMethod(org.apache.bcel.classfile.Method,int)" class="methodRef">writeMethod</a>(<a href="../classfile/Method.html" class="classRef">Method</a> method, int method_number)</span><div class="memberDescription">
+ Write a single method with the byte code associated with it.</div></td></tr>
+
+   </table>
+
+
+
+<!--
+   <p class="inherited">
+    <span class="header">Methods inherited from class java.util.<a
+   href="AbstractCollection.html">AbstractCollection</a></span>
+    <a href="#addAll">addAll</a>
+    <a href="#contains">contains</a>
+   </p>
+   <p class="inherited">
+    <span class="header">Methods inherited from class java.lang.<a
+   href="Object.html">Object</a></span>
+    <a href="#addAll">clone</a>
+    <a href="#contains">finalize</a>
+   </p>
+   <p class="inherited">
+    <span class="header">Methods inherited from interface java.util.<a
+   href="List.html">List</a></span>
+    <a href="#addAll">addAll</a>
+    <a href="#contains">contains</a>
+   </p>
+-->
+
+
+
+   <h2><a name="field_detail" id="field_detail">Field Detail</a></h2>
+
+   <h3><a name="class_name" id="class_name">class_name</a></h3>
+   <div class="memberName">private String class_name</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="constant_html" id="constant_html">constant_html</a></h3>
+   <div class="memberName">private <a href="ConstantHTML.html" class="classRef">ConstantHTML</a> constant_html</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="constant_pool" id="constant_pool">constant_pool</a></h3>
+   <div class="memberName">private <a href="../classfile/ConstantPool.html" class="classRef">ConstantPool</a> constant_pool</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="file" id="file">file</a></h3>
+   <div class="memberName">private PrintWriter file</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="goto_set" id="goto_set">goto_set</a></h3>
+   <div class="memberName">private BitSet goto_set</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="methods" id="methods">methods</a></h3>
+   <div class="memberName">private <a href="../classfile/Method.html" class="classRef">Method</a>[] methods</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="wide" id="wide">wide</a></h3>
+   <div class="memberName">private static boolean wide</div>
+   <div class="memberDescription"></div>
+
+
+
+
+   <h2><a name="constructor_detail" id="constructor_detail">Constructor Detail</a></h2>
+
+   <h3><a name="CodeHTML(<unknown>.String,<unknown>.String,org.apache.bcel.classfile.Method[],org.apache.bcel.classfile.ConstantPool,org.apache.bcel.util.ConstantHTML)" id="CodeHTML(<unknown>.String,<unknown>.String,org.apache.bcel.classfile.Method[],org.apache.bcel.classfile.ConstantPool,org.apache.bcel.util.ConstantHTML)">CodeHTML</a></h3>
+   <div class="memberName">  CodeHTML(String dir, String class_name, <a href="../classfile/Method.html" class="classRef">Method</a>[] methods, <a href="../classfile/ConstantPool.html" class="classRef">ConstantPool</a> constant_pool, <a href="ConstantHTML.html" class="classRef">ConstantHTML</a> constant_html)</div>
+   <div class="memberDescription"></div>
+
+
+
+
+   <h2><a name="method_detail" id="method_detail">Method Detail</a></h2>
+
+   <h3><a name="codeToHTML(org.apache.bcel.util.ByteSequence,int)" id="codeToHTML(org.apache.bcel.util.ByteSequence,int)">codeToHTML</a></h3>
+   <div class="memberName">private final  String codeToHTML(<a href="ByteSequence.html" class="classRef">ByteSequence</a> bytes, int method_number)</div>
+   <div class="memberDescription">
+ Disassemble a stream of byte codes and return the
+ string representation.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">stream data input stream</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">String representation of byte code</span> </p>
+</div>
+
+
+   <h3><a name="findGotos(org.apache.bcel.util.ByteSequence,org.apache.bcel.classfile.Method,org.apache.bcel.classfile.Code)" id="findGotos(org.apache.bcel.util.ByteSequence,org.apache.bcel.classfile.Method,org.apache.bcel.classfile.Code)">findGotos</a></h3>
+   <div class="memberName">private final  void findGotos(<a href="ByteSequence.html" class="classRef">ByteSequence</a> bytes, <a href="../classfile/Method.html" class="classRef">Method</a> method, <a href="../classfile/Code.html" class="classRef">Code</a> code)</div>
+   <div class="memberDescription">
+ Find all target addresses in code, so that they can be marked
+ with &lt;A NAME = ...&gt;. Target addresses are kept in an BitSet object.</div>
+
+
+   <h3><a name="writeMethod(org.apache.bcel.classfile.Method,int)" id="writeMethod(org.apache.bcel.classfile.Method,int)">writeMethod</a></h3>
+   <div class="memberName">private  void writeMethod(<a href="../classfile/Method.html" class="classRef">Method</a> method, int method_number)</div>
+   <div class="memberDescription">
+ Write a single method with the byte code associated with it.</div>
+
+   
+   <div class="navbar">
+    <p class="nav navtop">
+      <span class="over"><a href="../../../../overview-summary.html">Overview</a></span>
+      <span class="package"><a href="package-summary.html">Package</a></span>
+      <span class="class selected">Class</span>
+      <span class="use"><a href="class-use/CodeHTML.html">Use</a></span>
+      <span class="tree"><a href="package-tree.html">Tree</a></span>
+      <span class="deprecated"><a href="../../../../deprecated-list.html">Deprecated</a></span>
+      <span class="index"><a href="../../../../index-all.html">Index</a></span>
+      <span class="help"><a href="../../../../help-doc.html">Help</a></span>
+    </p>
+    <p class="nav navmid">
+      <span class="prevnext">
+       <span class="prev">Prev Class</span>
+       <span class="next">Next Class</span>
+      </span>
+      <span class="framesel">
+       <span class="frames"><a href="../../../../index.html" target="_top">Frames</a></span>
+       <span class="noframes"><a href="CodeHTML.html" target="_top">NoFrames</a></span>
+      </span>
+      <span class="allclasses"><a href="../../../../allclasses-noframe.html">All Classes</a></span>
+   </p>
+   <p class="nav navbot">
+      <span class="summary">Summary:
+       <span class="nested">Nested</span>
+       <span class="field"><a href="#field_summary">Field</a></span>
+       <span class="constr"><a href="#constructor_summary">Constr</a></span>
+       <span class="method"><a href="#method_summary">Method</a></span>
+      </span>
+      <span class="detail">Detail:
+       <span class="field"><a href="#field_detail">Field</a></span>
+       <span class="constr"><a href="#constructor_detail">Constr</a></span>
+       <span class="method"><a href="#method_detail">Method</a></span>
+      </span>
+   </p>
+    <div class="navtitle">
+     
+    </div>
+    <p class="clear"><!--empty--></p>
+   </div>
+   <div class="bottom"></div>
+   </body>
+</html>

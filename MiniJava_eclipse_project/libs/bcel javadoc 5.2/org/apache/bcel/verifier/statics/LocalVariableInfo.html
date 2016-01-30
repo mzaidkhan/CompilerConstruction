@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>LocalVariableInfo</title>
+    <meta name="keywords" content="org.apache.bcel.verifier.statics.LocalVariableInfo,LocalVariableInfo class" />
+    <meta name="generator" content="SinjDoc 0.5" />
+    <link href="../../../../../stylesheet.css" rel="stylesheet" type="text/css" />
+    <link rel="Index" href="../../../../../index-all.html" />
+    <link rel="Start" href="../../../../../overview-summary.html" />
+    <link rel="Up" href="package-summary.html" />
+    <link rel="Help" href="../../../../../help-doc.html" />
+  </head>
+  <body class="classPage bigframe">
+   <div class="navbar">
+    <p class="nav navtop">
+      <span class="over"><a href="../../../../../overview-summary.html">Overview</a></span>
+      <span class="package"><a href="package-summary.html">Package</a></span>
+      <span class="class selected">Class</span>
+      <span class="use"><a href="class-use/LocalVariableInfo.html">Use</a></span>
+      <span class="tree"><a href="package-tree.html">Tree</a></span>
+      <span class="deprecated"><a href="../../../../../deprecated-list.html">Deprecated</a></span>
+      <span class="index"><a href="../../../../../index-all.html">Index</a></span>
+      <span class="help"><a href="../../../../../help-doc.html">Help</a></span>
+    </p>
+    <p class="nav navmid">
+      <span class="prevnext">
+       <span class="prev">Prev Class</span>
+       <span class="next">Next Class</span>
+      </span>
+      <span class="framesel">
+       <span class="frames"><a href="../../../../../index.html" target="_top">Frames</a></span>
+       <span class="noframes"><a href="LocalVariableInfo.html" target="_top">NoFrames</a></span>
+      </span>
+      <span class="allclasses"><a href="../../../../../allclasses-noframe.html">All Classes</a></span>
+   </p>
+   <p class="nav navbot">
+      <span class="summary">Summary:
+       <span class="nested">Nested</span>
+       <span class="field"><a href="#field_summary">Field</a></span>
+       <span class="constr">Constr</span>
+       <span class="method"><a href="#method_summary">Method</a></span>
+      </span>
+      <span class="detail">Detail:
+       <span class="field"><a href="#field_detail">Field</a></span>
+       <span class="constr">Constr</span>
+       <span class="method"><a href="#method_detail">Method</a></span>
+      </span>
+   </p>
+    <div class="navtitle">
+     
+    </div>
+    <p class="clear"><!--empty--></p>
+   </div>
+   <p class="packageName">org.apache.bcel.verifier.statics</p>
+   <h1>  Class  LocalVariableInfo</h1>
+<!--
+   <p class="enclosing">
+   Enclosing class/interface: @OUTER@
+   </p>
+-->
+
+
+   <!-- XXX class hierarchy diagram goes here -->
+<!--
+   
+   <p class="directSubclasses">
+   Direct known subclasses: @ALL_SUBCLASSES@
+   </p>
+-->
+
+
+   <p class="declaration">public
+     class 
+   <span class="className">LocalVariableInfo</span>
+   
+   
+      
+      <span class="extends">extends Object</span>
+      
+      
+   
+   </p>
+
+   <div class="description">
+   
+ A utility class holding the information about
+ the name and the type of a local variable in
+ a given slot (== index). This information
+ often changes in course of byte code offsets.
+<p class="tag tag_version"><span class="tagName">Version:</span> <span class="tagContents">$Id: LocalVariableInfo.java 371539 2006-01-23 14:08:00Z tcurdt $</span> </p>
+<p class="tag tag_author"><span class="tagName">Author:</span> <span class="tagContents">Enver Haase</span> </p>
+
+   </div>
+
+
+
+
+   <table class="field_summary summary">
+     <tr><th colspan="2"><a name="field_summary" id="field_summary">Field Summary</a></th></tr>
+
+     <tr><td> Hashtable</td><td><span class="memberName"><a href="#names" class="fieldRef">names</a></span><div class="memberDescription"> The names database. </div></td></tr>
+
+
+
+     <tr><td> Hashtable</td><td><span class="memberName"><a href="#types" class="fieldRef">types</a></span><div class="memberDescription"> The types database. </div></td></tr>
+
+   </table>
+
+
+
+
+
+   <table class="method_summary summary">
+     <tr><th colspan="2"><a name="method_summary" id="method_summary">Method Summary</a></th></tr>
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#add(<unknown>.String,int,int,org.apache.bcel.generic.Type)" class="methodRef">add</a>(String name, int startpc, int length, <a href="../../generic/Type.html" class="classRef">Type</a> t)</span><div class="memberDescription">
+ Adds some information about this local variable (slot).</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#add(int,<unknown>.String,org.apache.bcel.generic.Type)" class="methodRef">add</a>(int offset, String name, <a href="../../generic/Type.html" class="classRef">Type</a> t)</span><div class="memberDescription">
+ Adds information about name and type for a given offset.</div></td></tr>
+
+
+
+     <tr><td>  String</td><td><span class="memberName"><a href="#getName(int)" class="methodRef">getName</a>(int offset)</span><div class="memberDescription">
+ Returns the name of the local variable that uses this local
+ variable slot at the given bytecode offset.
+ </div></td></tr>
+
+
+
+     <tr><td>  <a href="../../generic/Type.html" class="classRef">Type</a></td><td><span class="memberName"><a href="#getType(int)" class="methodRef">getType</a>(int offset)</span><div class="memberDescription">
+ Returns the type of the local variable that uses this local
+ variable slot at the given bytecode offset.
+ </div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#setName(int,<unknown>.String)" class="methodRef">setName</a>(int offset, String name)</span><div class="memberDescription">
+ Adds a name of a local variable and a certain slot to our 'names'
+ (Hashtable) database.</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#setType(int,org.apache.bcel.generic.Type)" class="methodRef">setType</a>(int offset, <a href="../../generic/Type.html" class="classRef">Type</a> t)</span><div class="memberDescription">
+ Adds a type of a local variable and a certain slot to our 'types'
+ (Hashtable) database.</div></td></tr>
+
+   </table>
+
+
+
+<!--
+   <p class="inherited">
+    <span class="header">Methods inherited from class java.util.<a
+   href="AbstractCollection.html">AbstractCollection</a></span>
+    <a href="#addAll">addAll</a>
+    <a href="#contains">contains</a>
+   </p>
+   <p class="inherited">
+    <span class="header">Methods inherited from class java.lang.<a
+   href="Object.html">Object</a></span>
+    <a href="#addAll">clone</a>
+    <a href="#contains">finalize</a>
+   </p>
+   <p class="inherited">
+    <span class="header">Methods inherited from interface java.util.<a
+   href="List.html">List</a></span>
+    <a href="#addAll">addAll</a>
+    <a href="#contains">contains</a>
+   </p>
+-->
+
+
+
+   <h2><a name="field_detail" id="field_detail">Field Detail</a></h2>
+
+   <h3><a name="names" id="names">names</a></h3>
+   <div class="memberName">private Hashtable names</div>
+   <div class="memberDescription"> The names database. KEY: String representing the offset integer.</div>
+
+
+   <h3><a name="types" id="types">types</a></h3>
+   <div class="memberName">private Hashtable types</div>
+   <div class="memberDescription"> The types database. KEY: String representing the offset integer.</div>
+
+
+
+
+
+
+   <h2><a name="method_detail" id="method_detail">Method Detail</a></h2>
+
+   <h3><a name="add(<unknown>.String,int,int,org.apache.bcel.generic.Type)" id="add(<unknown>.String,int,int,org.apache.bcel.generic.Type)">add</a></h3>
+   <div class="memberName">public  void add(String name, int startpc, int length, <a href="../../generic/Type.html" class="classRef">Type</a> t)</div>
+   <div class="memberDescription">
+ Adds some information about this local variable (slot).<p class="tag tag_throws"><span class="tagName">Throws:</span> <span class="tagContents">LocalVariableInfoInconsistentException if the new information conflicts
+         with already gathered information.</span> </p>
+</div>
+
+
+   <h3><a name="add(int,<unknown>.String,org.apache.bcel.generic.Type)" id="add(int,<unknown>.String,org.apache.bcel.generic.Type)">add</a></h3>
+   <div class="memberName">private  void add(int offset, String name, <a href="../../generic/Type.html" class="classRef">Type</a> t)</div>
+   <div class="memberDescription">
+ Adds information about name and type for a given offset.<p class="tag tag_throws"><span class="tagName">Throws:</span> <span class="tagContents">LocalVariableInfoInconsistentException if the new information conflicts
+         with already gathered information.</span> </p>
+</div>
+
+
+   <h3><a name="getName(int)" id="getName(int)">getName</a></h3>
+   <div class="memberName">public  String getName(int offset)</div>
+   <div class="memberDescription">
+ Returns the name of the local variable that uses this local
+ variable slot at the given bytecode offset.
+ Care for legal bytecode offsets yourself, otherwise the return value
+ might be wrong.
+ May return 'null' if nothing is known about the type of this local
+ variable slot at the given bytecode offset.</div>
+
+
+   <h3><a name="getType(int)" id="getType(int)">getType</a></h3>
+   <div class="memberName">public  <a href="../../generic/Type.html" class="classRef">Type</a> getType(int offset)</div>
+   <div class="memberDescription">
+ Returns the type of the local variable that uses this local
+ variable slot at the given bytecode offset.
+ Care for legal bytecode offsets yourself, otherwise the return value
+ might be wrong.
+ May return 'null' if nothing is known about the type of this local
+ variable slot at the given bytecode offset.</div>
+
+
+   <h3><a name="setName(int,<unknown>.String)" id="setName(int,<unknown>.String)">setName</a></h3>
+   <div class="memberName">private  void setName(int offset, String name)</div>
+   <div class="memberDescription">
+ Adds a name of a local variable and a certain slot to our 'names'
+ (Hashtable) database.</div>
+
+
+   <h3><a name="setType(int,org.apache.bcel.generic.Type)" id="setType(int,org.apache.bcel.generic.Type)">setType</a></h3>
+   <div class="memberName">private  void setType(int offset, <a href="../../generic/Type.html" class="classRef">Type</a> t)</div>
+   <div class="memberDescription">
+ Adds a type of a local variable and a certain slot to our 'types'
+ (Hashtable) database.</div>
+
+   
+   <div class="navbar">
+    <p class="nav navtop">
+      <span class="over"><a href="../../../../../overview-summary.html">Overview</a></span>
+      <span class="package"><a href="package-summary.html">Package</a></span>
+      <span class="class selected">Class</span>
+      <span class="use"><a href="class-use/LocalVariableInfo.html">Use</a></span>
+      <span class="tree"><a href="package-tree.html">Tree</a></span>
+      <span class="deprecated"><a href="../../../../../deprecated-list.html">Deprecated</a></span>
+      <span class="index"><a href="../../../../../index-all.html">Index</a></span>
+      <span class="help"><a href="../../../../../help-doc.html">Help</a></span>
+    </p>
+    <p class="nav navmid">
+      <span class="prevnext">
+       <span class="prev">Prev Class</span>
+       <span class="next">Next Class</span>
+      </span>
+      <span class="framesel">
+       <span class="frames"><a href="../../../../../index.html" target="_top">Frames</a></span>
+       <span class="noframes"><a href="LocalVariableInfo.html" target="_top">NoFrames</a></span>
+      </span>
+      <span class="allclasses"><a href="../../../../../allclasses-noframe.html">All Classes</a></span>
+   </p>
+   <p class="nav navbot">
+      <span class="summary">Summary:
+       <span class="nested">Nested</span>
+       <span class="field"><a href="#field_summary">Field</a></span>
+       <span class="constr">Constr</span>
+       <span class="method"><a href="#method_summary">Method</a></span>
+      </span>
+      <span class="detail">Detail:
+       <span class="field"><a href="#field_detail">Field</a></span>
+       <span class="constr">Constr</span>
+       <span class="method"><a href="#method_detail">Method</a></span>
+      </span>
+   </p>
+    <div class="navtitle">
+     
+    </div>
+    <p class="clear"><!--empty--></p>
+   </div>
+   <div class="bottom"></div>
+   </body>
+</html>

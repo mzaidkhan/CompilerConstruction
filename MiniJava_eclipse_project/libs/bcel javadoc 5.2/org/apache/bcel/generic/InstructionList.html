@@ -1,0 +1,1150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>InstructionList</title>
+    <meta name="keywords" content="org.apache.bcel.generic.InstructionList,InstructionList class" />
+    <meta name="generator" content="SinjDoc 0.5" />
+    <link href="../../../../stylesheet.css" rel="stylesheet" type="text/css" />
+    <link rel="Index" href="../../../../index-all.html" />
+    <link rel="Start" href="../../../../overview-summary.html" />
+    <link rel="Up" href="package-summary.html" />
+    <link rel="Help" href="../../../../help-doc.html" />
+  </head>
+  <body class="classPage bigframe">
+   <div class="navbar">
+    <p class="nav navtop">
+      <span class="over"><a href="../../../../overview-summary.html">Overview</a></span>
+      <span class="package"><a href="package-summary.html">Package</a></span>
+      <span class="class selected">Class</span>
+      <span class="use"><a href="class-use/InstructionList.html">Use</a></span>
+      <span class="tree"><a href="package-tree.html">Tree</a></span>
+      <span class="deprecated"><a href="../../../../deprecated-list.html">Deprecated</a></span>
+      <span class="index"><a href="../../../../index-all.html">Index</a></span>
+      <span class="help"><a href="../../../../help-doc.html">Help</a></span>
+    </p>
+    <p class="nav navmid">
+      <span class="prevnext">
+       <span class="prev">Prev Class</span>
+       <span class="next">Next Class</span>
+      </span>
+      <span class="framesel">
+       <span class="frames"><a href="../../../../index.html" target="_top">Frames</a></span>
+       <span class="noframes"><a href="InstructionList.html" target="_top">NoFrames</a></span>
+      </span>
+      <span class="allclasses"><a href="../../../../allclasses-noframe.html">All Classes</a></span>
+   </p>
+   <p class="nav navbot">
+      <span class="summary">Summary:
+       <span class="nested">Nested</span>
+       <span class="field"><a href="#field_summary">Field</a></span>
+       <span class="constr"><a href="#constructor_summary">Constr</a></span>
+       <span class="method"><a href="#method_summary">Method</a></span>
+      </span>
+      <span class="detail">Detail:
+       <span class="field"><a href="#field_detail">Field</a></span>
+       <span class="constr"><a href="#constructor_detail">Constr</a></span>
+       <span class="method"><a href="#method_detail">Method</a></span>
+      </span>
+   </p>
+    <div class="navtitle">
+     
+    </div>
+    <p class="clear"><!--empty--></p>
+   </div>
+   <p class="packageName">org.apache.bcel.generic</p>
+   <h1>  Class  InstructionList</h1>
+<!--
+   <p class="enclosing">
+   Enclosing class/interface: @OUTER@
+   </p>
+-->
+
+
+   <!-- XXX class hierarchy diagram goes here -->
+<!--
+   
+   <p class="implementedInterfaces">
+   All implemented interfaces: @ALL_SUPERINTERFACES@
+   </p>
+   
+   <p class="directSubclasses">
+   Direct known subclasses: @ALL_SUBCLASSES@
+   </p>
+-->
+
+
+   <p class="declaration">public
+     class 
+   <span class="className">InstructionList</span>
+   
+   
+      
+      <span class="extends">extends Object</span>
+      
+      
+        <span class="implements">implements Serializable</span>
+      
+   
+   </p>
+
+   <div class="description">
+    
+ This class is a container for a list of <a
+ href="Instruction.html">Instruction</a> objects. Instructions can
+ be appended, inserted, moved, deleted, etc.. Instructions are being
+ wrapped into <a
+ href="InstructionHandle.html">InstructionHandles</a> objects that
+ are returned upon append/insert operations. They give the user
+ (read only) access to the list structure, such that it can be traversed and
+ manipulated in a controlled way.
+
+ A list is finally dumped to a byte code array with <a
+ href="#getByteCode()">getByteCode</a>.
+<p class="tag tag_version"><span class="tagName">Version:</span> <span class="tagContents">$Id: InstructionList.java 386056 2006-03-15 11:31:56Z tcurdt $</span> </p>
+<p class="tag tag_author"><span class="tagName">Author:</span> <span class="tagContents"><A HREF="mailto:m.dahm@gmx.de">M. Dahm</A></span> </p>
+<p class="tag tag_see"><span class="tagName">See Also:</span> <span class="tagContents"><a href="Instruction.html" class="classRef">Instruction</a></span> <span class="tagContents"><a href="InstructionHandle.html" class="classRef">InstructionHandle</a></span> <span class="tagContents"><a href="BranchHandle.html" class="classRef">BranchHandle</a></span> </p>
+
+   </div>
+
+
+
+
+   <table class="field_summary summary">
+     <tr><th colspan="2"><a name="field_summary" id="field_summary">Field Summary</a></th></tr>
+
+     <tr><td> int[]</td><td><span class="memberName"><a href="#byte_positions" class="fieldRef">byte_positions</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td> <a href="InstructionHandle.html" class="classRef">InstructionHandle</a></td><td><span class="memberName"><a href="#end" class="fieldRef">end</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td> int</td><td><span class="memberName"><a href="#length" class="fieldRef">length</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td> List</td><td><span class="memberName"><a href="#observers" class="fieldRef">observers</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td> <a href="InstructionHandle.html" class="classRef">InstructionHandle</a></td><td><span class="memberName"><a href="#start" class="fieldRef">start</a></span><div class="memberDescription"></div></td></tr>
+
+   </table>
+
+
+
+
+   <table class="constructor_summary summary">
+     <tr><th colspan="2"><a name="constructor_summary" id="constructor_summary">Constructor Summary</a></th></tr>
+
+     <tr><td> </td><td><span class="memberName"><a href="#InstructionList()" class="constructorRef">InstructionList</a>()</span><div class="memberDescription">
+ Create (empty) instruction list.</div></td></tr>
+
+
+
+     <tr><td> </td><td><span class="memberName"><a href="#InstructionList(org.apache.bcel.generic.Instruction)" class="constructorRef">InstructionList</a>(<a href="Instruction.html" class="classRef">Instruction</a> i)</span><div class="memberDescription">
+ Create instruction list containing one instruction.</div></td></tr>
+
+
+
+     <tr><td> </td><td><span class="memberName"><a href="#InstructionList(org.apache.bcel.generic.BranchInstruction)" class="constructorRef">InstructionList</a>(<a href="BranchInstruction.html" class="classRef">BranchInstruction</a> i)</span><div class="memberDescription">
+ Create instruction list containing one instruction.</div></td></tr>
+
+
+
+     <tr><td> </td><td><span class="memberName"><a href="#InstructionList(org.apache.bcel.generic.CompoundInstruction)" class="constructorRef">InstructionList</a>(<a href="CompoundInstruction.html" class="interfaceRef">CompoundInstruction</a> c)</span><div class="memberDescription">
+ Initialize list with (nonnull) compound instruction. </div></td></tr>
+
+
+
+     <tr><td> </td><td><span class="memberName"><a href="#InstructionList(byte[])" class="constructorRef">InstructionList</a>(byte[] code)</span><div class="memberDescription">
+ Initialize instruction list from byte array.
+</div></td></tr>
+
+   </table>
+
+
+
+
+   <table class="method_summary summary">
+     <tr><th colspan="2"><a name="method_summary" id="method_summary">Method Summary</a></th></tr>
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#addObserver(org.apache.bcel.generic.InstructionListObserver)" class="methodRef">addObserver</a>(<a href="InstructionListObserver.html" class="interfaceRef">InstructionListObserver</a> o)</span><div class="memberDescription"> Add observer for this object.</div></td></tr>
+
+
+
+     <tr><td>  <a href="InstructionHandle.html" class="classRef">InstructionHandle</a></td><td><span class="memberName"><a href="#append(org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.InstructionList)" class="methodRef">append</a>(<a href="InstructionHandle.html" class="classRef">InstructionHandle</a> ih, <a href="InstructionList.html" class="classRef">InstructionList</a> il)</span><div class="memberDescription">
+ Append another list after instruction (handle) ih contained in this list.
+ </div></td></tr>
+
+
+
+     <tr><td>  <a href="InstructionHandle.html" class="classRef">InstructionHandle</a></td><td><span class="memberName"><a href="#append(org.apache.bcel.generic.Instruction,org.apache.bcel.generic.InstructionList)" class="methodRef">append</a>(<a href="Instruction.html" class="classRef">Instruction</a> i, <a href="InstructionList.html" class="classRef">InstructionList</a> il)</span><div class="memberDescription">
+ Append another list after instruction i contained in this list.
+ </div></td></tr>
+
+
+
+     <tr><td>  <a href="InstructionHandle.html" class="classRef">InstructionHandle</a></td><td><span class="memberName"><a href="#append(org.apache.bcel.generic.InstructionList)" class="methodRef">append</a>(<a href="InstructionList.html" class="classRef">InstructionList</a> il)</span><div class="memberDescription">
+ Append another list to this one.
+ </div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#append(org.apache.bcel.generic.InstructionHandle)" class="methodRef">append</a>(<a href="InstructionHandle.html" class="classRef">InstructionHandle</a> ih)</span><div class="memberDescription">
+ Append an instruction to the end of this list.
+</div></td></tr>
+
+
+
+     <tr><td>  <a href="InstructionHandle.html" class="classRef">InstructionHandle</a></td><td><span class="memberName"><a href="#append(org.apache.bcel.generic.Instruction)" class="methodRef">append</a>(<a href="Instruction.html" class="classRef">Instruction</a> i)</span><div class="memberDescription">
+ Append an instruction to the end of this list.
+</div></td></tr>
+
+
+
+     <tr><td>  <a href="BranchHandle.html" class="classRef">BranchHandle</a></td><td><span class="memberName"><a href="#append(org.apache.bcel.generic.BranchInstruction)" class="methodRef">append</a>(<a href="BranchInstruction.html" class="classRef">BranchInstruction</a> i)</span><div class="memberDescription">
+ Append a branch instruction to the end of this list.
+</div></td></tr>
+
+
+
+     <tr><td>  <a href="InstructionHandle.html" class="classRef">InstructionHandle</a></td><td><span class="memberName"><a href="#append(org.apache.bcel.generic.Instruction,org.apache.bcel.generic.Instruction)" class="methodRef">append</a>(<a href="Instruction.html" class="classRef">Instruction</a> i, <a href="Instruction.html" class="classRef">Instruction</a> j)</span><div class="memberDescription">
+ Append a single instruction j after another instruction i, which
+ must be in this list of course!
+</div></td></tr>
+
+
+
+     <tr><td>  <a href="InstructionHandle.html" class="classRef">InstructionHandle</a></td><td><span class="memberName"><a href="#append(org.apache.bcel.generic.Instruction,org.apache.bcel.generic.CompoundInstruction)" class="methodRef">append</a>(<a href="Instruction.html" class="classRef">Instruction</a> i, <a href="CompoundInstruction.html" class="interfaceRef">CompoundInstruction</a> c)</span><div class="memberDescription">
+ Append a compound instruction, after instruction i.
+</div></td></tr>
+
+
+
+     <tr><td>  <a href="InstructionHandle.html" class="classRef">InstructionHandle</a></td><td><span class="memberName"><a href="#append(org.apache.bcel.generic.CompoundInstruction)" class="methodRef">append</a>(<a href="CompoundInstruction.html" class="interfaceRef">CompoundInstruction</a> c)</span><div class="memberDescription">
+ Append a compound instruction.
+</div></td></tr>
+
+
+
+     <tr><td>  <a href="InstructionHandle.html" class="classRef">InstructionHandle</a></td><td><span class="memberName"><a href="#append(org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.CompoundInstruction)" class="methodRef">append</a>(<a href="InstructionHandle.html" class="classRef">InstructionHandle</a> ih, <a href="CompoundInstruction.html" class="interfaceRef">CompoundInstruction</a> c)</span><div class="memberDescription">
+ Append a compound instruction.
+</div></td></tr>
+
+
+
+     <tr><td>  <a href="InstructionHandle.html" class="classRef">InstructionHandle</a></td><td><span class="memberName"><a href="#append(org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.Instruction)" class="methodRef">append</a>(<a href="InstructionHandle.html" class="classRef">InstructionHandle</a> ih, <a href="Instruction.html" class="classRef">Instruction</a> i)</span><div class="memberDescription">
+ Append an instruction after instruction (handle) ih contained in this list.
+</div></td></tr>
+
+
+
+     <tr><td>  <a href="BranchHandle.html" class="classRef">BranchHandle</a></td><td><span class="memberName"><a href="#append(org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.BranchInstruction)" class="methodRef">append</a>(<a href="InstructionHandle.html" class="classRef">InstructionHandle</a> ih, <a href="BranchInstruction.html" class="classRef">BranchInstruction</a> i)</span><div class="memberDescription">
+ Append an instruction after instruction (handle) ih contained in this list.
+</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#clear()" class="methodRef">clear</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  boolean</td><td><span class="memberName"><a href="#contains(org.apache.bcel.generic.InstructionHandle)" class="methodRef">contains</a>(<a href="InstructionHandle.html" class="classRef">InstructionHandle</a> i)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  boolean</td><td><span class="memberName"><a href="#contains(org.apache.bcel.generic.Instruction)" class="methodRef">contains</a>(<a href="Instruction.html" class="classRef">Instruction</a> i)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  <a href="InstructionList.html" class="classRef">InstructionList</a></td><td><span class="memberName"><a href="#copy()" class="methodRef">copy</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#delete(org.apache.bcel.generic.InstructionHandle)" class="methodRef">delete</a>(<a href="InstructionHandle.html" class="classRef">InstructionHandle</a> ih)</span><div class="memberDescription">
+ Remove instruction from this list. </div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#delete(org.apache.bcel.generic.Instruction)" class="methodRef">delete</a>(<a href="Instruction.html" class="classRef">Instruction</a> i)</span><div class="memberDescription">
+ Remove instruction from this list. </div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#delete(org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.InstructionHandle)" class="methodRef">delete</a>(<a href="InstructionHandle.html" class="classRef">InstructionHandle</a> from, <a href="InstructionHandle.html" class="classRef">InstructionHandle</a> to)</span><div class="memberDescription">
+ Remove instructions from instruction `from' to instruction `to' contained
+ in this list. </div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#delete(org.apache.bcel.generic.Instruction,org.apache.bcel.generic.Instruction)" class="methodRef">delete</a>(<a href="Instruction.html" class="classRef">Instruction</a> from, <a href="Instruction.html" class="classRef">Instruction</a> to)</span><div class="memberDescription">
+ Remove instructions from instruction `from' to instruction `to' contained
+ in this list. </div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#dispose()" class="methodRef">dispose</a>()</span><div class="memberDescription">
+ Delete contents of list. </div></td></tr>
+
+
+
+     <tr><td>static  <a href="InstructionHandle.html" class="classRef">InstructionHandle</a></td><td><span class="memberName"><a href="#findHandle(org.apache.bcel.generic.InstructionHandle[],int[],int,int)" class="methodRef">findHandle</a>(<a href="InstructionHandle.html" class="classRef">InstructionHandle</a>[] ihs, int[] pos, int count, int target)</span><div class="memberDescription">
+ Find the target instruction (handle) that corresponds to the given target
+ position (byte code offset).
+</div></td></tr>
+
+
+
+     <tr><td>  <a href="InstructionHandle.html" class="classRef">InstructionHandle</a></td><td><span class="memberName"><a href="#findHandle(int)" class="methodRef">findHandle</a>(int pos)</span><div class="memberDescription">
+ Get instruction handle for instruction at byte code position pos.
+ </div></td></tr>
+
+
+
+     <tr><td>  <a href="InstructionHandle.html" class="classRef">InstructionHandle</a></td><td><span class="memberName"><a href="#findInstruction1(org.apache.bcel.generic.Instruction)" class="methodRef">findInstruction1</a>(<a href="Instruction.html" class="classRef">Instruction</a> i)</span><div class="memberDescription">
+ Search for given Instruction reference, start at beginning of list.
+</div></td></tr>
+
+
+
+     <tr><td>  <a href="InstructionHandle.html" class="classRef">InstructionHandle</a></td><td><span class="memberName"><a href="#findInstruction2(org.apache.bcel.generic.Instruction)" class="methodRef">findInstruction2</a>(<a href="Instruction.html" class="classRef">Instruction</a> i)</span><div class="memberDescription">
+ Search for given Instruction reference, start at end of list
+</div></td></tr>
+
+
+
+     <tr><td>  byte[]</td><td><span class="memberName"><a href="#getByteCode()" class="methodRef">getByteCode</a>()</span><div class="memberDescription">
+ When everything is finished, use this method to convert the instruction
+ list into an array of bytes.
+</div></td></tr>
+
+
+
+     <tr><td>  <a href="InstructionHandle.html" class="classRef">InstructionHandle</a></td><td><span class="memberName"><a href="#getEnd()" class="methodRef">getEnd</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  <a href="InstructionHandle.html" class="classRef">InstructionHandle</a>[]</td><td><span class="memberName"><a href="#getInstructionHandles()" class="methodRef">getInstructionHandles</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  int[]</td><td><span class="memberName"><a href="#getInstructionPositions()" class="methodRef">getInstructionPositions</a>()</span><div class="memberDescription">
+ Get positions (offsets) of all instructions in the list. </div></td></tr>
+
+
+
+     <tr><td>  <a href="Instruction.html" class="classRef">Instruction</a>[]</td><td><span class="memberName"><a href="#getInstructions()" class="methodRef">getInstructions</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  int</td><td><span class="memberName"><a href="#getLength()" class="methodRef">getLength</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  <a href="InstructionHandle.html" class="classRef">InstructionHandle</a></td><td><span class="memberName"><a href="#getStart()" class="methodRef">getStart</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  <a href="InstructionHandle.html" class="classRef">InstructionHandle</a></td><td><span class="memberName"><a href="#insert(org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.InstructionList)" class="methodRef">insert</a>(<a href="InstructionHandle.html" class="classRef">InstructionHandle</a> ih, <a href="InstructionList.html" class="classRef">InstructionList</a> il)</span><div class="memberDescription">
+ Insert another list before Instruction handle ih contained in this list.
+ </div></td></tr>
+
+
+
+     <tr><td>  <a href="InstructionHandle.html" class="classRef">InstructionHandle</a></td><td><span class="memberName"><a href="#insert(org.apache.bcel.generic.InstructionList)" class="methodRef">insert</a>(<a href="InstructionList.html" class="classRef">InstructionList</a> il)</span><div class="memberDescription">
+ Insert another list.   
+</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#insert(org.apache.bcel.generic.InstructionHandle)" class="methodRef">insert</a>(<a href="InstructionHandle.html" class="classRef">InstructionHandle</a> ih)</span><div class="memberDescription">
+ Insert an instruction at start of this list.
+</div></td></tr>
+
+
+
+     <tr><td>  <a href="InstructionHandle.html" class="classRef">InstructionHandle</a></td><td><span class="memberName"><a href="#insert(org.apache.bcel.generic.Instruction,org.apache.bcel.generic.InstructionList)" class="methodRef">insert</a>(<a href="Instruction.html" class="classRef">Instruction</a> i, <a href="InstructionList.html" class="classRef">InstructionList</a> il)</span><div class="memberDescription">
+ Insert another list before Instruction i contained in this list.
+ </div></td></tr>
+
+
+
+     <tr><td>  <a href="InstructionHandle.html" class="classRef">InstructionHandle</a></td><td><span class="memberName"><a href="#insert(org.apache.bcel.generic.Instruction)" class="methodRef">insert</a>(<a href="Instruction.html" class="classRef">Instruction</a> i)</span><div class="memberDescription">
+ Insert an instruction at start of this list.
+</div></td></tr>
+
+
+
+     <tr><td>  <a href="BranchHandle.html" class="classRef">BranchHandle</a></td><td><span class="memberName"><a href="#insert(org.apache.bcel.generic.BranchInstruction)" class="methodRef">insert</a>(<a href="BranchInstruction.html" class="classRef">BranchInstruction</a> i)</span><div class="memberDescription">
+ Insert a branch instruction at start of this list.
+</div></td></tr>
+
+
+
+     <tr><td>  <a href="InstructionHandle.html" class="classRef">InstructionHandle</a></td><td><span class="memberName"><a href="#insert(org.apache.bcel.generic.Instruction,org.apache.bcel.generic.Instruction)" class="methodRef">insert</a>(<a href="Instruction.html" class="classRef">Instruction</a> i, <a href="Instruction.html" class="classRef">Instruction</a> j)</span><div class="memberDescription">
+ Insert a single instruction j before another instruction i, which
+ must be in this list of course!
+</div></td></tr>
+
+
+
+     <tr><td>  <a href="InstructionHandle.html" class="classRef">InstructionHandle</a></td><td><span class="memberName"><a href="#insert(org.apache.bcel.generic.Instruction,org.apache.bcel.generic.CompoundInstruction)" class="methodRef">insert</a>(<a href="Instruction.html" class="classRef">Instruction</a> i, <a href="CompoundInstruction.html" class="interfaceRef">CompoundInstruction</a> c)</span><div class="memberDescription">
+ Insert a compound instruction before instruction i.
+</div></td></tr>
+
+
+
+     <tr><td>  <a href="InstructionHandle.html" class="classRef">InstructionHandle</a></td><td><span class="memberName"><a href="#insert(org.apache.bcel.generic.CompoundInstruction)" class="methodRef">insert</a>(<a href="CompoundInstruction.html" class="interfaceRef">CompoundInstruction</a> c)</span><div class="memberDescription">
+ Insert a compound instruction.
+</div></td></tr>
+
+
+
+     <tr><td>  <a href="InstructionHandle.html" class="classRef">InstructionHandle</a></td><td><span class="memberName"><a href="#insert(org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.Instruction)" class="methodRef">insert</a>(<a href="InstructionHandle.html" class="classRef">InstructionHandle</a> ih, <a href="Instruction.html" class="classRef">Instruction</a> i)</span><div class="memberDescription">
+ Insert an instruction before instruction (handle) ih contained in this list.
+</div></td></tr>
+
+
+
+     <tr><td>  <a href="InstructionHandle.html" class="classRef">InstructionHandle</a></td><td><span class="memberName"><a href="#insert(org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.CompoundInstruction)" class="methodRef">insert</a>(<a href="InstructionHandle.html" class="classRef">InstructionHandle</a> ih, <a href="CompoundInstruction.html" class="interfaceRef">CompoundInstruction</a> c)</span><div class="memberDescription">
+ Insert a compound instruction.
+</div></td></tr>
+
+
+
+     <tr><td>  <a href="BranchHandle.html" class="classRef">BranchHandle</a></td><td><span class="memberName"><a href="#insert(org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.BranchInstruction)" class="methodRef">insert</a>(<a href="InstructionHandle.html" class="classRef">InstructionHandle</a> ih, <a href="BranchInstruction.html" class="classRef">BranchInstruction</a> i)</span><div class="memberDescription">
+ Insert an instruction before instruction (handle) ih contained in this list.
+</div></td></tr>
+
+
+
+     <tr><td>  boolean</td><td><span class="memberName"><a href="#isEmpty()" class="methodRef">isEmpty</a>()</span><div class="memberDescription">
+ Test for empty list.</div></td></tr>
+
+
+
+     <tr><td>  Iterator</td><td><span class="memberName"><a href="#iterator()" class="methodRef">iterator</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#move(org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.InstructionHandle)" class="methodRef">move</a>(<a href="InstructionHandle.html" class="classRef">InstructionHandle</a> start, <a href="InstructionHandle.html" class="classRef">InstructionHandle</a> end, <a href="InstructionHandle.html" class="classRef">InstructionHandle</a> target)</span><div class="memberDescription">
+ Take all instructions (handles) from "start" to "end" and append them after the
+ new location "target". </div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#move(org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.InstructionHandle)" class="methodRef">move</a>(<a href="InstructionHandle.html" class="classRef">InstructionHandle</a> ih, <a href="InstructionHandle.html" class="classRef">InstructionHandle</a> target)</span><div class="memberDescription">
+ Move a single instruction (handle) to a new location.
+</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#redirectBranches(org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.InstructionHandle)" class="methodRef">redirectBranches</a>(<a href="InstructionHandle.html" class="classRef">InstructionHandle</a> old_target, <a href="InstructionHandle.html" class="classRef">InstructionHandle</a> new_target)</span><div class="memberDescription">
+ Redirect all references from old_target to new_target, i.e., update targets 
+ of branch instructions.
+</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#redirectExceptionHandlers(org.apache.bcel.generic.CodeExceptionGen[],org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.InstructionHandle)" class="methodRef">redirectExceptionHandlers</a>(<a href="CodeExceptionGen.html" class="classRef">CodeExceptionGen</a>[] exceptions, <a href="InstructionHandle.html" class="classRef">InstructionHandle</a> old_target, <a href="InstructionHandle.html" class="classRef">InstructionHandle</a> new_target)</span><div class="memberDescription">
+ Redirect all references of exception handlers from old_target to new_target.
+</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#redirectLocalVariables(org.apache.bcel.generic.LocalVariableGen[],org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.InstructionHandle)" class="methodRef">redirectLocalVariables</a>(<a href="LocalVariableGen.html" class="classRef">LocalVariableGen</a>[] lg, <a href="InstructionHandle.html" class="classRef">InstructionHandle</a> old_target, <a href="InstructionHandle.html" class="classRef">InstructionHandle</a> new_target)</span><div class="memberDescription">
+ Redirect all references of local variables from old_target to new_target.
+</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#remove(org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.InstructionHandle)" class="methodRef">remove</a>(<a href="InstructionHandle.html" class="classRef">InstructionHandle</a> prev, <a href="InstructionHandle.html" class="classRef">InstructionHandle</a> next)</span><div class="memberDescription">
+ Remove from instruction `prev' to instruction `next' both contained
+ in this list. </div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#removeObserver(org.apache.bcel.generic.InstructionListObserver)" class="methodRef">removeObserver</a>(<a href="InstructionListObserver.html" class="interfaceRef">InstructionListObserver</a> o)</span><div class="memberDescription"> Remove observer for this object.</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#replaceConstantPool(org.apache.bcel.generic.ConstantPoolGen,org.apache.bcel.generic.ConstantPoolGen)" class="methodRef">replaceConstantPool</a>(<a href="ConstantPoolGen.html" class="classRef">ConstantPoolGen</a> old_cp, <a href="ConstantPoolGen.html" class="classRef">ConstantPoolGen</a> new_cp)</span><div class="memberDescription"> Replace all references to the old constant pool with references to the new
+  constant pool</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#setPositions()" class="methodRef">setPositions</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#setPositions(boolean)" class="methodRef">setPositions</a>(boolean check)</span><div class="memberDescription">
+ Give all instructions their position number (offset in byte stream), i.e.,
+ make the list ready to be dumped.
+</div></td></tr>
+
+
+
+     <tr><td>  int</td><td><span class="memberName"><a href="#size()" class="methodRef">size</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  String</td><td><span class="memberName"><a href="#toString()" class="methodRef">toString</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  String</td><td><span class="memberName"><a href="#toString(boolean)" class="methodRef">toString</a>(boolean verbose)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#update()" class="methodRef">update</a>()</span><div class="memberDescription"> Call notify() method on all observers. </div></td></tr>
+
+   </table>
+
+
+
+<!--
+   <p class="inherited">
+    <span class="header">Methods inherited from class java.util.<a
+   href="AbstractCollection.html">AbstractCollection</a></span>
+    <a href="#addAll">addAll</a>
+    <a href="#contains">contains</a>
+   </p>
+   <p class="inherited">
+    <span class="header">Methods inherited from class java.lang.<a
+   href="Object.html">Object</a></span>
+    <a href="#addAll">clone</a>
+    <a href="#contains">finalize</a>
+   </p>
+   <p class="inherited">
+    <span class="header">Methods inherited from interface java.util.<a
+   href="List.html">List</a></span>
+    <a href="#addAll">addAll</a>
+    <a href="#contains">contains</a>
+   </p>
+-->
+
+
+
+   <h2><a name="field_detail" id="field_detail">Field Detail</a></h2>
+
+   <h3><a name="byte_positions" id="byte_positions">byte_positions</a></h3>
+   <div class="memberName">private int[] byte_positions</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="end" id="end">end</a></h3>
+   <div class="memberName">private <a href="InstructionHandle.html" class="classRef">InstructionHandle</a> end</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="length" id="length">length</a></h3>
+   <div class="memberName">private int length</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="observers" id="observers">observers</a></h3>
+   <div class="memberName">private List observers</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="start" id="start">start</a></h3>
+   <div class="memberName">private <a href="InstructionHandle.html" class="classRef">InstructionHandle</a> start</div>
+   <div class="memberDescription"></div>
+
+
+
+
+   <h2><a name="constructor_detail" id="constructor_detail">Constructor Detail</a></h2>
+
+   <h3><a name="InstructionList()" id="InstructionList()">InstructionList</a></h3>
+   <div class="memberName">public  InstructionList()</div>
+   <div class="memberDescription">
+ Create (empty) instruction list.</div>
+
+
+   <h3><a name="InstructionList(org.apache.bcel.generic.Instruction)" id="InstructionList(org.apache.bcel.generic.Instruction)">InstructionList</a></h3>
+   <div class="memberName">public  InstructionList(<a href="Instruction.html" class="classRef">Instruction</a> i)</div>
+   <div class="memberDescription">
+ Create instruction list containing one instruction.<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">i initial instruction</span> </p>
+</div>
+
+
+   <h3><a name="InstructionList(org.apache.bcel.generic.BranchInstruction)" id="InstructionList(org.apache.bcel.generic.BranchInstruction)">InstructionList</a></h3>
+   <div class="memberName">public  InstructionList(<a href="BranchInstruction.html" class="classRef">BranchInstruction</a> i)</div>
+   <div class="memberDescription">
+ Create instruction list containing one instruction.<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">i initial instruction</span> </p>
+</div>
+
+
+   <h3><a name="InstructionList(org.apache.bcel.generic.CompoundInstruction)" id="InstructionList(org.apache.bcel.generic.CompoundInstruction)">InstructionList</a></h3>
+   <div class="memberName">public  InstructionList(<a href="CompoundInstruction.html" class="interfaceRef">CompoundInstruction</a> c)</div>
+   <div class="memberDescription">
+ Initialize list with (nonnull) compound instruction. Consumes argument
+ list, i.e., it becomes empty.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">c compound instruction (list)</span> </p>
+</div>
+
+
+   <h3><a name="InstructionList(byte[])" id="InstructionList(byte[])">InstructionList</a></h3>
+   <div class="memberName">public  InstructionList(byte[] code)</div>
+   <div class="memberDescription">
+ Initialize instruction list from byte array.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">code byte array containing the instructions</span> </p>
+</div>
+
+
+
+
+   <h2><a name="method_detail" id="method_detail">Method Detail</a></h2>
+
+   <h3><a name="addObserver(org.apache.bcel.generic.InstructionListObserver)" id="addObserver(org.apache.bcel.generic.InstructionListObserver)">addObserver</a></h3>
+   <div class="memberName">public  void addObserver(<a href="InstructionListObserver.html" class="interfaceRef">InstructionListObserver</a> o)</div>
+   <div class="memberDescription"> Add observer for this object.</div>
+
+
+   <h3><a name="append(org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.InstructionList)" id="append(org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.InstructionList)">append</a></h3>
+   <div class="memberName">public  <a href="InstructionHandle.html" class="classRef">InstructionHandle</a> append(<a href="InstructionHandle.html" class="classRef">InstructionHandle</a> ih, <a href="InstructionList.html" class="classRef">InstructionList</a> il)</div>
+   <div class="memberDescription">
+ Append another list after instruction (handle) ih contained in this list.
+ Consumes argument list, i.e., it becomes empty.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">ih where to append the instruction list</span> <span class="tagContents">il Instruction list to append to this one</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">instruction handle pointing to the <B>first</B> appended instruction</span> </p>
+</div>
+
+
+   <h3><a name="append(org.apache.bcel.generic.Instruction,org.apache.bcel.generic.InstructionList)" id="append(org.apache.bcel.generic.Instruction,org.apache.bcel.generic.InstructionList)">append</a></h3>
+   <div class="memberName">public  <a href="InstructionHandle.html" class="classRef">InstructionHandle</a> append(<a href="Instruction.html" class="classRef">Instruction</a> i, <a href="InstructionList.html" class="classRef">InstructionList</a> il)</div>
+   <div class="memberDescription">
+ Append another list after instruction i contained in this list.
+ Consumes argument list, i.e., it becomes empty.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">i  where to append the instruction list</span> <span class="tagContents">il Instruction list to append to this one</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">instruction handle pointing to the <B>first</B> appended instruction</span> </p>
+</div>
+
+
+   <h3><a name="append(org.apache.bcel.generic.InstructionList)" id="append(org.apache.bcel.generic.InstructionList)">append</a></h3>
+   <div class="memberName">public  <a href="InstructionHandle.html" class="classRef">InstructionHandle</a> append(<a href="InstructionList.html" class="classRef">InstructionList</a> il)</div>
+   <div class="memberDescription">
+ Append another list to this one.
+ Consumes argument list, i.e., it becomes empty.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">il list to append to end of this list</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">instruction handle of the <B>first</B> appended instruction</span> </p>
+</div>
+
+
+   <h3><a name="append(org.apache.bcel.generic.InstructionHandle)" id="append(org.apache.bcel.generic.InstructionHandle)">append</a></h3>
+   <div class="memberName">private  void append(<a href="InstructionHandle.html" class="classRef">InstructionHandle</a> ih)</div>
+   <div class="memberDescription">
+ Append an instruction to the end of this list.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">ih instruction to append</span> </p>
+</div>
+
+
+   <h3><a name="append(org.apache.bcel.generic.Instruction)" id="append(org.apache.bcel.generic.Instruction)">append</a></h3>
+   <div class="memberName">public  <a href="InstructionHandle.html" class="classRef">InstructionHandle</a> append(<a href="Instruction.html" class="classRef">Instruction</a> i)</div>
+   <div class="memberDescription">
+ Append an instruction to the end of this list.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">i instruction to append</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">instruction handle of the appended instruction</span> </p>
+</div>
+
+
+   <h3><a name="append(org.apache.bcel.generic.BranchInstruction)" id="append(org.apache.bcel.generic.BranchInstruction)">append</a></h3>
+   <div class="memberName">public  <a href="BranchHandle.html" class="classRef">BranchHandle</a> append(<a href="BranchInstruction.html" class="classRef">BranchInstruction</a> i)</div>
+   <div class="memberDescription">
+ Append a branch instruction to the end of this list.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">i branch instruction to append</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">branch instruction handle of the appended instruction</span> </p>
+</div>
+
+
+   <h3><a name="append(org.apache.bcel.generic.Instruction,org.apache.bcel.generic.Instruction)" id="append(org.apache.bcel.generic.Instruction,org.apache.bcel.generic.Instruction)">append</a></h3>
+   <div class="memberName">public  <a href="InstructionHandle.html" class="classRef">InstructionHandle</a> append(<a href="Instruction.html" class="classRef">Instruction</a> i, <a href="Instruction.html" class="classRef">Instruction</a> j)</div>
+   <div class="memberDescription">
+ Append a single instruction j after another instruction i, which
+ must be in this list of course!
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">i Instruction in list</span> <span class="tagContents">j Instruction to append after i in list</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">instruction handle of the first appended instruction</span> </p>
+</div>
+
+
+   <h3><a name="append(org.apache.bcel.generic.Instruction,org.apache.bcel.generic.CompoundInstruction)" id="append(org.apache.bcel.generic.Instruction,org.apache.bcel.generic.CompoundInstruction)">append</a></h3>
+   <div class="memberName">public  <a href="InstructionHandle.html" class="classRef">InstructionHandle</a> append(<a href="Instruction.html" class="classRef">Instruction</a> i, <a href="CompoundInstruction.html" class="interfaceRef">CompoundInstruction</a> c)</div>
+   <div class="memberDescription">
+ Append a compound instruction, after instruction i.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">i Instruction in list</span> <span class="tagContents">c The composite instruction (containing an InstructionList)</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">instruction handle of the first appended instruction</span> </p>
+</div>
+
+
+   <h3><a name="append(org.apache.bcel.generic.CompoundInstruction)" id="append(org.apache.bcel.generic.CompoundInstruction)">append</a></h3>
+   <div class="memberName">public  <a href="InstructionHandle.html" class="classRef">InstructionHandle</a> append(<a href="CompoundInstruction.html" class="interfaceRef">CompoundInstruction</a> c)</div>
+   <div class="memberDescription">
+ Append a compound instruction.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">c The composite instruction (containing an InstructionList)</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">instruction handle of the first appended instruction</span> </p>
+</div>
+
+
+   <h3><a name="append(org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.CompoundInstruction)" id="append(org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.CompoundInstruction)">append</a></h3>
+   <div class="memberName">public  <a href="InstructionHandle.html" class="classRef">InstructionHandle</a> append(<a href="InstructionHandle.html" class="classRef">InstructionHandle</a> ih, <a href="CompoundInstruction.html" class="interfaceRef">CompoundInstruction</a> c)</div>
+   <div class="memberDescription">
+ Append a compound instruction.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">ih where to append the instruction list</span> <span class="tagContents">c The composite instruction (containing an InstructionList)</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">instruction handle of the first appended instruction</span> </p>
+</div>
+
+
+   <h3><a name="append(org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.Instruction)" id="append(org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.Instruction)">append</a></h3>
+   <div class="memberName">public  <a href="InstructionHandle.html" class="classRef">InstructionHandle</a> append(<a href="InstructionHandle.html" class="classRef">InstructionHandle</a> ih, <a href="Instruction.html" class="classRef">Instruction</a> i)</div>
+   <div class="memberDescription">
+ Append an instruction after instruction (handle) ih contained in this list.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">ih where to append the instruction list</span> <span class="tagContents">i Instruction to append</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">instruction handle pointing to the <B>first</B> appended instruction</span> </p>
+</div>
+
+
+   <h3><a name="append(org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.BranchInstruction)" id="append(org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.BranchInstruction)">append</a></h3>
+   <div class="memberName">public  <a href="BranchHandle.html" class="classRef">BranchHandle</a> append(<a href="InstructionHandle.html" class="classRef">InstructionHandle</a> ih, <a href="BranchInstruction.html" class="classRef">BranchInstruction</a> i)</div>
+   <div class="memberDescription">
+ Append an instruction after instruction (handle) ih contained in this list.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">ih where to append the instruction list</span> <span class="tagContents">i Instruction to append</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">instruction handle pointing to the <B>first</B> appended instruction</span> </p>
+</div>
+
+
+   <h3><a name="clear()" id="clear()">clear</a></h3>
+   <div class="memberName">private  void clear()</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="contains(org.apache.bcel.generic.InstructionHandle)" id="contains(org.apache.bcel.generic.InstructionHandle)">contains</a></h3>
+   <div class="memberName">public  boolean contains(<a href="InstructionHandle.html" class="classRef">InstructionHandle</a> i)</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="contains(org.apache.bcel.generic.Instruction)" id="contains(org.apache.bcel.generic.Instruction)">contains</a></h3>
+   <div class="memberName">public  boolean contains(<a href="Instruction.html" class="classRef">Instruction</a> i)</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="copy()" id="copy()">copy</a></h3>
+   <div class="memberName">public  <a href="InstructionList.html" class="classRef">InstructionList</a> copy()</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">complete, i.e., deep copy of this list</span> </p>
+</div>
+
+
+   <h3><a name="delete(org.apache.bcel.generic.InstructionHandle)" id="delete(org.apache.bcel.generic.InstructionHandle)">delete</a></h3>
+   <div class="memberName">public  void delete(<a href="InstructionHandle.html" class="classRef">InstructionHandle</a> ih)</div>
+   <div class="memberDescription">
+ Remove instruction from this list. The corresponding Instruction
+ handles must not be reused!
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">ih instruction (handle) to remove</span> </p>
+</div>
+
+
+   <h3><a name="delete(org.apache.bcel.generic.Instruction)" id="delete(org.apache.bcel.generic.Instruction)">delete</a></h3>
+   <div class="memberName">public  void delete(<a href="Instruction.html" class="classRef">Instruction</a> i)</div>
+   <div class="memberDescription">
+ Remove instruction from this list. The corresponding Instruction
+ handles must not be reused!
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">i instruction to remove</span> </p>
+</div>
+
+
+   <h3><a name="delete(org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.InstructionHandle)" id="delete(org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.InstructionHandle)">delete</a></h3>
+   <div class="memberName">public  void delete(<a href="InstructionHandle.html" class="classRef">InstructionHandle</a> from, <a href="InstructionHandle.html" class="classRef">InstructionHandle</a> to)</div>
+   <div class="memberDescription">
+ Remove instructions from instruction `from' to instruction `to' contained
+ in this list. The user must ensure that `from' is an instruction before
+ `to', or risk havoc. The corresponding Instruction handles must not be reused!
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">from where to start deleting (inclusive)</span> <span class="tagContents">to   where to end deleting (inclusive)</span> </p>
+</div>
+
+
+   <h3><a name="delete(org.apache.bcel.generic.Instruction,org.apache.bcel.generic.Instruction)" id="delete(org.apache.bcel.generic.Instruction,org.apache.bcel.generic.Instruction)">delete</a></h3>
+   <div class="memberName">public  void delete(<a href="Instruction.html" class="classRef">Instruction</a> from, <a href="Instruction.html" class="classRef">Instruction</a> to)</div>
+   <div class="memberDescription">
+ Remove instructions from instruction `from' to instruction `to' contained
+ in this list. The user must ensure that `from' is an instruction before
+ `to', or risk havoc. The corresponding Instruction handles must not be reused!
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">from where to start deleting (inclusive)</span> <span class="tagContents">to   where to end deleting (inclusive)</span> </p>
+</div>
+
+
+   <h3><a name="dispose()" id="dispose()">dispose</a></h3>
+   <div class="memberName">public  void dispose()</div>
+   <div class="memberDescription">
+ Delete contents of list. Provides besser memory utilization,
+ because the system then may reuse the instruction handles. This
+ method is typically called right after
+ <href="MethodGen.html#getMethod()">MethodGen.getMethod()</a>.</div>
+
+
+   <h3><a name="findHandle(org.apache.bcel.generic.InstructionHandle[],int[],int,int)" id="findHandle(org.apache.bcel.generic.InstructionHandle[],int[],int,int)">findHandle</a></h3>
+   <div class="memberName">public static  <a href="InstructionHandle.html" class="classRef">InstructionHandle</a> findHandle(<a href="InstructionHandle.html" class="classRef">InstructionHandle</a>[] ihs, int[] pos, int count, int target)</div>
+   <div class="memberDescription">
+ Find the target instruction (handle) that corresponds to the given target
+ position (byte code offset).
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">ihs array of instruction handles, i.e. il.getInstructionHandles()</span> <span class="tagContents">pos array of positions corresponding to ihs, i.e. il.getInstructionPositions()</span> <span class="tagContents">count length of arrays</span> <span class="tagContents">target target position to search for</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">target position's instruction handle if available</span> </p>
+</div>
+
+
+   <h3><a name="findHandle(int)" id="findHandle(int)">findHandle</a></h3>
+   <div class="memberName">public  <a href="InstructionHandle.html" class="classRef">InstructionHandle</a> findHandle(int pos)</div>
+   <div class="memberDescription">
+ Get instruction handle for instruction at byte code position pos.
+ This only works properly, if the list is freshly initialized from a byte array or
+ setPositions() has been called before this method.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">pos byte code position to search for</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">target position's instruction handle if available</span> </p>
+</div>
+
+
+   <h3><a name="findInstruction1(org.apache.bcel.generic.Instruction)" id="findInstruction1(org.apache.bcel.generic.Instruction)">findInstruction1</a></h3>
+   <div class="memberName">private  <a href="InstructionHandle.html" class="classRef">InstructionHandle</a> findInstruction1(<a href="Instruction.html" class="classRef">Instruction</a> i)</div>
+   <div class="memberDescription">
+ Search for given Instruction reference, start at beginning of list.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">i instruction to search for</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">instruction found on success, null otherwise</span> </p>
+</div>
+
+
+   <h3><a name="findInstruction2(org.apache.bcel.generic.Instruction)" id="findInstruction2(org.apache.bcel.generic.Instruction)">findInstruction2</a></h3>
+   <div class="memberName">private  <a href="InstructionHandle.html" class="classRef">InstructionHandle</a> findInstruction2(<a href="Instruction.html" class="classRef">Instruction</a> i)</div>
+   <div class="memberDescription">
+ Search for given Instruction reference, start at end of list
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">i instruction to search for</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">instruction found on success, null otherwise</span> </p>
+</div>
+
+
+   <h3><a name="getByteCode()" id="getByteCode()">getByteCode</a></h3>
+   <div class="memberName">public  byte[] getByteCode()</div>
+   <div class="memberDescription">
+ When everything is finished, use this method to convert the instruction
+ list into an array of bytes.
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">the byte code ready to be dumped</span> </p>
+</div>
+
+
+   <h3><a name="getEnd()" id="getEnd()">getEnd</a></h3>
+   <div class="memberName">public  <a href="InstructionHandle.html" class="classRef">InstructionHandle</a> getEnd()</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">end of list</span> </p>
+</div>
+
+
+   <h3><a name="getInstructionHandles()" id="getInstructionHandles()">getInstructionHandles</a></h3>
+   <div class="memberName">public  <a href="InstructionHandle.html" class="classRef">InstructionHandle</a>[] getInstructionHandles()</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">array containing all instructions (handles)</span> </p>
+</div>
+
+
+   <h3><a name="getInstructionPositions()" id="getInstructionPositions()">getInstructionPositions</a></h3>
+   <div class="memberName">public  int[] getInstructionPositions()</div>
+   <div class="memberDescription">
+ Get positions (offsets) of all instructions in the list. This relies on that
+ the list has been freshly created from an byte code array, or that setPositions()
+ has been called. Otherwise this may be inaccurate.
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">array containing all instruction's offset in byte code</span> </p>
+</div>
+
+
+   <h3><a name="getInstructions()" id="getInstructions()">getInstructions</a></h3>
+   <div class="memberName">public  <a href="Instruction.html" class="classRef">Instruction</a>[] getInstructions()</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">an array of instructions without target information for branch instructions.</span> </p>
+</div>
+
+
+   <h3><a name="getLength()" id="getLength()">getLength</a></h3>
+   <div class="memberName">public  int getLength()</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">length of list (Number of instructions, not bytes)</span> </p>
+</div>
+
+
+   <h3><a name="getStart()" id="getStart()">getStart</a></h3>
+   <div class="memberName">public  <a href="InstructionHandle.html" class="classRef">InstructionHandle</a> getStart()</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">start of list</span> </p>
+</div>
+
+
+   <h3><a name="insert(org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.InstructionList)" id="insert(org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.InstructionList)">insert</a></h3>
+   <div class="memberName">public  <a href="InstructionHandle.html" class="classRef">InstructionHandle</a> insert(<a href="InstructionHandle.html" class="classRef">InstructionHandle</a> ih, <a href="InstructionList.html" class="classRef">InstructionList</a> il)</div>
+   <div class="memberDescription">
+ Insert another list before Instruction handle ih contained in this list.
+ Consumes argument list, i.e., it becomes empty.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">ih  where to append the instruction list</span> <span class="tagContents">il Instruction list to insert</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">instruction handle of the first inserted instruction</span> </p>
+</div>
+
+
+   <h3><a name="insert(org.apache.bcel.generic.InstructionList)" id="insert(org.apache.bcel.generic.InstructionList)">insert</a></h3>
+   <div class="memberName">public  <a href="InstructionHandle.html" class="classRef">InstructionHandle</a> insert(<a href="InstructionList.html" class="classRef">InstructionList</a> il)</div>
+   <div class="memberDescription">
+ Insert another list.   
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">il list to insert before start of this list</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">instruction handle of the first inserted instruction</span> </p>
+</div>
+
+
+   <h3><a name="insert(org.apache.bcel.generic.InstructionHandle)" id="insert(org.apache.bcel.generic.InstructionHandle)">insert</a></h3>
+   <div class="memberName">private  void insert(<a href="InstructionHandle.html" class="classRef">InstructionHandle</a> ih)</div>
+   <div class="memberDescription">
+ Insert an instruction at start of this list.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">ih instruction to insert</span> </p>
+</div>
+
+
+   <h3><a name="insert(org.apache.bcel.generic.Instruction,org.apache.bcel.generic.InstructionList)" id="insert(org.apache.bcel.generic.Instruction,org.apache.bcel.generic.InstructionList)">insert</a></h3>
+   <div class="memberName">public  <a href="InstructionHandle.html" class="classRef">InstructionHandle</a> insert(<a href="Instruction.html" class="classRef">Instruction</a> i, <a href="InstructionList.html" class="classRef">InstructionList</a> il)</div>
+   <div class="memberDescription">
+ Insert another list before Instruction i contained in this list.
+ Consumes argument list, i.e., it becomes empty.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">i  where to append the instruction list</span> <span class="tagContents">il Instruction list to insert</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">instruction handle pointing to the first inserted instruction,
+ i.e., il.getStart()</span> </p>
+</div>
+
+
+   <h3><a name="insert(org.apache.bcel.generic.Instruction)" id="insert(org.apache.bcel.generic.Instruction)">insert</a></h3>
+   <div class="memberName">public  <a href="InstructionHandle.html" class="classRef">InstructionHandle</a> insert(<a href="Instruction.html" class="classRef">Instruction</a> i)</div>
+   <div class="memberDescription">
+ Insert an instruction at start of this list.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">i instruction to insert</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">instruction handle of the inserted instruction</span> </p>
+</div>
+
+
+   <h3><a name="insert(org.apache.bcel.generic.BranchInstruction)" id="insert(org.apache.bcel.generic.BranchInstruction)">insert</a></h3>
+   <div class="memberName">public  <a href="BranchHandle.html" class="classRef">BranchHandle</a> insert(<a href="BranchInstruction.html" class="classRef">BranchInstruction</a> i)</div>
+   <div class="memberDescription">
+ Insert a branch instruction at start of this list.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">i branch instruction to insert</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">branch instruction handle of the appended instruction</span> </p>
+</div>
+
+
+   <h3><a name="insert(org.apache.bcel.generic.Instruction,org.apache.bcel.generic.Instruction)" id="insert(org.apache.bcel.generic.Instruction,org.apache.bcel.generic.Instruction)">insert</a></h3>
+   <div class="memberName">public  <a href="InstructionHandle.html" class="classRef">InstructionHandle</a> insert(<a href="Instruction.html" class="classRef">Instruction</a> i, <a href="Instruction.html" class="classRef">Instruction</a> j)</div>
+   <div class="memberDescription">
+ Insert a single instruction j before another instruction i, which
+ must be in this list of course!
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">i Instruction in list</span> <span class="tagContents">j Instruction to insert before i in list</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">instruction handle of the first inserted instruction</span> </p>
+</div>
+
+
+   <h3><a name="insert(org.apache.bcel.generic.Instruction,org.apache.bcel.generic.CompoundInstruction)" id="insert(org.apache.bcel.generic.Instruction,org.apache.bcel.generic.CompoundInstruction)">insert</a></h3>
+   <div class="memberName">public  <a href="InstructionHandle.html" class="classRef">InstructionHandle</a> insert(<a href="Instruction.html" class="classRef">Instruction</a> i, <a href="CompoundInstruction.html" class="interfaceRef">CompoundInstruction</a> c)</div>
+   <div class="memberDescription">
+ Insert a compound instruction before instruction i.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">i Instruction in list</span> <span class="tagContents">c The composite instruction (containing an InstructionList)</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">instruction handle of the first inserted instruction</span> </p>
+</div>
+
+
+   <h3><a name="insert(org.apache.bcel.generic.CompoundInstruction)" id="insert(org.apache.bcel.generic.CompoundInstruction)">insert</a></h3>
+   <div class="memberName">public  <a href="InstructionHandle.html" class="classRef">InstructionHandle</a> insert(<a href="CompoundInstruction.html" class="interfaceRef">CompoundInstruction</a> c)</div>
+   <div class="memberDescription">
+ Insert a compound instruction.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">c The composite instruction (containing an InstructionList)</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">instruction handle of the first inserted instruction</span> </p>
+</div>
+
+
+   <h3><a name="insert(org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.Instruction)" id="insert(org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.Instruction)">insert</a></h3>
+   <div class="memberName">public  <a href="InstructionHandle.html" class="classRef">InstructionHandle</a> insert(<a href="InstructionHandle.html" class="classRef">InstructionHandle</a> ih, <a href="Instruction.html" class="classRef">Instruction</a> i)</div>
+   <div class="memberDescription">
+ Insert an instruction before instruction (handle) ih contained in this list.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">ih where to insert to the instruction list</span> <span class="tagContents">i Instruction to insert</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">instruction handle of the first inserted instruction</span> </p>
+</div>
+
+
+   <h3><a name="insert(org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.CompoundInstruction)" id="insert(org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.CompoundInstruction)">insert</a></h3>
+   <div class="memberName">public  <a href="InstructionHandle.html" class="classRef">InstructionHandle</a> insert(<a href="InstructionHandle.html" class="classRef">InstructionHandle</a> ih, <a href="CompoundInstruction.html" class="interfaceRef">CompoundInstruction</a> c)</div>
+   <div class="memberDescription">
+ Insert a compound instruction.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">ih where to insert the instruction list</span> <span class="tagContents">c The composite instruction (containing an InstructionList)</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">instruction handle of the first inserted instruction</span> </p>
+</div>
+
+
+   <h3><a name="insert(org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.BranchInstruction)" id="insert(org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.BranchInstruction)">insert</a></h3>
+   <div class="memberName">public  <a href="BranchHandle.html" class="classRef">BranchHandle</a> insert(<a href="InstructionHandle.html" class="classRef">InstructionHandle</a> ih, <a href="BranchInstruction.html" class="classRef">BranchInstruction</a> i)</div>
+   <div class="memberDescription">
+ Insert an instruction before instruction (handle) ih contained in this list.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">ih where to insert to the instruction list</span> <span class="tagContents">i Instruction to insert</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">instruction handle of the first inserted instruction</span> </p>
+</div>
+
+
+   <h3><a name="isEmpty()" id="isEmpty()">isEmpty</a></h3>
+   <div class="memberName">public  boolean isEmpty()</div>
+   <div class="memberDescription">
+ Test for empty list.</div>
+
+
+   <h3><a name="iterator()" id="iterator()">iterator</a></h3>
+   <div class="memberName">public  Iterator iterator()</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">Enumeration that lists all instructions (handles)</span> </p>
+</div>
+
+
+   <h3><a name="move(org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.InstructionHandle)" id="move(org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.InstructionHandle)">move</a></h3>
+   <div class="memberName">public  void move(<a href="InstructionHandle.html" class="classRef">InstructionHandle</a> start, <a href="InstructionHandle.html" class="classRef">InstructionHandle</a> end, <a href="InstructionHandle.html" class="classRef">InstructionHandle</a> target)</div>
+   <div class="memberDescription">
+ Take all instructions (handles) from "start" to "end" and append them after the
+ new location "target". Of course, "end" must be after "start" and target must
+ not be located withing this range. If you want to move something to the start of
+ the list use null as value for target.<br>
+ Any instruction targeters pointing to handles within the block, keep their targets.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">start  of moved block</span> <span class="tagContents">end    of moved block</span> <span class="tagContents">target of moved block</span> </p>
+</div>
+
+
+   <h3><a name="move(org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.InstructionHandle)" id="move(org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.InstructionHandle)">move</a></h3>
+   <div class="memberName">public  void move(<a href="InstructionHandle.html" class="classRef">InstructionHandle</a> ih, <a href="InstructionHandle.html" class="classRef">InstructionHandle</a> target)</div>
+   <div class="memberDescription">
+ Move a single instruction (handle) to a new location.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">ih     moved instruction</span> <span class="tagContents">target new location of moved instruction</span> </p>
+</div>
+
+
+   <h3><a name="redirectBranches(org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.InstructionHandle)" id="redirectBranches(org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.InstructionHandle)">redirectBranches</a></h3>
+   <div class="memberName">public  void redirectBranches(<a href="InstructionHandle.html" class="classRef">InstructionHandle</a> old_target, <a href="InstructionHandle.html" class="classRef">InstructionHandle</a> new_target)</div>
+   <div class="memberDescription">
+ Redirect all references from old_target to new_target, i.e., update targets 
+ of branch instructions.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">old_target the old target instruction handle</span> <span class="tagContents">new_target the new target instruction handle</span> </p>
+</div>
+
+
+   <h3><a name="redirectExceptionHandlers(org.apache.bcel.generic.CodeExceptionGen[],org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.InstructionHandle)" id="redirectExceptionHandlers(org.apache.bcel.generic.CodeExceptionGen[],org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.InstructionHandle)">redirectExceptionHandlers</a></h3>
+   <div class="memberName">public  void redirectExceptionHandlers(<a href="CodeExceptionGen.html" class="classRef">CodeExceptionGen</a>[] exceptions, <a href="InstructionHandle.html" class="classRef">InstructionHandle</a> old_target, <a href="InstructionHandle.html" class="classRef">InstructionHandle</a> new_target)</div>
+   <div class="memberDescription">
+ Redirect all references of exception handlers from old_target to new_target.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">exceptions array of exception handlers</span> <span class="tagContents">old_target the old target instruction handle</span> <span class="tagContents">new_target the new target instruction handle</span> </p>
+<p class="tag tag_see"><span class="tagName">See Also:</span> <span class="tagContents"><a href="MethodGen.html" class="classRef">MethodGen</a></span> </p>
+</div>
+
+
+   <h3><a name="redirectLocalVariables(org.apache.bcel.generic.LocalVariableGen[],org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.InstructionHandle)" id="redirectLocalVariables(org.apache.bcel.generic.LocalVariableGen[],org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.InstructionHandle)">redirectLocalVariables</a></h3>
+   <div class="memberName">public  void redirectLocalVariables(<a href="LocalVariableGen.html" class="classRef">LocalVariableGen</a>[] lg, <a href="InstructionHandle.html" class="classRef">InstructionHandle</a> old_target, <a href="InstructionHandle.html" class="classRef">InstructionHandle</a> new_target)</div>
+   <div class="memberDescription">
+ Redirect all references of local variables from old_target to new_target.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">lg array of local variables</span> <span class="tagContents">old_target the old target instruction handle</span> <span class="tagContents">new_target the new target instruction handle</span> </p>
+<p class="tag tag_see"><span class="tagName">See Also:</span> <span class="tagContents"><a href="MethodGen.html" class="classRef">MethodGen</a></span> </p>
+</div>
+
+
+   <h3><a name="remove(org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.InstructionHandle)" id="remove(org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.InstructionHandle)">remove</a></h3>
+   <div class="memberName">private  void remove(<a href="InstructionHandle.html" class="classRef">InstructionHandle</a> prev, <a href="InstructionHandle.html" class="classRef">InstructionHandle</a> next)</div>
+   <div class="memberDescription">
+ Remove from instruction `prev' to instruction `next' both contained
+ in this list. Throws TargetLostException when one of the removed instruction handles
+ is still being targeted.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">prev where to start deleting (predecessor, exclusive)</span> <span class="tagContents">next where to end deleting (successor, exclusive)</span> </p>
+</div>
+
+
+   <h3><a name="removeObserver(org.apache.bcel.generic.InstructionListObserver)" id="removeObserver(org.apache.bcel.generic.InstructionListObserver)">removeObserver</a></h3>
+   <div class="memberName">public  void removeObserver(<a href="InstructionListObserver.html" class="interfaceRef">InstructionListObserver</a> o)</div>
+   <div class="memberDescription"> Remove observer for this object.</div>
+
+
+   <h3><a name="replaceConstantPool(org.apache.bcel.generic.ConstantPoolGen,org.apache.bcel.generic.ConstantPoolGen)" id="replaceConstantPool(org.apache.bcel.generic.ConstantPoolGen,org.apache.bcel.generic.ConstantPoolGen)">replaceConstantPool</a></h3>
+   <div class="memberName">public  void replaceConstantPool(<a href="ConstantPoolGen.html" class="classRef">ConstantPoolGen</a> old_cp, <a href="ConstantPoolGen.html" class="classRef">ConstantPoolGen</a> new_cp)</div>
+   <div class="memberDescription"> Replace all references to the old constant pool with references to the new
+  constant pool</div>
+
+
+   <h3><a name="setPositions()" id="setPositions()">setPositions</a></h3>
+   <div class="memberName">public  void setPositions()</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="setPositions(boolean)" id="setPositions(boolean)">setPositions</a></h3>
+   <div class="memberName">public  void setPositions(boolean check)</div>
+   <div class="memberDescription">
+ Give all instructions their position number (offset in byte stream), i.e.,
+ make the list ready to be dumped.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">check Perform sanity checks, e.g. if all targeted instructions really belong
+ to this list</span> </p>
+</div>
+
+
+   <h3><a name="size()" id="size()">size</a></h3>
+   <div class="memberName">public  int size()</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">length of list (Number of instructions, not bytes)</span> </p>
+</div>
+
+
+   <h3><a name="toString()" id="toString()">toString</a></h3>
+   <div class="memberName">public  String toString()</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="toString(boolean)" id="toString(boolean)">toString</a></h3>
+   <div class="memberName">public  String toString(boolean verbose)</div>
+   <div class="memberDescription"><p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">verbose toggle output format</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">String containing all instructions in this list.</span> </p>
+</div>
+
+
+   <h3><a name="update()" id="update()">update</a></h3>
+   <div class="memberName">public  void update()</div>
+   <div class="memberDescription"> Call notify() method on all observers. This method is not called
+ automatically whenever the state has changed, but has to be
+ called by the user after he has finished editing the object.</div>
+
+   
+   <div class="navbar">
+    <p class="nav navtop">
+      <span class="over"><a href="../../../../overview-summary.html">Overview</a></span>
+      <span class="package"><a href="package-summary.html">Package</a></span>
+      <span class="class selected">Class</span>
+      <span class="use"><a href="class-use/InstructionList.html">Use</a></span>
+      <span class="tree"><a href="package-tree.html">Tree</a></span>
+      <span class="deprecated"><a href="../../../../deprecated-list.html">Deprecated</a></span>
+      <span class="index"><a href="../../../../index-all.html">Index</a></span>
+      <span class="help"><a href="../../../../help-doc.html">Help</a></span>
+    </p>
+    <p class="nav navmid">
+      <span class="prevnext">
+       <span class="prev">Prev Class</span>
+       <span class="next">Next Class</span>
+      </span>
+      <span class="framesel">
+       <span class="frames"><a href="../../../../index.html" target="_top">Frames</a></span>
+       <span class="noframes"><a href="InstructionList.html" target="_top">NoFrames</a></span>
+      </span>
+      <span class="allclasses"><a href="../../../../allclasses-noframe.html">All Classes</a></span>
+   </p>
+   <p class="nav navbot">
+      <span class="summary">Summary:
+       <span class="nested">Nested</span>
+       <span class="field"><a href="#field_summary">Field</a></span>
+       <span class="constr"><a href="#constructor_summary">Constr</a></span>
+       <span class="method"><a href="#method_summary">Method</a></span>
+      </span>
+      <span class="detail">Detail:
+       <span class="field"><a href="#field_detail">Field</a></span>
+       <span class="constr"><a href="#constructor_detail">Constr</a></span>
+       <span class="method"><a href="#method_detail">Method</a></span>
+      </span>
+   </p>
+    <div class="navtitle">
+     
+    </div>
+    <p class="clear"><!--empty--></p>
+   </div>
+   <div class="bottom"></div>
+   </body>
+</html>

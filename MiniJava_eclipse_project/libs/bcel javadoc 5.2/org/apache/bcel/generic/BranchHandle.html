@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>BranchHandle</title>
+    <meta name="keywords" content="org.apache.bcel.generic.BranchHandle,BranchHandle class" />
+    <meta name="generator" content="SinjDoc 0.5" />
+    <link href="../../../../stylesheet.css" rel="stylesheet" type="text/css" />
+    <link rel="Index" href="../../../../index-all.html" />
+    <link rel="Start" href="../../../../overview-summary.html" />
+    <link rel="Up" href="package-summary.html" />
+    <link rel="Help" href="../../../../help-doc.html" />
+  </head>
+  <body class="classPage bigframe">
+   <div class="navbar">
+    <p class="nav navtop">
+      <span class="over"><a href="../../../../overview-summary.html">Overview</a></span>
+      <span class="package"><a href="package-summary.html">Package</a></span>
+      <span class="class selected">Class</span>
+      <span class="use"><a href="class-use/BranchHandle.html">Use</a></span>
+      <span class="tree"><a href="package-tree.html">Tree</a></span>
+      <span class="deprecated"><a href="../../../../deprecated-list.html">Deprecated</a></span>
+      <span class="index"><a href="../../../../index-all.html">Index</a></span>
+      <span class="help"><a href="../../../../help-doc.html">Help</a></span>
+    </p>
+    <p class="nav navmid">
+      <span class="prevnext">
+       <span class="prev">Prev Class</span>
+       <span class="next">Next Class</span>
+      </span>
+      <span class="framesel">
+       <span class="frames"><a href="../../../../index.html" target="_top">Frames</a></span>
+       <span class="noframes"><a href="BranchHandle.html" target="_top">NoFrames</a></span>
+      </span>
+      <span class="allclasses"><a href="../../../../allclasses-noframe.html">All Classes</a></span>
+   </p>
+   <p class="nav navbot">
+      <span class="summary">Summary:
+       <span class="nested">Nested</span>
+       <span class="field"><a href="#field_summary">Field</a></span>
+       <span class="constr"><a href="#constructor_summary">Constr</a></span>
+       <span class="method"><a href="#method_summary">Method</a></span>
+      </span>
+      <span class="detail">Detail:
+       <span class="field"><a href="#field_detail">Field</a></span>
+       <span class="constr"><a href="#constructor_detail">Constr</a></span>
+       <span class="method"><a href="#method_detail">Method</a></span>
+      </span>
+   </p>
+    <div class="navtitle">
+     
+    </div>
+    <p class="clear"><!--empty--></p>
+   </div>
+   <p class="packageName">org.apache.bcel.generic</p>
+   <h1>  Class  BranchHandle</h1>
+<!--
+   <p class="enclosing">
+   Enclosing class/interface: @OUTER@
+   </p>
+-->
+
+
+   <!-- XXX class hierarchy diagram goes here -->
+<!--
+   
+   <p class="directSubclasses">
+   Direct known subclasses: @ALL_SUBCLASSES@
+   </p>
+-->
+
+
+   <p class="declaration">public final
+     class 
+   <span class="className">BranchHandle</span>
+   
+   
+      
+      <span class="extends">extends <a href="InstructionHandle.html" class="classRef">InstructionHandle</a></span>
+      
+      
+   
+   </p>
+
+   <div class="description">
+   
+ BranchHandle is returned by specialized InstructionList.append() whenever a
+ BranchInstruction is appended. This is useful when the target of this
+ instruction is not known at time of creation and must be set later
+ via setTarget().
+<p class="tag tag_version"><span class="tagName">Version:</span> <span class="tagContents">$Id: BranchHandle.java 386056 2006-03-15 11:31:56Z tcurdt $</span> </p>
+<p class="tag tag_author"><span class="tagName">Author:</span> <span class="tagContents"><A HREF="mailto:m.dahm@gmx.de">M. Dahm</A></span> </p>
+<p class="tag tag_see"><span class="tagName">See Also:</span> <span class="tagContents"><a href="InstructionHandle.html" class="classRef">InstructionHandle</a></span> <span class="tagContents"><a href="Instruction.html" class="classRef">Instruction</a></span> <span class="tagContents"><a href="InstructionList.html" class="classRef">InstructionList</a></span> </p>
+
+   </div>
+
+
+
+
+   <table class="field_summary summary">
+     <tr><th colspan="2"><a name="field_summary" id="field_summary">Field Summary</a></th></tr>
+
+     <tr><td>static <a href="BranchHandle.html" class="classRef">BranchHandle</a></td><td><span class="memberName"><a href="#bh_list" class="fieldRef">bh_list</a></span><div class="memberDescription"> Factory methods.</div></td></tr>
+
+
+
+     <tr><td> <a href="BranchInstruction.html" class="classRef">BranchInstruction</a></td><td><span class="memberName"><a href="#bi" class="fieldRef">bi</a></span><div class="memberDescription"></div></td></tr>
+
+   </table>
+
+
+
+
+   <table class="constructor_summary summary">
+     <tr><th colspan="2"><a name="constructor_summary" id="constructor_summary">Constructor Summary</a></th></tr>
+
+     <tr><td> </td><td><span class="memberName"><a href="#BranchHandle(org.apache.bcel.generic.BranchInstruction)" class="constructorRef">BranchHandle</a>(<a href="BranchInstruction.html" class="classRef">BranchInstruction</a> i)</span><div class="memberDescription"></div></td></tr>
+
+   </table>
+
+
+
+
+   <table class="method_summary summary">
+     <tr><th colspan="2"><a name="method_summary" id="method_summary">Method Summary</a></th></tr>
+
+     <tr><td>protected  void</td><td><span class="memberName"><a href="#addHandle()" class="methodRef">addHandle</a>()</span><div class="memberDescription"> Handle adds itself to the list of resuable handles.</div></td></tr>
+
+
+
+     <tr><td>static  <a href="BranchHandle.html" class="classRef">BranchHandle</a></td><td><span class="memberName"><a href="#getBranchHandle(org.apache.bcel.generic.BranchInstruction)" class="methodRef">getBranchHandle</a>(<a href="BranchInstruction.html" class="classRef">BranchInstruction</a> i)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  int</td><td><span class="memberName"><a href="#getPosition()" class="methodRef">getPosition</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  <a href="InstructionHandle.html" class="classRef">InstructionHandle</a></td><td><span class="memberName"><a href="#getTarget()" class="methodRef">getTarget</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#setInstruction(org.apache.bcel.generic.Instruction)" class="methodRef">setInstruction</a>(<a href="Instruction.html" class="classRef">Instruction</a> i)</span><div class="memberDescription"> 
+ Set new contents. </div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#setPosition(int)" class="methodRef">setPosition</a>(int pos)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#setTarget(org.apache.bcel.generic.InstructionHandle)" class="methodRef">setTarget</a>(<a href="InstructionHandle.html" class="classRef">InstructionHandle</a> ih)</span><div class="memberDescription">
+ Pass new target to instruction.</div></td></tr>
+
+
+
+     <tr><td>protected  int</td><td><span class="memberName"><a href="#updatePosition(int,int)" class="methodRef">updatePosition</a>(int offset, int max_offset)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#updateTarget(org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.InstructionHandle)" class="methodRef">updateTarget</a>(<a href="InstructionHandle.html" class="classRef">InstructionHandle</a> old_ih, <a href="InstructionHandle.html" class="classRef">InstructionHandle</a> new_ih)</span><div class="memberDescription">
+ Update target of instruction.</div></td></tr>
+
+   </table>
+
+
+
+<!--
+   <p class="inherited">
+    <span class="header">Methods inherited from class java.util.<a
+   href="AbstractCollection.html">AbstractCollection</a></span>
+    <a href="#addAll">addAll</a>
+    <a href="#contains">contains</a>
+   </p>
+   <p class="inherited">
+    <span class="header">Methods inherited from class java.lang.<a
+   href="Object.html">Object</a></span>
+    <a href="#addAll">clone</a>
+    <a href="#contains">finalize</a>
+   </p>
+   <p class="inherited">
+    <span class="header">Methods inherited from interface java.util.<a
+   href="List.html">List</a></span>
+    <a href="#addAll">addAll</a>
+    <a href="#contains">contains</a>
+   </p>
+-->
+
+
+
+   <h2><a name="field_detail" id="field_detail">Field Detail</a></h2>
+
+   <h3><a name="bh_list" id="bh_list">bh_list</a></h3>
+   <div class="memberName">private static <a href="BranchHandle.html" class="classRef">BranchHandle</a> bh_list</div>
+   <div class="memberDescription"> Factory methods.</div>
+
+
+   <h3><a name="bi" id="bi">bi</a></h3>
+   <div class="memberName">private <a href="BranchInstruction.html" class="classRef">BranchInstruction</a> bi</div>
+   <div class="memberDescription"></div>
+
+
+
+
+   <h2><a name="constructor_detail" id="constructor_detail">Constructor Detail</a></h2>
+
+   <h3><a name="BranchHandle(org.apache.bcel.generic.BranchInstruction)" id="BranchHandle(org.apache.bcel.generic.BranchInstruction)">BranchHandle</a></h3>
+   <div class="memberName">private  BranchHandle(<a href="BranchInstruction.html" class="classRef">BranchInstruction</a> i)</div>
+   <div class="memberDescription"></div>
+
+
+
+
+   <h2><a name="method_detail" id="method_detail">Method Detail</a></h2>
+
+   <h3><a name="addHandle()" id="addHandle()">addHandle</a></h3>
+   <div class="memberName">protected  void addHandle()</div>
+   <div class="memberDescription"> Handle adds itself to the list of resuable handles.</div>
+
+
+   <h3><a name="getBranchHandle(org.apache.bcel.generic.BranchInstruction)" id="getBranchHandle(org.apache.bcel.generic.BranchInstruction)">getBranchHandle</a></h3>
+   <div class="memberName">static final  <a href="BranchHandle.html" class="classRef">BranchHandle</a> getBranchHandle(<a href="BranchInstruction.html" class="classRef">BranchInstruction</a> i)</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="getPosition()" id="getPosition()">getPosition</a></h3>
+   <div class="memberName">public  int getPosition()</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="getTarget()" id="getTarget()">getTarget</a></h3>
+   <div class="memberName">public  <a href="InstructionHandle.html" class="classRef">InstructionHandle</a> getTarget()</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">target of instruction.</span> </p>
+</div>
+
+
+   <h3><a name="setInstruction(org.apache.bcel.generic.Instruction)" id="setInstruction(org.apache.bcel.generic.Instruction)">setInstruction</a></h3>
+   <div class="memberName">public  void setInstruction(<a href="Instruction.html" class="classRef">Instruction</a> i)</div>
+   <div class="memberDescription"> 
+ Set new contents. Old instruction is disposed and may not be used anymore.</div>
+
+
+   <h3><a name="setPosition(int)" id="setPosition(int)">setPosition</a></h3>
+   <div class="memberName">  void setPosition(int pos)</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="setTarget(org.apache.bcel.generic.InstructionHandle)" id="setTarget(org.apache.bcel.generic.InstructionHandle)">setTarget</a></h3>
+   <div class="memberName">public  void setTarget(<a href="InstructionHandle.html" class="classRef">InstructionHandle</a> ih)</div>
+   <div class="memberDescription">
+ Pass new target to instruction.</div>
+
+
+   <h3><a name="updatePosition(int,int)" id="updatePosition(int,int)">updatePosition</a></h3>
+   <div class="memberName">protected  int updatePosition(int offset, int max_offset)</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="updateTarget(org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.InstructionHandle)" id="updateTarget(org.apache.bcel.generic.InstructionHandle,org.apache.bcel.generic.InstructionHandle)">updateTarget</a></h3>
+   <div class="memberName">public  void updateTarget(<a href="InstructionHandle.html" class="classRef">InstructionHandle</a> old_ih, <a href="InstructionHandle.html" class="classRef">InstructionHandle</a> new_ih)</div>
+   <div class="memberDescription">
+ Update target of instruction.</div>
+
+   
+   <div class="navbar">
+    <p class="nav navtop">
+      <span class="over"><a href="../../../../overview-summary.html">Overview</a></span>
+      <span class="package"><a href="package-summary.html">Package</a></span>
+      <span class="class selected">Class</span>
+      <span class="use"><a href="class-use/BranchHandle.html">Use</a></span>
+      <span class="tree"><a href="package-tree.html">Tree</a></span>
+      <span class="deprecated"><a href="../../../../deprecated-list.html">Deprecated</a></span>
+      <span class="index"><a href="../../../../index-all.html">Index</a></span>
+      <span class="help"><a href="../../../../help-doc.html">Help</a></span>
+    </p>
+    <p class="nav navmid">
+      <span class="prevnext">
+       <span class="prev">Prev Class</span>
+       <span class="next">Next Class</span>
+      </span>
+      <span class="framesel">
+       <span class="frames"><a href="../../../../index.html" target="_top">Frames</a></span>
+       <span class="noframes"><a href="BranchHandle.html" target="_top">NoFrames</a></span>
+      </span>
+      <span class="allclasses"><a href="../../../../allclasses-noframe.html">All Classes</a></span>
+   </p>
+   <p class="nav navbot">
+      <span class="summary">Summary:
+       <span class="nested">Nested</span>
+       <span class="field"><a href="#field_summary">Field</a></span>
+       <span class="constr"><a href="#constructor_summary">Constr</a></span>
+       <span class="method"><a href="#method_summary">Method</a></span>
+      </span>
+      <span class="detail">Detail:
+       <span class="field"><a href="#field_detail">Field</a></span>
+       <span class="constr"><a href="#constructor_detail">Constr</a></span>
+       <span class="method"><a href="#method_detail">Method</a></span>
+      </span>
+   </p>
+    <div class="navtitle">
+     
+    </div>
+    <p class="clear"><!--empty--></p>
+   </div>
+   <div class="bottom"></div>
+   </body>
+</html>

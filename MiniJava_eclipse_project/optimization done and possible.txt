@@ -1,0 +1,13 @@
+optimization:
+
+-remove nop's
+(-remove store,load ops if same value was already on stack)
+-inline methods if they return a literal
+
+Done:
+-if then else is optimized
+-constant expressions
+-while statements (while false is removed)
+-constant identifiers
+-reduce method to "return const" if expression is constant, only in case when there is no method call or print statement
+-peephole for multiplication (replaced with shiftLeft if possible)

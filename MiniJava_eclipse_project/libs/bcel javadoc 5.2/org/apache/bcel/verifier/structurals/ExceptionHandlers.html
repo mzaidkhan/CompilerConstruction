@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>ExceptionHandlers</title>
+    <meta name="keywords" content="org.apache.bcel.verifier.structurals.ExceptionHandlers,ExceptionHandlers class" />
+    <meta name="generator" content="SinjDoc 0.5" />
+    <link href="../../../../../stylesheet.css" rel="stylesheet" type="text/css" />
+    <link rel="Index" href="../../../../../index-all.html" />
+    <link rel="Start" href="../../../../../overview-summary.html" />
+    <link rel="Up" href="package-summary.html" />
+    <link rel="Help" href="../../../../../help-doc.html" />
+  </head>
+  <body class="classPage bigframe">
+   <div class="navbar">
+    <p class="nav navtop">
+      <span class="over"><a href="../../../../../overview-summary.html">Overview</a></span>
+      <span class="package"><a href="package-summary.html">Package</a></span>
+      <span class="class selected">Class</span>
+      <span class="use"><a href="class-use/ExceptionHandlers.html">Use</a></span>
+      <span class="tree"><a href="package-tree.html">Tree</a></span>
+      <span class="deprecated"><a href="../../../../../deprecated-list.html">Deprecated</a></span>
+      <span class="index"><a href="../../../../../index-all.html">Index</a></span>
+      <span class="help"><a href="../../../../../help-doc.html">Help</a></span>
+    </p>
+    <p class="nav navmid">
+      <span class="prevnext">
+       <span class="prev">Prev Class</span>
+       <span class="next">Next Class</span>
+      </span>
+      <span class="framesel">
+       <span class="frames"><a href="../../../../../index.html" target="_top">Frames</a></span>
+       <span class="noframes"><a href="ExceptionHandlers.html" target="_top">NoFrames</a></span>
+      </span>
+      <span class="allclasses"><a href="../../../../../allclasses-noframe.html">All Classes</a></span>
+   </p>
+   <p class="nav navbot">
+      <span class="summary">Summary:
+       <span class="nested">Nested</span>
+       <span class="field"><a href="#field_summary">Field</a></span>
+       <span class="constr"><a href="#constructor_summary">Constr</a></span>
+       <span class="method"><a href="#method_summary">Method</a></span>
+      </span>
+      <span class="detail">Detail:
+       <span class="field"><a href="#field_detail">Field</a></span>
+       <span class="constr"><a href="#constructor_detail">Constr</a></span>
+       <span class="method"><a href="#method_detail">Method</a></span>
+      </span>
+   </p>
+    <div class="navtitle">
+     
+    </div>
+    <p class="clear"><!--empty--></p>
+   </div>
+   <p class="packageName">org.apache.bcel.verifier.structurals</p>
+   <h1>  Class  ExceptionHandlers</h1>
+<!--
+   <p class="enclosing">
+   Enclosing class/interface: @OUTER@
+   </p>
+-->
+
+
+   <!-- XXX class hierarchy diagram goes here -->
+<!--
+   
+   <p class="directSubclasses">
+   Direct known subclasses: @ALL_SUBCLASSES@
+   </p>
+-->
+
+
+   <p class="declaration">public
+     class 
+   <span class="className">ExceptionHandlers</span>
+   
+   
+      
+      <span class="extends">extends Object</span>
+      
+      
+   
+   </p>
+
+   <div class="description">
+   
+ This class allows easy access to ExceptionHandler objects.
+<p class="tag tag_version"><span class="tagName">Version:</span> <span class="tagContents">$Id: ExceptionHandlers.java 386056 2006-03-15 11:31:56Z tcurdt $</span> </p>
+<p class="tag tag_author"><span class="tagName">Author:</span> <span class="tagContents">Enver Haase</span> </p>
+
+   </div>
+
+
+
+
+   <table class="field_summary summary">
+     <tr><th colspan="2"><a name="field_summary" id="field_summary">Field Summary</a></th></tr>
+
+     <tr><td> Hashtable</td><td><span class="memberName"><a href="#exceptionhandlers" class="fieldRef">exceptionhandlers</a></span><div class="memberDescription">
+ The ExceptionHandler instances.
+ </div></td></tr>
+
+   </table>
+
+
+
+
+   <table class="constructor_summary summary">
+     <tr><th colspan="2"><a name="constructor_summary" id="constructor_summary">Constructor Summary</a></th></tr>
+
+     <tr><td> </td><td><span class="memberName"><a href="#ExceptionHandlers(org.apache.bcel.generic.MethodGen)" class="constructorRef">ExceptionHandlers</a>(<a href="../../generic/MethodGen.html" class="classRef">MethodGen</a> mg)</span><div class="memberDescription">
+ Constructor. </div></td></tr>
+
+   </table>
+
+
+
+
+   <table class="method_summary summary">
+     <tr><th colspan="2"><a name="method_summary" id="method_summary">Method Summary</a></th></tr>
+
+     <tr><td>  <a href="ExceptionHandler.html" class="classRef">ExceptionHandler</a>[]</td><td><span class="memberName"><a href="#getExceptionHandlers(org.apache.bcel.generic.InstructionHandle)" class="methodRef">getExceptionHandlers</a>(<a href="../../generic/InstructionHandle.html" class="classRef">InstructionHandle</a> ih)</span><div class="memberDescription">
+ Returns all the ExceptionHandler instances representing exception
+ handlers that protect the instruction ih.</div></td></tr>
+
+   </table>
+
+
+
+<!--
+   <p class="inherited">
+    <span class="header">Methods inherited from class java.util.<a
+   href="AbstractCollection.html">AbstractCollection</a></span>
+    <a href="#addAll">addAll</a>
+    <a href="#contains">contains</a>
+   </p>
+   <p class="inherited">
+    <span class="header">Methods inherited from class java.lang.<a
+   href="Object.html">Object</a></span>
+    <a href="#addAll">clone</a>
+    <a href="#contains">finalize</a>
+   </p>
+   <p class="inherited">
+    <span class="header">Methods inherited from interface java.util.<a
+   href="List.html">List</a></span>
+    <a href="#addAll">addAll</a>
+    <a href="#contains">contains</a>
+   </p>
+-->
+
+
+
+   <h2><a name="field_detail" id="field_detail">Field Detail</a></h2>
+
+   <h3><a name="exceptionhandlers" id="exceptionhandlers">exceptionhandlers</a></h3>
+   <div class="memberName">private Hashtable exceptionhandlers</div>
+   <div class="memberDescription">
+ The ExceptionHandler instances.
+ Key: InstructionHandle objects, Values: HashSet<ExceptionHandler> instances.</div>
+
+
+
+
+   <h2><a name="constructor_detail" id="constructor_detail">Constructor Detail</a></h2>
+
+   <h3><a name="ExceptionHandlers(org.apache.bcel.generic.MethodGen)" id="ExceptionHandlers(org.apache.bcel.generic.MethodGen)">ExceptionHandlers</a></h3>
+   <div class="memberName">public  ExceptionHandlers(<a href="../../generic/MethodGen.html" class="classRef">MethodGen</a> mg)</div>
+   <div class="memberDescription">
+ Constructor. Creates a new ExceptionHandlers instance.</div>
+
+
+
+
+   <h2><a name="method_detail" id="method_detail">Method Detail</a></h2>
+
+   <h3><a name="getExceptionHandlers(org.apache.bcel.generic.InstructionHandle)" id="getExceptionHandlers(org.apache.bcel.generic.InstructionHandle)">getExceptionHandlers</a></h3>
+   <div class="memberName">public  <a href="ExceptionHandler.html" class="classRef">ExceptionHandler</a>[] getExceptionHandlers(<a href="../../generic/InstructionHandle.html" class="classRef">InstructionHandle</a> ih)</div>
+   <div class="memberDescription">
+ Returns all the ExceptionHandler instances representing exception
+ handlers that protect the instruction ih.</div>
+
+   
+   <div class="navbar">
+    <p class="nav navtop">
+      <span class="over"><a href="../../../../../overview-summary.html">Overview</a></span>
+      <span class="package"><a href="package-summary.html">Package</a></span>
+      <span class="class selected">Class</span>
+      <span class="use"><a href="class-use/ExceptionHandlers.html">Use</a></span>
+      <span class="tree"><a href="package-tree.html">Tree</a></span>
+      <span class="deprecated"><a href="../../../../../deprecated-list.html">Deprecated</a></span>
+      <span class="index"><a href="../../../../../index-all.html">Index</a></span>
+      <span class="help"><a href="../../../../../help-doc.html">Help</a></span>
+    </p>
+    <p class="nav navmid">
+      <span class="prevnext">
+       <span class="prev">Prev Class</span>
+       <span class="next">Next Class</span>
+      </span>
+      <span class="framesel">
+       <span class="frames"><a href="../../../../../index.html" target="_top">Frames</a></span>
+       <span class="noframes"><a href="ExceptionHandlers.html" target="_top">NoFrames</a></span>
+      </span>
+      <span class="allclasses"><a href="../../../../../allclasses-noframe.html">All Classes</a></span>
+   </p>
+   <p class="nav navbot">
+      <span class="summary">Summary:
+       <span class="nested">Nested</span>
+       <span class="field"><a href="#field_summary">Field</a></span>
+       <span class="constr"><a href="#constructor_summary">Constr</a></span>
+       <span class="method"><a href="#method_summary">Method</a></span>
+      </span>
+      <span class="detail">Detail:
+       <span class="field"><a href="#field_detail">Field</a></span>
+       <span class="constr"><a href="#constructor_detail">Constr</a></span>
+       <span class="method"><a href="#method_detail">Method</a></span>
+      </span>
+   </p>
+    <div class="navtitle">
+     
+    </div>
+    <p class="clear"><!--empty--></p>
+   </div>
+   <div class="bottom"></div>
+   </body>
+</html>

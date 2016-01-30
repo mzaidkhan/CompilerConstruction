@@ -1,0 +1,1062 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>JavaClass</title>
+    <meta name="keywords" content="org.apache.bcel.classfile.JavaClass,JavaClass class" />
+    <meta name="generator" content="SinjDoc 0.5" />
+    <link href="../../../../stylesheet.css" rel="stylesheet" type="text/css" />
+    <link rel="Index" href="../../../../index-all.html" />
+    <link rel="Start" href="../../../../overview-summary.html" />
+    <link rel="Up" href="package-summary.html" />
+    <link rel="Help" href="../../../../help-doc.html" />
+  </head>
+  <body class="classPage bigframe">
+   <div class="navbar">
+    <p class="nav navtop">
+      <span class="over"><a href="../../../../overview-summary.html">Overview</a></span>
+      <span class="package"><a href="package-summary.html">Package</a></span>
+      <span class="class selected">Class</span>
+      <span class="use"><a href="class-use/JavaClass.html">Use</a></span>
+      <span class="tree"><a href="package-tree.html">Tree</a></span>
+      <span class="deprecated"><a href="../../../../deprecated-list.html">Deprecated</a></span>
+      <span class="index"><a href="../../../../index-all.html">Index</a></span>
+      <span class="help"><a href="../../../../help-doc.html">Help</a></span>
+    </p>
+    <p class="nav navmid">
+      <span class="prevnext">
+       <span class="prev">Prev Class</span>
+       <span class="next">Next Class</span>
+      </span>
+      <span class="framesel">
+       <span class="frames"><a href="../../../../index.html" target="_top">Frames</a></span>
+       <span class="noframes"><a href="JavaClass.html" target="_top">NoFrames</a></span>
+      </span>
+      <span class="allclasses"><a href="../../../../allclasses-noframe.html">All Classes</a></span>
+   </p>
+   <p class="nav navbot">
+      <span class="summary">Summary:
+       <span class="nested">Nested</span>
+       <span class="field"><a href="#field_summary">Field</a></span>
+       <span class="constr"><a href="#constructor_summary">Constr</a></span>
+       <span class="method"><a href="#method_summary">Method</a></span>
+      </span>
+      <span class="detail">Detail:
+       <span class="field"><a href="#field_detail">Field</a></span>
+       <span class="constr"><a href="#constructor_detail">Constr</a></span>
+       <span class="method"><a href="#method_detail">Method</a></span>
+      </span>
+   </p>
+    <div class="navtitle">
+     
+    </div>
+    <p class="clear"><!--empty--></p>
+   </div>
+   <p class="packageName">org.apache.bcel.classfile</p>
+   <h1>  Class  JavaClass</h1>
+<!--
+   <p class="enclosing">
+   Enclosing class/interface: @OUTER@
+   </p>
+-->
+
+
+   <!-- XXX class hierarchy diagram goes here -->
+<!--
+   
+   <p class="implementedInterfaces">
+   All implemented interfaces: @ALL_SUPERINTERFACES@
+   </p>
+   
+   <p class="directSubclasses">
+   Direct known subclasses: @ALL_SUBCLASSES@
+   </p>
+-->
+
+
+   <p class="declaration">public
+     class 
+   <span class="className">JavaClass</span>
+   
+   
+      
+      <span class="extends">extends <a href="AccessFlags.html" class="classRef">AccessFlags</a></span>
+      
+      
+        <span class="implements">implements Cloneable, <a href="Node.html" class="interfaceRef">Node</a>, Comparable</span>
+      
+   
+   </p>
+
+   <div class="description">
+   
+ Represents a Java class, i.e., the data structures, constant pool,
+ fields, methods and commands contained in a Java .class file.
+ See <a href="ftp://java.sun.com/docs/specs/">JVM specification</a> for details.
+ The intent of this class is to represent a parsed or otherwise existing
+ class file.  Those interested in programatically generating classes
+ should see the <a href="../generic/ClassGen.html">ClassGen</a> class.<p class="tag tag_version"><span class="tagName">Version:</span> <span class="tagContents">$Id: JavaClass.java 386056 2006-03-15 11:31:56Z tcurdt $</span> </p>
+<p class="tag tag_author"><span class="tagName">Author:</span> <span class="tagContents"><A HREF="mailto:m.dahm@gmx.de">M. Dahm</A></span> </p>
+<p class="tag tag_see"><span class="tagName">See Also:</span> <span class="tagContents"><a href="../generic/ClassGen.html" class="classRef">ClassGen</a></span> </p>
+
+   </div>
+
+
+
+
+   <table class="field_summary summary">
+     <tr><th colspan="2"><a name="field_summary" id="field_summary">Field Summary</a></th></tr>
+
+     <tr><td> <a href="Attribute.html" class="classRef">Attribute</a>[]</td><td><span class="memberName"><a href="#attributes" class="fieldRef">attributes</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td> String</td><td><span class="memberName"><a href="#class_name" class="fieldRef">class_name</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td> int</td><td><span class="memberName"><a href="#class_name_index" class="fieldRef">class_name_index</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td> <a href="ConstantPool.html" class="classRef">ConstantPool</a></td><td><span class="memberName"><a href="#constant_pool" class="fieldRef">constant_pool</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static boolean</td><td><span class="memberName"><a href="#debug" class="fieldRef">debug</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td> <a href="Field.html" class="classRef">Field</a>[]</td><td><span class="memberName"><a href="#fields" class="fieldRef">fields</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td> String</td><td><span class="memberName"><a href="#file_name" class="fieldRef">file_name</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static byte</td><td><span class="memberName"><a href="#FILE" class="fieldRef">FILE</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static byte</td><td><span class="memberName"><a href="#HEAP" class="fieldRef">HEAP</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td> int[]</td><td><span class="memberName"><a href="#interfaces" class="fieldRef">interfaces</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td> String[]</td><td><span class="memberName"><a href="#interface_names" class="fieldRef">interface_names</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td> int</td><td><span class="memberName"><a href="#major" class="fieldRef">major</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td> <a href="Method.html" class="classRef">Method</a>[]</td><td><span class="memberName"><a href="#methods" class="fieldRef">methods</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td> int</td><td><span class="memberName"><a href="#minor" class="fieldRef">minor</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td> String</td><td><span class="memberName"><a href="#package_name" class="fieldRef">package_name</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td> <a href="../util/Repository.html" class="interfaceRef">Repository</a></td><td><span class="memberName"><a href="#repository" class="fieldRef">repository</a></span><div class="memberDescription">
+ In cases where we go ahead and create something,
+ use the default SyntheticRepository, because we
+ don't know any better.</div></td></tr>
+
+
+
+     <tr><td>static char</td><td><span class="memberName"><a href="#sep" class="fieldRef">sep</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td> byte</td><td><span class="memberName"><a href="#source" class="fieldRef">source</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td> String</td><td><span class="memberName"><a href="#source_file_name" class="fieldRef">source_file_name</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td> String</td><td><span class="memberName"><a href="#superclass_name" class="fieldRef">superclass_name</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td> int</td><td><span class="memberName"><a href="#superclass_name_index" class="fieldRef">superclass_name_index</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static byte</td><td><span class="memberName"><a href="#ZIP" class="fieldRef">ZIP</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static <a href="../util/BCELComparator.html" class="interfaceRef">BCELComparator</a></td><td><span class="memberName"><a href="#_cmp" class="fieldRef">_cmp</a></span><div class="memberDescription"></div></td></tr>
+
+   </table>
+
+
+
+
+   <table class="constructor_summary summary">
+     <tr><th colspan="2"><a name="constructor_summary" id="constructor_summary">Constructor Summary</a></th></tr>
+
+     <tr><td> </td><td><span class="memberName"><a href="#JavaClass(int,int,<unknown>.String,int,int,int,org.apache.bcel.classfile.ConstantPool,int[],org.apache.bcel.classfile.Field[],org.apache.bcel.classfile.Method[],org.apache.bcel.classfile.Attribute[],byte)" class="constructorRef">JavaClass</a>(int class_name_index, int superclass_name_index, String file_name, int major, int minor, int access_flags, <a href="ConstantPool.html" class="classRef">ConstantPool</a> constant_pool, int[] interfaces, <a href="Field.html" class="classRef">Field</a>[] fields, <a href="Method.html" class="classRef">Method</a>[] methods, <a href="Attribute.html" class="classRef">Attribute</a>[] attributes, byte source)</span><div class="memberDescription">
+ Constructor gets all contents as arguments.
+</div></td></tr>
+
+
+
+     <tr><td> </td><td><span class="memberName"><a href="#JavaClass(int,int,<unknown>.String,int,int,int,org.apache.bcel.classfile.ConstantPool,int[],org.apache.bcel.classfile.Field[],org.apache.bcel.classfile.Method[],org.apache.bcel.classfile.Attribute[])" class="constructorRef">JavaClass</a>(int class_name_index, int superclass_name_index, String file_name, int major, int minor, int access_flags, <a href="ConstantPool.html" class="classRef">ConstantPool</a> constant_pool, int[] interfaces, <a href="Field.html" class="classRef">Field</a>[] fields, <a href="Method.html" class="classRef">Method</a>[] methods, <a href="Attribute.html" class="classRef">Attribute</a>[] attributes)</span><div class="memberDescription">
+ Constructor gets all contents as arguments.
+</div></td></tr>
+
+   </table>
+
+
+
+
+   <table class="method_summary summary">
+     <tr><th colspan="2"><a name="method_summary" id="method_summary">Method Summary</a></th></tr>
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#accept(org.apache.bcel.classfile.Visitor)" class="methodRef">accept</a>(<a href="Visitor.html" class="interfaceRef">Visitor</a> v)</span><div class="memberDescription">
+ Called by objects that are traversing the nodes of the tree implicitely
+ defined by the contents of a Java class. </div></td></tr>
+
+
+
+     <tr><td>  int</td><td><span class="memberName"><a href="#compareTo(<unknown>.Object)" class="methodRef">compareTo</a>(Object obj)</span><div class="memberDescription">
+ Return the natural ordering of two JavaClasses.
+ </div></td></tr>
+
+
+
+     <tr><td>  <a href="JavaClass.html" class="classRef">JavaClass</a></td><td><span class="memberName"><a href="#copy()" class="methodRef">copy</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#dump(java.io.File)" class="methodRef">dump</a>(File file)</span><div class="memberDescription"> 
+ Dump class to a file.
+</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#dump(<unknown>.String)" class="methodRef">dump</a>(String _file_name)</span><div class="memberDescription"> 
+ Dump class to a file named file_name.
+</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#dump(java.io.OutputStream)" class="methodRef">dump</a>(OutputStream file)</span><div class="memberDescription">
+ Dump Java class to output stream in binary format.
+</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#dump(java.io.DataOutputStream)" class="methodRef">dump</a>(DataOutputStream file)</span><div class="memberDescription">
+ Dump Java class to output stream in binary format.
+</div></td></tr>
+
+
+
+     <tr><td>static  void</td><td><span class="memberName"><a href="#Debug(<unknown>.String)" class="methodRef">Debug</a>(String str)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  boolean</td><td><span class="memberName"><a href="#equals(<unknown>.Object)" class="methodRef">equals</a>(Object obj)</span><div class="memberDescription">
+ Return value as defined by given BCELComparator strategy.
+ </div></td></tr>
+
+
+
+     <tr><td>  <a href="JavaClass.html" class="classRef">JavaClass</a>[]</td><td><span class="memberName"><a href="#getAllInterfaces()" class="methodRef">getAllInterfaces</a>()</span><div class="memberDescription">
+ Get all interfaces implemented by this JavaClass (transitively).</div></td></tr>
+
+
+
+     <tr><td>  <a href="Attribute.html" class="classRef">Attribute</a>[]</td><td><span class="memberName"><a href="#getAttributes()" class="methodRef">getAttributes</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  byte[]</td><td><span class="memberName"><a href="#getBytes()" class="methodRef">getBytes</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  String</td><td><span class="memberName"><a href="#getClassName()" class="methodRef">getClassName</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  int</td><td><span class="memberName"><a href="#getClassNameIndex()" class="methodRef">getClassNameIndex</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static  <a href="../util/BCELComparator.html" class="interfaceRef">BCELComparator</a></td><td><span class="memberName"><a href="#getComparator()" class="methodRef">getComparator</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  <a href="ConstantPool.html" class="classRef">ConstantPool</a></td><td><span class="memberName"><a href="#getConstantPool()" class="methodRef">getConstantPool</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  <a href="Field.html" class="classRef">Field</a>[]</td><td><span class="memberName"><a href="#getFields()" class="methodRef">getFields</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  String</td><td><span class="memberName"><a href="#getFileName()" class="methodRef">getFileName</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  int[]</td><td><span class="memberName"><a href="#getInterfaceIndices()" class="methodRef">getInterfaceIndices</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  String[]</td><td><span class="memberName"><a href="#getInterfaceNames()" class="methodRef">getInterfaceNames</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  <a href="JavaClass.html" class="classRef">JavaClass</a>[]</td><td><span class="memberName"><a href="#getInterfaces()" class="methodRef">getInterfaces</a>()</span><div class="memberDescription">
+ Get interfaces directly implemented by this JavaClass.</div></td></tr>
+
+
+
+     <tr><td>  int</td><td><span class="memberName"><a href="#getMajor()" class="methodRef">getMajor</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  <a href="Method.html" class="classRef">Method</a></td><td><span class="memberName"><a href="#getMethod(java.lang.reflect.Method)" class="methodRef">getMethod</a>(Method m)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  <a href="Method.html" class="classRef">Method</a>[]</td><td><span class="memberName"><a href="#getMethods()" class="methodRef">getMethods</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  int</td><td><span class="memberName"><a href="#getMinor()" class="methodRef">getMinor</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  String</td><td><span class="memberName"><a href="#getPackageName()" class="methodRef">getPackageName</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  <a href="../util/Repository.html" class="interfaceRef">Repository</a></td><td><span class="memberName"><a href="#getRepository()" class="methodRef">getRepository</a>()</span><div class="memberDescription">
+ Gets the ClassRepository which holds its definition. </div></td></tr>
+
+
+
+     <tr><td>  byte</td><td><span class="memberName"><a href="#getSource()" class="methodRef">getSource</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  String</td><td><span class="memberName"><a href="#getSourceFileName()" class="methodRef">getSourceFileName</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  String</td><td><span class="memberName"><a href="#getSuperclassName()" class="methodRef">getSuperclassName</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  int</td><td><span class="memberName"><a href="#getSuperclassNameIndex()" class="methodRef">getSuperclassNameIndex</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  <a href="JavaClass.html" class="classRef">JavaClass</a></td><td><span class="memberName"><a href="#getSuperClass()" class="methodRef">getSuperClass</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  <a href="JavaClass.html" class="classRef">JavaClass</a>[]</td><td><span class="memberName"><a href="#getSuperClasses()" class="methodRef">getSuperClasses</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  int</td><td><span class="memberName"><a href="#hashCode()" class="methodRef">hashCode</a>()</span><div class="memberDescription">
+ Return value as defined by given BCELComparator strategy.
+ </div></td></tr>
+
+
+
+     <tr><td>  boolean</td><td><span class="memberName"><a href="#implementationOf(org.apache.bcel.classfile.JavaClass)" class="methodRef">implementationOf</a>(<a href="JavaClass.html" class="classRef">JavaClass</a> inter)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static  String</td><td><span class="memberName"><a href="#indent(<unknown>.Object)" class="methodRef">indent</a>(Object obj)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  boolean</td><td><span class="memberName"><a href="#instanceOf(org.apache.bcel.classfile.JavaClass)" class="methodRef">instanceOf</a>(<a href="JavaClass.html" class="classRef">JavaClass</a> super_class)</span><div class="memberDescription"> Equivalent to runtime "instanceof" operator.
+</div></td></tr>
+
+
+
+     <tr><td>  boolean</td><td><span class="memberName"><a href="#isClass()" class="methodRef">isClass</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  boolean</td><td><span class="memberName"><a href="#isSuper()" class="methodRef">isSuper</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#setAttributes(org.apache.bcel.classfile.Attribute[])" class="methodRef">setAttributes</a>(<a href="Attribute.html" class="classRef">Attribute</a>[] attributes)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#setClassName(<unknown>.String)" class="methodRef">setClassName</a>(String class_name)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#setClassNameIndex(int)" class="methodRef">setClassNameIndex</a>(int class_name_index)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static  void</td><td><span class="memberName"><a href="#setComparator(org.apache.bcel.util.BCELComparator)" class="methodRef">setComparator</a>(<a href="../util/BCELComparator.html" class="interfaceRef">BCELComparator</a> comparator)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#setConstantPool(org.apache.bcel.classfile.ConstantPool)" class="methodRef">setConstantPool</a>(<a href="ConstantPool.html" class="classRef">ConstantPool</a> constant_pool)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#setFields(org.apache.bcel.classfile.Field[])" class="methodRef">setFields</a>(<a href="Field.html" class="classRef">Field</a>[] fields)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#setFileName(<unknown>.String)" class="methodRef">setFileName</a>(String file_name)</span><div class="memberDescription">
+ Set File name of class, aka SourceFile attribute value</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#setInterfaceNames(<unknown>.String[])" class="methodRef">setInterfaceNames</a>(String[] interface_names)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#setInterfaces(int[])" class="methodRef">setInterfaces</a>(int[] interfaces)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#setMajor(int)" class="methodRef">setMajor</a>(int major)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#setMethods(org.apache.bcel.classfile.Method[])" class="methodRef">setMethods</a>(<a href="Method.html" class="classRef">Method</a>[] methods)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#setMinor(int)" class="methodRef">setMinor</a>(int minor)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#setRepository(org.apache.bcel.util.Repository)" class="methodRef">setRepository</a>(<a href="../util/Repository.html" class="interfaceRef">Repository</a> repository)</span><div class="memberDescription">
+ Sets the ClassRepository which loaded the JavaClass.
+ </div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#setSourceFileName(<unknown>.String)" class="methodRef">setSourceFileName</a>(String source_file_name)</span><div class="memberDescription">
+ Set absolute path to file this class was read from.</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#setSuperclassName(<unknown>.String)" class="methodRef">setSuperclassName</a>(String superclass_name)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#setSuperclassNameIndex(int)" class="methodRef">setSuperclassNameIndex</a>(int superclass_name_index)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  String</td><td><span class="memberName"><a href="#toString()" class="methodRef">toString</a>()</span><div class="memberDescription"></div></td></tr>
+
+   </table>
+
+
+
+<!--
+   <p class="inherited">
+    <span class="header">Methods inherited from class java.util.<a
+   href="AbstractCollection.html">AbstractCollection</a></span>
+    <a href="#addAll">addAll</a>
+    <a href="#contains">contains</a>
+   </p>
+   <p class="inherited">
+    <span class="header">Methods inherited from class java.lang.<a
+   href="Object.html">Object</a></span>
+    <a href="#addAll">clone</a>
+    <a href="#contains">finalize</a>
+   </p>
+   <p class="inherited">
+    <span class="header">Methods inherited from interface java.util.<a
+   href="List.html">List</a></span>
+    <a href="#addAll">addAll</a>
+    <a href="#contains">contains</a>
+   </p>
+-->
+
+
+
+   <h2><a name="field_detail" id="field_detail">Field Detail</a></h2>
+
+   <h3><a name="attributes" id="attributes">attributes</a></h3>
+   <div class="memberName">private <a href="Attribute.html" class="classRef">Attribute</a>[] attributes</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="class_name" id="class_name">class_name</a></h3>
+   <div class="memberName">private String class_name</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="class_name_index" id="class_name_index">class_name_index</a></h3>
+   <div class="memberName">private int class_name_index</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="constant_pool" id="constant_pool">constant_pool</a></h3>
+   <div class="memberName">private <a href="ConstantPool.html" class="classRef">ConstantPool</a> constant_pool</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="debug" id="debug">debug</a></h3>
+   <div class="memberName">static boolean debug</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="fields" id="fields">fields</a></h3>
+   <div class="memberName">private <a href="Field.html" class="classRef">Field</a>[] fields</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="file_name" id="file_name">file_name</a></h3>
+   <div class="memberName">private String file_name</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="FILE" id="FILE">FILE</a></h3>
+   <div class="memberName">public static final byte FILE</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="HEAP" id="HEAP">HEAP</a></h3>
+   <div class="memberName">public static final byte HEAP</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="interfaces" id="interfaces">interfaces</a></h3>
+   <div class="memberName">private int[] interfaces</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="interface_names" id="interface_names">interface_names</a></h3>
+   <div class="memberName">private String[] interface_names</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="major" id="major">major</a></h3>
+   <div class="memberName">private int major</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="methods" id="methods">methods</a></h3>
+   <div class="memberName">private <a href="Method.html" class="classRef">Method</a>[] methods</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="minor" id="minor">minor</a></h3>
+   <div class="memberName">private int minor</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="package_name" id="package_name">package_name</a></h3>
+   <div class="memberName">private String package_name</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="repository" id="repository">repository</a></h3>
+   <div class="memberName">private transient <a href="../util/Repository.html" class="interfaceRef">Repository</a> repository</div>
+   <div class="memberDescription">
+ In cases where we go ahead and create something,
+ use the default SyntheticRepository, because we
+ don't know any better.</div>
+
+
+   <h3><a name="sep" id="sep">sep</a></h3>
+   <div class="memberName">static char sep</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="source" id="source">source</a></h3>
+   <div class="memberName">private byte source</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="source_file_name" id="source_file_name">source_file_name</a></h3>
+   <div class="memberName">private String source_file_name</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="superclass_name" id="superclass_name">superclass_name</a></h3>
+   <div class="memberName">private String superclass_name</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="superclass_name_index" id="superclass_name_index">superclass_name_index</a></h3>
+   <div class="memberName">private int superclass_name_index</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="ZIP" id="ZIP">ZIP</a></h3>
+   <div class="memberName">public static final byte ZIP</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="_cmp" id="_cmp">_cmp</a></h3>
+   <div class="memberName">private static <a href="../util/BCELComparator.html" class="interfaceRef">BCELComparator</a> _cmp</div>
+   <div class="memberDescription"></div>
+
+
+
+
+   <h2><a name="constructor_detail" id="constructor_detail">Constructor Detail</a></h2>
+
+   <h3><a name="JavaClass(int,int,<unknown>.String,int,int,int,org.apache.bcel.classfile.ConstantPool,int[],org.apache.bcel.classfile.Field[],org.apache.bcel.classfile.Method[],org.apache.bcel.classfile.Attribute[],byte)" id="JavaClass(int,int,<unknown>.String,int,int,int,org.apache.bcel.classfile.ConstantPool,int[],org.apache.bcel.classfile.Field[],org.apache.bcel.classfile.Method[],org.apache.bcel.classfile.Attribute[],byte)">JavaClass</a></h3>
+   <div class="memberName">public  JavaClass(int class_name_index, int superclass_name_index, String file_name, int major, int minor, int access_flags, <a href="ConstantPool.html" class="classRef">ConstantPool</a> constant_pool, int[] interfaces, <a href="Field.html" class="classRef">Field</a>[] fields, <a href="Method.html" class="classRef">Method</a>[] methods, <a href="Attribute.html" class="classRef">Attribute</a>[] attributes, byte source)</div>
+   <div class="memberDescription">
+ Constructor gets all contents as arguments.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">class_name_index Index into constant pool referencing a
+ ConstantClass that represents this class.</span> <span class="tagContents">superclass_name_index Index into constant pool referencing a
+ ConstantClass that represents this class's superclass.</span> <span class="tagContents">file_name File name</span> <span class="tagContents">major Major compiler version</span> <span class="tagContents">minor Minor compiler version</span> <span class="tagContents">access_flags Access rights defined by bit flags</span> <span class="tagContents">constant_pool Array of constants</span> <span class="tagContents">interfaces Implemented interfaces</span> <span class="tagContents">fields Class fields</span> <span class="tagContents">methods Class methods</span> <span class="tagContents">attributes Class attributes</span> <span class="tagContents">source Read from file or generated in memory?</span> </p>
+</div>
+
+
+   <h3><a name="JavaClass(int,int,<unknown>.String,int,int,int,org.apache.bcel.classfile.ConstantPool,int[],org.apache.bcel.classfile.Field[],org.apache.bcel.classfile.Method[],org.apache.bcel.classfile.Attribute[])" id="JavaClass(int,int,<unknown>.String,int,int,int,org.apache.bcel.classfile.ConstantPool,int[],org.apache.bcel.classfile.Field[],org.apache.bcel.classfile.Method[],org.apache.bcel.classfile.Attribute[])">JavaClass</a></h3>
+   <div class="memberName">public  JavaClass(int class_name_index, int superclass_name_index, String file_name, int major, int minor, int access_flags, <a href="ConstantPool.html" class="classRef">ConstantPool</a> constant_pool, int[] interfaces, <a href="Field.html" class="classRef">Field</a>[] fields, <a href="Method.html" class="classRef">Method</a>[] methods, <a href="Attribute.html" class="classRef">Attribute</a>[] attributes)</div>
+   <div class="memberDescription">
+ Constructor gets all contents as arguments.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">class_name_index Class name</span> <span class="tagContents">superclass_name_index Superclass name</span> <span class="tagContents">file_name File name</span> <span class="tagContents">major Major compiler version</span> <span class="tagContents">minor Minor compiler version</span> <span class="tagContents">access_flags Access rights defined by bit flags</span> <span class="tagContents">constant_pool Array of constants</span> <span class="tagContents">interfaces Implemented interfaces</span> <span class="tagContents">fields Class fields</span> <span class="tagContents">methods Class methods</span> <span class="tagContents">attributes Class attributes</span> </p>
+</div>
+
+
+
+
+   <h2><a name="method_detail" id="method_detail">Method Detail</a></h2>
+
+   <h3><a name="accept(org.apache.bcel.classfile.Visitor)" id="accept(org.apache.bcel.classfile.Visitor)">accept</a></h3>
+   <div class="memberName">public  void accept(<a href="Visitor.html" class="interfaceRef">Visitor</a> v)</div>
+   <div class="memberDescription">
+ Called by objects that are traversing the nodes of the tree implicitely
+ defined by the contents of a Java class. I.e., the hierarchy of methods,
+ fields, attributes, etc. spawns a tree of objects.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">v Visitor object</span> </p>
+</div>
+
+
+   <h3><a name="compareTo(<unknown>.Object)" id="compareTo(<unknown>.Object)">compareTo</a></h3>
+   <div class="memberName">public  int compareTo(Object obj)</div>
+   <div class="memberDescription">
+ Return the natural ordering of two JavaClasses.
+ This ordering is based on the class name</div>
+
+
+   <h3><a name="copy()" id="copy()">copy</a></h3>
+   <div class="memberName">public  <a href="JavaClass.html" class="classRef">JavaClass</a> copy()</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">deep copy of this class</span> </p>
+</div>
+
+
+   <h3><a name="dump(java.io.File)" id="dump(java.io.File)">dump</a></h3>
+   <div class="memberName">public  void dump(File file)</div>
+   <div class="memberDescription"> 
+ Dump class to a file.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">file Output file</span> </p>
+<p class="tag tag_throws"><span class="tagName">Throws:</span> <span class="tagContents">IOException</span> </p>
+</div>
+
+
+   <h3><a name="dump(<unknown>.String)" id="dump(<unknown>.String)">dump</a></h3>
+   <div class="memberName">public  void dump(String _file_name)</div>
+   <div class="memberDescription"> 
+ Dump class to a file named file_name.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">_file_name Output file name</span> </p>
+<p class="tag tag_throws"><span class="tagName">Throws:</span> <span class="tagContents">IOException</span> </p>
+</div>
+
+
+   <h3><a name="dump(java.io.OutputStream)" id="dump(java.io.OutputStream)">dump</a></h3>
+   <div class="memberName">public  void dump(OutputStream file)</div>
+   <div class="memberDescription">
+ Dump Java class to output stream in binary format.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">file Output stream</span> </p>
+<p class="tag tag_throws"><span class="tagName">Throws:</span> <span class="tagContents">IOException</span> </p>
+</div>
+
+
+   <h3><a name="dump(java.io.DataOutputStream)" id="dump(java.io.DataOutputStream)">dump</a></h3>
+   <div class="memberName">public  void dump(DataOutputStream file)</div>
+   <div class="memberDescription">
+ Dump Java class to output stream in binary format.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">file Output stream</span> </p>
+<p class="tag tag_throws"><span class="tagName">Throws:</span> <span class="tagContents">IOException</span> </p>
+</div>
+
+
+   <h3><a name="Debug(<unknown>.String)" id="Debug(<unknown>.String)">Debug</a></h3>
+   <div class="memberName">static final  void Debug(String str)</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="equals(<unknown>.Object)" id="equals(<unknown>.Object)">equals</a></h3>
+   <div class="memberName">public  boolean equals(Object obj)</div>
+   <div class="memberDescription">
+ Return value as defined by given BCELComparator strategy.
+ By default two JavaClass objects are said to be equal when
+ their class names are equal.
+<p class="tag tag_see"><span class="tagName">See Also:</span> <span class="tagContents">java.lang.Object#equals(java.lang.Object)</span> </p>
+</div>
+
+
+   <h3><a name="getAllInterfaces()" id="getAllInterfaces()">getAllInterfaces</a></h3>
+   <div class="memberName">public  <a href="JavaClass.html" class="classRef">JavaClass</a>[] getAllInterfaces()</div>
+   <div class="memberDescription">
+ Get all interfaces implemented by this JavaClass (transitively).</div>
+
+
+   <h3><a name="getAttributes()" id="getAttributes()">getAttributes</a></h3>
+   <div class="memberName">public  <a href="Attribute.html" class="classRef">Attribute</a>[] getAttributes()</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">Attributes of the class.</span> </p>
+</div>
+
+
+   <h3><a name="getBytes()" id="getBytes()">getBytes</a></h3>
+   <div class="memberName">public  byte[] getBytes()</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">class in binary format</span> </p>
+</div>
+
+
+   <h3><a name="getClassName()" id="getClassName()">getClassName</a></h3>
+   <div class="memberName">public  String getClassName()</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">Class name.</span> </p>
+</div>
+
+
+   <h3><a name="getClassNameIndex()" id="getClassNameIndex()">getClassNameIndex</a></h3>
+   <div class="memberName">public  int getClassNameIndex()</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">Class name index.</span> </p>
+</div>
+
+
+   <h3><a name="getComparator()" id="getComparator()">getComparator</a></h3>
+   <div class="memberName">public static  <a href="../util/BCELComparator.html" class="interfaceRef">BCELComparator</a> getComparator()</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">Comparison strategy object</span> </p>
+</div>
+
+
+   <h3><a name="getConstantPool()" id="getConstantPool()">getConstantPool</a></h3>
+   <div class="memberName">public  <a href="ConstantPool.html" class="classRef">ConstantPool</a> getConstantPool()</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">Constant pool.</span> </p>
+</div>
+
+
+   <h3><a name="getFields()" id="getFields()">getFields</a></h3>
+   <div class="memberName">public  <a href="Field.html" class="classRef">Field</a>[] getFields()</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">Fields, i.e., variables of the class. Like the JVM spec
+ mandates for the classfile format, these fields are those specific to
+ this class, and not those of the superclass or superinterfaces.</span> </p>
+</div>
+
+
+   <h3><a name="getFileName()" id="getFileName()">getFileName</a></h3>
+   <div class="memberName">public  String getFileName()</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">File name of class, aka SourceFile attribute value</span> </p>
+</div>
+
+
+   <h3><a name="getInterfaceIndices()" id="getInterfaceIndices()">getInterfaceIndices</a></h3>
+   <div class="memberName">public  int[] getInterfaceIndices()</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">Indices in constant pool of implemented interfaces.</span> </p>
+</div>
+
+
+   <h3><a name="getInterfaceNames()" id="getInterfaceNames()">getInterfaceNames</a></h3>
+   <div class="memberName">public  String[] getInterfaceNames()</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">Names of implemented interfaces.</span> </p>
+</div>
+
+
+   <h3><a name="getInterfaces()" id="getInterfaces()">getInterfaces</a></h3>
+   <div class="memberName">public  <a href="JavaClass.html" class="classRef">JavaClass</a>[] getInterfaces()</div>
+   <div class="memberDescription">
+ Get interfaces directly implemented by this JavaClass.</div>
+
+
+   <h3><a name="getMajor()" id="getMajor()">getMajor</a></h3>
+   <div class="memberName">public  int getMajor()</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">Major number of class file version.</span> </p>
+</div>
+
+
+   <h3><a name="getMethod(java.lang.reflect.Method)" id="getMethod(java.lang.reflect.Method)">getMethod</a></h3>
+   <div class="memberName">public  <a href="Method.html" class="classRef">Method</a> getMethod(Method m)</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">A org.apache.bcel.classfile.Method corresponding to
+ java.lang.reflect.Method if any</span> </p>
+</div>
+
+
+   <h3><a name="getMethods()" id="getMethods()">getMethods</a></h3>
+   <div class="memberName">public  <a href="Method.html" class="classRef">Method</a>[] getMethods()</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">Methods of the class.</span> </p>
+</div>
+
+
+   <h3><a name="getMinor()" id="getMinor()">getMinor</a></h3>
+   <div class="memberName">public  int getMinor()</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">Minor number of class file version.</span> </p>
+</div>
+
+
+   <h3><a name="getPackageName()" id="getPackageName()">getPackageName</a></h3>
+   <div class="memberName">public  String getPackageName()</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">Package name.</span> </p>
+</div>
+
+
+   <h3><a name="getRepository()" id="getRepository()">getRepository</a></h3>
+   <div class="memberName">public  <a href="../util/Repository.html" class="interfaceRef">Repository</a> getRepository()</div>
+   <div class="memberDescription">
+ Gets the ClassRepository which holds its definition. By default
+ this is the same as SyntheticRepository.getInstance();</div>
+
+
+   <h3><a name="getSource()" id="getSource()">getSource</a></h3>
+   <div class="memberName">public final  byte getSource()</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">returns either HEAP (generated), FILE, or ZIP</span> </p>
+</div>
+
+
+   <h3><a name="getSourceFileName()" id="getSourceFileName()">getSourceFileName</a></h3>
+   <div class="memberName">public  String getSourceFileName()</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">sbsolute path to file where this class was read from</span> </p>
+</div>
+
+
+   <h3><a name="getSuperclassName()" id="getSuperclassName()">getSuperclassName</a></h3>
+   <div class="memberName">public  String getSuperclassName()</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">Superclass name.</span> </p>
+</div>
+
+
+   <h3><a name="getSuperclassNameIndex()" id="getSuperclassNameIndex()">getSuperclassNameIndex</a></h3>
+   <div class="memberName">public  int getSuperclassNameIndex()</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">Class name index.</span> </p>
+</div>
+
+
+   <h3><a name="getSuperClass()" id="getSuperClass()">getSuperClass</a></h3>
+   <div class="memberName">public  <a href="JavaClass.html" class="classRef">JavaClass</a> getSuperClass()</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">the superclass for this JavaClass object, or null if this
+ is java.lang.Object</span> </p>
+<p class="tag tag_throws"><span class="tagName">Throws:</span> <span class="tagContents">ClassNotFoundException if the superclass can't be found</span> </p>
+</div>
+
+
+   <h3><a name="getSuperClasses()" id="getSuperClasses()">getSuperClasses</a></h3>
+   <div class="memberName">public  <a href="JavaClass.html" class="classRef">JavaClass</a>[] getSuperClasses()</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">list of super classes of this class in ascending order, i.e.,
+ java.lang.Object is always the last element</span> </p>
+<p class="tag tag_throws"><span class="tagName">Throws:</span> <span class="tagContents">ClassNotFoundException if any of the superclasses can't be found</span> </p>
+</div>
+
+
+   <h3><a name="hashCode()" id="hashCode()">hashCode</a></h3>
+   <div class="memberName">public  int hashCode()</div>
+   <div class="memberDescription">
+ Return value as defined by given BCELComparator strategy.
+ By default return the hashcode of the class name.
+<p class="tag tag_see"><span class="tagName">See Also:</span> <span class="tagContents">java.lang.Object#hashCode()</span> </p>
+</div>
+
+
+   <h3><a name="implementationOf(org.apache.bcel.classfile.JavaClass)" id="implementationOf(org.apache.bcel.classfile.JavaClass)">implementationOf</a></h3>
+   <div class="memberName">public  boolean implementationOf(<a href="JavaClass.html" class="classRef">JavaClass</a> inter)</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">true, if this class is an implementation of interface inter</span> </p>
+<p class="tag tag_throws"><span class="tagName">Throws:</span> <span class="tagContents">ClassNotFoundException if superclasses or superinterfaces
+   of this class can't be found</span> </p>
+</div>
+
+
+   <h3><a name="indent(<unknown>.Object)" id="indent(<unknown>.Object)">indent</a></h3>
+   <div class="memberName">private static final  String indent(Object obj)</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="instanceOf(org.apache.bcel.classfile.JavaClass)" id="instanceOf(org.apache.bcel.classfile.JavaClass)">instanceOf</a></h3>
+   <div class="memberName">public final  boolean instanceOf(<a href="JavaClass.html" class="classRef">JavaClass</a> super_class)</div>
+   <div class="memberDescription"> Equivalent to runtime "instanceof" operator.
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">true if this JavaClass is derived from the super class</span> </p>
+<p class="tag tag_throws"><span class="tagName">Throws:</span> <span class="tagContents">ClassNotFoundException if superclasses or superinterfaces
+   of this object can't be found</span> </p>
+</div>
+
+
+   <h3><a name="isClass()" id="isClass()">isClass</a></h3>
+   <div class="memberName">public final  boolean isClass()</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="isSuper()" id="isSuper()">isSuper</a></h3>
+   <div class="memberName">public final  boolean isSuper()</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="setAttributes(org.apache.bcel.classfile.Attribute[])" id="setAttributes(org.apache.bcel.classfile.Attribute[])">setAttributes</a></h3>
+   <div class="memberName">public  void setAttributes(<a href="Attribute.html" class="classRef">Attribute</a>[] attributes)</div>
+   <div class="memberDescription"><p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">attributes .</span> </p>
+</div>
+
+
+   <h3><a name="setClassName(<unknown>.String)" id="setClassName(<unknown>.String)">setClassName</a></h3>
+   <div class="memberName">public  void setClassName(String class_name)</div>
+   <div class="memberDescription"><p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">class_name .</span> </p>
+</div>
+
+
+   <h3><a name="setClassNameIndex(int)" id="setClassNameIndex(int)">setClassNameIndex</a></h3>
+   <div class="memberName">public  void setClassNameIndex(int class_name_index)</div>
+   <div class="memberDescription"><p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">class_name_index .</span> </p>
+</div>
+
+
+   <h3><a name="setComparator(org.apache.bcel.util.BCELComparator)" id="setComparator(org.apache.bcel.util.BCELComparator)">setComparator</a></h3>
+   <div class="memberName">public static  void setComparator(<a href="../util/BCELComparator.html" class="interfaceRef">BCELComparator</a> comparator)</div>
+   <div class="memberDescription"><p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">comparator Comparison strategy object</span> </p>
+</div>
+
+
+   <h3><a name="setConstantPool(org.apache.bcel.classfile.ConstantPool)" id="setConstantPool(org.apache.bcel.classfile.ConstantPool)">setConstantPool</a></h3>
+   <div class="memberName">public  void setConstantPool(<a href="ConstantPool.html" class="classRef">ConstantPool</a> constant_pool)</div>
+   <div class="memberDescription"><p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">constant_pool .</span> </p>
+</div>
+
+
+   <h3><a name="setFields(org.apache.bcel.classfile.Field[])" id="setFields(org.apache.bcel.classfile.Field[])">setFields</a></h3>
+   <div class="memberName">public  void setFields(<a href="Field.html" class="classRef">Field</a>[] fields)</div>
+   <div class="memberDescription"><p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">fields .</span> </p>
+</div>
+
+
+   <h3><a name="setFileName(<unknown>.String)" id="setFileName(<unknown>.String)">setFileName</a></h3>
+   <div class="memberName">public  void setFileName(String file_name)</div>
+   <div class="memberDescription">
+ Set File name of class, aka SourceFile attribute value</div>
+
+
+   <h3><a name="setInterfaceNames(<unknown>.String[])" id="setInterfaceNames(<unknown>.String[])">setInterfaceNames</a></h3>
+   <div class="memberName">public  void setInterfaceNames(String[] interface_names)</div>
+   <div class="memberDescription"><p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">interface_names .</span> </p>
+</div>
+
+
+   <h3><a name="setInterfaces(int[])" id="setInterfaces(int[])">setInterfaces</a></h3>
+   <div class="memberName">public  void setInterfaces(int[] interfaces)</div>
+   <div class="memberDescription"><p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">interfaces .</span> </p>
+</div>
+
+
+   <h3><a name="setMajor(int)" id="setMajor(int)">setMajor</a></h3>
+   <div class="memberName">public  void setMajor(int major)</div>
+   <div class="memberDescription"><p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">major .</span> </p>
+</div>
+
+
+   <h3><a name="setMethods(org.apache.bcel.classfile.Method[])" id="setMethods(org.apache.bcel.classfile.Method[])">setMethods</a></h3>
+   <div class="memberName">public  void setMethods(<a href="Method.html" class="classRef">Method</a>[] methods)</div>
+   <div class="memberDescription"><p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">methods .</span> </p>
+</div>
+
+
+   <h3><a name="setMinor(int)" id="setMinor(int)">setMinor</a></h3>
+   <div class="memberName">public  void setMinor(int minor)</div>
+   <div class="memberDescription"><p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">minor .</span> </p>
+</div>
+
+
+   <h3><a name="setRepository(org.apache.bcel.util.Repository)" id="setRepository(org.apache.bcel.util.Repository)">setRepository</a></h3>
+   <div class="memberName">public  void setRepository(<a href="../util/Repository.html" class="interfaceRef">Repository</a> repository)</div>
+   <div class="memberDescription">
+ Sets the ClassRepository which loaded the JavaClass.
+ Should be called immediately after parsing is done.</div>
+
+
+   <h3><a name="setSourceFileName(<unknown>.String)" id="setSourceFileName(<unknown>.String)">setSourceFileName</a></h3>
+   <div class="memberName">public  void setSourceFileName(String source_file_name)</div>
+   <div class="memberDescription">
+ Set absolute path to file this class was read from.</div>
+
+
+   <h3><a name="setSuperclassName(<unknown>.String)" id="setSuperclassName(<unknown>.String)">setSuperclassName</a></h3>
+   <div class="memberName">public  void setSuperclassName(String superclass_name)</div>
+   <div class="memberDescription"><p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">superclass_name .</span> </p>
+</div>
+
+
+   <h3><a name="setSuperclassNameIndex(int)" id="setSuperclassNameIndex(int)">setSuperclassNameIndex</a></h3>
+   <div class="memberName">public  void setSuperclassNameIndex(int superclass_name_index)</div>
+   <div class="memberDescription"><p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">superclass_name_index .</span> </p>
+</div>
+
+
+   <h3><a name="toString()" id="toString()">toString</a></h3>
+   <div class="memberName">public  String toString()</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">String representing class contents.</span> </p>
+</div>
+
+   
+   <div class="navbar">
+    <p class="nav navtop">
+      <span class="over"><a href="../../../../overview-summary.html">Overview</a></span>
+      <span class="package"><a href="package-summary.html">Package</a></span>
+      <span class="class selected">Class</span>
+      <span class="use"><a href="class-use/JavaClass.html">Use</a></span>
+      <span class="tree"><a href="package-tree.html">Tree</a></span>
+      <span class="deprecated"><a href="../../../../deprecated-list.html">Deprecated</a></span>
+      <span class="index"><a href="../../../../index-all.html">Index</a></span>
+      <span class="help"><a href="../../../../help-doc.html">Help</a></span>
+    </p>
+    <p class="nav navmid">
+      <span class="prevnext">
+       <span class="prev">Prev Class</span>
+       <span class="next">Next Class</span>
+      </span>
+      <span class="framesel">
+       <span class="frames"><a href="../../../../index.html" target="_top">Frames</a></span>
+       <span class="noframes"><a href="JavaClass.html" target="_top">NoFrames</a></span>
+      </span>
+      <span class="allclasses"><a href="../../../../allclasses-noframe.html">All Classes</a></span>
+   </p>
+   <p class="nav navbot">
+      <span class="summary">Summary:
+       <span class="nested">Nested</span>
+       <span class="field"><a href="#field_summary">Field</a></span>
+       <span class="constr"><a href="#constructor_summary">Constr</a></span>
+       <span class="method"><a href="#method_summary">Method</a></span>
+      </span>
+      <span class="detail">Detail:
+       <span class="field"><a href="#field_detail">Field</a></span>
+       <span class="constr"><a href="#constructor_detail">Constr</a></span>
+       <span class="method"><a href="#method_detail">Method</a></span>
+      </span>
+   </p>
+    <div class="navtitle">
+     
+    </div>
+    <p class="clear"><!--empty--></p>
+   </div>
+   <div class="bottom"></div>
+   </body>
+</html>

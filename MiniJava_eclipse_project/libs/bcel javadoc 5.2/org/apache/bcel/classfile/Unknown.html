@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>Unknown</title>
+    <meta name="keywords" content="org.apache.bcel.classfile.Unknown,Unknown class" />
+    <meta name="generator" content="SinjDoc 0.5" />
+    <link href="../../../../stylesheet.css" rel="stylesheet" type="text/css" />
+    <link rel="Index" href="../../../../index-all.html" />
+    <link rel="Start" href="../../../../overview-summary.html" />
+    <link rel="Up" href="package-summary.html" />
+    <link rel="Help" href="../../../../help-doc.html" />
+  </head>
+  <body class="classPage bigframe">
+   <div class="navbar">
+    <p class="nav navtop">
+      <span class="over"><a href="../../../../overview-summary.html">Overview</a></span>
+      <span class="package"><a href="package-summary.html">Package</a></span>
+      <span class="class selected">Class</span>
+      <span class="use"><a href="class-use/Unknown.html">Use</a></span>
+      <span class="tree"><a href="package-tree.html">Tree</a></span>
+      <span class="deprecated"><a href="../../../../deprecated-list.html">Deprecated</a></span>
+      <span class="index"><a href="../../../../index-all.html">Index</a></span>
+      <span class="help"><a href="../../../../help-doc.html">Help</a></span>
+    </p>
+    <p class="nav navmid">
+      <span class="prevnext">
+       <span class="prev">Prev Class</span>
+       <span class="next">Next Class</span>
+      </span>
+      <span class="framesel">
+       <span class="frames"><a href="../../../../index.html" target="_top">Frames</a></span>
+       <span class="noframes"><a href="Unknown.html" target="_top">NoFrames</a></span>
+      </span>
+      <span class="allclasses"><a href="../../../../allclasses-noframe.html">All Classes</a></span>
+   </p>
+   <p class="nav navbot">
+      <span class="summary">Summary:
+       <span class="nested">Nested</span>
+       <span class="field"><a href="#field_summary">Field</a></span>
+       <span class="constr"><a href="#constructor_summary">Constr</a></span>
+       <span class="method"><a href="#method_summary">Method</a></span>
+      </span>
+      <span class="detail">Detail:
+       <span class="field"><a href="#field_detail">Field</a></span>
+       <span class="constr"><a href="#constructor_detail">Constr</a></span>
+       <span class="method"><a href="#method_detail">Method</a></span>
+      </span>
+   </p>
+    <div class="navtitle">
+     
+    </div>
+    <p class="clear"><!--empty--></p>
+   </div>
+   <p class="packageName">org.apache.bcel.classfile</p>
+   <h1>  Class  Unknown</h1>
+<!--
+   <p class="enclosing">
+   Enclosing class/interface: @OUTER@
+   </p>
+-->
+
+
+   <!-- XXX class hierarchy diagram goes here -->
+<!--
+   
+   <p class="directSubclasses">
+   Direct known subclasses: @ALL_SUBCLASSES@
+   </p>
+-->
+
+
+   <p class="declaration">public final
+     class 
+   <span class="className">Unknown</span>
+   
+   
+      
+      <span class="extends">extends <a href="Attribute.html" class="classRef">Attribute</a></span>
+      
+      
+   
+   </p>
+
+   <div class="description">
+   
+ This class represents a reference to an unknown (i.e.,
+ application-specific) attribute of a class.  It is instantiated from the
+ <em>Attribute.readAttribute()</em> method.  Applications that need to
+ read in application-specific attributes should create an <a
+ href="./AttributeReader.html">AttributeReader</a> implementation and
+ attach it via <a
+ href="./Attribute.html#addAttributeReader(java.lang.String,
+ org.apache.bcel.classfile.AttributeReader)">Attribute.addAttributeReader</a>.
+
+<p class="tag tag_version"><span class="tagName">Version:</span> <span class="tagContents">$Id: Unknown.java 386056 2006-03-15 11:31:56Z tcurdt $</span> </p>
+<p class="tag tag_author"><span class="tagName">Author:</span> <span class="tagContents"><A HREF="mailto:m.dahm@gmx.de">M. Dahm</A></span> </p>
+<p class="tag tag_see"><span class="tagName">See Also:</span> <span class="tagContents"><a href="Attribute.html" class="classRef">Attribute</a></span> <span class="tagContents"><a href="AttributeReader.html" class="interfaceRef">AttributeReader</a></span> </p>
+
+   </div>
+
+
+
+
+   <table class="field_summary summary">
+     <tr><th colspan="2"><a name="field_summary" id="field_summary">Field Summary</a></th></tr>
+
+     <tr><td> byte[]</td><td><span class="memberName"><a href="#bytes" class="fieldRef">bytes</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td> String</td><td><span class="memberName"><a href="#name" class="fieldRef">name</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static Map</td><td><span class="memberName"><a href="#unknown_attributes" class="fieldRef">unknown_attributes</a></span><div class="memberDescription"></div></td></tr>
+
+   </table>
+
+
+
+
+   <table class="constructor_summary summary">
+     <tr><th colspan="2"><a name="constructor_summary" id="constructor_summary">Constructor Summary</a></th></tr>
+
+     <tr><td> </td><td><span class="memberName"><a href="#Unknown(org.apache.bcel.classfile.Unknown)" class="constructorRef">Unknown</a>(<a href="Unknown.html" class="classRef">Unknown</a> c)</span><div class="memberDescription">
+ Initialize from another object. </div></td></tr>
+
+
+
+     <tr><td> </td><td><span class="memberName"><a href="#Unknown(int,int,byte[],org.apache.bcel.classfile.ConstantPool)" class="constructorRef">Unknown</a>(int name_index, int length, byte[] bytes, <a href="ConstantPool.html" class="classRef">ConstantPool</a> constant_pool)</span><div class="memberDescription">
+ Create a non-standard attribute.
+</div></td></tr>
+
+
+
+     <tr><td> </td><td><span class="memberName"><a href="#Unknown(int,int,java.io.DataInputStream,org.apache.bcel.classfile.ConstantPool)" class="constructorRef">Unknown</a>(int name_index, int length, DataInputStream file, <a href="ConstantPool.html" class="classRef">ConstantPool</a> constant_pool)</span><div class="memberDescription">
+ Construct object from file stream.</div></td></tr>
+
+   </table>
+
+
+
+
+   <table class="method_summary summary">
+     <tr><th colspan="2"><a name="method_summary" id="method_summary">Method Summary</a></th></tr>
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#accept(org.apache.bcel.classfile.Visitor)" class="methodRef">accept</a>(<a href="Visitor.html" class="interfaceRef">Visitor</a> v)</span><div class="memberDescription">
+ Called by objects that are traversing the nodes of the tree implicitely
+ defined by the contents of a Java class. </div></td></tr>
+
+
+
+     <tr><td>  <a href="Attribute.html" class="classRef">Attribute</a></td><td><span class="memberName"><a href="#copy(org.apache.bcel.classfile.ConstantPool)" class="methodRef">copy</a>(<a href="ConstantPool.html" class="classRef">ConstantPool</a> _constant_pool)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#dump(java.io.DataOutputStream)" class="methodRef">dump</a>(DataOutputStream file)</span><div class="memberDescription">
+ Dump unknown bytes to file stream.
+</div></td></tr>
+
+
+
+     <tr><td>  byte[]</td><td><span class="memberName"><a href="#getBytes()" class="methodRef">getBytes</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  String</td><td><span class="memberName"><a href="#getName()" class="methodRef">getName</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static  <a href="Unknown.html" class="classRef">Unknown</a>[]</td><td><span class="memberName"><a href="#getUnknownAttributes()" class="methodRef">getUnknownAttributes</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#setBytes(byte[])" class="methodRef">setBytes</a>(byte[] bytes)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  String</td><td><span class="memberName"><a href="#toString()" class="methodRef">toString</a>()</span><div class="memberDescription"></div></td></tr>
+
+   </table>
+
+
+
+<!--
+   <p class="inherited">
+    <span class="header">Methods inherited from class java.util.<a
+   href="AbstractCollection.html">AbstractCollection</a></span>
+    <a href="#addAll">addAll</a>
+    <a href="#contains">contains</a>
+   </p>
+   <p class="inherited">
+    <span class="header">Methods inherited from class java.lang.<a
+   href="Object.html">Object</a></span>
+    <a href="#addAll">clone</a>
+    <a href="#contains">finalize</a>
+   </p>
+   <p class="inherited">
+    <span class="header">Methods inherited from interface java.util.<a
+   href="List.html">List</a></span>
+    <a href="#addAll">addAll</a>
+    <a href="#contains">contains</a>
+   </p>
+-->
+
+
+
+   <h2><a name="field_detail" id="field_detail">Field Detail</a></h2>
+
+   <h3><a name="bytes" id="bytes">bytes</a></h3>
+   <div class="memberName">private byte[] bytes</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="name" id="name">name</a></h3>
+   <div class="memberName">private String name</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="unknown_attributes" id="unknown_attributes">unknown_attributes</a></h3>
+   <div class="memberName">private static Map unknown_attributes</div>
+   <div class="memberDescription"></div>
+
+
+
+
+   <h2><a name="constructor_detail" id="constructor_detail">Constructor Detail</a></h2>
+
+   <h3><a name="Unknown(org.apache.bcel.classfile.Unknown)" id="Unknown(org.apache.bcel.classfile.Unknown)">Unknown</a></h3>
+   <div class="memberName">public  Unknown(<a href="Unknown.html" class="classRef">Unknown</a> c)</div>
+   <div class="memberDescription">
+ Initialize from another object. Note that both objects use the same
+ references (shallow copy). Use clone() for a physical copy.</div>
+
+
+   <h3><a name="Unknown(int,int,byte[],org.apache.bcel.classfile.ConstantPool)" id="Unknown(int,int,byte[],org.apache.bcel.classfile.ConstantPool)">Unknown</a></h3>
+   <div class="memberName">public  Unknown(int name_index, int length, byte[] bytes, <a href="ConstantPool.html" class="classRef">ConstantPool</a> constant_pool)</div>
+   <div class="memberDescription">
+ Create a non-standard attribute.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">name_index Index in constant pool</span> <span class="tagContents">length Content length in bytes</span> <span class="tagContents">bytes Attribute contents</span> <span class="tagContents">constant_pool Array of constants</span> </p>
+</div>
+
+
+   <h3><a name="Unknown(int,int,java.io.DataInputStream,org.apache.bcel.classfile.ConstantPool)" id="Unknown(int,int,java.io.DataInputStream,org.apache.bcel.classfile.ConstantPool)">Unknown</a></h3>
+   <div class="memberName">  Unknown(int name_index, int length, DataInputStream file, <a href="ConstantPool.html" class="classRef">ConstantPool</a> constant_pool)</div>
+   <div class="memberDescription">
+ Construct object from file stream.<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">name_index Index in constant pool</span> <span class="tagContents">length Content length in bytes</span> <span class="tagContents">file Input stream</span> <span class="tagContents">constant_pool Array of constants</span> </p>
+<p class="tag tag_throws"><span class="tagName">Throws:</span> <span class="tagContents">IOException</span> </p>
+</div>
+
+
+
+
+   <h2><a name="method_detail" id="method_detail">Method Detail</a></h2>
+
+   <h3><a name="accept(org.apache.bcel.classfile.Visitor)" id="accept(org.apache.bcel.classfile.Visitor)">accept</a></h3>
+   <div class="memberName">public  void accept(<a href="Visitor.html" class="interfaceRef">Visitor</a> v)</div>
+   <div class="memberDescription">
+ Called by objects that are traversing the nodes of the tree implicitely
+ defined by the contents of a Java class. I.e., the hierarchy of methods,
+ fields, attributes, etc. spawns a tree of objects.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">v Visitor object</span> </p>
+</div>
+
+
+   <h3><a name="copy(org.apache.bcel.classfile.ConstantPool)" id="copy(org.apache.bcel.classfile.ConstantPool)">copy</a></h3>
+   <div class="memberName">public  <a href="Attribute.html" class="classRef">Attribute</a> copy(<a href="ConstantPool.html" class="classRef">ConstantPool</a> _constant_pool)</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">deep copy of this attribute</span> </p>
+</div>
+
+
+   <h3><a name="dump(java.io.DataOutputStream)" id="dump(java.io.DataOutputStream)">dump</a></h3>
+   <div class="memberName">public final  void dump(DataOutputStream file)</div>
+   <div class="memberDescription">
+ Dump unknown bytes to file stream.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">file Output file stream</span> </p>
+<p class="tag tag_throws"><span class="tagName">Throws:</span> <span class="tagContents">IOException</span> </p>
+</div>
+
+
+   <h3><a name="getBytes()" id="getBytes()">getBytes</a></h3>
+   <div class="memberName">public final  byte[] getBytes()</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">data bytes.</span> </p>
+</div>
+
+
+   <h3><a name="getName()" id="getName()">getName</a></h3>
+   <div class="memberName">public final  String getName()</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">name of attribute.</span> </p>
+</div>
+
+
+   <h3><a name="getUnknownAttributes()" id="getUnknownAttributes()">getUnknownAttributes</a></h3>
+   <div class="memberName">static  <a href="Unknown.html" class="classRef">Unknown</a>[] getUnknownAttributes()</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">array of unknown attributes, but just one for each kind.</span> </p>
+</div>
+
+
+   <h3><a name="setBytes(byte[])" id="setBytes(byte[])">setBytes</a></h3>
+   <div class="memberName">public final  void setBytes(byte[] bytes)</div>
+   <div class="memberDescription"><p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">bytes the bytes to set</span> </p>
+</div>
+
+
+   <h3><a name="toString()" id="toString()">toString</a></h3>
+   <div class="memberName">public final  String toString()</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">String representation.</span> </p>
+</div>
+
+   
+   <div class="navbar">
+    <p class="nav navtop">
+      <span class="over"><a href="../../../../overview-summary.html">Overview</a></span>
+      <span class="package"><a href="package-summary.html">Package</a></span>
+      <span class="class selected">Class</span>
+      <span class="use"><a href="class-use/Unknown.html">Use</a></span>
+      <span class="tree"><a href="package-tree.html">Tree</a></span>
+      <span class="deprecated"><a href="../../../../deprecated-list.html">Deprecated</a></span>
+      <span class="index"><a href="../../../../index-all.html">Index</a></span>
+      <span class="help"><a href="../../../../help-doc.html">Help</a></span>
+    </p>
+    <p class="nav navmid">
+      <span class="prevnext">
+       <span class="prev">Prev Class</span>
+       <span class="next">Next Class</span>
+      </span>
+      <span class="framesel">
+       <span class="frames"><a href="../../../../index.html" target="_top">Frames</a></span>
+       <span class="noframes"><a href="Unknown.html" target="_top">NoFrames</a></span>
+      </span>
+      <span class="allclasses"><a href="../../../../allclasses-noframe.html">All Classes</a></span>
+   </p>
+   <p class="nav navbot">
+      <span class="summary">Summary:
+       <span class="nested">Nested</span>
+       <span class="field"><a href="#field_summary">Field</a></span>
+       <span class="constr"><a href="#constructor_summary">Constr</a></span>
+       <span class="method"><a href="#method_summary">Method</a></span>
+      </span>
+      <span class="detail">Detail:
+       <span class="field"><a href="#field_detail">Field</a></span>
+       <span class="constr"><a href="#constructor_detail">Constr</a></span>
+       <span class="method"><a href="#method_detail">Method</a></span>
+      </span>
+   </p>
+    <div class="navtitle">
+     
+    </div>
+    <p class="clear"><!--empty--></p>
+   </div>
+   <div class="bottom"></div>
+   </body>
+</html>

@@ -1,0 +1,831 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>ClassGen</title>
+    <meta name="keywords" content="org.apache.bcel.generic.ClassGen,ClassGen class" />
+    <meta name="generator" content="SinjDoc 0.5" />
+    <link href="../../../../stylesheet.css" rel="stylesheet" type="text/css" />
+    <link rel="Index" href="../../../../index-all.html" />
+    <link rel="Start" href="../../../../overview-summary.html" />
+    <link rel="Up" href="package-summary.html" />
+    <link rel="Help" href="../../../../help-doc.html" />
+  </head>
+  <body class="classPage bigframe">
+   <div class="navbar">
+    <p class="nav navtop">
+      <span class="over"><a href="../../../../overview-summary.html">Overview</a></span>
+      <span class="package"><a href="package-summary.html">Package</a></span>
+      <span class="class selected">Class</span>
+      <span class="use"><a href="class-use/ClassGen.html">Use</a></span>
+      <span class="tree"><a href="package-tree.html">Tree</a></span>
+      <span class="deprecated"><a href="../../../../deprecated-list.html">Deprecated</a></span>
+      <span class="index"><a href="../../../../index-all.html">Index</a></span>
+      <span class="help"><a href="../../../../help-doc.html">Help</a></span>
+    </p>
+    <p class="nav navmid">
+      <span class="prevnext">
+       <span class="prev">Prev Class</span>
+       <span class="next">Next Class</span>
+      </span>
+      <span class="framesel">
+       <span class="frames"><a href="../../../../index.html" target="_top">Frames</a></span>
+       <span class="noframes"><a href="ClassGen.html" target="_top">NoFrames</a></span>
+      </span>
+      <span class="allclasses"><a href="../../../../allclasses-noframe.html">All Classes</a></span>
+   </p>
+   <p class="nav navbot">
+      <span class="summary">Summary:
+       <span class="nested">Nested</span>
+       <span class="field"><a href="#field_summary">Field</a></span>
+       <span class="constr"><a href="#constructor_summary">Constr</a></span>
+       <span class="method"><a href="#method_summary">Method</a></span>
+      </span>
+      <span class="detail">Detail:
+       <span class="field"><a href="#field_detail">Field</a></span>
+       <span class="constr"><a href="#constructor_detail">Constr</a></span>
+       <span class="method"><a href="#method_detail">Method</a></span>
+      </span>
+   </p>
+    <div class="navtitle">
+     
+    </div>
+    <p class="clear"><!--empty--></p>
+   </div>
+   <p class="packageName">org.apache.bcel.generic</p>
+   <h1>  Class  ClassGen</h1>
+<!--
+   <p class="enclosing">
+   Enclosing class/interface: @OUTER@
+   </p>
+-->
+
+
+   <!-- XXX class hierarchy diagram goes here -->
+<!--
+   
+   <p class="implementedInterfaces">
+   All implemented interfaces: @ALL_SUPERINTERFACES@
+   </p>
+   
+   <p class="directSubclasses">
+   Direct known subclasses: @ALL_SUBCLASSES@
+   </p>
+-->
+
+
+   <p class="declaration">public
+     class 
+   <span class="className">ClassGen</span>
+   
+   
+      
+      <span class="extends">extends <a href="../classfile/AccessFlags.html" class="classRef">AccessFlags</a></span>
+      
+      
+        <span class="implements">implements Cloneable</span>
+      
+   
+   </p>
+
+   <div class="description">
+    
+ Template class for building up a java class. May be initialized with an
+ existing java class (file).
+<p class="tag tag_version"><span class="tagName">Version:</span> <span class="tagContents">$Id: ClassGen.java 386056 2006-03-15 11:31:56Z tcurdt $</span> </p>
+<p class="tag tag_author"><span class="tagName">Author:</span> <span class="tagContents"><A HREF="mailto:m.dahm@gmx.de">M. Dahm</A></span> </p>
+<p class="tag tag_see"><span class="tagName">See Also:</span> <span class="tagContents"><a href="../classfile/JavaClass.html" class="classRef">JavaClass</a></span> </p>
+
+   </div>
+
+
+
+
+   <table class="field_summary summary">
+     <tr><th colspan="2"><a name="field_summary" id="field_summary">Field Summary</a></th></tr>
+
+     <tr><td> List</td><td><span class="memberName"><a href="#attribute_vec" class="fieldRef">attribute_vec</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td> String</td><td><span class="memberName"><a href="#class_name" class="fieldRef">class_name</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td> int</td><td><span class="memberName"><a href="#class_name_index" class="fieldRef">class_name_index</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td> <a href="ConstantPoolGen.html" class="classRef">ConstantPoolGen</a></td><td><span class="memberName"><a href="#cp" class="fieldRef">cp</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td> List</td><td><span class="memberName"><a href="#field_vec" class="fieldRef">field_vec</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td> String</td><td><span class="memberName"><a href="#file_name" class="fieldRef">file_name</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td> List</td><td><span class="memberName"><a href="#interface_vec" class="fieldRef">interface_vec</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td> int</td><td><span class="memberName"><a href="#major" class="fieldRef">major</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td> List</td><td><span class="memberName"><a href="#method_vec" class="fieldRef">method_vec</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td> int</td><td><span class="memberName"><a href="#minor" class="fieldRef">minor</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td> ArrayList</td><td><span class="memberName"><a href="#observers" class="fieldRef">observers</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td> int</td><td><span class="memberName"><a href="#superclass_name_index" class="fieldRef">superclass_name_index</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td> String</td><td><span class="memberName"><a href="#super_class_name" class="fieldRef">super_class_name</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static <a href="../util/BCELComparator.html" class="interfaceRef">BCELComparator</a></td><td><span class="memberName"><a href="#_cmp" class="fieldRef">_cmp</a></span><div class="memberDescription"></div></td></tr>
+
+   </table>
+
+
+
+
+   <table class="constructor_summary summary">
+     <tr><th colspan="2"><a name="constructor_summary" id="constructor_summary">Constructor Summary</a></th></tr>
+
+     <tr><td> </td><td><span class="memberName"><a href="#ClassGen(<unknown>.String,<unknown>.String,<unknown>.String,int,<unknown>.String[],org.apache.bcel.generic.ConstantPoolGen)" class="constructorRef">ClassGen</a>(String class_name, String super_class_name, String file_name, int access_flags, String[] interfaces, <a href="ConstantPoolGen.html" class="classRef">ConstantPoolGen</a> cp)</span><div class="memberDescription"> Convenience constructor to set up some important values initially.
+</div></td></tr>
+
+
+
+     <tr><td> </td><td><span class="memberName"><a href="#ClassGen(<unknown>.String,<unknown>.String,<unknown>.String,int,<unknown>.String[])" class="constructorRef">ClassGen</a>(String class_name, String super_class_name, String file_name, int access_flags, String[] interfaces)</span><div class="memberDescription"> Convenience constructor to set up some important values initially.
+</div></td></tr>
+
+
+
+     <tr><td> </td><td><span class="memberName"><a href="#ClassGen(org.apache.bcel.classfile.JavaClass)" class="constructorRef">ClassGen</a>(<a href="../classfile/JavaClass.html" class="classRef">JavaClass</a> clazz)</span><div class="memberDescription">
+ Initialize with existing class.</div></td></tr>
+
+   </table>
+
+
+
+
+   <table class="method_summary summary">
+     <tr><th colspan="2"><a name="method_summary" id="method_summary">Method Summary</a></th></tr>
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#addAttribute(org.apache.bcel.classfile.Attribute)" class="methodRef">addAttribute</a>(<a href="../classfile/Attribute.html" class="classRef">Attribute</a> a)</span><div class="memberDescription">
+ Add an attribute to this class.</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#addEmptyConstructor(int)" class="methodRef">addEmptyConstructor</a>(int access_flags)</span><div class="memberDescription">
+ Convenience method.
+
+ </div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#addField(org.apache.bcel.classfile.Field)" class="methodRef">addField</a>(<a href="../classfile/Field.html" class="classRef">Field</a> f)</span><div class="memberDescription">
+ Add a field to this class.</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#addInterface(<unknown>.String)" class="methodRef">addInterface</a>(String name)</span><div class="memberDescription">
+ Add an interface to this class, i.e., this class has to implement it.</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#addMethod(org.apache.bcel.classfile.Method)" class="methodRef">addMethod</a>(<a href="../classfile/Method.html" class="classRef">Method</a> m)</span><div class="memberDescription">
+ Add a method to this class.</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#addObserver(org.apache.bcel.generic.ClassObserver)" class="methodRef">addObserver</a>(<a href="ClassObserver.html" class="interfaceRef">ClassObserver</a> o)</span><div class="memberDescription"> Add observer for this object.</div></td></tr>
+
+
+
+     <tr><td>  Object</td><td><span class="memberName"><a href="#clone()" class="methodRef">clone</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  boolean</td><td><span class="memberName"><a href="#containsField(org.apache.bcel.classfile.Field)" class="methodRef">containsField</a>(<a href="../classfile/Field.html" class="classRef">Field</a> f)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  <a href="../classfile/Field.html" class="classRef">Field</a></td><td><span class="memberName"><a href="#containsField(<unknown>.String)" class="methodRef">containsField</a>(String name)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  <a href="../classfile/Method.html" class="classRef">Method</a></td><td><span class="memberName"><a href="#containsMethod(<unknown>.String,<unknown>.String)" class="methodRef">containsMethod</a>(String name, String signature)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  boolean</td><td><span class="memberName"><a href="#equals(<unknown>.Object)" class="methodRef">equals</a>(Object obj)</span><div class="memberDescription">
+ Return value as defined by given BCELComparator strategy.
+ </div></td></tr>
+
+
+
+     <tr><td>  <a href="../classfile/Attribute.html" class="classRef">Attribute</a>[]</td><td><span class="memberName"><a href="#getAttributes()" class="methodRef">getAttributes</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  String</td><td><span class="memberName"><a href="#getClassName()" class="methodRef">getClassName</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  int</td><td><span class="memberName"><a href="#getClassNameIndex()" class="methodRef">getClassNameIndex</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static  <a href="../util/BCELComparator.html" class="interfaceRef">BCELComparator</a></td><td><span class="memberName"><a href="#getComparator()" class="methodRef">getComparator</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  <a href="ConstantPoolGen.html" class="classRef">ConstantPoolGen</a></td><td><span class="memberName"><a href="#getConstantPool()" class="methodRef">getConstantPool</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  <a href="../classfile/Field.html" class="classRef">Field</a>[]</td><td><span class="memberName"><a href="#getFields()" class="methodRef">getFields</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  String</td><td><span class="memberName"><a href="#getFileName()" class="methodRef">getFileName</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  String[]</td><td><span class="memberName"><a href="#getInterfaceNames()" class="methodRef">getInterfaceNames</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  int[]</td><td><span class="memberName"><a href="#getInterfaces()" class="methodRef">getInterfaces</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  <a href="../classfile/JavaClass.html" class="classRef">JavaClass</a></td><td><span class="memberName"><a href="#getJavaClass()" class="methodRef">getJavaClass</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  int</td><td><span class="memberName"><a href="#getMajor()" class="methodRef">getMajor</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  <a href="../classfile/Method.html" class="classRef">Method</a></td><td><span class="memberName"><a href="#getMethodAt(int)" class="methodRef">getMethodAt</a>(int pos)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  <a href="../classfile/Method.html" class="classRef">Method</a>[]</td><td><span class="memberName"><a href="#getMethods()" class="methodRef">getMethods</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  int</td><td><span class="memberName"><a href="#getMinor()" class="methodRef">getMinor</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  String</td><td><span class="memberName"><a href="#getSuperclassName()" class="methodRef">getSuperclassName</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  int</td><td><span class="memberName"><a href="#getSuperclassNameIndex()" class="methodRef">getSuperclassNameIndex</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  int</td><td><span class="memberName"><a href="#hashCode()" class="methodRef">hashCode</a>()</span><div class="memberDescription">
+ Return value as defined by given BCELComparator strategy.
+ </div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#removeAttribute(org.apache.bcel.classfile.Attribute)" class="methodRef">removeAttribute</a>(<a href="../classfile/Attribute.html" class="classRef">Attribute</a> a)</span><div class="memberDescription">
+ Remove an attribute from this class.</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#removeField(org.apache.bcel.classfile.Field)" class="methodRef">removeField</a>(<a href="../classfile/Field.html" class="classRef">Field</a> f)</span><div class="memberDescription">
+ Remove a field to this class.</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#removeInterface(<unknown>.String)" class="methodRef">removeInterface</a>(String name)</span><div class="memberDescription">
+ Remove an interface from this class.</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#removeMethod(org.apache.bcel.classfile.Method)" class="methodRef">removeMethod</a>(<a href="../classfile/Method.html" class="classRef">Method</a> m)</span><div class="memberDescription">
+ Remove a method from this class.</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#removeObserver(org.apache.bcel.generic.ClassObserver)" class="methodRef">removeObserver</a>(<a href="ClassObserver.html" class="interfaceRef">ClassObserver</a> o)</span><div class="memberDescription"> Remove observer for this object.</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#replaceField(org.apache.bcel.classfile.Field,org.apache.bcel.classfile.Field)" class="methodRef">replaceField</a>(<a href="../classfile/Field.html" class="classRef">Field</a> old, <a href="../classfile/Field.html" class="classRef">Field</a> new_)</span><div class="memberDescription"> Replace given field with new one. </div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#replaceMethod(org.apache.bcel.classfile.Method,org.apache.bcel.classfile.Method)" class="methodRef">replaceMethod</a>(<a href="../classfile/Method.html" class="classRef">Method</a> old, <a href="../classfile/Method.html" class="classRef">Method</a> new_)</span><div class="memberDescription"> Replace given method with new one. </div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#setClassName(<unknown>.String)" class="methodRef">setClassName</a>(String name)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#setClassNameIndex(int)" class="methodRef">setClassNameIndex</a>(int class_name_index)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static  void</td><td><span class="memberName"><a href="#setComparator(org.apache.bcel.util.BCELComparator)" class="methodRef">setComparator</a>(<a href="../util/BCELComparator.html" class="interfaceRef">BCELComparator</a> comparator)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#setConstantPool(org.apache.bcel.generic.ConstantPoolGen)" class="methodRef">setConstantPool</a>(<a href="ConstantPoolGen.html" class="classRef">ConstantPoolGen</a> constant_pool)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#setMajor(int)" class="methodRef">setMajor</a>(int major)</span><div class="memberDescription"> Set major version number of class file, default value is 45 (JDK 1.1)</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#setMethodAt(org.apache.bcel.classfile.Method,int)" class="methodRef">setMethodAt</a>(<a href="../classfile/Method.html" class="classRef">Method</a> method, int pos)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#setMethods(org.apache.bcel.classfile.Method[])" class="methodRef">setMethods</a>(<a href="../classfile/Method.html" class="classRef">Method</a>[] methods)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#setMinor(int)" class="methodRef">setMinor</a>(int minor)</span><div class="memberDescription"> Set minor version number of class file, default value is 3 (JDK 1.1)</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#setSuperclassName(<unknown>.String)" class="methodRef">setSuperclassName</a>(String name)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#setSuperclassNameIndex(int)" class="methodRef">setSuperclassNameIndex</a>(int superclass_name_index)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#update()" class="methodRef">update</a>()</span><div class="memberDescription"> Call notify() method on all observers. </div></td></tr>
+
+   </table>
+
+
+
+<!--
+   <p class="inherited">
+    <span class="header">Methods inherited from class java.util.<a
+   href="AbstractCollection.html">AbstractCollection</a></span>
+    <a href="#addAll">addAll</a>
+    <a href="#contains">contains</a>
+   </p>
+   <p class="inherited">
+    <span class="header">Methods inherited from class java.lang.<a
+   href="Object.html">Object</a></span>
+    <a href="#addAll">clone</a>
+    <a href="#contains">finalize</a>
+   </p>
+   <p class="inherited">
+    <span class="header">Methods inherited from interface java.util.<a
+   href="List.html">List</a></span>
+    <a href="#addAll">addAll</a>
+    <a href="#contains">contains</a>
+   </p>
+-->
+
+
+
+   <h2><a name="field_detail" id="field_detail">Field Detail</a></h2>
+
+   <h3><a name="attribute_vec" id="attribute_vec">attribute_vec</a></h3>
+   <div class="memberName">private List attribute_vec</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="class_name" id="class_name">class_name</a></h3>
+   <div class="memberName">private String class_name</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="class_name_index" id="class_name_index">class_name_index</a></h3>
+   <div class="memberName">private int class_name_index</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="cp" id="cp">cp</a></h3>
+   <div class="memberName">private <a href="ConstantPoolGen.html" class="classRef">ConstantPoolGen</a> cp</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="field_vec" id="field_vec">field_vec</a></h3>
+   <div class="memberName">private List field_vec</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="file_name" id="file_name">file_name</a></h3>
+   <div class="memberName">private String file_name</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="interface_vec" id="interface_vec">interface_vec</a></h3>
+   <div class="memberName">private List interface_vec</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="major" id="major">major</a></h3>
+   <div class="memberName">private int major</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="method_vec" id="method_vec">method_vec</a></h3>
+   <div class="memberName">private List method_vec</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="minor" id="minor">minor</a></h3>
+   <div class="memberName">private int minor</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="observers" id="observers">observers</a></h3>
+   <div class="memberName">private ArrayList observers</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="superclass_name_index" id="superclass_name_index">superclass_name_index</a></h3>
+   <div class="memberName">private int superclass_name_index</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="super_class_name" id="super_class_name">super_class_name</a></h3>
+   <div class="memberName">private String super_class_name</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="_cmp" id="_cmp">_cmp</a></h3>
+   <div class="memberName">private static <a href="../util/BCELComparator.html" class="interfaceRef">BCELComparator</a> _cmp</div>
+   <div class="memberDescription"></div>
+
+
+
+
+   <h2><a name="constructor_detail" id="constructor_detail">Constructor Detail</a></h2>
+
+   <h3><a name="ClassGen(<unknown>.String,<unknown>.String,<unknown>.String,int,<unknown>.String[],org.apache.bcel.generic.ConstantPoolGen)" id="ClassGen(<unknown>.String,<unknown>.String,<unknown>.String,int,<unknown>.String[],org.apache.bcel.generic.ConstantPoolGen)">ClassGen</a></h3>
+   <div class="memberName">public  ClassGen(String class_name, String super_class_name, String file_name, int access_flags, String[] interfaces, <a href="ConstantPoolGen.html" class="classRef">ConstantPoolGen</a> cp)</div>
+   <div class="memberDescription"> Convenience constructor to set up some important values initially.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">class_name fully qualified class name</span> <span class="tagContents">super_class_name fully qualified superclass name</span> <span class="tagContents">file_name source file name</span> <span class="tagContents">access_flags access qualifiers</span> <span class="tagContents">interfaces implemented interfaces</span> <span class="tagContents">cp constant pool to use</span> </p>
+</div>
+
+
+   <h3><a name="ClassGen(<unknown>.String,<unknown>.String,<unknown>.String,int,<unknown>.String[])" id="ClassGen(<unknown>.String,<unknown>.String,<unknown>.String,int,<unknown>.String[])">ClassGen</a></h3>
+   <div class="memberName">public  ClassGen(String class_name, String super_class_name, String file_name, int access_flags, String[] interfaces)</div>
+   <div class="memberDescription"> Convenience constructor to set up some important values initially.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">class_name fully qualified class name</span> <span class="tagContents">super_class_name fully qualified superclass name</span> <span class="tagContents">file_name source file name</span> <span class="tagContents">access_flags access qualifiers</span> <span class="tagContents">interfaces implemented interfaces</span> </p>
+</div>
+
+
+   <h3><a name="ClassGen(org.apache.bcel.classfile.JavaClass)" id="ClassGen(org.apache.bcel.classfile.JavaClass)">ClassGen</a></h3>
+   <div class="memberName">public  ClassGen(<a href="../classfile/JavaClass.html" class="classRef">JavaClass</a> clazz)</div>
+   <div class="memberDescription">
+ Initialize with existing class.<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">clazz JavaClass object (e.g. read from file)</span> </p>
+</div>
+
+
+
+
+   <h2><a name="method_detail" id="method_detail">Method Detail</a></h2>
+
+   <h3><a name="addAttribute(org.apache.bcel.classfile.Attribute)" id="addAttribute(org.apache.bcel.classfile.Attribute)">addAttribute</a></h3>
+   <div class="memberName">public  void addAttribute(<a href="../classfile/Attribute.html" class="classRef">Attribute</a> a)</div>
+   <div class="memberDescription">
+ Add an attribute to this class.<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">a attribute to add</span> </p>
+</div>
+
+
+   <h3><a name="addEmptyConstructor(int)" id="addEmptyConstructor(int)">addEmptyConstructor</a></h3>
+   <div class="memberName">public  void addEmptyConstructor(int access_flags)</div>
+   <div class="memberDescription">
+ Convenience method.
+
+ Add an empty constructor to this class that does nothing but calling super().<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">access_flags rights for constructor</span> </p>
+</div>
+
+
+   <h3><a name="addField(org.apache.bcel.classfile.Field)" id="addField(org.apache.bcel.classfile.Field)">addField</a></h3>
+   <div class="memberName">public  void addField(<a href="../classfile/Field.html" class="classRef">Field</a> f)</div>
+   <div class="memberDescription">
+ Add a field to this class.<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">f field to add</span> </p>
+</div>
+
+
+   <h3><a name="addInterface(<unknown>.String)" id="addInterface(<unknown>.String)">addInterface</a></h3>
+   <div class="memberName">public  void addInterface(String name)</div>
+   <div class="memberDescription">
+ Add an interface to this class, i.e., this class has to implement it.<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">name interface to implement (fully qualified class name)</span> </p>
+</div>
+
+
+   <h3><a name="addMethod(org.apache.bcel.classfile.Method)" id="addMethod(org.apache.bcel.classfile.Method)">addMethod</a></h3>
+   <div class="memberName">public  void addMethod(<a href="../classfile/Method.html" class="classRef">Method</a> m)</div>
+   <div class="memberDescription">
+ Add a method to this class.<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">m method to add</span> </p>
+</div>
+
+
+   <h3><a name="addObserver(org.apache.bcel.generic.ClassObserver)" id="addObserver(org.apache.bcel.generic.ClassObserver)">addObserver</a></h3>
+   <div class="memberName">public  void addObserver(<a href="ClassObserver.html" class="interfaceRef">ClassObserver</a> o)</div>
+   <div class="memberDescription"> Add observer for this object.</div>
+
+
+   <h3><a name="clone()" id="clone()">clone</a></h3>
+   <div class="memberName">public  Object clone()</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="containsField(org.apache.bcel.classfile.Field)" id="containsField(org.apache.bcel.classfile.Field)">containsField</a></h3>
+   <div class="memberName">public  boolean containsField(<a href="../classfile/Field.html" class="classRef">Field</a> f)</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="containsField(<unknown>.String)" id="containsField(<unknown>.String)">containsField</a></h3>
+   <div class="memberName">public  <a href="../classfile/Field.html" class="classRef">Field</a> containsField(String name)</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">field object with given name, or null</span> </p>
+</div>
+
+
+   <h3><a name="containsMethod(<unknown>.String,<unknown>.String)" id="containsMethod(<unknown>.String,<unknown>.String)">containsMethod</a></h3>
+   <div class="memberName">public  <a href="../classfile/Method.html" class="classRef">Method</a> containsMethod(String name, String signature)</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">method object with given name and signature, or null</span> </p>
+</div>
+
+
+   <h3><a name="equals(<unknown>.Object)" id="equals(<unknown>.Object)">equals</a></h3>
+   <div class="memberName">public  boolean equals(Object obj)</div>
+   <div class="memberDescription">
+ Return value as defined by given BCELComparator strategy.
+ By default two ClassGen objects are said to be equal when
+ their class names are equal.
+<p class="tag tag_see"><span class="tagName">See Also:</span> <span class="tagContents">java.lang.Object#equals(java.lang.Object)</span> </p>
+</div>
+
+
+   <h3><a name="getAttributes()" id="getAttributes()">getAttributes</a></h3>
+   <div class="memberName">public  <a href="../classfile/Attribute.html" class="classRef">Attribute</a>[] getAttributes()</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="getClassName()" id="getClassName()">getClassName</a></h3>
+   <div class="memberName">public  String getClassName()</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="getClassNameIndex()" id="getClassNameIndex()">getClassNameIndex</a></h3>
+   <div class="memberName">public  int getClassNameIndex()</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="getComparator()" id="getComparator()">getComparator</a></h3>
+   <div class="memberName">public static  <a href="../util/BCELComparator.html" class="interfaceRef">BCELComparator</a> getComparator()</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">Comparison strategy object</span> </p>
+</div>
+
+
+   <h3><a name="getConstantPool()" id="getConstantPool()">getConstantPool</a></h3>
+   <div class="memberName">public  <a href="ConstantPoolGen.html" class="classRef">ConstantPoolGen</a> getConstantPool()</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="getFields()" id="getFields()">getFields</a></h3>
+   <div class="memberName">public  <a href="../classfile/Field.html" class="classRef">Field</a>[] getFields()</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="getFileName()" id="getFileName()">getFileName</a></h3>
+   <div class="memberName">public  String getFileName()</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="getInterfaceNames()" id="getInterfaceNames()">getInterfaceNames</a></h3>
+   <div class="memberName">public  String[] getInterfaceNames()</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="getInterfaces()" id="getInterfaces()">getInterfaces</a></h3>
+   <div class="memberName">public  int[] getInterfaces()</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="getJavaClass()" id="getJavaClass()">getJavaClass</a></h3>
+   <div class="memberName">public  <a href="../classfile/JavaClass.html" class="classRef">JavaClass</a> getJavaClass()</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">the (finally) built up Java class object.</span> </p>
+</div>
+
+
+   <h3><a name="getMajor()" id="getMajor()">getMajor</a></h3>
+   <div class="memberName">public  int getMajor()</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">major version number of class file</span> </p>
+</div>
+
+
+   <h3><a name="getMethodAt(int)" id="getMethodAt(int)">getMethodAt</a></h3>
+   <div class="memberName">public  <a href="../classfile/Method.html" class="classRef">Method</a> getMethodAt(int pos)</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="getMethods()" id="getMethods()">getMethods</a></h3>
+   <div class="memberName">public  <a href="../classfile/Method.html" class="classRef">Method</a>[] getMethods()</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="getMinor()" id="getMinor()">getMinor</a></h3>
+   <div class="memberName">public  int getMinor()</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">minor version number of class file</span> </p>
+</div>
+
+
+   <h3><a name="getSuperclassName()" id="getSuperclassName()">getSuperclassName</a></h3>
+   <div class="memberName">public  String getSuperclassName()</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="getSuperclassNameIndex()" id="getSuperclassNameIndex()">getSuperclassNameIndex</a></h3>
+   <div class="memberName">public  int getSuperclassNameIndex()</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="hashCode()" id="hashCode()">hashCode</a></h3>
+   <div class="memberName">public  int hashCode()</div>
+   <div class="memberDescription">
+ Return value as defined by given BCELComparator strategy.
+ By default return the hashcode of the class name.
+<p class="tag tag_see"><span class="tagName">See Also:</span> <span class="tagContents">java.lang.Object#hashCode()</span> </p>
+</div>
+
+
+   <h3><a name="removeAttribute(org.apache.bcel.classfile.Attribute)" id="removeAttribute(org.apache.bcel.classfile.Attribute)">removeAttribute</a></h3>
+   <div class="memberName">public  void removeAttribute(<a href="../classfile/Attribute.html" class="classRef">Attribute</a> a)</div>
+   <div class="memberDescription">
+ Remove an attribute from this class.<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">a attribute to remove</span> </p>
+</div>
+
+
+   <h3><a name="removeField(org.apache.bcel.classfile.Field)" id="removeField(org.apache.bcel.classfile.Field)">removeField</a></h3>
+   <div class="memberName">public  void removeField(<a href="../classfile/Field.html" class="classRef">Field</a> f)</div>
+   <div class="memberDescription">
+ Remove a field to this class.<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">f field to remove</span> </p>
+</div>
+
+
+   <h3><a name="removeInterface(<unknown>.String)" id="removeInterface(<unknown>.String)">removeInterface</a></h3>
+   <div class="memberName">public  void removeInterface(String name)</div>
+   <div class="memberDescription">
+ Remove an interface from this class.<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">name interface to remove (fully qualified name)</span> </p>
+</div>
+
+
+   <h3><a name="removeMethod(org.apache.bcel.classfile.Method)" id="removeMethod(org.apache.bcel.classfile.Method)">removeMethod</a></h3>
+   <div class="memberName">public  void removeMethod(<a href="../classfile/Method.html" class="classRef">Method</a> m)</div>
+   <div class="memberDescription">
+ Remove a method from this class.<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">m method to remove</span> </p>
+</div>
+
+
+   <h3><a name="removeObserver(org.apache.bcel.generic.ClassObserver)" id="removeObserver(org.apache.bcel.generic.ClassObserver)">removeObserver</a></h3>
+   <div class="memberName">public  void removeObserver(<a href="ClassObserver.html" class="interfaceRef">ClassObserver</a> o)</div>
+   <div class="memberDescription"> Remove observer for this object.</div>
+
+
+   <h3><a name="replaceField(org.apache.bcel.classfile.Field,org.apache.bcel.classfile.Field)" id="replaceField(org.apache.bcel.classfile.Field,org.apache.bcel.classfile.Field)">replaceField</a></h3>
+   <div class="memberName">public  void replaceField(<a href="../classfile/Field.html" class="classRef">Field</a> old, <a href="../classfile/Field.html" class="classRef">Field</a> new_)</div>
+   <div class="memberDescription"> Replace given field with new one. If the old one does not exist
+ add the new_ field to the class anyway.</div>
+
+
+   <h3><a name="replaceMethod(org.apache.bcel.classfile.Method,org.apache.bcel.classfile.Method)" id="replaceMethod(org.apache.bcel.classfile.Method,org.apache.bcel.classfile.Method)">replaceMethod</a></h3>
+   <div class="memberName">public  void replaceMethod(<a href="../classfile/Method.html" class="classRef">Method</a> old, <a href="../classfile/Method.html" class="classRef">Method</a> new_)</div>
+   <div class="memberDescription"> Replace given method with new one. If the old one does not exist
+ add the new_ method to the class anyway.</div>
+
+
+   <h3><a name="setClassName(<unknown>.String)" id="setClassName(<unknown>.String)">setClassName</a></h3>
+   <div class="memberName">public  void setClassName(String name)</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="setClassNameIndex(int)" id="setClassNameIndex(int)">setClassNameIndex</a></h3>
+   <div class="memberName">public  void setClassNameIndex(int class_name_index)</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="setComparator(org.apache.bcel.util.BCELComparator)" id="setComparator(org.apache.bcel.util.BCELComparator)">setComparator</a></h3>
+   <div class="memberName">public static  void setComparator(<a href="../util/BCELComparator.html" class="interfaceRef">BCELComparator</a> comparator)</div>
+   <div class="memberDescription"><p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">comparator Comparison strategy object</span> </p>
+</div>
+
+
+   <h3><a name="setConstantPool(org.apache.bcel.generic.ConstantPoolGen)" id="setConstantPool(org.apache.bcel.generic.ConstantPoolGen)">setConstantPool</a></h3>
+   <div class="memberName">public  void setConstantPool(<a href="ConstantPoolGen.html" class="classRef">ConstantPoolGen</a> constant_pool)</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="setMajor(int)" id="setMajor(int)">setMajor</a></h3>
+   <div class="memberName">public  void setMajor(int major)</div>
+   <div class="memberDescription"> Set major version number of class file, default value is 45 (JDK 1.1)<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">major major version number</span> </p>
+</div>
+
+
+   <h3><a name="setMethodAt(org.apache.bcel.classfile.Method,int)" id="setMethodAt(org.apache.bcel.classfile.Method,int)">setMethodAt</a></h3>
+   <div class="memberName">public  void setMethodAt(<a href="../classfile/Method.html" class="classRef">Method</a> method, int pos)</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="setMethods(org.apache.bcel.classfile.Method[])" id="setMethods(org.apache.bcel.classfile.Method[])">setMethods</a></h3>
+   <div class="memberName">public  void setMethods(<a href="../classfile/Method.html" class="classRef">Method</a>[] methods)</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="setMinor(int)" id="setMinor(int)">setMinor</a></h3>
+   <div class="memberName">public  void setMinor(int minor)</div>
+   <div class="memberDescription"> Set minor version number of class file, default value is 3 (JDK 1.1)<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">minor minor version number</span> </p>
+</div>
+
+
+   <h3><a name="setSuperclassName(<unknown>.String)" id="setSuperclassName(<unknown>.String)">setSuperclassName</a></h3>
+   <div class="memberName">public  void setSuperclassName(String name)</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="setSuperclassNameIndex(int)" id="setSuperclassNameIndex(int)">setSuperclassNameIndex</a></h3>
+   <div class="memberName">public  void setSuperclassNameIndex(int superclass_name_index)</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="update()" id="update()">update</a></h3>
+   <div class="memberName">public  void update()</div>
+   <div class="memberDescription"> Call notify() method on all observers. This method is not called
+ automatically whenever the state has changed, but has to be
+ called by the user after he has finished editing the object.</div>
+
+   
+   <div class="navbar">
+    <p class="nav navtop">
+      <span class="over"><a href="../../../../overview-summary.html">Overview</a></span>
+      <span class="package"><a href="package-summary.html">Package</a></span>
+      <span class="class selected">Class</span>
+      <span class="use"><a href="class-use/ClassGen.html">Use</a></span>
+      <span class="tree"><a href="package-tree.html">Tree</a></span>
+      <span class="deprecated"><a href="../../../../deprecated-list.html">Deprecated</a></span>
+      <span class="index"><a href="../../../../index-all.html">Index</a></span>
+      <span class="help"><a href="../../../../help-doc.html">Help</a></span>
+    </p>
+    <p class="nav navmid">
+      <span class="prevnext">
+       <span class="prev">Prev Class</span>
+       <span class="next">Next Class</span>
+      </span>
+      <span class="framesel">
+       <span class="frames"><a href="../../../../index.html" target="_top">Frames</a></span>
+       <span class="noframes"><a href="ClassGen.html" target="_top">NoFrames</a></span>
+      </span>
+      <span class="allclasses"><a href="../../../../allclasses-noframe.html">All Classes</a></span>
+   </p>
+   <p class="nav navbot">
+      <span class="summary">Summary:
+       <span class="nested">Nested</span>
+       <span class="field"><a href="#field_summary">Field</a></span>
+       <span class="constr"><a href="#constructor_summary">Constr</a></span>
+       <span class="method"><a href="#method_summary">Method</a></span>
+      </span>
+      <span class="detail">Detail:
+       <span class="field"><a href="#field_detail">Field</a></span>
+       <span class="constr"><a href="#constructor_detail">Constr</a></span>
+       <span class="method"><a href="#method_detail">Method</a></span>
+      </span>
+   </p>
+    <div class="navtitle">
+     
+    </div>
+    <p class="clear"><!--empty--></p>
+   </div>
+   <div class="bottom"></div>
+   </body>
+</html>

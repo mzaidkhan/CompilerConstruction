@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>Frame</title>
+    <meta name="keywords" content="org.apache.bcel.verifier.structurals.Frame,Frame class" />
+    <meta name="generator" content="SinjDoc 0.5" />
+    <link href="../../../../../stylesheet.css" rel="stylesheet" type="text/css" />
+    <link rel="Index" href="../../../../../index-all.html" />
+    <link rel="Start" href="../../../../../overview-summary.html" />
+    <link rel="Up" href="package-summary.html" />
+    <link rel="Help" href="../../../../../help-doc.html" />
+  </head>
+  <body class="classPage bigframe">
+   <div class="navbar">
+    <p class="nav navtop">
+      <span class="over"><a href="../../../../../overview-summary.html">Overview</a></span>
+      <span class="package"><a href="package-summary.html">Package</a></span>
+      <span class="class selected">Class</span>
+      <span class="use"><a href="class-use/Frame.html">Use</a></span>
+      <span class="tree"><a href="package-tree.html">Tree</a></span>
+      <span class="deprecated"><a href="../../../../../deprecated-list.html">Deprecated</a></span>
+      <span class="index"><a href="../../../../../index-all.html">Index</a></span>
+      <span class="help"><a href="../../../../../help-doc.html">Help</a></span>
+    </p>
+    <p class="nav navmid">
+      <span class="prevnext">
+       <span class="prev">Prev Class</span>
+       <span class="next">Next Class</span>
+      </span>
+      <span class="framesel">
+       <span class="frames"><a href="../../../../../index.html" target="_top">Frames</a></span>
+       <span class="noframes"><a href="Frame.html" target="_top">NoFrames</a></span>
+      </span>
+      <span class="allclasses"><a href="../../../../../allclasses-noframe.html">All Classes</a></span>
+   </p>
+   <p class="nav navbot">
+      <span class="summary">Summary:
+       <span class="nested">Nested</span>
+       <span class="field"><a href="#field_summary">Field</a></span>
+       <span class="constr"><a href="#constructor_summary">Constr</a></span>
+       <span class="method"><a href="#method_summary">Method</a></span>
+      </span>
+      <span class="detail">Detail:
+       <span class="field"><a href="#field_detail">Field</a></span>
+       <span class="constr"><a href="#constructor_detail">Constr</a></span>
+       <span class="method"><a href="#method_detail">Method</a></span>
+      </span>
+   </p>
+    <div class="navtitle">
+     
+    </div>
+    <p class="clear"><!--empty--></p>
+   </div>
+   <p class="packageName">org.apache.bcel.verifier.structurals</p>
+   <h1>  Class  Frame</h1>
+<!--
+   <p class="enclosing">
+   Enclosing class/interface: @OUTER@
+   </p>
+-->
+
+
+   <!-- XXX class hierarchy diagram goes here -->
+<!--
+   
+   <p class="directSubclasses">
+   Direct known subclasses: @ALL_SUBCLASSES@
+   </p>
+-->
+
+
+   <p class="declaration">public
+     class 
+   <span class="className">Frame</span>
+   
+   
+      
+      <span class="extends">extends Object</span>
+      
+      
+   
+   </p>
+
+   <div class="description">
+   
+ This class represents a JVM execution frame; that means,
+ a local variable array and an operand stack.
+<p class="tag tag_version"><span class="tagName">Version:</span> <span class="tagContents">$Id: Frame.java 386056 2006-03-15 11:31:56Z tcurdt $</span> </p>
+<p class="tag tag_author"><span class="tagName">Author:</span> <span class="tagContents">Enver Haase</span> </p>
+
+   </div>
+
+
+
+
+   <table class="field_summary summary">
+     <tr><th colspan="2"><a name="field_summary" id="field_summary">Field Summary</a></th></tr>
+
+     <tr><td> <a href="LocalVariables.html" class="classRef">LocalVariables</a></td><td><span class="memberName"><a href="#locals" class="fieldRef">locals</a></span><div class="memberDescription">
+</div></td></tr>
+
+
+
+     <tr><td> <a href="OperandStack.html" class="classRef">OperandStack</a></td><td><span class="memberName"><a href="#stack" class="fieldRef">stack</a></span><div class="memberDescription">
+</div></td></tr>
+
+
+
+     <tr><td>protected static <a href="UninitializedObjectType.html" class="classRef">UninitializedObjectType</a></td><td><span class="memberName"><a href="#_this" class="fieldRef">_this</a></span><div class="memberDescription">
+ For instance initialization methods, it is important to remember
+ which instance it is that is not initialized yet. </div></td></tr>
+
+   </table>
+
+
+
+
+   <table class="constructor_summary summary">
+     <tr><th colspan="2"><a name="constructor_summary" id="constructor_summary">Constructor Summary</a></th></tr>
+
+     <tr><td> </td><td><span class="memberName"><a href="#Frame(int,int)" class="constructorRef">Frame</a>(int maxLocals, int maxStack)</span><div class="memberDescription">
+</div></td></tr>
+
+
+
+     <tr><td> </td><td><span class="memberName"><a href="#Frame(org.apache.bcel.verifier.structurals.LocalVariables,org.apache.bcel.verifier.structurals.OperandStack)" class="constructorRef">Frame</a>(<a href="LocalVariables.html" class="classRef">LocalVariables</a> locals, <a href="OperandStack.html" class="classRef">OperandStack</a> stack)</span><div class="memberDescription">
+</div></td></tr>
+
+   </table>
+
+
+
+
+   <table class="method_summary summary">
+     <tr><th colspan="2"><a name="method_summary" id="method_summary">Method Summary</a></th></tr>
+
+     <tr><td>protected  Object</td><td><span class="memberName"><a href="#clone()" class="methodRef">clone</a>()</span><div class="memberDescription">
+</div></td></tr>
+
+
+
+     <tr><td>  boolean</td><td><span class="memberName"><a href="#equals(<unknown>.Object)" class="methodRef">equals</a>(Object o)</span><div class="memberDescription">
+</div></td></tr>
+
+
+
+     <tr><td>  <a href="Frame.html" class="classRef">Frame</a></td><td><span class="memberName"><a href="#getClone()" class="methodRef">getClone</a>()</span><div class="memberDescription">
+</div></td></tr>
+
+
+
+     <tr><td>  <a href="LocalVariables.html" class="classRef">LocalVariables</a></td><td><span class="memberName"><a href="#getLocals()" class="methodRef">getLocals</a>()</span><div class="memberDescription">
+</div></td></tr>
+
+
+
+     <tr><td>  <a href="OperandStack.html" class="classRef">OperandStack</a></td><td><span class="memberName"><a href="#getStack()" class="methodRef">getStack</a>()</span><div class="memberDescription">
+</div></td></tr>
+
+
+
+     <tr><td>  int</td><td><span class="memberName"><a href="#hashCode()" class="methodRef">hashCode</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  String</td><td><span class="memberName"><a href="#toString()" class="methodRef">toString</a>()</span><div class="memberDescription">
+ Returns a String representation of the Frame instance.</div></td></tr>
+
+   </table>
+
+
+
+<!--
+   <p class="inherited">
+    <span class="header">Methods inherited from class java.util.<a
+   href="AbstractCollection.html">AbstractCollection</a></span>
+    <a href="#addAll">addAll</a>
+    <a href="#contains">contains</a>
+   </p>
+   <p class="inherited">
+    <span class="header">Methods inherited from class java.lang.<a
+   href="Object.html">Object</a></span>
+    <a href="#addAll">clone</a>
+    <a href="#contains">finalize</a>
+   </p>
+   <p class="inherited">
+    <span class="header">Methods inherited from interface java.util.<a
+   href="List.html">List</a></span>
+    <a href="#addAll">addAll</a>
+    <a href="#contains">contains</a>
+   </p>
+-->
+
+
+
+   <h2><a name="field_detail" id="field_detail">Field Detail</a></h2>
+
+   <h3><a name="locals" id="locals">locals</a></h3>
+   <div class="memberName">private <a href="LocalVariables.html" class="classRef">LocalVariables</a> locals</div>
+   <div class="memberDescription">
+</div>
+
+
+   <h3><a name="stack" id="stack">stack</a></h3>
+   <div class="memberName">private <a href="OperandStack.html" class="classRef">OperandStack</a> stack</div>
+   <div class="memberDescription">
+</div>
+
+
+   <h3><a name="_this" id="_this">_this</a></h3>
+   <div class="memberName">protected static <a href="UninitializedObjectType.html" class="classRef">UninitializedObjectType</a> _this</div>
+   <div class="memberDescription">
+ For instance initialization methods, it is important to remember
+ which instance it is that is not initialized yet. It will be
+ initialized invoking another constructor later.
+ NULL means the instance already *is* initialized.</div>
+
+
+
+
+   <h2><a name="constructor_detail" id="constructor_detail">Constructor Detail</a></h2>
+
+   <h3><a name="Frame(int,int)" id="Frame(int,int)">Frame</a></h3>
+   <div class="memberName">public  Frame(int maxLocals, int maxStack)</div>
+   <div class="memberDescription">
+</div>
+
+
+   <h3><a name="Frame(org.apache.bcel.verifier.structurals.LocalVariables,org.apache.bcel.verifier.structurals.OperandStack)" id="Frame(org.apache.bcel.verifier.structurals.LocalVariables,org.apache.bcel.verifier.structurals.OperandStack)">Frame</a></h3>
+   <div class="memberName">public  Frame(<a href="LocalVariables.html" class="classRef">LocalVariables</a> locals, <a href="OperandStack.html" class="classRef">OperandStack</a> stack)</div>
+   <div class="memberDescription">
+</div>
+
+
+
+
+   <h2><a name="method_detail" id="method_detail">Method Detail</a></h2>
+
+   <h3><a name="clone()" id="clone()">clone</a></h3>
+   <div class="memberName">protected  Object clone()</div>
+   <div class="memberDescription">
+</div>
+
+
+   <h3><a name="equals(<unknown>.Object)" id="equals(<unknown>.Object)">equals</a></h3>
+   <div class="memberName">public  boolean equals(Object o)</div>
+   <div class="memberDescription">
+</div>
+
+
+   <h3><a name="getClone()" id="getClone()">getClone</a></h3>
+   <div class="memberName">public  <a href="Frame.html" class="classRef">Frame</a> getClone()</div>
+   <div class="memberDescription">
+</div>
+
+
+   <h3><a name="getLocals()" id="getLocals()">getLocals</a></h3>
+   <div class="memberName">public  <a href="LocalVariables.html" class="classRef">LocalVariables</a> getLocals()</div>
+   <div class="memberDescription">
+</div>
+
+
+   <h3><a name="getStack()" id="getStack()">getStack</a></h3>
+   <div class="memberName">public  <a href="OperandStack.html" class="classRef">OperandStack</a> getStack()</div>
+   <div class="memberDescription">
+</div>
+
+
+   <h3><a name="hashCode()" id="hashCode()">hashCode</a></h3>
+   <div class="memberName">public  int hashCode()</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">a hash code value for the object.</span> </p>
+</div>
+
+
+   <h3><a name="toString()" id="toString()">toString</a></h3>
+   <div class="memberName">public  String toString()</div>
+   <div class="memberDescription">
+ Returns a String representation of the Frame instance.</div>
+
+   
+   <div class="navbar">
+    <p class="nav navtop">
+      <span class="over"><a href="../../../../../overview-summary.html">Overview</a></span>
+      <span class="package"><a href="package-summary.html">Package</a></span>
+      <span class="class selected">Class</span>
+      <span class="use"><a href="class-use/Frame.html">Use</a></span>
+      <span class="tree"><a href="package-tree.html">Tree</a></span>
+      <span class="deprecated"><a href="../../../../../deprecated-list.html">Deprecated</a></span>
+      <span class="index"><a href="../../../../../index-all.html">Index</a></span>
+      <span class="help"><a href="../../../../../help-doc.html">Help</a></span>
+    </p>
+    <p class="nav navmid">
+      <span class="prevnext">
+       <span class="prev">Prev Class</span>
+       <span class="next">Next Class</span>
+      </span>
+      <span class="framesel">
+       <span class="frames"><a href="../../../../../index.html" target="_top">Frames</a></span>
+       <span class="noframes"><a href="Frame.html" target="_top">NoFrames</a></span>
+      </span>
+      <span class="allclasses"><a href="../../../../../allclasses-noframe.html">All Classes</a></span>
+   </p>
+   <p class="nav navbot">
+      <span class="summary">Summary:
+       <span class="nested">Nested</span>
+       <span class="field"><a href="#field_summary">Field</a></span>
+       <span class="constr"><a href="#constructor_summary">Constr</a></span>
+       <span class="method"><a href="#method_summary">Method</a></span>
+      </span>
+      <span class="detail">Detail:
+       <span class="field"><a href="#field_detail">Field</a></span>
+       <span class="constr"><a href="#constructor_detail">Constr</a></span>
+       <span class="method"><a href="#method_detail">Method</a></span>
+      </span>
+   </p>
+    <div class="navtitle">
+     
+    </div>
+    <p class="clear"><!--empty--></p>
+   </div>
+   <div class="bottom"></div>
+   </body>
+</html>

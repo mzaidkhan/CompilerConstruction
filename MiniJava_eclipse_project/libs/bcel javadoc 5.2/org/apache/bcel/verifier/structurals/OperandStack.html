@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>OperandStack</title>
+    <meta name="keywords" content="org.apache.bcel.verifier.structurals.OperandStack,OperandStack class" />
+    <meta name="generator" content="SinjDoc 0.5" />
+    <link href="../../../../../stylesheet.css" rel="stylesheet" type="text/css" />
+    <link rel="Index" href="../../../../../index-all.html" />
+    <link rel="Start" href="../../../../../overview-summary.html" />
+    <link rel="Up" href="package-summary.html" />
+    <link rel="Help" href="../../../../../help-doc.html" />
+  </head>
+  <body class="classPage bigframe">
+   <div class="navbar">
+    <p class="nav navtop">
+      <span class="over"><a href="../../../../../overview-summary.html">Overview</a></span>
+      <span class="package"><a href="package-summary.html">Package</a></span>
+      <span class="class selected">Class</span>
+      <span class="use"><a href="class-use/OperandStack.html">Use</a></span>
+      <span class="tree"><a href="package-tree.html">Tree</a></span>
+      <span class="deprecated"><a href="../../../../../deprecated-list.html">Deprecated</a></span>
+      <span class="index"><a href="../../../../../index-all.html">Index</a></span>
+      <span class="help"><a href="../../../../../help-doc.html">Help</a></span>
+    </p>
+    <p class="nav navmid">
+      <span class="prevnext">
+       <span class="prev">Prev Class</span>
+       <span class="next">Next Class</span>
+      </span>
+      <span class="framesel">
+       <span class="frames"><a href="../../../../../index.html" target="_top">Frames</a></span>
+       <span class="noframes"><a href="OperandStack.html" target="_top">NoFrames</a></span>
+      </span>
+      <span class="allclasses"><a href="../../../../../allclasses-noframe.html">All Classes</a></span>
+   </p>
+   <p class="nav navbot">
+      <span class="summary">Summary:
+       <span class="nested">Nested</span>
+       <span class="field"><a href="#field_summary">Field</a></span>
+       <span class="constr"><a href="#constructor_summary">Constr</a></span>
+       <span class="method"><a href="#method_summary">Method</a></span>
+      </span>
+      <span class="detail">Detail:
+       <span class="field"><a href="#field_detail">Field</a></span>
+       <span class="constr"><a href="#constructor_detail">Constr</a></span>
+       <span class="method"><a href="#method_detail">Method</a></span>
+      </span>
+   </p>
+    <div class="navtitle">
+     
+    </div>
+    <p class="clear"><!--empty--></p>
+   </div>
+   <p class="packageName">org.apache.bcel.verifier.structurals</p>
+   <h1>  Class  OperandStack</h1>
+<!--
+   <p class="enclosing">
+   Enclosing class/interface: @OUTER@
+   </p>
+-->
+
+
+   <!-- XXX class hierarchy diagram goes here -->
+<!--
+   
+   <p class="directSubclasses">
+   Direct known subclasses: @ALL_SUBCLASSES@
+   </p>
+-->
+
+
+   <p class="declaration">public
+     class 
+   <span class="className">OperandStack</span>
+   
+   
+      
+      <span class="extends">extends Object</span>
+      
+      
+   
+   </p>
+
+   <div class="description">
+   
+ This class implements a stack used for symbolic JVM stack simulation.
+ [It's used an an operand stack substitute.]
+ Elements of this stack are org.apache.bcel.generic.Type objects.
+<p class="tag tag_version"><span class="tagName">Version:</span> <span class="tagContents">$Id: OperandStack.java 386056 2006-03-15 11:31:56Z tcurdt $</span> </p>
+<p class="tag tag_author"><span class="tagName">Author:</span> <span class="tagContents">Enver Haase</span> </p>
+
+   </div>
+
+
+
+
+   <table class="field_summary summary">
+     <tr><th colspan="2"><a name="field_summary" id="field_summary">Field Summary</a></th></tr>
+
+     <tr><td> int</td><td><span class="memberName"><a href="#maxStack" class="fieldRef">maxStack</a></span><div class="memberDescription"> The maximum number of stack slots this OperandStack instance may hold.</div></td></tr>
+
+
+
+     <tr><td> ArrayList</td><td><span class="memberName"><a href="#stack" class="fieldRef">stack</a></span><div class="memberDescription"> We hold the stack information here.</div></td></tr>
+
+   </table>
+
+
+
+
+   <table class="constructor_summary summary">
+     <tr><th colspan="2"><a name="constructor_summary" id="constructor_summary">Constructor Summary</a></th></tr>
+
+     <tr><td> </td><td><span class="memberName"><a href="#OperandStack(int)" class="constructorRef">OperandStack</a>(int maxStack)</span><div class="memberDescription">
+ Creates an empty stack with a maximum of maxStack slots.</div></td></tr>
+
+
+
+     <tr><td> </td><td><span class="memberName"><a href="#OperandStack(int,org.apache.bcel.generic.ObjectType)" class="constructorRef">OperandStack</a>(int maxStack, <a href="../../generic/ObjectType.html" class="classRef">ObjectType</a> obj)</span><div class="memberDescription">
+ Creates an otherwise empty stack with a maximum of maxStack slots and
+ the ObjectType 'obj' at the top.</div></td></tr>
+
+   </table>
+
+
+
+
+   <table class="method_summary summary">
+     <tr><th colspan="2"><a name="method_summary" id="method_summary">Method Summary</a></th></tr>
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#clear()" class="methodRef">clear</a>()</span><div class="memberDescription">
+ Clears the stack.</div></td></tr>
+
+
+
+     <tr><td>protected  Object</td><td><span class="memberName"><a href="#clone()" class="methodRef">clone</a>()</span><div class="memberDescription">
+ Returns a deep copy of this object; that means, the clone operates
+ on a new stack. </div></td></tr>
+
+
+
+     <tr><td>  boolean</td><td><span class="memberName"><a href="#equals(<unknown>.Object)" class="methodRef">equals</a>(Object o)</span><div class="memberDescription">
+ Returns true if and only if this OperandStack
+ equals another, meaning equal lengths and equal
+ objects on the stacks.</div></td></tr>
+
+
+
+     <tr><td>  <a href="OperandStack.html" class="classRef">OperandStack</a></td><td><span class="memberName"><a href="#getClone()" class="methodRef">getClone</a>()</span><div class="memberDescription">
+ Returns a (typed!) </div></td></tr>
+
+
+
+     <tr><td>  int</td><td><span class="memberName"><a href="#hashCode()" class="methodRef">hashCode</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#initializeObject(org.apache.bcel.verifier.structurals.UninitializedObjectType)" class="methodRef">initializeObject</a>(<a href="UninitializedObjectType.html" class="classRef">UninitializedObjectType</a> u)</span><div class="memberDescription">
+ Replaces all occurences of u in this OperandStack instance
+ with an "initialized" ObjectType.</div></td></tr>
+
+
+
+     <tr><td>  boolean</td><td><span class="memberName"><a href="#isEmpty()" class="methodRef">isEmpty</a>()</span><div class="memberDescription">
+ Returns true IFF this OperandStack is empty.</div></td></tr>
+
+
+
+     <tr><td>  int</td><td><span class="memberName"><a href="#maxStack()" class="methodRef">maxStack</a>()</span><div class="memberDescription">
+ Returns the number of stack slots this stack can hold.</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#merge(org.apache.bcel.verifier.structurals.OperandStack)" class="methodRef">merge</a>(<a href="OperandStack.html" class="classRef">OperandStack</a> s)</span><div class="memberDescription">
+ Merges another stack state into this instance's stack state.
+ </div></td></tr>
+
+
+
+     <tr><td>  <a href="../../generic/Type.html" class="classRef">Type</a></td><td><span class="memberName"><a href="#peek()" class="methodRef">peek</a>()</span><div class="memberDescription">
+ Returns the element on top of the stack. </div></td></tr>
+
+
+
+     <tr><td>  <a href="../../generic/Type.html" class="classRef">Type</a></td><td><span class="memberName"><a href="#peek(int)" class="methodRef">peek</a>(int i)</span><div class="memberDescription">
+ Returns the element that's i elements below the top element; that means,
+ iff i==0 the top element is returned. </div></td></tr>
+
+
+
+     <tr><td>  <a href="../../generic/Type.html" class="classRef">Type</a></td><td><span class="memberName"><a href="#pop()" class="methodRef">pop</a>()</span><div class="memberDescription">
+ Returns the element on top of the stack. </div></td></tr>
+
+
+
+     <tr><td>  <a href="../../generic/Type.html" class="classRef">Type</a></td><td><span class="memberName"><a href="#pop(int)" class="methodRef">pop</a>(int i)</span><div class="memberDescription">
+ Pops i elements off the stack. </div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#push(org.apache.bcel.generic.Type)" class="methodRef">push</a>(<a href="../../generic/Type.html" class="classRef">Type</a> type)</span><div class="memberDescription">
+ Pushes a Type object onto the stack.</div></td></tr>
+
+
+
+     <tr><td>  int</td><td><span class="memberName"><a href="#size()" class="methodRef">size</a>()</span><div class="memberDescription">
+ Returns the size of this OperandStack; that means, how many Type objects there are.</div></td></tr>
+
+
+
+     <tr><td>  int</td><td><span class="memberName"><a href="#slotsUsed()" class="methodRef">slotsUsed</a>()</span><div class="memberDescription">
+ Returns the number of stack slots used.</div></td></tr>
+
+
+
+     <tr><td>  String</td><td><span class="memberName"><a href="#toString()" class="methodRef">toString</a>()</span><div class="memberDescription">
+ Returns a String representation of this OperandStack instance.</div></td></tr>
+
+   </table>
+
+
+
+<!--
+   <p class="inherited">
+    <span class="header">Methods inherited from class java.util.<a
+   href="AbstractCollection.html">AbstractCollection</a></span>
+    <a href="#addAll">addAll</a>
+    <a href="#contains">contains</a>
+   </p>
+   <p class="inherited">
+    <span class="header">Methods inherited from class java.lang.<a
+   href="Object.html">Object</a></span>
+    <a href="#addAll">clone</a>
+    <a href="#contains">finalize</a>
+   </p>
+   <p class="inherited">
+    <span class="header">Methods inherited from interface java.util.<a
+   href="List.html">List</a></span>
+    <a href="#addAll">addAll</a>
+    <a href="#contains">contains</a>
+   </p>
+-->
+
+
+
+   <h2><a name="field_detail" id="field_detail">Field Detail</a></h2>
+
+   <h3><a name="maxStack" id="maxStack">maxStack</a></h3>
+   <div class="memberName">private int maxStack</div>
+   <div class="memberDescription"> The maximum number of stack slots this OperandStack instance may hold.</div>
+
+
+   <h3><a name="stack" id="stack">stack</a></h3>
+   <div class="memberName">private ArrayList stack</div>
+   <div class="memberDescription"> We hold the stack information here.</div>
+
+
+
+
+   <h2><a name="constructor_detail" id="constructor_detail">Constructor Detail</a></h2>
+
+   <h3><a name="OperandStack(int)" id="OperandStack(int)">OperandStack</a></h3>
+   <div class="memberName">public  OperandStack(int maxStack)</div>
+   <div class="memberDescription">
+ Creates an empty stack with a maximum of maxStack slots.</div>
+
+
+   <h3><a name="OperandStack(int,org.apache.bcel.generic.ObjectType)" id="OperandStack(int,org.apache.bcel.generic.ObjectType)">OperandStack</a></h3>
+   <div class="memberName">public  OperandStack(int maxStack, <a href="../../generic/ObjectType.html" class="classRef">ObjectType</a> obj)</div>
+   <div class="memberDescription">
+ Creates an otherwise empty stack with a maximum of maxStack slots and
+ the ObjectType 'obj' at the top.</div>
+
+
+
+
+   <h2><a name="method_detail" id="method_detail">Method Detail</a></h2>
+
+   <h3><a name="clear()" id="clear()">clear</a></h3>
+   <div class="memberName">public  void clear()</div>
+   <div class="memberDescription">
+ Clears the stack.</div>
+
+
+   <h3><a name="clone()" id="clone()">clone</a></h3>
+   <div class="memberName">protected  Object clone()</div>
+   <div class="memberDescription">
+ Returns a deep copy of this object; that means, the clone operates
+ on a new stack. However, the Type objects on the stack are
+ shared.</div>
+
+
+   <h3><a name="equals(<unknown>.Object)" id="equals(<unknown>.Object)">equals</a></h3>
+   <div class="memberName">public  boolean equals(Object o)</div>
+   <div class="memberDescription">
+ Returns true if and only if this OperandStack
+ equals another, meaning equal lengths and equal
+ objects on the stacks.</div>
+
+
+   <h3><a name="getClone()" id="getClone()">getClone</a></h3>
+   <div class="memberName">public  <a href="OperandStack.html" class="classRef">OperandStack</a> getClone()</div>
+   <div class="memberDescription">
+ Returns a (typed!) clone of this.
+<p class="tag tag_see"><span class="tagName">See Also:</span> <span class="tagContents"><a href="#clone()" class="methodRef">clone</a></span> </p>
+</div>
+
+
+   <h3><a name="hashCode()" id="hashCode()">hashCode</a></h3>
+   <div class="memberName">public  int hashCode()</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">a hash code value for the object.</span> </p>
+</div>
+
+
+   <h3><a name="initializeObject(org.apache.bcel.verifier.structurals.UninitializedObjectType)" id="initializeObject(org.apache.bcel.verifier.structurals.UninitializedObjectType)">initializeObject</a></h3>
+   <div class="memberName">public  void initializeObject(<a href="UninitializedObjectType.html" class="classRef">UninitializedObjectType</a> u)</div>
+   <div class="memberDescription">
+ Replaces all occurences of u in this OperandStack instance
+ with an "initialized" ObjectType.</div>
+
+
+   <h3><a name="isEmpty()" id="isEmpty()">isEmpty</a></h3>
+   <div class="memberName">public  boolean isEmpty()</div>
+   <div class="memberDescription">
+ Returns true IFF this OperandStack is empty.</div>
+
+
+   <h3><a name="maxStack()" id="maxStack()">maxStack</a></h3>
+   <div class="memberName">public  int maxStack()</div>
+   <div class="memberDescription">
+ Returns the number of stack slots this stack can hold.</div>
+
+
+   <h3><a name="merge(org.apache.bcel.verifier.structurals.OperandStack)" id="merge(org.apache.bcel.verifier.structurals.OperandStack)">merge</a></h3>
+   <div class="memberName">public  void merge(<a href="OperandStack.html" class="classRef">OperandStack</a> s)</div>
+   <div class="memberDescription">
+ Merges another stack state into this instance's stack state.
+ See the Java Virtual Machine Specification, Second Edition, page 146: 4.9.2
+ for details.</div>
+
+
+   <h3><a name="peek()" id="peek()">peek</a></h3>
+   <div class="memberName">public  <a href="../../generic/Type.html" class="classRef">Type</a> peek()</div>
+   <div class="memberDescription">
+ Returns the element on top of the stack. The element is not popped off the stack!</div>
+
+
+   <h3><a name="peek(int)" id="peek(int)">peek</a></h3>
+   <div class="memberName">public  <a href="../../generic/Type.html" class="classRef">Type</a> peek(int i)</div>
+   <div class="memberDescription">
+ Returns the element that's i elements below the top element; that means,
+ iff i==0 the top element is returned. The element is not popped off the stack!</div>
+
+
+   <h3><a name="pop()" id="pop()">pop</a></h3>
+   <div class="memberName">public  <a href="../../generic/Type.html" class="classRef">Type</a> pop()</div>
+   <div class="memberDescription">
+ Returns the element on top of the stack. The element is popped off the stack.</div>
+
+
+   <h3><a name="pop(int)" id="pop(int)">pop</a></h3>
+   <div class="memberName">public  <a href="../../generic/Type.html" class="classRef">Type</a> pop(int i)</div>
+   <div class="memberDescription">
+ Pops i elements off the stack. ALWAYS RETURNS "null"!!!</div>
+
+
+   <h3><a name="push(org.apache.bcel.generic.Type)" id="push(org.apache.bcel.generic.Type)">push</a></h3>
+   <div class="memberName">public  void push(<a href="../../generic/Type.html" class="classRef">Type</a> type)</div>
+   <div class="memberDescription">
+ Pushes a Type object onto the stack.</div>
+
+
+   <h3><a name="size()" id="size()">size</a></h3>
+   <div class="memberName">public  int size()</div>
+   <div class="memberDescription">
+ Returns the size of this OperandStack; that means, how many Type objects there are.</div>
+
+
+   <h3><a name="slotsUsed()" id="slotsUsed()">slotsUsed</a></h3>
+   <div class="memberName">public  int slotsUsed()</div>
+   <div class="memberDescription">
+ Returns the number of stack slots used.<p class="tag tag_see"><span class="tagName">See Also:</span> <span class="tagContents"><a href="#maxStack()" class="methodRef">maxStack</a></span> </p>
+</div>
+
+
+   <h3><a name="toString()" id="toString()">toString</a></h3>
+   <div class="memberName">public  String toString()</div>
+   <div class="memberDescription">
+ Returns a String representation of this OperandStack instance.</div>
+
+   
+   <div class="navbar">
+    <p class="nav navtop">
+      <span class="over"><a href="../../../../../overview-summary.html">Overview</a></span>
+      <span class="package"><a href="package-summary.html">Package</a></span>
+      <span class="class selected">Class</span>
+      <span class="use"><a href="class-use/OperandStack.html">Use</a></span>
+      <span class="tree"><a href="package-tree.html">Tree</a></span>
+      <span class="deprecated"><a href="../../../../../deprecated-list.html">Deprecated</a></span>
+      <span class="index"><a href="../../../../../index-all.html">Index</a></span>
+      <span class="help"><a href="../../../../../help-doc.html">Help</a></span>
+    </p>
+    <p class="nav navmid">
+      <span class="prevnext">
+       <span class="prev">Prev Class</span>
+       <span class="next">Next Class</span>
+      </span>
+      <span class="framesel">
+       <span class="frames"><a href="../../../../../index.html" target="_top">Frames</a></span>
+       <span class="noframes"><a href="OperandStack.html" target="_top">NoFrames</a></span>
+      </span>
+      <span class="allclasses"><a href="../../../../../allclasses-noframe.html">All Classes</a></span>
+   </p>
+   <p class="nav navbot">
+      <span class="summary">Summary:
+       <span class="nested">Nested</span>
+       <span class="field"><a href="#field_summary">Field</a></span>
+       <span class="constr"><a href="#constructor_summary">Constr</a></span>
+       <span class="method"><a href="#method_summary">Method</a></span>
+      </span>
+      <span class="detail">Detail:
+       <span class="field"><a href="#field_detail">Field</a></span>
+       <span class="constr"><a href="#constructor_detail">Constr</a></span>
+       <span class="method"><a href="#method_detail">Method</a></span>
+      </span>
+   </p>
+    <div class="navtitle">
+     
+    </div>
+    <p class="clear"><!--empty--></p>
+   </div>
+   <div class="bottom"></div>
+   </body>
+</html>

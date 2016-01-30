@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>Instruction</title>
+    <meta name="keywords" content="org.apache.bcel.generic.Instruction,Instruction class" />
+    <meta name="generator" content="SinjDoc 0.5" />
+    <link href="../../../../stylesheet.css" rel="stylesheet" type="text/css" />
+    <link rel="Index" href="../../../../index-all.html" />
+    <link rel="Start" href="../../../../overview-summary.html" />
+    <link rel="Up" href="package-summary.html" />
+    <link rel="Help" href="../../../../help-doc.html" />
+  </head>
+  <body class="classPage bigframe">
+   <div class="navbar">
+    <p class="nav navtop">
+      <span class="over"><a href="../../../../overview-summary.html">Overview</a></span>
+      <span class="package"><a href="package-summary.html">Package</a></span>
+      <span class="class selected">Class</span>
+      <span class="use"><a href="class-use/Instruction.html">Use</a></span>
+      <span class="tree"><a href="package-tree.html">Tree</a></span>
+      <span class="deprecated"><a href="../../../../deprecated-list.html">Deprecated</a></span>
+      <span class="index"><a href="../../../../index-all.html">Index</a></span>
+      <span class="help"><a href="../../../../help-doc.html">Help</a></span>
+    </p>
+    <p class="nav navmid">
+      <span class="prevnext">
+       <span class="prev">Prev Class</span>
+       <span class="next">Next Class</span>
+      </span>
+      <span class="framesel">
+       <span class="frames"><a href="../../../../index.html" target="_top">Frames</a></span>
+       <span class="noframes"><a href="Instruction.html" target="_top">NoFrames</a></span>
+      </span>
+      <span class="allclasses"><a href="../../../../allclasses-noframe.html">All Classes</a></span>
+   </p>
+   <p class="nav navbot">
+      <span class="summary">Summary:
+       <span class="nested">Nested</span>
+       <span class="field"><a href="#field_summary">Field</a></span>
+       <span class="constr"><a href="#constructor_summary">Constr</a></span>
+       <span class="method"><a href="#method_summary">Method</a></span>
+      </span>
+      <span class="detail">Detail:
+       <span class="field"><a href="#field_detail">Field</a></span>
+       <span class="constr"><a href="#constructor_detail">Constr</a></span>
+       <span class="method"><a href="#method_detail">Method</a></span>
+      </span>
+   </p>
+    <div class="navtitle">
+     
+    </div>
+    <p class="clear"><!--empty--></p>
+   </div>
+   <p class="packageName">org.apache.bcel.generic</p>
+   <h1>  Class  Instruction</h1>
+<!--
+   <p class="enclosing">
+   Enclosing class/interface: @OUTER@
+   </p>
+-->
+
+
+   <!-- XXX class hierarchy diagram goes here -->
+<!--
+   
+   <p class="implementedInterfaces">
+   All implemented interfaces: @ALL_SUPERINTERFACES@
+   </p>
+   
+   <p class="directSubclasses">
+   Direct known subclasses: @ALL_SUBCLASSES@
+   </p>
+-->
+
+
+   <p class="declaration">public abstract
+     class 
+   <span class="className">Instruction</span>
+   
+   
+      
+      <span class="extends">extends Object</span>
+      
+      
+        <span class="implements">implements Cloneable, Serializable</span>
+      
+   
+   </p>
+
+   <div class="description">
+    
+ Abstract super class for all Java byte codes.
+<p class="tag tag_version"><span class="tagName">Version:</span> <span class="tagContents">$Id: Instruction.java 386056 2006-03-15 11:31:56Z tcurdt $</span> </p>
+<p class="tag tag_author"><span class="tagName">Author:</span> <span class="tagContents"><A HREF="mailto:m.dahm@gmx.de">M. Dahm</A></span> </p>
+
+   </div>
+
+
+
+
+   <table class="field_summary summary">
+     <tr><th colspan="2"><a name="field_summary" id="field_summary">Field Summary</a></th></tr>
+
+     <tr><td>static <a href="InstructionComparator.html" class="interfaceRef">InstructionComparator</a></td><td><span class="memberName"><a href="#cmp" class="fieldRef">cmp</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>protected short</td><td><span class="memberName"><a href="#length" class="fieldRef">length</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>protected short</td><td><span class="memberName"><a href="#opcode" class="fieldRef">opcode</a></span><div class="memberDescription"></div></td></tr>
+
+   </table>
+
+
+
+
+   <table class="constructor_summary summary">
+     <tr><th colspan="2"><a name="constructor_summary" id="constructor_summary">Constructor Summary</a></th></tr>
+
+     <tr><td> </td><td><span class="memberName"><a href="#Instruction()" class="constructorRef">Instruction</a>()</span><div class="memberDescription">
+ Empty constructor needed for the Class.newInstance() statement in
+ Instruction.readInstruction(). </div></td></tr>
+
+
+
+     <tr><td> </td><td><span class="memberName"><a href="#Instruction(short,short)" class="constructorRef">Instruction</a>(short opcode, short length)</span><div class="memberDescription"></div></td></tr>
+
+   </table>
+
+
+
+
+   <table class="method_summary summary">
+     <tr><th colspan="2"><a name="method_summary" id="method_summary">Method Summary</a></th></tr>
+
+     <tr><td>abstract  void</td><td><span class="memberName"><a href="#accept(org.apache.bcel.generic.Visitor)" class="methodRef">accept</a>(<a href="Visitor.html" class="interfaceRef">Visitor</a> v)</span><div class="memberDescription">
+ Call corresponding visitor method(s). </div></td></tr>
+
+
+
+     <tr><td>static  String</td><td><span class="memberName"><a href="#className(short)" class="methodRef">className</a>(short opcode)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  int</td><td><span class="memberName"><a href="#consumeStack(org.apache.bcel.generic.ConstantPoolGen)" class="methodRef">consumeStack</a>(<a href="ConstantPoolGen.html" class="classRef">ConstantPoolGen</a> cpg)</span><div class="memberDescription">
+ This method also gives right results for instructions whose
+ effect on the stack depends on the constant pool entry they
+ reference.</div></td></tr>
+
+
+
+     <tr><td>  <a href="Instruction.html" class="classRef">Instruction</a></td><td><span class="memberName"><a href="#copy()" class="methodRef">copy</a>()</span><div class="memberDescription">
+ Use with caution, since `BranchInstruction's have a `target' reference which
+ is not copied correctly (only basic types are). </div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#dispose()" class="methodRef">dispose</a>()</span><div class="memberDescription"> Some instructions may be reused, so don't do anything by default.</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#dump(java.io.DataOutputStream)" class="methodRef">dump</a>(DataOutputStream out)</span><div class="memberDescription">
+ Dump instruction as byte code to stream out.</div></td></tr>
+
+
+
+     <tr><td>  boolean</td><td><span class="memberName"><a href="#equals(<unknown>.Object)" class="methodRef">equals</a>(Object that)</span><div class="memberDescription"> Check for equality, delegated to comparator</div></td></tr>
+
+
+
+     <tr><td>static  <a href="InstructionComparator.html" class="interfaceRef">InstructionComparator</a></td><td><span class="memberName"><a href="#getComparator()" class="methodRef">getComparator</a>()</span><div class="memberDescription"> Get Comparator object used in the equals() method to determine
+ equality of instructions.
+</div></td></tr>
+
+
+
+     <tr><td>  int</td><td><span class="memberName"><a href="#getLength()" class="methodRef">getLength</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  String</td><td><span class="memberName"><a href="#getName()" class="methodRef">getName</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  short</td><td><span class="memberName"><a href="#getOpcode()" class="methodRef">getOpcode</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>protected  void</td><td><span class="memberName"><a href="#initFromFile(org.apache.bcel.util.ByteSequence,boolean)" class="methodRef">initFromFile</a>(<a href="../util/ByteSequence.html" class="classRef">ByteSequence</a> bytes, boolean wide)</span><div class="memberDescription">
+ Read needed data (e.g. index) from file.
+</div></td></tr>
+
+
+
+     <tr><td>  int</td><td><span class="memberName"><a href="#produceStack(org.apache.bcel.generic.ConstantPoolGen)" class="methodRef">produceStack</a>(<a href="ConstantPoolGen.html" class="classRef">ConstantPoolGen</a> cpg)</span><div class="memberDescription">
+ This method also gives right results for instructions whose
+ effect on the stack depends on the constant pool entry they
+ reference.</div></td></tr>
+
+
+
+     <tr><td>static  <a href="Instruction.html" class="classRef">Instruction</a></td><td><span class="memberName"><a href="#readInstruction(org.apache.bcel.util.ByteSequence)" class="methodRef">readInstruction</a>(<a href="../util/ByteSequence.html" class="classRef">ByteSequence</a> bytes)</span><div class="memberDescription">
+ Read an instruction from (byte code) input stream and return the
+ appropiate object.
+</div></td></tr>
+
+
+
+     <tr><td>static  void</td><td><span class="memberName"><a href="#setComparator(org.apache.bcel.generic.InstructionComparator)" class="methodRef">setComparator</a>(<a href="InstructionComparator.html" class="interfaceRef">InstructionComparator</a> c)</span><div class="memberDescription"> Set comparator to be used for equals().</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#setOpcode(short)" class="methodRef">setOpcode</a>(short opcode)</span><div class="memberDescription">
+ Needed in readInstruction.</div></td></tr>
+
+
+
+     <tr><td>  String</td><td><span class="memberName"><a href="#toString(boolean)" class="methodRef">toString</a>(boolean verbose)</span><div class="memberDescription">
+ Long output format:
+
+ &lt;name of opcode&gt; "["&lt;opcode number&gt;"]" 
+ "("&lt;length of instruction&gt;")"
+</div></td></tr>
+
+
+
+     <tr><td>  String</td><td><span class="memberName"><a href="#toString()" class="methodRef">toString</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  String</td><td><span class="memberName"><a href="#toString(org.apache.bcel.classfile.ConstantPool)" class="methodRef">toString</a>(<a href="../classfile/ConstantPool.html" class="classRef">ConstantPool</a> cp)</span><div class="memberDescription"></div></td></tr>
+
+   </table>
+
+
+
+<!--
+   <p class="inherited">
+    <span class="header">Methods inherited from class java.util.<a
+   href="AbstractCollection.html">AbstractCollection</a></span>
+    <a href="#addAll">addAll</a>
+    <a href="#contains">contains</a>
+   </p>
+   <p class="inherited">
+    <span class="header">Methods inherited from class java.lang.<a
+   href="Object.html">Object</a></span>
+    <a href="#addAll">clone</a>
+    <a href="#contains">finalize</a>
+   </p>
+   <p class="inherited">
+    <span class="header">Methods inherited from interface java.util.<a
+   href="List.html">List</a></span>
+    <a href="#addAll">addAll</a>
+    <a href="#contains">contains</a>
+   </p>
+-->
+
+
+
+   <h2><a name="field_detail" id="field_detail">Field Detail</a></h2>
+
+   <h3><a name="cmp" id="cmp">cmp</a></h3>
+   <div class="memberName">private static <a href="InstructionComparator.html" class="interfaceRef">InstructionComparator</a> cmp</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="length" id="length">length</a></h3>
+   <div class="memberName">protected short length</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="opcode" id="opcode">opcode</a></h3>
+   <div class="memberName">protected short opcode</div>
+   <div class="memberDescription"></div>
+
+
+
+
+   <h2><a name="constructor_detail" id="constructor_detail">Constructor Detail</a></h2>
+
+   <h3><a name="Instruction()" id="Instruction()">Instruction</a></h3>
+   <div class="memberName">  Instruction()</div>
+   <div class="memberDescription">
+ Empty constructor needed for the Class.newInstance() statement in
+ Instruction.readInstruction(). Not to be used otherwise.</div>
+
+
+   <h3><a name="Instruction(short,short)" id="Instruction(short,short)">Instruction</a></h3>
+   <div class="memberName">public  Instruction(short opcode, short length)</div>
+   <div class="memberDescription"></div>
+
+
+
+
+   <h2><a name="method_detail" id="method_detail">Method Detail</a></h2>
+
+   <h3><a name="accept(org.apache.bcel.generic.Visitor)" id="accept(org.apache.bcel.generic.Visitor)">accept</a></h3>
+   <div class="memberName">public abstract  void accept(<a href="Visitor.html" class="interfaceRef">Visitor</a> v)</div>
+   <div class="memberDescription">
+ Call corresponding visitor method(s). The order is:
+ Call visitor methods of implemented interfaces first, then
+ call methods according to the class hierarchy in descending order,
+ i.e., the most specific visitXXX() call comes last.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">v Visitor object</span> </p>
+</div>
+
+
+   <h3><a name="className(short)" id="className(short)">className</a></h3>
+   <div class="memberName">private static final  String className(short opcode)</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="consumeStack(org.apache.bcel.generic.ConstantPoolGen)" id="consumeStack(org.apache.bcel.generic.ConstantPoolGen)">consumeStack</a></h3>
+   <div class="memberName">public  int consumeStack(<a href="ConstantPoolGen.html" class="classRef">ConstantPoolGen</a> cpg)</div>
+   <div class="memberDescription">
+ This method also gives right results for instructions whose
+ effect on the stack depends on the constant pool entry they
+ reference.<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">Number of words consumed from stack by this instruction,
+ or Constants.UNPREDICTABLE, if this can not be computed statically</span> </p>
+</div>
+
+
+   <h3><a name="copy()" id="copy()">copy</a></h3>
+   <div class="memberName">public  <a href="Instruction.html" class="classRef">Instruction</a> copy()</div>
+   <div class="memberDescription">
+ Use with caution, since `BranchInstruction's have a `target' reference which
+ is not copied correctly (only basic types are). This also applies for 
+ `Select' instructions with their multiple branch targets.
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">(shallow) copy of an instruction</span> </p>
+<p class="tag tag_see"><span class="tagName">See Also:</span> <span class="tagContents"><a href="BranchInstruction.html" class="classRef">BranchInstruction</a></span> </p>
+</div>
+
+
+   <h3><a name="dispose()" id="dispose()">dispose</a></h3>
+   <div class="memberName">  void dispose()</div>
+   <div class="memberDescription"> Some instructions may be reused, so don't do anything by default.</div>
+
+
+   <h3><a name="dump(java.io.DataOutputStream)" id="dump(java.io.DataOutputStream)">dump</a></h3>
+   <div class="memberName">public  void dump(DataOutputStream out)</div>
+   <div class="memberDescription">
+ Dump instruction as byte code to stream out.<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">out Output stream</span> </p>
+</div>
+
+
+   <h3><a name="equals(<unknown>.Object)" id="equals(<unknown>.Object)">equals</a></h3>
+   <div class="memberName">public  boolean equals(Object that)</div>
+   <div class="memberDescription"> Check for equality, delegated to comparator<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">true if that is an Instruction and has the same opcode</span> </p>
+</div>
+
+
+   <h3><a name="getComparator()" id="getComparator()">getComparator</a></h3>
+   <div class="memberName">public static  <a href="InstructionComparator.html" class="interfaceRef">InstructionComparator</a> getComparator()</div>
+   <div class="memberDescription"> Get Comparator object used in the equals() method to determine
+ equality of instructions.
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">currently used comparator for equals()</span> </p>
+</div>
+
+
+   <h3><a name="getLength()" id="getLength()">getLength</a></h3>
+   <div class="memberName">public  int getLength()</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">length (in bytes) of instruction</span> </p>
+</div>
+
+
+   <h3><a name="getName()" id="getName()">getName</a></h3>
+   <div class="memberName">public  String getName()</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">name of instruction, i.e., opcode name</span> </p>
+</div>
+
+
+   <h3><a name="getOpcode()" id="getOpcode()">getOpcode</a></h3>
+   <div class="memberName">public  short getOpcode()</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">this instructions opcode</span> </p>
+</div>
+
+
+   <h3><a name="initFromFile(org.apache.bcel.util.ByteSequence,boolean)" id="initFromFile(org.apache.bcel.util.ByteSequence,boolean)">initFromFile</a></h3>
+   <div class="memberName">protected  void initFromFile(<a href="../util/ByteSequence.html" class="classRef">ByteSequence</a> bytes, boolean wide)</div>
+   <div class="memberDescription">
+ Read needed data (e.g. index) from file.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">bytes byte sequence to read from</span> <span class="tagContents">wide "wide" instruction flag</span> </p>
+</div>
+
+
+   <h3><a name="produceStack(org.apache.bcel.generic.ConstantPoolGen)" id="produceStack(org.apache.bcel.generic.ConstantPoolGen)">produceStack</a></h3>
+   <div class="memberName">public  int produceStack(<a href="ConstantPoolGen.html" class="classRef">ConstantPoolGen</a> cpg)</div>
+   <div class="memberDescription">
+ This method also gives right results for instructions whose
+ effect on the stack depends on the constant pool entry they
+ reference.<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">Number of words produced onto stack by this instruction,
+ or Constants.UNPREDICTABLE, if this can not be computed statically</span> </p>
+</div>
+
+
+   <h3><a name="readInstruction(org.apache.bcel.util.ByteSequence)" id="readInstruction(org.apache.bcel.util.ByteSequence)">readInstruction</a></h3>
+   <div class="memberName">public static final  <a href="Instruction.html" class="classRef">Instruction</a> readInstruction(<a href="../util/ByteSequence.html" class="classRef">ByteSequence</a> bytes)</div>
+   <div class="memberDescription">
+ Read an instruction from (byte code) input stream and return the
+ appropiate object.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">bytes input stream bytes</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">instruction object being read</span> </p>
+</div>
+
+
+   <h3><a name="setComparator(org.apache.bcel.generic.InstructionComparator)" id="setComparator(org.apache.bcel.generic.InstructionComparator)">setComparator</a></h3>
+   <div class="memberName">public static  void setComparator(<a href="InstructionComparator.html" class="interfaceRef">InstructionComparator</a> c)</div>
+   <div class="memberDescription"> Set comparator to be used for equals().</div>
+
+
+   <h3><a name="setOpcode(short)" id="setOpcode(short)">setOpcode</a></h3>
+   <div class="memberName">private  void setOpcode(short opcode)</div>
+   <div class="memberDescription">
+ Needed in readInstruction.</div>
+
+
+   <h3><a name="toString(boolean)" id="toString(boolean)">toString</a></h3>
+   <div class="memberName">public  String toString(boolean verbose)</div>
+   <div class="memberDescription">
+ Long output format:
+
+ &lt;name of opcode&gt; "["&lt;opcode number&gt;"]" 
+ "("&lt;length of instruction&gt;")"
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">verbose long/short format switch</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">mnemonic for instruction</span> </p>
+</div>
+
+
+   <h3><a name="toString()" id="toString()">toString</a></h3>
+   <div class="memberName">public  String toString()</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">mnemonic for instruction in verbose format</span> </p>
+</div>
+
+
+   <h3><a name="toString(org.apache.bcel.classfile.ConstantPool)" id="toString(org.apache.bcel.classfile.ConstantPool)">toString</a></h3>
+   <div class="memberName">public  String toString(<a href="../classfile/ConstantPool.html" class="classRef">ConstantPool</a> cp)</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">mnemonic for instruction with sumbolic references resolved</span> </p>
+</div>
+
+   
+   <div class="navbar">
+    <p class="nav navtop">
+      <span class="over"><a href="../../../../overview-summary.html">Overview</a></span>
+      <span class="package"><a href="package-summary.html">Package</a></span>
+      <span class="class selected">Class</span>
+      <span class="use"><a href="class-use/Instruction.html">Use</a></span>
+      <span class="tree"><a href="package-tree.html">Tree</a></span>
+      <span class="deprecated"><a href="../../../../deprecated-list.html">Deprecated</a></span>
+      <span class="index"><a href="../../../../index-all.html">Index</a></span>
+      <span class="help"><a href="../../../../help-doc.html">Help</a></span>
+    </p>
+    <p class="nav navmid">
+      <span class="prevnext">
+       <span class="prev">Prev Class</span>
+       <span class="next">Next Class</span>
+      </span>
+      <span class="framesel">
+       <span class="frames"><a href="../../../../index.html" target="_top">Frames</a></span>
+       <span class="noframes"><a href="Instruction.html" target="_top">NoFrames</a></span>
+      </span>
+      <span class="allclasses"><a href="../../../../allclasses-noframe.html">All Classes</a></span>
+   </p>
+   <p class="nav navbot">
+      <span class="summary">Summary:
+       <span class="nested">Nested</span>
+       <span class="field"><a href="#field_summary">Field</a></span>
+       <span class="constr"><a href="#constructor_summary">Constr</a></span>
+       <span class="method"><a href="#method_summary">Method</a></span>
+      </span>
+      <span class="detail">Detail:
+       <span class="field"><a href="#field_detail">Field</a></span>
+       <span class="constr"><a href="#constructor_detail">Constr</a></span>
+       <span class="method"><a href="#method_detail">Method</a></span>
+      </span>
+   </p>
+    <div class="navtitle">
+     
+    </div>
+    <p class="clear"><!--empty--></p>
+   </div>
+   <div class="bottom"></div>
+   </body>
+</html>

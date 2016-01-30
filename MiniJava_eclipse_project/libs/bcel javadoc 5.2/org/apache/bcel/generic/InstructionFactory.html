@@ -1,0 +1,636 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>InstructionFactory</title>
+    <meta name="keywords" content="org.apache.bcel.generic.InstructionFactory,InstructionFactory class" />
+    <meta name="generator" content="SinjDoc 0.5" />
+    <link href="../../../../stylesheet.css" rel="stylesheet" type="text/css" />
+    <link rel="Index" href="../../../../index-all.html" />
+    <link rel="Start" href="../../../../overview-summary.html" />
+    <link rel="Up" href="package-summary.html" />
+    <link rel="Help" href="../../../../help-doc.html" />
+  </head>
+  <body class="classPage bigframe">
+   <div class="navbar">
+    <p class="nav navtop">
+      <span class="over"><a href="../../../../overview-summary.html">Overview</a></span>
+      <span class="package"><a href="package-summary.html">Package</a></span>
+      <span class="class selected">Class</span>
+      <span class="use"><a href="class-use/InstructionFactory.html">Use</a></span>
+      <span class="tree"><a href="package-tree.html">Tree</a></span>
+      <span class="deprecated"><a href="../../../../deprecated-list.html">Deprecated</a></span>
+      <span class="index"><a href="../../../../index-all.html">Index</a></span>
+      <span class="help"><a href="../../../../help-doc.html">Help</a></span>
+    </p>
+    <p class="nav navmid">
+      <span class="prevnext">
+       <span class="prev">Prev Class</span>
+       <span class="next">Next Class</span>
+      </span>
+      <span class="framesel">
+       <span class="frames"><a href="../../../../index.html" target="_top">Frames</a></span>
+       <span class="noframes"><a href="InstructionFactory.html" target="_top">NoFrames</a></span>
+      </span>
+      <span class="allclasses"><a href="../../../../allclasses-noframe.html">All Classes</a></span>
+   </p>
+   <p class="nav navbot">
+      <span class="summary">Summary:
+       <span class="nested"><a href="#nested_class_summary">Nested</a></span>
+       <span class="field"><a href="#field_summary">Field</a></span>
+       <span class="constr"><a href="#constructor_summary">Constr</a></span>
+       <span class="method"><a href="#method_summary">Method</a></span>
+      </span>
+      <span class="detail">Detail:
+       <span class="field"><a href="#field_detail">Field</a></span>
+       <span class="constr"><a href="#constructor_detail">Constr</a></span>
+       <span class="method"><a href="#method_detail">Method</a></span>
+      </span>
+   </p>
+    <div class="navtitle">
+     
+    </div>
+    <p class="clear"><!--empty--></p>
+   </div>
+   <p class="packageName">org.apache.bcel.generic</p>
+   <h1>  Class  InstructionFactory</h1>
+<!--
+   <p class="enclosing">
+   Enclosing class/interface: @OUTER@
+   </p>
+-->
+
+
+   <!-- XXX class hierarchy diagram goes here -->
+<!--
+   
+   <p class="implementedInterfaces">
+   All implemented interfaces: @ALL_SUPERINTERFACES@
+   </p>
+   
+   <p class="directSubclasses">
+   Direct known subclasses: @ALL_SUBCLASSES@
+   </p>
+-->
+
+
+   <p class="declaration">public
+     class 
+   <span class="className">InstructionFactory</span>
+   
+   
+      
+      <span class="extends">extends Object</span>
+      
+      
+        <span class="implements">implements <a href="InstructionConstants.html" class="interfaceRef">InstructionConstants</a>, Serializable</span>
+      
+   
+   </p>
+
+   <div class="description">
+    
+ Instances of this class may be used, e.g., to generate typed
+ versions of instructions. Its main purpose is to be used as the
+ byte code generating backend of a compiler. You can subclass it to
+ add your own create methods.
+<p class="tag tag_version"><span class="tagName">Version:</span> <span class="tagContents">$Id: InstructionFactory.java 386056 2006-03-15 11:31:56Z tcurdt $</span> </p>
+<p class="tag tag_author"><span class="tagName">Author:</span> <span class="tagContents"><A HREF="mailto:m.dahm@gmx.de">M. Dahm</A></span> </p>
+<p class="tag tag_see"><span class="tagName">See Also:</span> <span class="tagContents"><a href="../Constants.html" class="interfaceRef">Constants</a></span> </p>
+
+   </div>
+
+
+
+   <table class="nested_class_summary summary">
+     <tr><th colspan="2"><a name="nested_class_summary" id="nested_class_summary">Nested Class Summary</a></th></tr>
+
+     <tr><td>static class</td><td><span class="memberName"><a href="InstructionFactory.MethodObject.html" class="classRef">InstructionFactory.MethodObject</a></span><div class="memberDescription"></div></td></tr>
+
+   </table>
+
+
+
+
+   <table class="field_summary summary">
+     <tr><th colspan="2"><a name="field_summary" id="field_summary">Field Summary</a></th></tr>
+
+     <tr><td>static <a href="InstructionFactory.html" class="classRef">InstructionFactory</a>.<a href="InstructionFactory.MethodObject.html" class="classRef">MethodObject</a>[]</td><td><span class="memberName"><a href="#append_mos" class="fieldRef">append_mos</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>protected <a href="ClassGen.html" class="classRef">ClassGen</a></td><td><span class="memberName"><a href="#cg" class="fieldRef">cg</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>protected <a href="ConstantPoolGen.html" class="classRef">ConstantPoolGen</a></td><td><span class="memberName"><a href="#cp" class="fieldRef">cp</a></span><div class="memberDescription"></div></td></tr>
+
+   </table>
+
+
+
+
+   <table class="constructor_summary summary">
+     <tr><th colspan="2"><a name="constructor_summary" id="constructor_summary">Constructor Summary</a></th></tr>
+
+     <tr><td> </td><td><span class="memberName"><a href="#InstructionFactory(org.apache.bcel.generic.ClassGen,org.apache.bcel.generic.ConstantPoolGen)" class="constructorRef">InstructionFactory</a>(<a href="ClassGen.html" class="classRef">ClassGen</a> cg, <a href="ConstantPoolGen.html" class="classRef">ConstantPoolGen</a> cp)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td> </td><td><span class="memberName"><a href="#InstructionFactory(org.apache.bcel.generic.ClassGen)" class="constructorRef">InstructionFactory</a>(<a href="ClassGen.html" class="classRef">ClassGen</a> cg)</span><div class="memberDescription"> Initialize with ClassGen object</div></td></tr>
+
+
+
+     <tr><td> </td><td><span class="memberName"><a href="#InstructionFactory(org.apache.bcel.generic.ConstantPoolGen)" class="constructorRef">InstructionFactory</a>(<a href="ConstantPoolGen.html" class="classRef">ConstantPoolGen</a> cp)</span><div class="memberDescription"> Initialize just with ConstantPoolGen object</div></td></tr>
+
+   </table>
+
+
+
+
+   <table class="method_summary summary">
+     <tr><th colspan="2"><a name="method_summary" id="method_summary">Method Summary</a></th></tr>
+
+     <tr><td>  <a href="Instruction.html" class="classRef">Instruction</a></td><td><span class="memberName"><a href="#createAppend(org.apache.bcel.generic.Type)" class="methodRef">createAppend</a>(<a href="Type.html" class="classRef">Type</a> type)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static  <a href="ArrayInstruction.html" class="classRef">ArrayInstruction</a></td><td><span class="memberName"><a href="#createArrayLoad(org.apache.bcel.generic.Type)" class="methodRef">createArrayLoad</a>(<a href="Type.html" class="classRef">Type</a> type)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static  <a href="ArrayInstruction.html" class="classRef">ArrayInstruction</a></td><td><span class="memberName"><a href="#createArrayStore(org.apache.bcel.generic.Type)" class="methodRef">createArrayStore</a>(<a href="Type.html" class="classRef">Type</a> type)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static  <a href="ArithmeticInstruction.html" class="classRef">ArithmeticInstruction</a></td><td><span class="memberName"><a href="#createBinaryDoubleOp(char)" class="methodRef">createBinaryDoubleOp</a>(char op)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static  <a href="ArithmeticInstruction.html" class="classRef">ArithmeticInstruction</a></td><td><span class="memberName"><a href="#createBinaryFloatOp(char)" class="methodRef">createBinaryFloatOp</a>(char op)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static  <a href="ArithmeticInstruction.html" class="classRef">ArithmeticInstruction</a></td><td><span class="memberName"><a href="#createBinaryIntOp(char,<unknown>.String)" class="methodRef">createBinaryIntOp</a>(char first, String op)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static  <a href="ArithmeticInstruction.html" class="classRef">ArithmeticInstruction</a></td><td><span class="memberName"><a href="#createBinaryLongOp(char,<unknown>.String)" class="methodRef">createBinaryLongOp</a>(char first, String op)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static  <a href="ArithmeticInstruction.html" class="classRef">ArithmeticInstruction</a></td><td><span class="memberName"><a href="#createBinaryOperation(<unknown>.String,org.apache.bcel.generic.Type)" class="methodRef">createBinaryOperation</a>(String op, <a href="Type.html" class="classRef">Type</a> type)</span><div class="memberDescription">
+ Create binary operation for simple basic types, such as int and float.
+</div></td></tr>
+
+
+
+     <tr><td>static  <a href="BranchInstruction.html" class="classRef">BranchInstruction</a></td><td><span class="memberName"><a href="#createBranchInstruction(short,org.apache.bcel.generic.InstructionHandle)" class="methodRef">createBranchInstruction</a>(short opcode, <a href="InstructionHandle.html" class="classRef">InstructionHandle</a> target)</span><div class="memberDescription"> Create branch instruction by given opcode, except LOOKUPSWITCH and TABLESWITCH.
+ </div></td></tr>
+
+
+
+     <tr><td>  <a href="Instruction.html" class="classRef">Instruction</a></td><td><span class="memberName"><a href="#createCast(org.apache.bcel.generic.Type,org.apache.bcel.generic.Type)" class="methodRef">createCast</a>(<a href="Type.html" class="classRef">Type</a> src_type, <a href="Type.html" class="classRef">Type</a> dest_type)</span><div class="memberDescription"> Create conversion operation for two stack operands, this may be an I2C, instruction, e.g.,
+ if the operands are basic types and CHECKCAST if they are reference types.</div></td></tr>
+
+
+
+     <tr><td>  <a href="CHECKCAST.html" class="classRef">CHECKCAST</a></td><td><span class="memberName"><a href="#createCheckCast(org.apache.bcel.generic.ReferenceType)" class="methodRef">createCheckCast</a>(<a href="ReferenceType.html" class="classRef">ReferenceType</a> t)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  <a href="Instruction.html" class="classRef">Instruction</a></td><td><span class="memberName"><a href="#createConstant(<unknown>.Object)" class="methodRef">createConstant</a>(Object value)</span><div class="memberDescription"> Uses PUSH to push a constant value onto the stack.</div></td></tr>
+
+
+
+     <tr><td>static  <a href="StackInstruction.html" class="classRef">StackInstruction</a></td><td><span class="memberName"><a href="#createDup(int)" class="methodRef">createDup</a>(int size)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static  <a href="StackInstruction.html" class="classRef">StackInstruction</a></td><td><span class="memberName"><a href="#createDup_1(int)" class="methodRef">createDup_1</a>(int size)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static  <a href="StackInstruction.html" class="classRef">StackInstruction</a></td><td><span class="memberName"><a href="#createDup_2(int)" class="methodRef">createDup_2</a>(int size)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  <a href="FieldInstruction.html" class="classRef">FieldInstruction</a></td><td><span class="memberName"><a href="#createFieldAccess(<unknown>.String,<unknown>.String,org.apache.bcel.generic.Type,short)" class="methodRef">createFieldAccess</a>(String class_name, String name, <a href="Type.html" class="classRef">Type</a> type, short kind)</span><div class="memberDescription"> Create a field instruction.
+</div></td></tr>
+
+
+
+     <tr><td>  <a href="GETFIELD.html" class="classRef">GETFIELD</a></td><td><span class="memberName"><a href="#createGetField(<unknown>.String,<unknown>.String,org.apache.bcel.generic.Type)" class="methodRef">createGetField</a>(String class_name, String name, <a href="Type.html" class="classRef">Type</a> t)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  <a href="GETSTATIC.html" class="classRef">GETSTATIC</a></td><td><span class="memberName"><a href="#createGetStatic(<unknown>.String,<unknown>.String,org.apache.bcel.generic.Type)" class="methodRef">createGetStatic</a>(String class_name, String name, <a href="Type.html" class="classRef">Type</a> t)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  <a href="INSTANCEOF.html" class="classRef">INSTANCEOF</a></td><td><span class="memberName"><a href="#createInstanceOf(org.apache.bcel.generic.ReferenceType)" class="methodRef">createInstanceOf</a>(<a href="ReferenceType.html" class="classRef">ReferenceType</a> t)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  <a href="InvokeInstruction.html" class="classRef">InvokeInstruction</a></td><td><span class="memberName"><a href="#createInvoke(<unknown>.String,<unknown>.String,org.apache.bcel.generic.Type,org.apache.bcel.generic.Type[],short)" class="methodRef">createInvoke</a>(String class_name, String name, <a href="Type.html" class="classRef">Type</a> ret_type, <a href="Type.html" class="classRef">Type</a>[] arg_types, short kind)</span><div class="memberDescription"> Create an invoke instruction.
+</div></td></tr>
+
+
+
+     <tr><td>  <a href="InvokeInstruction.html" class="classRef">InvokeInstruction</a></td><td><span class="memberName"><a href="#createInvoke(org.apache.bcel.generic.InstructionFactory.MethodObject,short)" class="methodRef">createInvoke</a>(<a href="InstructionFactory.html" class="classRef">InstructionFactory</a>.<a href="InstructionFactory.MethodObject.html" class="classRef">MethodObject</a> m, short kind)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static  <a href="LocalVariableInstruction.html" class="classRef">LocalVariableInstruction</a></td><td><span class="memberName"><a href="#createLoad(org.apache.bcel.generic.Type,int)" class="methodRef">createLoad</a>(<a href="Type.html" class="classRef">Type</a> type, int index)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  <a href="NEW.html" class="classRef">NEW</a></td><td><span class="memberName"><a href="#createNew(org.apache.bcel.generic.ObjectType)" class="methodRef">createNew</a>(<a href="ObjectType.html" class="classRef">ObjectType</a> t)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  <a href="NEW.html" class="classRef">NEW</a></td><td><span class="memberName"><a href="#createNew(<unknown>.String)" class="methodRef">createNew</a>(String s)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  <a href="Instruction.html" class="classRef">Instruction</a></td><td><span class="memberName"><a href="#createNewArray(org.apache.bcel.generic.Type,short)" class="methodRef">createNewArray</a>(<a href="Type.html" class="classRef">Type</a> t, short dim)</span><div class="memberDescription"> Create new array of given size and type.</div></td></tr>
+
+
+
+     <tr><td>static  <a href="Instruction.html" class="classRef">Instruction</a></td><td><span class="memberName"><a href="#createNull(org.apache.bcel.generic.Type)" class="methodRef">createNull</a>(<a href="Type.html" class="classRef">Type</a> type)</span><div class="memberDescription"> Create "null" value for reference types, 0 for basic types like int</div></td></tr>
+
+
+
+     <tr><td>static  <a href="StackInstruction.html" class="classRef">StackInstruction</a></td><td><span class="memberName"><a href="#createPop(int)" class="methodRef">createPop</a>(int size)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  <a href="InstructionList.html" class="classRef">InstructionList</a></td><td><span class="memberName"><a href="#createPrintln(<unknown>.String)" class="methodRef">createPrintln</a>(String s)</span><div class="memberDescription"> Create a call to the most popular System.out.println() method.
+</div></td></tr>
+
+
+
+     <tr><td>  <a href="PUTFIELD.html" class="classRef">PUTFIELD</a></td><td><span class="memberName"><a href="#createPutField(<unknown>.String,<unknown>.String,org.apache.bcel.generic.Type)" class="methodRef">createPutField</a>(String class_name, String name, <a href="Type.html" class="classRef">Type</a> t)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  <a href="PUTSTATIC.html" class="classRef">PUTSTATIC</a></td><td><span class="memberName"><a href="#createPutStatic(<unknown>.String,<unknown>.String,org.apache.bcel.generic.Type)" class="methodRef">createPutStatic</a>(String class_name, String name, <a href="Type.html" class="classRef">Type</a> t)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static  <a href="ReturnInstruction.html" class="classRef">ReturnInstruction</a></td><td><span class="memberName"><a href="#createReturn(org.apache.bcel.generic.Type)" class="methodRef">createReturn</a>(<a href="Type.html" class="classRef">Type</a> type)</span><div class="memberDescription"> Create typed return</div></td></tr>
+
+
+
+     <tr><td>static  <a href="LocalVariableInstruction.html" class="classRef">LocalVariableInstruction</a></td><td><span class="memberName"><a href="#createStore(org.apache.bcel.generic.Type,int)" class="methodRef">createStore</a>(<a href="Type.html" class="classRef">Type</a> type, int index)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static  <a href="Instruction.html" class="classRef">Instruction</a></td><td><span class="memberName"><a href="#createThis()" class="methodRef">createThis</a>()</span><div class="memberDescription"> Create reference to `this'</div></td></tr>
+
+
+
+     <tr><td>  <a href="ClassGen.html" class="classRef">ClassGen</a></td><td><span class="memberName"><a href="#getClassGen()" class="methodRef">getClassGen</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  <a href="ConstantPoolGen.html" class="classRef">ConstantPoolGen</a></td><td><span class="memberName"><a href="#getConstantPool()" class="methodRef">getConstantPool</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static  boolean</td><td><span class="memberName"><a href="#isString(org.apache.bcel.generic.Type)" class="methodRef">isString</a>(<a href="Type.html" class="classRef">Type</a> type)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#setClassGen(org.apache.bcel.generic.ClassGen)" class="methodRef">setClassGen</a>(<a href="ClassGen.html" class="classRef">ClassGen</a> c)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#setConstantPool(org.apache.bcel.generic.ConstantPoolGen)" class="methodRef">setConstantPool</a>(<a href="ConstantPoolGen.html" class="classRef">ConstantPoolGen</a> c)</span><div class="memberDescription"></div></td></tr>
+
+   </table>
+
+
+
+<!--
+   <p class="inherited">
+    <span class="header">Methods inherited from class java.util.<a
+   href="AbstractCollection.html">AbstractCollection</a></span>
+    <a href="#addAll">addAll</a>
+    <a href="#contains">contains</a>
+   </p>
+   <p class="inherited">
+    <span class="header">Methods inherited from class java.lang.<a
+   href="Object.html">Object</a></span>
+    <a href="#addAll">clone</a>
+    <a href="#contains">finalize</a>
+   </p>
+   <p class="inherited">
+    <span class="header">Methods inherited from interface java.util.<a
+   href="List.html">List</a></span>
+    <a href="#addAll">addAll</a>
+    <a href="#contains">contains</a>
+   </p>
+-->
+
+
+
+   <h2><a name="field_detail" id="field_detail">Field Detail</a></h2>
+
+   <h3><a name="append_mos" id="append_mos">append_mos</a></h3>
+   <div class="memberName">private static <a href="InstructionFactory.html" class="classRef">InstructionFactory</a>.<a href="InstructionFactory.MethodObject.html" class="classRef">MethodObject</a>[] append_mos</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="cg" id="cg">cg</a></h3>
+   <div class="memberName">protected <a href="ClassGen.html" class="classRef">ClassGen</a> cg</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="cp" id="cp">cp</a></h3>
+   <div class="memberName">protected <a href="ConstantPoolGen.html" class="classRef">ConstantPoolGen</a> cp</div>
+   <div class="memberDescription"></div>
+
+
+
+
+   <h2><a name="constructor_detail" id="constructor_detail">Constructor Detail</a></h2>
+
+   <h3><a name="InstructionFactory(org.apache.bcel.generic.ClassGen,org.apache.bcel.generic.ConstantPoolGen)" id="InstructionFactory(org.apache.bcel.generic.ClassGen,org.apache.bcel.generic.ConstantPoolGen)">InstructionFactory</a></h3>
+   <div class="memberName">public  InstructionFactory(<a href="ClassGen.html" class="classRef">ClassGen</a> cg, <a href="ConstantPoolGen.html" class="classRef">ConstantPoolGen</a> cp)</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="InstructionFactory(org.apache.bcel.generic.ClassGen)" id="InstructionFactory(org.apache.bcel.generic.ClassGen)">InstructionFactory</a></h3>
+   <div class="memberName">public  InstructionFactory(<a href="ClassGen.html" class="classRef">ClassGen</a> cg)</div>
+   <div class="memberDescription"> Initialize with ClassGen object</div>
+
+
+   <h3><a name="InstructionFactory(org.apache.bcel.generic.ConstantPoolGen)" id="InstructionFactory(org.apache.bcel.generic.ConstantPoolGen)">InstructionFactory</a></h3>
+   <div class="memberName">public  InstructionFactory(<a href="ConstantPoolGen.html" class="classRef">ConstantPoolGen</a> cp)</div>
+   <div class="memberDescription"> Initialize just with ConstantPoolGen object</div>
+
+
+
+
+   <h2><a name="method_detail" id="method_detail">Method Detail</a></h2>
+
+   <h3><a name="createAppend(org.apache.bcel.generic.Type)" id="createAppend(org.apache.bcel.generic.Type)">createAppend</a></h3>
+   <div class="memberName">public  <a href="Instruction.html" class="classRef">Instruction</a> createAppend(<a href="Type.html" class="classRef">Type</a> type)</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="createArrayLoad(org.apache.bcel.generic.Type)" id="createArrayLoad(org.apache.bcel.generic.Type)">createArrayLoad</a></h3>
+   <div class="memberName">public static  <a href="ArrayInstruction.html" class="classRef">ArrayInstruction</a> createArrayLoad(<a href="Type.html" class="classRef">Type</a> type)</div>
+   <div class="memberDescription"><p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">type type of elements of array, i.e., array.getElementType()</span> </p>
+</div>
+
+
+   <h3><a name="createArrayStore(org.apache.bcel.generic.Type)" id="createArrayStore(org.apache.bcel.generic.Type)">createArrayStore</a></h3>
+   <div class="memberName">public static  <a href="ArrayInstruction.html" class="classRef">ArrayInstruction</a> createArrayStore(<a href="Type.html" class="classRef">Type</a> type)</div>
+   <div class="memberDescription"><p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">type type of elements of array, i.e., array.getElementType()</span> </p>
+</div>
+
+
+   <h3><a name="createBinaryDoubleOp(char)" id="createBinaryDoubleOp(char)">createBinaryDoubleOp</a></h3>
+   <div class="memberName">private static final  <a href="ArithmeticInstruction.html" class="classRef">ArithmeticInstruction</a> createBinaryDoubleOp(char op)</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="createBinaryFloatOp(char)" id="createBinaryFloatOp(char)">createBinaryFloatOp</a></h3>
+   <div class="memberName">private static final  <a href="ArithmeticInstruction.html" class="classRef">ArithmeticInstruction</a> createBinaryFloatOp(char op)</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="createBinaryIntOp(char,<unknown>.String)" id="createBinaryIntOp(char,<unknown>.String)">createBinaryIntOp</a></h3>
+   <div class="memberName">private static final  <a href="ArithmeticInstruction.html" class="classRef">ArithmeticInstruction</a> createBinaryIntOp(char first, String op)</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="createBinaryLongOp(char,<unknown>.String)" id="createBinaryLongOp(char,<unknown>.String)">createBinaryLongOp</a></h3>
+   <div class="memberName">private static final  <a href="ArithmeticInstruction.html" class="classRef">ArithmeticInstruction</a> createBinaryLongOp(char first, String op)</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="createBinaryOperation(<unknown>.String,org.apache.bcel.generic.Type)" id="createBinaryOperation(<unknown>.String,org.apache.bcel.generic.Type)">createBinaryOperation</a></h3>
+   <div class="memberName">public static  <a href="ArithmeticInstruction.html" class="classRef">ArithmeticInstruction</a> createBinaryOperation(String op, <a href="Type.html" class="classRef">Type</a> type)</div>
+   <div class="memberDescription">
+ Create binary operation for simple basic types, such as int and float.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">op operation, such as "+", "*", "<<", etc.</span> </p>
+</div>
+
+
+   <h3><a name="createBranchInstruction(short,org.apache.bcel.generic.InstructionHandle)" id="createBranchInstruction(short,org.apache.bcel.generic.InstructionHandle)">createBranchInstruction</a></h3>
+   <div class="memberName">public static  <a href="BranchInstruction.html" class="classRef">BranchInstruction</a> createBranchInstruction(short opcode, <a href="InstructionHandle.html" class="classRef">InstructionHandle</a> target)</div>
+   <div class="memberDescription"> Create branch instruction by given opcode, except LOOKUPSWITCH and TABLESWITCH.
+ For those you should use the SWITCH compound instruction.</div>
+
+
+   <h3><a name="createCast(org.apache.bcel.generic.Type,org.apache.bcel.generic.Type)" id="createCast(org.apache.bcel.generic.Type,org.apache.bcel.generic.Type)">createCast</a></h3>
+   <div class="memberName">public  <a href="Instruction.html" class="classRef">Instruction</a> createCast(<a href="Type.html" class="classRef">Type</a> src_type, <a href="Type.html" class="classRef">Type</a> dest_type)</div>
+   <div class="memberDescription"> Create conversion operation for two stack operands, this may be an I2C, instruction, e.g.,
+ if the operands are basic types and CHECKCAST if they are reference types.</div>
+
+
+   <h3><a name="createCheckCast(org.apache.bcel.generic.ReferenceType)" id="createCheckCast(org.apache.bcel.generic.ReferenceType)">createCheckCast</a></h3>
+   <div class="memberName">public  <a href="CHECKCAST.html" class="classRef">CHECKCAST</a> createCheckCast(<a href="ReferenceType.html" class="classRef">ReferenceType</a> t)</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="createConstant(<unknown>.Object)" id="createConstant(<unknown>.Object)">createConstant</a></h3>
+   <div class="memberName">public  <a href="Instruction.html" class="classRef">Instruction</a> createConstant(Object value)</div>
+   <div class="memberDescription"> Uses PUSH to push a constant value onto the stack.<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">value must be of type Number, Boolean, Character or String</span> </p>
+</div>
+
+
+   <h3><a name="createDup(int)" id="createDup(int)">createDup</a></h3>
+   <div class="memberName">public static  <a href="StackInstruction.html" class="classRef">StackInstruction</a> createDup(int size)</div>
+   <div class="memberDescription"><p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">size size of operand, either 1 (int, e.g.) or 2 (double)</span> </p>
+</div>
+
+
+   <h3><a name="createDup_1(int)" id="createDup_1(int)">createDup_1</a></h3>
+   <div class="memberName">public static  <a href="StackInstruction.html" class="classRef">StackInstruction</a> createDup_1(int size)</div>
+   <div class="memberDescription"><p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">size size of operand, either 1 (int, e.g.) or 2 (double)</span> </p>
+</div>
+
+
+   <h3><a name="createDup_2(int)" id="createDup_2(int)">createDup_2</a></h3>
+   <div class="memberName">public static  <a href="StackInstruction.html" class="classRef">StackInstruction</a> createDup_2(int size)</div>
+   <div class="memberDescription"><p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">size size of operand, either 1 (int, e.g.) or 2 (double)</span> </p>
+</div>
+
+
+   <h3><a name="createFieldAccess(<unknown>.String,<unknown>.String,org.apache.bcel.generic.Type,short)" id="createFieldAccess(<unknown>.String,<unknown>.String,org.apache.bcel.generic.Type,short)">createFieldAccess</a></h3>
+   <div class="memberName">public  <a href="FieldInstruction.html" class="classRef">FieldInstruction</a> createFieldAccess(String class_name, String name, <a href="Type.html" class="classRef">Type</a> type, short kind)</div>
+   <div class="memberDescription"> Create a field instruction.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">class_name name of the accessed class</span> <span class="tagContents">name name of the referenced field</span> <span class="tagContents">type  type of field</span> <span class="tagContents">kind how to access, i.e., GETFIELD, PUTFIELD, GETSTATIC, PUTSTATIC</span> </p>
+<p class="tag tag_see"><span class="tagName">See Also:</span> <span class="tagContents"><a href="../Constants.html" class="interfaceRef">Constants</a></span> </p>
+</div>
+
+
+   <h3><a name="createGetField(<unknown>.String,<unknown>.String,org.apache.bcel.generic.Type)" id="createGetField(<unknown>.String,<unknown>.String,org.apache.bcel.generic.Type)">createGetField</a></h3>
+   <div class="memberName">public  <a href="GETFIELD.html" class="classRef">GETFIELD</a> createGetField(String class_name, String name, <a href="Type.html" class="classRef">Type</a> t)</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="createGetStatic(<unknown>.String,<unknown>.String,org.apache.bcel.generic.Type)" id="createGetStatic(<unknown>.String,<unknown>.String,org.apache.bcel.generic.Type)">createGetStatic</a></h3>
+   <div class="memberName">public  <a href="GETSTATIC.html" class="classRef">GETSTATIC</a> createGetStatic(String class_name, String name, <a href="Type.html" class="classRef">Type</a> t)</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="createInstanceOf(org.apache.bcel.generic.ReferenceType)" id="createInstanceOf(org.apache.bcel.generic.ReferenceType)">createInstanceOf</a></h3>
+   <div class="memberName">public  <a href="INSTANCEOF.html" class="classRef">INSTANCEOF</a> createInstanceOf(<a href="ReferenceType.html" class="classRef">ReferenceType</a> t)</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="createInvoke(<unknown>.String,<unknown>.String,org.apache.bcel.generic.Type,org.apache.bcel.generic.Type[],short)" id="createInvoke(<unknown>.String,<unknown>.String,org.apache.bcel.generic.Type,org.apache.bcel.generic.Type[],short)">createInvoke</a></h3>
+   <div class="memberName">public  <a href="InvokeInstruction.html" class="classRef">InvokeInstruction</a> createInvoke(String class_name, String name, <a href="Type.html" class="classRef">Type</a> ret_type, <a href="Type.html" class="classRef">Type</a>[] arg_types, short kind)</div>
+   <div class="memberDescription"> Create an invoke instruction.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">class_name name of the called class</span> <span class="tagContents">name name of the called method</span> <span class="tagContents">ret_type return type of method</span> <span class="tagContents">arg_types argument types of method</span> <span class="tagContents">kind how to invoke, i.e., INVOKEINTERFACE, INVOKESTATIC, INVOKEVIRTUAL,
+ or INVOKESPECIAL</span> </p>
+<p class="tag tag_see"><span class="tagName">See Also:</span> <span class="tagContents"><a href="../Constants.html" class="interfaceRef">Constants</a></span> </p>
+</div>
+
+
+   <h3><a name="createInvoke(org.apache.bcel.generic.InstructionFactory.MethodObject,short)" id="createInvoke(org.apache.bcel.generic.InstructionFactory.MethodObject,short)">createInvoke</a></h3>
+   <div class="memberName">private  <a href="InvokeInstruction.html" class="classRef">InvokeInstruction</a> createInvoke(<a href="InstructionFactory.html" class="classRef">InstructionFactory</a>.<a href="InstructionFactory.MethodObject.html" class="classRef">MethodObject</a> m, short kind)</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="createLoad(org.apache.bcel.generic.Type,int)" id="createLoad(org.apache.bcel.generic.Type,int)">createLoad</a></h3>
+   <div class="memberName">public static  <a href="LocalVariableInstruction.html" class="classRef">LocalVariableInstruction</a> createLoad(<a href="Type.html" class="classRef">Type</a> type, int index)</div>
+   <div class="memberDescription"><p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">index index of local variable</span> </p>
+</div>
+
+
+   <h3><a name="createNew(org.apache.bcel.generic.ObjectType)" id="createNew(org.apache.bcel.generic.ObjectType)">createNew</a></h3>
+   <div class="memberName">public  <a href="NEW.html" class="classRef">NEW</a> createNew(<a href="ObjectType.html" class="classRef">ObjectType</a> t)</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="createNew(<unknown>.String)" id="createNew(<unknown>.String)">createNew</a></h3>
+   <div class="memberName">public  <a href="NEW.html" class="classRef">NEW</a> createNew(String s)</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="createNewArray(org.apache.bcel.generic.Type,short)" id="createNewArray(org.apache.bcel.generic.Type,short)">createNewArray</a></h3>
+   <div class="memberName">public  <a href="Instruction.html" class="classRef">Instruction</a> createNewArray(<a href="Type.html" class="classRef">Type</a> t, short dim)</div>
+   <div class="memberDescription"> Create new array of given size and type.<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">an instruction that creates the corresponding array at runtime, i.e. is an AllocationInstruction</span> </p>
+</div>
+
+
+   <h3><a name="createNull(org.apache.bcel.generic.Type)" id="createNull(org.apache.bcel.generic.Type)">createNull</a></h3>
+   <div class="memberName">public static  <a href="Instruction.html" class="classRef">Instruction</a> createNull(<a href="Type.html" class="classRef">Type</a> type)</div>
+   <div class="memberDescription"> Create "null" value for reference types, 0 for basic types like int</div>
+
+
+   <h3><a name="createPop(int)" id="createPop(int)">createPop</a></h3>
+   <div class="memberName">public static  <a href="StackInstruction.html" class="classRef">StackInstruction</a> createPop(int size)</div>
+   <div class="memberDescription"><p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">size size of operand, either 1 (int, e.g.) or 2 (double)</span> </p>
+</div>
+
+
+   <h3><a name="createPrintln(<unknown>.String)" id="createPrintln(<unknown>.String)">createPrintln</a></h3>
+   <div class="memberName">public  <a href="InstructionList.html" class="classRef">InstructionList</a> createPrintln(String s)</div>
+   <div class="memberDescription"> Create a call to the most popular System.out.println() method.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">s the string to print</span> </p>
+</div>
+
+
+   <h3><a name="createPutField(<unknown>.String,<unknown>.String,org.apache.bcel.generic.Type)" id="createPutField(<unknown>.String,<unknown>.String,org.apache.bcel.generic.Type)">createPutField</a></h3>
+   <div class="memberName">public  <a href="PUTFIELD.html" class="classRef">PUTFIELD</a> createPutField(String class_name, String name, <a href="Type.html" class="classRef">Type</a> t)</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="createPutStatic(<unknown>.String,<unknown>.String,org.apache.bcel.generic.Type)" id="createPutStatic(<unknown>.String,<unknown>.String,org.apache.bcel.generic.Type)">createPutStatic</a></h3>
+   <div class="memberName">public  <a href="PUTSTATIC.html" class="classRef">PUTSTATIC</a> createPutStatic(String class_name, String name, <a href="Type.html" class="classRef">Type</a> t)</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="createReturn(org.apache.bcel.generic.Type)" id="createReturn(org.apache.bcel.generic.Type)">createReturn</a></h3>
+   <div class="memberName">public static  <a href="ReturnInstruction.html" class="classRef">ReturnInstruction</a> createReturn(<a href="Type.html" class="classRef">Type</a> type)</div>
+   <div class="memberDescription"> Create typed return</div>
+
+
+   <h3><a name="createStore(org.apache.bcel.generic.Type,int)" id="createStore(org.apache.bcel.generic.Type,int)">createStore</a></h3>
+   <div class="memberName">public static  <a href="LocalVariableInstruction.html" class="classRef">LocalVariableInstruction</a> createStore(<a href="Type.html" class="classRef">Type</a> type, int index)</div>
+   <div class="memberDescription"><p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">index index of local variable</span> </p>
+</div>
+
+
+   <h3><a name="createThis()" id="createThis()">createThis</a></h3>
+   <div class="memberName">public static  <a href="Instruction.html" class="classRef">Instruction</a> createThis()</div>
+   <div class="memberDescription"> Create reference to `this'</div>
+
+
+   <h3><a name="getClassGen()" id="getClassGen()">getClassGen</a></h3>
+   <div class="memberName">public  <a href="ClassGen.html" class="classRef">ClassGen</a> getClassGen()</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="getConstantPool()" id="getConstantPool()">getConstantPool</a></h3>
+   <div class="memberName">public  <a href="ConstantPoolGen.html" class="classRef">ConstantPoolGen</a> getConstantPool()</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="isString(org.apache.bcel.generic.Type)" id="isString(org.apache.bcel.generic.Type)">isString</a></h3>
+   <div class="memberName">private static final  boolean isString(<a href="Type.html" class="classRef">Type</a> type)</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="setClassGen(org.apache.bcel.generic.ClassGen)" id="setClassGen(org.apache.bcel.generic.ClassGen)">setClassGen</a></h3>
+   <div class="memberName">public  void setClassGen(<a href="ClassGen.html" class="classRef">ClassGen</a> c)</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="setConstantPool(org.apache.bcel.generic.ConstantPoolGen)" id="setConstantPool(org.apache.bcel.generic.ConstantPoolGen)">setConstantPool</a></h3>
+   <div class="memberName">public  void setConstantPool(<a href="ConstantPoolGen.html" class="classRef">ConstantPoolGen</a> c)</div>
+   <div class="memberDescription"></div>
+
+   
+   <div class="navbar">
+    <p class="nav navtop">
+      <span class="over"><a href="../../../../overview-summary.html">Overview</a></span>
+      <span class="package"><a href="package-summary.html">Package</a></span>
+      <span class="class selected">Class</span>
+      <span class="use"><a href="class-use/InstructionFactory.html">Use</a></span>
+      <span class="tree"><a href="package-tree.html">Tree</a></span>
+      <span class="deprecated"><a href="../../../../deprecated-list.html">Deprecated</a></span>
+      <span class="index"><a href="../../../../index-all.html">Index</a></span>
+      <span class="help"><a href="../../../../help-doc.html">Help</a></span>
+    </p>
+    <p class="nav navmid">
+      <span class="prevnext">
+       <span class="prev">Prev Class</span>
+       <span class="next">Next Class</span>
+      </span>
+      <span class="framesel">
+       <span class="frames"><a href="../../../../index.html" target="_top">Frames</a></span>
+       <span class="noframes"><a href="InstructionFactory.html" target="_top">NoFrames</a></span>
+      </span>
+      <span class="allclasses"><a href="../../../../allclasses-noframe.html">All Classes</a></span>
+   </p>
+   <p class="nav navbot">
+      <span class="summary">Summary:
+       <span class="nested"><a href="#nested_class_summary">Nested</a></span>
+       <span class="field"><a href="#field_summary">Field</a></span>
+       <span class="constr"><a href="#constructor_summary">Constr</a></span>
+       <span class="method"><a href="#method_summary">Method</a></span>
+      </span>
+      <span class="detail">Detail:
+       <span class="field"><a href="#field_detail">Field</a></span>
+       <span class="constr"><a href="#constructor_detail">Constr</a></span>
+       <span class="method"><a href="#method_detail">Method</a></span>
+      </span>
+   </p>
+    <div class="navtitle">
+     
+    </div>
+    <p class="clear"><!--empty--></p>
+   </div>
+   <div class="bottom"></div>
+   </body>
+</html>

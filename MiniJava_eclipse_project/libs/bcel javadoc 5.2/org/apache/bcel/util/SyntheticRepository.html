@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>SyntheticRepository</title>
+    <meta name="keywords" content="org.apache.bcel.util.SyntheticRepository,SyntheticRepository class" />
+    <meta name="generator" content="SinjDoc 0.5" />
+    <link href="../../../../stylesheet.css" rel="stylesheet" type="text/css" />
+    <link rel="Index" href="../../../../index-all.html" />
+    <link rel="Start" href="../../../../overview-summary.html" />
+    <link rel="Up" href="package-summary.html" />
+    <link rel="Help" href="../../../../help-doc.html" />
+  </head>
+  <body class="classPage bigframe">
+   <div class="navbar">
+    <p class="nav navtop">
+      <span class="over"><a href="../../../../overview-summary.html">Overview</a></span>
+      <span class="package"><a href="package-summary.html">Package</a></span>
+      <span class="class selected">Class</span>
+      <span class="use"><a href="class-use/SyntheticRepository.html">Use</a></span>
+      <span class="tree"><a href="package-tree.html">Tree</a></span>
+      <span class="deprecated"><a href="../../../../deprecated-list.html">Deprecated</a></span>
+      <span class="index"><a href="../../../../index-all.html">Index</a></span>
+      <span class="help"><a href="../../../../help-doc.html">Help</a></span>
+    </p>
+    <p class="nav navmid">
+      <span class="prevnext">
+       <span class="prev">Prev Class</span>
+       <span class="next">Next Class</span>
+      </span>
+      <span class="framesel">
+       <span class="frames"><a href="../../../../index.html" target="_top">Frames</a></span>
+       <span class="noframes"><a href="SyntheticRepository.html" target="_top">NoFrames</a></span>
+      </span>
+      <span class="allclasses"><a href="../../../../allclasses-noframe.html">All Classes</a></span>
+   </p>
+   <p class="nav navbot">
+      <span class="summary">Summary:
+       <span class="nested">Nested</span>
+       <span class="field"><a href="#field_summary">Field</a></span>
+       <span class="constr"><a href="#constructor_summary">Constr</a></span>
+       <span class="method"><a href="#method_summary">Method</a></span>
+      </span>
+      <span class="detail">Detail:
+       <span class="field"><a href="#field_detail">Field</a></span>
+       <span class="constr"><a href="#constructor_detail">Constr</a></span>
+       <span class="method"><a href="#method_detail">Method</a></span>
+      </span>
+   </p>
+    <div class="navtitle">
+     
+    </div>
+    <p class="clear"><!--empty--></p>
+   </div>
+   <p class="packageName">org.apache.bcel.util</p>
+   <h1>  Class  SyntheticRepository</h1>
+<!--
+   <p class="enclosing">
+   Enclosing class/interface: @OUTER@
+   </p>
+-->
+
+
+   <!-- XXX class hierarchy diagram goes here -->
+<!--
+   
+   <p class="implementedInterfaces">
+   All implemented interfaces: @ALL_SUPERINTERFACES@
+   </p>
+   
+   <p class="directSubclasses">
+   Direct known subclasses: @ALL_SUBCLASSES@
+   </p>
+-->
+
+
+   <p class="declaration">public
+     class 
+   <span class="className">SyntheticRepository</span>
+   
+   
+      
+      <span class="extends">extends Object</span>
+      
+      
+        <span class="implements">implements <a href="Repository.html" class="interfaceRef">Repository</a></span>
+      
+   
+   </p>
+
+   <div class="description">
+   
+ This repository is used in situations where a Class is created
+ outside the realm of a ClassLoader. Classes are loaded from
+ the file systems using the paths specified in the given
+ class path. By default, this is the value returned by
+ ClassPath.getClassPath().
+ <br>
+ It is designed to be used as a singleton, however it
+ can also be used with custom classpaths.
+
+ /**
+ Abstract definition of a class repository. Instances may be used
+ to load classes from different sources and may be used in the
+ Repository.setRepository method.
+<p class="tag tag_version"><span class="tagName">Version:</span> <span class="tagContents">$Id: SyntheticRepository.java 386056 2006-03-15 11:31:56Z tcurdt $</span> </p>
+<p class="tag tag_author"><span class="tagName">Author:</span> <span class="tagContents"><A HREF="mailto:m.dahm@gmx.de">M. Dahm</A></span> <span class="tagContents">David Dixon-Peugh</span> </p>
+<p class="tag tag_see"><span class="tagName">See Also:</span> <span class="tagContents"><code><a href="../Repository.html">
+</a></code></code></span> </p>
+
+   </div>
+
+
+
+
+   <table class="field_summary summary">
+     <tr><th colspan="2"><a name="field_summary" id="field_summary">Field Summary</a></th></tr>
+
+     <tr><td>static String</td><td><span class="memberName"><a href="#DEFAULT_PATH" class="fieldRef">DEFAULT_PATH</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static Map</td><td><span class="memberName"><a href="#_instances" class="fieldRef">_instances</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td> Map</td><td><span class="memberName"><a href="#_loadedClasses" class="fieldRef">_loadedClasses</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td> <a href="ClassPath.html" class="classRef">ClassPath</a></td><td><span class="memberName"><a href="#_path" class="fieldRef">_path</a></span><div class="memberDescription"></div></td></tr>
+
+   </table>
+
+
+
+
+   <table class="constructor_summary summary">
+     <tr><th colspan="2"><a name="constructor_summary" id="constructor_summary">Constructor Summary</a></th></tr>
+
+     <tr><td> </td><td><span class="memberName"><a href="#SyntheticRepository(org.apache.bcel.util.ClassPath)" class="constructorRef">SyntheticRepository</a>(<a href="ClassPath.html" class="classRef">ClassPath</a> path)</span><div class="memberDescription"></div></td></tr>
+
+   </table>
+
+
+
+
+   <table class="method_summary summary">
+     <tr><th colspan="2"><a name="method_summary" id="method_summary">Method Summary</a></th></tr>
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#clear()" class="methodRef">clear</a>()</span><div class="memberDescription"> Clear all entries from cache.</div></td></tr>
+
+
+
+     <tr><td>  <a href="../classfile/JavaClass.html" class="classRef">JavaClass</a></td><td><span class="memberName"><a href="#findClass(<unknown>.String)" class="methodRef">findClass</a>(String className)</span><div class="memberDescription">
+ Find an already defined (cached) JavaClass object by name.</div></td></tr>
+
+
+
+     <tr><td>  <a href="ClassPath.html" class="classRef">ClassPath</a></td><td><span class="memberName"><a href="#getClassPath()" class="methodRef">getClassPath</a>()</span><div class="memberDescription"> ClassPath associated with the Repository.</div></td></tr>
+
+
+
+     <tr><td>static  <a href="SyntheticRepository.html" class="classRef">SyntheticRepository</a></td><td><span class="memberName"><a href="#getInstance()" class="methodRef">getInstance</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static  <a href="SyntheticRepository.html" class="classRef">SyntheticRepository</a></td><td><span class="memberName"><a href="#getInstance(org.apache.bcel.util.ClassPath)" class="methodRef">getInstance</a>(<a href="ClassPath.html" class="classRef">ClassPath</a> classPath)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  <a href="../classfile/JavaClass.html" class="classRef">JavaClass</a></td><td><span class="memberName"><a href="#loadClass(<unknown>.String)" class="methodRef">loadClass</a>(String className)</span><div class="memberDescription">
+ Find a JavaClass object by name.
+ </div></td></tr>
+
+
+
+     <tr><td>  <a href="../classfile/JavaClass.html" class="classRef">JavaClass</a></td><td><span class="memberName"><a href="#loadClass(<unknown>.Class)" class="methodRef">loadClass</a>(Class clazz)</span><div class="memberDescription">
+ Find the JavaClass object for a runtime Class object.
+ </div></td></tr>
+
+
+
+     <tr><td>  <a href="../classfile/JavaClass.html" class="classRef">JavaClass</a></td><td><span class="memberName"><a href="#loadClass(java.io.InputStream,<unknown>.String)" class="methodRef">loadClass</a>(InputStream is, String className)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#removeClass(org.apache.bcel.classfile.JavaClass)" class="methodRef">removeClass</a>(<a href="../classfile/JavaClass.html" class="classRef">JavaClass</a> clazz)</span><div class="memberDescription">
+ Remove class from repository</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#storeClass(org.apache.bcel.classfile.JavaClass)" class="methodRef">storeClass</a>(<a href="../classfile/JavaClass.html" class="classRef">JavaClass</a> clazz)</span><div class="memberDescription">
+ Store a new JavaClass instance into this Repository.</div></td></tr>
+
+   </table>
+
+
+
+<!--
+   <p class="inherited">
+    <span class="header">Methods inherited from class java.util.<a
+   href="AbstractCollection.html">AbstractCollection</a></span>
+    <a href="#addAll">addAll</a>
+    <a href="#contains">contains</a>
+   </p>
+   <p class="inherited">
+    <span class="header">Methods inherited from class java.lang.<a
+   href="Object.html">Object</a></span>
+    <a href="#addAll">clone</a>
+    <a href="#contains">finalize</a>
+   </p>
+   <p class="inherited">
+    <span class="header">Methods inherited from interface java.util.<a
+   href="List.html">List</a></span>
+    <a href="#addAll">addAll</a>
+    <a href="#contains">contains</a>
+   </p>
+-->
+
+
+
+   <h2><a name="field_detail" id="field_detail">Field Detail</a></h2>
+
+   <h3><a name="DEFAULT_PATH" id="DEFAULT_PATH">DEFAULT_PATH</a></h3>
+   <div class="memberName">private static final String DEFAULT_PATH</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="_instances" id="_instances">_instances</a></h3>
+   <div class="memberName">private static Map _instances</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="_loadedClasses" id="_loadedClasses">_loadedClasses</a></h3>
+   <div class="memberName">private Map _loadedClasses</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="_path" id="_path">_path</a></h3>
+   <div class="memberName">private <a href="ClassPath.html" class="classRef">ClassPath</a> _path</div>
+   <div class="memberDescription"></div>
+
+
+
+
+   <h2><a name="constructor_detail" id="constructor_detail">Constructor Detail</a></h2>
+
+   <h3><a name="SyntheticRepository(org.apache.bcel.util.ClassPath)" id="SyntheticRepository(org.apache.bcel.util.ClassPath)">SyntheticRepository</a></h3>
+   <div class="memberName">private  SyntheticRepository(<a href="ClassPath.html" class="classRef">ClassPath</a> path)</div>
+   <div class="memberDescription"></div>
+
+
+
+
+   <h2><a name="method_detail" id="method_detail">Method Detail</a></h2>
+
+   <h3><a name="clear()" id="clear()">clear</a></h3>
+   <div class="memberName">public  void clear()</div>
+   <div class="memberDescription"> Clear all entries from cache.</div>
+
+
+   <h3><a name="findClass(<unknown>.String)" id="findClass(<unknown>.String)">findClass</a></h3>
+   <div class="memberName">public  <a href="../classfile/JavaClass.html" class="classRef">JavaClass</a> findClass(String className)</div>
+   <div class="memberDescription">
+ Find an already defined (cached) JavaClass object by name.</div>
+
+
+   <h3><a name="getClassPath()" id="getClassPath()">getClassPath</a></h3>
+   <div class="memberName">public  <a href="ClassPath.html" class="classRef">ClassPath</a> getClassPath()</div>
+   <div class="memberDescription"> ClassPath associated with the Repository.</div>
+
+
+   <h3><a name="getInstance()" id="getInstance()">getInstance</a></h3>
+   <div class="memberName">public static  <a href="SyntheticRepository.html" class="classRef">SyntheticRepository</a> getInstance()</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="getInstance(org.apache.bcel.util.ClassPath)" id="getInstance(org.apache.bcel.util.ClassPath)">getInstance</a></h3>
+   <div class="memberName">public static  <a href="SyntheticRepository.html" class="classRef">SyntheticRepository</a> getInstance(<a href="ClassPath.html" class="classRef">ClassPath</a> classPath)</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="loadClass(<unknown>.String)" id="loadClass(<unknown>.String)">loadClass</a></h3>
+   <div class="memberName">public  <a href="../classfile/JavaClass.html" class="classRef">JavaClass</a> loadClass(String className)</div>
+   <div class="memberDescription">
+ Find a JavaClass object by name.
+ If it is already in this Repository, the Repository version
+ is returned.  Otherwise, the Repository's classpath is searched for
+ the class (and it is added to the Repository if found).
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">className the name of the class</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">the JavaClass object</span> </p>
+<p class="tag tag_throws"><span class="tagName">Throws:</span> <span class="tagContents">ClassNotFoundException if the class is not in the
+   Repository, and could not be found on the classpath</span> </p>
+</div>
+
+
+   <h3><a name="loadClass(<unknown>.Class)" id="loadClass(<unknown>.Class)">loadClass</a></h3>
+   <div class="memberName">public  <a href="../classfile/JavaClass.html" class="classRef">JavaClass</a> loadClass(Class clazz)</div>
+   <div class="memberDescription">
+ Find the JavaClass object for a runtime Class object.
+ If a class with the same name is already in this Repository,
+ the Repository version is returned.  Otherwise, getResourceAsStream()
+ is called on the Class object to find the class's representation.
+ If the representation is found, it is added to the Repository.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">clazz the runtime Class object</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">JavaClass object for given runtime class</span> </p>
+<p class="tag tag_throws"><span class="tagName">Throws:</span> <span class="tagContents">ClassNotFoundException if the class is not in the
+   Repository, and its representation could not be found</span> </p>
+<p class="tag tag_see"><span class="tagName">See Also:</span> <span class="tagContents">Class</span> </p>
+</div>
+
+
+   <h3><a name="loadClass(java.io.InputStream,<unknown>.String)" id="loadClass(java.io.InputStream,<unknown>.String)">loadClass</a></h3>
+   <div class="memberName">private  <a href="../classfile/JavaClass.html" class="classRef">JavaClass</a> loadClass(InputStream is, String className)</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="removeClass(org.apache.bcel.classfile.JavaClass)" id="removeClass(org.apache.bcel.classfile.JavaClass)">removeClass</a></h3>
+   <div class="memberName">public  void removeClass(<a href="../classfile/JavaClass.html" class="classRef">JavaClass</a> clazz)</div>
+   <div class="memberDescription">
+ Remove class from repository</div>
+
+
+   <h3><a name="storeClass(org.apache.bcel.classfile.JavaClass)" id="storeClass(org.apache.bcel.classfile.JavaClass)">storeClass</a></h3>
+   <div class="memberName">public  void storeClass(<a href="../classfile/JavaClass.html" class="classRef">JavaClass</a> clazz)</div>
+   <div class="memberDescription">
+ Store a new JavaClass instance into this Repository.</div>
+
+   
+   <div class="navbar">
+    <p class="nav navtop">
+      <span class="over"><a href="../../../../overview-summary.html">Overview</a></span>
+      <span class="package"><a href="package-summary.html">Package</a></span>
+      <span class="class selected">Class</span>
+      <span class="use"><a href="class-use/SyntheticRepository.html">Use</a></span>
+      <span class="tree"><a href="package-tree.html">Tree</a></span>
+      <span class="deprecated"><a href="../../../../deprecated-list.html">Deprecated</a></span>
+      <span class="index"><a href="../../../../index-all.html">Index</a></span>
+      <span class="help"><a href="../../../../help-doc.html">Help</a></span>
+    </p>
+    <p class="nav navmid">
+      <span class="prevnext">
+       <span class="prev">Prev Class</span>
+       <span class="next">Next Class</span>
+      </span>
+      <span class="framesel">
+       <span class="frames"><a href="../../../../index.html" target="_top">Frames</a></span>
+       <span class="noframes"><a href="SyntheticRepository.html" target="_top">NoFrames</a></span>
+      </span>
+      <span class="allclasses"><a href="../../../../allclasses-noframe.html">All Classes</a></span>
+   </p>
+   <p class="nav navbot">
+      <span class="summary">Summary:
+       <span class="nested">Nested</span>
+       <span class="field"><a href="#field_summary">Field</a></span>
+       <span class="constr"><a href="#constructor_summary">Constr</a></span>
+       <span class="method"><a href="#method_summary">Method</a></span>
+      </span>
+      <span class="detail">Detail:
+       <span class="field"><a href="#field_detail">Field</a></span>
+       <span class="constr"><a href="#constructor_detail">Constr</a></span>
+       <span class="method"><a href="#method_detail">Method</a></span>
+      </span>
+   </p>
+    <div class="navtitle">
+     
+    </div>
+    <p class="clear"><!--empty--></p>
+   </div>
+   <div class="bottom"></div>
+   </body>
+</html>

@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>Class2HTML</title>
+    <meta name="keywords" content="org.apache.bcel.util.Class2HTML,Class2HTML class" />
+    <meta name="generator" content="SinjDoc 0.5" />
+    <link href="../../../../stylesheet.css" rel="stylesheet" type="text/css" />
+    <link rel="Index" href="../../../../index-all.html" />
+    <link rel="Start" href="../../../../overview-summary.html" />
+    <link rel="Up" href="package-summary.html" />
+    <link rel="Help" href="../../../../help-doc.html" />
+  </head>
+  <body class="classPage bigframe">
+   <div class="navbar">
+    <p class="nav navtop">
+      <span class="over"><a href="../../../../overview-summary.html">Overview</a></span>
+      <span class="package"><a href="package-summary.html">Package</a></span>
+      <span class="class selected">Class</span>
+      <span class="use"><a href="class-use/Class2HTML.html">Use</a></span>
+      <span class="tree"><a href="package-tree.html">Tree</a></span>
+      <span class="deprecated"><a href="../../../../deprecated-list.html">Deprecated</a></span>
+      <span class="index"><a href="../../../../index-all.html">Index</a></span>
+      <span class="help"><a href="../../../../help-doc.html">Help</a></span>
+    </p>
+    <p class="nav navmid">
+      <span class="prevnext">
+       <span class="prev">Prev Class</span>
+       <span class="next">Next Class</span>
+      </span>
+      <span class="framesel">
+       <span class="frames"><a href="../../../../index.html" target="_top">Frames</a></span>
+       <span class="noframes"><a href="Class2HTML.html" target="_top">NoFrames</a></span>
+      </span>
+      <span class="allclasses"><a href="../../../../allclasses-noframe.html">All Classes</a></span>
+   </p>
+   <p class="nav navbot">
+      <span class="summary">Summary:
+       <span class="nested">Nested</span>
+       <span class="field"><a href="#field_summary">Field</a></span>
+       <span class="constr"><a href="#constructor_summary">Constr</a></span>
+       <span class="method"><a href="#method_summary">Method</a></span>
+      </span>
+      <span class="detail">Detail:
+       <span class="field"><a href="#field_detail">Field</a></span>
+       <span class="constr"><a href="#constructor_detail">Constr</a></span>
+       <span class="method"><a href="#method_detail">Method</a></span>
+      </span>
+   </p>
+    <div class="navtitle">
+     
+    </div>
+    <p class="clear"><!--empty--></p>
+   </div>
+   <p class="packageName">org.apache.bcel.util</p>
+   <h1>  Class  Class2HTML</h1>
+<!--
+   <p class="enclosing">
+   Enclosing class/interface: @OUTER@
+   </p>
+-->
+
+
+   <!-- XXX class hierarchy diagram goes here -->
+<!--
+   
+   <p class="implementedInterfaces">
+   All implemented interfaces: @ALL_SUPERINTERFACES@
+   </p>
+   
+   <p class="directSubclasses">
+   Direct known subclasses: @ALL_SUBCLASSES@
+   </p>
+-->
+
+
+   <p class="declaration">public
+     class 
+   <span class="className">Class2HTML</span>
+   
+   
+      
+      <span class="extends">extends Object</span>
+      
+      
+        <span class="implements">implements <a href="../Constants.html" class="interfaceRef">Constants</a></span>
+      
+   
+   </p>
+
+   <div class="description">
+   
+ Read class file(s) and convert them into HTML files.
+
+ Given a JavaClass object "class" that is in package "package" five files
+ will be created in the specified directory.
+
+ <OL>
+ <LI> "package"."class".html as the main file which defines the frames for
+ the following subfiles.
+ <LI>  "package"."class"_attributes.html contains all (known) attributes found in the file
+ <LI>  "package"."class"_cp.html contains the constant pool
+ <LI>  "package"."class"_code.html contains the byte code
+ <LI>  "package"."class"_methods.html contains references to all methods and fields of the class
+ </OL>
+
+ All subfiles reference each other appropiately, e.g. clicking on a
+ method in the Method's frame will jump to the appropiate method in
+ the Code frame.
+<p class="tag tag_version"><span class="tagName">Version:</span> <span class="tagContents">$Id: Class2HTML.java 386056 2006-03-15 11:31:56Z tcurdt $</span> </p>
+<p class="tag tag_author"><span class="tagName">Author:</span> <span class="tagContents"><A HREF="mailto:m.dahm@gmx.de">M. Dahm</A></span> </p>
+
+   </div>
+
+
+
+
+   <table class="field_summary summary">
+     <tr><th colspan="2"><a name="field_summary" id="field_summary">Field Summary</a></th></tr>
+
+     <tr><td>static String</td><td><span class="memberName"><a href="#class_name" class="fieldRef">class_name</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static String</td><td><span class="memberName"><a href="#class_package" class="fieldRef">class_package</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static <a href="../classfile/ConstantPool.html" class="classRef">ConstantPool</a></td><td><span class="memberName"><a href="#constant_pool" class="fieldRef">constant_pool</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td> String</td><td><span class="memberName"><a href="#dir" class="fieldRef">dir</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td> <a href="../classfile/JavaClass.html" class="classRef">JavaClass</a></td><td><span class="memberName"><a href="#java_class" class="fieldRef">java_class</a></span><div class="memberDescription"></div></td></tr>
+
+   </table>
+
+
+
+
+   <table class="constructor_summary summary">
+     <tr><th colspan="2"><a name="constructor_summary" id="constructor_summary">Constructor Summary</a></th></tr>
+
+     <tr><td> </td><td><span class="memberName"><a href="#Class2HTML(org.apache.bcel.classfile.JavaClass,<unknown>.String)" class="constructorRef">Class2HTML</a>(<a href="../classfile/JavaClass.html" class="classRef">JavaClass</a> java_class, String dir)</span><div class="memberDescription">
+ Write contents of the given JavaClass into HTML files.
+</div></td></tr>
+
+   </table>
+
+
+
+
+   <table class="method_summary summary">
+     <tr><th colspan="2"><a name="method_summary" id="method_summary">Method Summary</a></th></tr>
+
+     <tr><td>static  void</td><td><span class="memberName"><a href="#main(<unknown>.String[])" class="methodRef">main</a>(String[] argv)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static  String</td><td><span class="memberName"><a href="#referenceClass(int)" class="methodRef">referenceClass</a>(int index)</span><div class="memberDescription">
+ Utility method that converts a class reference in the constant pool,
+ i.e., an index to a string.</div></td></tr>
+
+
+
+     <tr><td>static  String</td><td><span class="memberName"><a href="#referenceType(<unknown>.String)" class="methodRef">referenceType</a>(String type)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static  String</td><td><span class="memberName"><a href="#toHTML(<unknown>.String)" class="methodRef">toHTML</a>(String str)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#writeMainHTML(org.apache.bcel.util.AttributeHTML)" class="methodRef">writeMainHTML</a>(<a href="AttributeHTML.html" class="classRef">AttributeHTML</a> attribute_html)</span><div class="memberDescription"></div></td></tr>
+
+   </table>
+
+
+
+<!--
+   <p class="inherited">
+    <span class="header">Methods inherited from class java.util.<a
+   href="AbstractCollection.html">AbstractCollection</a></span>
+    <a href="#addAll">addAll</a>
+    <a href="#contains">contains</a>
+   </p>
+   <p class="inherited">
+    <span class="header">Methods inherited from class java.lang.<a
+   href="Object.html">Object</a></span>
+    <a href="#addAll">clone</a>
+    <a href="#contains">finalize</a>
+   </p>
+   <p class="inherited">
+    <span class="header">Methods inherited from interface java.util.<a
+   href="List.html">List</a></span>
+    <a href="#addAll">addAll</a>
+    <a href="#contains">contains</a>
+   </p>
+-->
+
+
+
+   <h2><a name="field_detail" id="field_detail">Field Detail</a></h2>
+
+   <h3><a name="class_name" id="class_name">class_name</a></h3>
+   <div class="memberName">private static String class_name</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="class_package" id="class_package">class_package</a></h3>
+   <div class="memberName">private static String class_package</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="constant_pool" id="constant_pool">constant_pool</a></h3>
+   <div class="memberName">private static <a href="../classfile/ConstantPool.html" class="classRef">ConstantPool</a> constant_pool</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="dir" id="dir">dir</a></h3>
+   <div class="memberName">private String dir</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="java_class" id="java_class">java_class</a></h3>
+   <div class="memberName">private <a href="../classfile/JavaClass.html" class="classRef">JavaClass</a> java_class</div>
+   <div class="memberDescription"></div>
+
+
+
+
+   <h2><a name="constructor_detail" id="constructor_detail">Constructor Detail</a></h2>
+
+   <h3><a name="Class2HTML(org.apache.bcel.classfile.JavaClass,<unknown>.String)" id="Class2HTML(org.apache.bcel.classfile.JavaClass,<unknown>.String)">Class2HTML</a></h3>
+   <div class="memberName">public  Class2HTML(<a href="../classfile/JavaClass.html" class="classRef">JavaClass</a> java_class, String dir)</div>
+   <div class="memberDescription">
+ Write contents of the given JavaClass into HTML files.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">java_class The class to write</span> <span class="tagContents">dir The directory to put the files in</span> </p>
+</div>
+
+
+
+
+   <h2><a name="method_detail" id="method_detail">Method Detail</a></h2>
+
+   <h3><a name="main(<unknown>.String[])" id="main(<unknown>.String[])">main</a></h3>
+   <div class="memberName">public static  void main(String[] argv)</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="referenceClass(int)" id="referenceClass(int)">referenceClass</a></h3>
+   <div class="memberName">static  String referenceClass(int index)</div>
+   <div class="memberDescription">
+ Utility method that converts a class reference in the constant pool,
+ i.e., an index to a string.</div>
+
+
+   <h3><a name="referenceType(<unknown>.String)" id="referenceType(<unknown>.String)">referenceType</a></h3>
+   <div class="memberName">static final  String referenceType(String type)</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="toHTML(<unknown>.String)" id="toHTML(<unknown>.String)">toHTML</a></h3>
+   <div class="memberName">static  String toHTML(String str)</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="writeMainHTML(org.apache.bcel.util.AttributeHTML)" id="writeMainHTML(org.apache.bcel.util.AttributeHTML)">writeMainHTML</a></h3>
+   <div class="memberName">private  void writeMainHTML(<a href="AttributeHTML.html" class="classRef">AttributeHTML</a> attribute_html)</div>
+   <div class="memberDescription"></div>
+
+   
+   <div class="navbar">
+    <p class="nav navtop">
+      <span class="over"><a href="../../../../overview-summary.html">Overview</a></span>
+      <span class="package"><a href="package-summary.html">Package</a></span>
+      <span class="class selected">Class</span>
+      <span class="use"><a href="class-use/Class2HTML.html">Use</a></span>
+      <span class="tree"><a href="package-tree.html">Tree</a></span>
+      <span class="deprecated"><a href="../../../../deprecated-list.html">Deprecated</a></span>
+      <span class="index"><a href="../../../../index-all.html">Index</a></span>
+      <span class="help"><a href="../../../../help-doc.html">Help</a></span>
+    </p>
+    <p class="nav navmid">
+      <span class="prevnext">
+       <span class="prev">Prev Class</span>
+       <span class="next">Next Class</span>
+      </span>
+      <span class="framesel">
+       <span class="frames"><a href="../../../../index.html" target="_top">Frames</a></span>
+       <span class="noframes"><a href="Class2HTML.html" target="_top">NoFrames</a></span>
+      </span>
+      <span class="allclasses"><a href="../../../../allclasses-noframe.html">All Classes</a></span>
+   </p>
+   <p class="nav navbot">
+      <span class="summary">Summary:
+       <span class="nested">Nested</span>
+       <span class="field"><a href="#field_summary">Field</a></span>
+       <span class="constr"><a href="#constructor_summary">Constr</a></span>
+       <span class="method"><a href="#method_summary">Method</a></span>
+      </span>
+      <span class="detail">Detail:
+       <span class="field"><a href="#field_detail">Field</a></span>
+       <span class="constr"><a href="#constructor_detail">Constr</a></span>
+       <span class="method"><a href="#method_detail">Method</a></span>
+      </span>
+   </p>
+    <div class="navtitle">
+     
+    </div>
+    <p class="clear"><!--empty--></p>
+   </div>
+   <div class="bottom"></div>
+   </body>
+</html>

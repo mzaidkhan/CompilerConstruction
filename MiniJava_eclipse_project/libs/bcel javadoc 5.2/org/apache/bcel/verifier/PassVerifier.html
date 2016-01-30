@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>PassVerifier</title>
+    <meta name="keywords" content="org.apache.bcel.verifier.PassVerifier,PassVerifier class" />
+    <meta name="generator" content="SinjDoc 0.5" />
+    <link href="../../../../stylesheet.css" rel="stylesheet" type="text/css" />
+    <link rel="Index" href="../../../../index-all.html" />
+    <link rel="Start" href="../../../../overview-summary.html" />
+    <link rel="Up" href="package-summary.html" />
+    <link rel="Help" href="../../../../help-doc.html" />
+  </head>
+  <body class="classPage bigframe">
+   <div class="navbar">
+    <p class="nav navtop">
+      <span class="over"><a href="../../../../overview-summary.html">Overview</a></span>
+      <span class="package"><a href="package-summary.html">Package</a></span>
+      <span class="class selected">Class</span>
+      <span class="use"><a href="class-use/PassVerifier.html">Use</a></span>
+      <span class="tree"><a href="package-tree.html">Tree</a></span>
+      <span class="deprecated"><a href="../../../../deprecated-list.html">Deprecated</a></span>
+      <span class="index"><a href="../../../../index-all.html">Index</a></span>
+      <span class="help"><a href="../../../../help-doc.html">Help</a></span>
+    </p>
+    <p class="nav navmid">
+      <span class="prevnext">
+       <span class="prev">Prev Class</span>
+       <span class="next">Next Class</span>
+      </span>
+      <span class="framesel">
+       <span class="frames"><a href="../../../../index.html" target="_top">Frames</a></span>
+       <span class="noframes"><a href="PassVerifier.html" target="_top">NoFrames</a></span>
+      </span>
+      <span class="allclasses"><a href="../../../../allclasses-noframe.html">All Classes</a></span>
+   </p>
+   <p class="nav navbot">
+      <span class="summary">Summary:
+       <span class="nested">Nested</span>
+       <span class="field"><a href="#field_summary">Field</a></span>
+       <span class="constr">Constr</span>
+       <span class="method"><a href="#method_summary">Method</a></span>
+      </span>
+      <span class="detail">Detail:
+       <span class="field"><a href="#field_detail">Field</a></span>
+       <span class="constr">Constr</span>
+       <span class="method"><a href="#method_detail">Method</a></span>
+      </span>
+   </p>
+    <div class="navtitle">
+     
+    </div>
+    <p class="clear"><!--empty--></p>
+   </div>
+   <p class="packageName">org.apache.bcel.verifier</p>
+   <h1>  Class  PassVerifier</h1>
+<!--
+   <p class="enclosing">
+   Enclosing class/interface: @OUTER@
+   </p>
+-->
+
+
+   <!-- XXX class hierarchy diagram goes here -->
+<!--
+   
+   <p class="directSubclasses">
+   Direct known subclasses: @ALL_SUBCLASSES@
+   </p>
+-->
+
+
+   <p class="declaration">public abstract
+     class 
+   <span class="className">PassVerifier</span>
+   
+   
+      
+      <span class="extends">extends Object</span>
+      
+      
+   
+   </p>
+
+   <div class="description">
+   
+ A PassVerifier actually verifies a class file; it is instantiated
+ by a Verifier.
+ The verification should conform with a certain pass as described
+ in The Java Virtual Machine Specification, 2nd edition.
+ This book describes four passes. Pass one means loading the
+ class and verifying a few static constraints. Pass two actually
+ verifies some other constraints that could enforce loading in
+ referenced class files. Pass three is the first pass that actually
+ checks constraints in the code array of a method in the class file;
+ it has two parts with the first verifying static constraints and
+ the second part verifying structural constraints (where a data flow
+ analysis is used for). The fourth pass, finally, performs checks
+ that can only be done at run-time.
+ JustIce does not have a run-time pass, but certain constraints that
+ are usually delayed until run-time for performance reasons are also
+ checked during the second part of pass three.
+ PassVerifier instances perform caching.
+ That means, if you really want a new verification run of a certain
+ pass you must use a new instance of a given PassVerifier.
+<p class="tag tag_version"><span class="tagName">Version:</span> <span class="tagContents">$Id: PassVerifier.java 386056 2006-03-15 11:31:56Z tcurdt $</span> </p>
+<p class="tag tag_author"><span class="tagName">Author:</span> <span class="tagContents">Enver Haase</span> </p>
+<p class="tag tag_see"><span class="tagName">See Also:</span> <span class="tagContents"><a href="Verifier.html" class="classRef">Verifier</a></span> <span class="tagContents"><a href="#verify()" class="methodRef">verify</a></span> </p>
+
+   </div>
+
+
+
+
+   <table class="field_summary summary">
+     <tr><th colspan="2"><a name="field_summary" id="field_summary">Field Summary</a></th></tr>
+
+     <tr><td> List</td><td><span class="memberName"><a href="#messages" class="fieldRef">messages</a></span><div class="memberDescription"> The (warning) messages.</div></td></tr>
+
+
+
+     <tr><td> <a href="VerificationResult.html" class="classRef">VerificationResult</a></td><td><span class="memberName"><a href="#verificationResult" class="fieldRef">verificationResult</a></span><div class="memberDescription"> The VerificationResult cache.</div></td></tr>
+
+   </table>
+
+
+
+
+
+   <table class="method_summary summary">
+     <tr><th colspan="2"><a name="method_summary" id="method_summary">Method Summary</a></th></tr>
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#addMessage(<unknown>.String)" class="methodRef">addMessage</a>(String message)</span><div class="memberDescription">
+ This method adds a (warning) message to the message pool of this
+ PassVerifier. </div></td></tr>
+
+
+
+     <tr><td>abstract  <a href="VerificationResult.html" class="classRef">VerificationResult</a></td><td><span class="memberName"><a href="#do_verify()" class="methodRef">do_verify</a>()</span><div class="memberDescription"> Does the real verification work, uncached.</div></td></tr>
+
+
+
+     <tr><td>  String[]</td><td><span class="memberName"><a href="#getMessages()" class="methodRef">getMessages</a>()</span><div class="memberDescription">
+ Returns the (warning) messages that this PassVerifier accumulated
+ during its do_verify()ing work.
+</div></td></tr>
+
+
+
+     <tr><td>  <a href="VerificationResult.html" class="classRef">VerificationResult</a></td><td><span class="memberName"><a href="#verify()" class="methodRef">verify</a>()</span><div class="memberDescription">
+ This method runs a verification pass conforming to the
+ Java Virtual Machine Specification, 2nd edition, on a
+ class file.
+ </div></td></tr>
+
+   </table>
+
+
+
+<!--
+   <p class="inherited">
+    <span class="header">Methods inherited from class java.util.<a
+   href="AbstractCollection.html">AbstractCollection</a></span>
+    <a href="#addAll">addAll</a>
+    <a href="#contains">contains</a>
+   </p>
+   <p class="inherited">
+    <span class="header">Methods inherited from class java.lang.<a
+   href="Object.html">Object</a></span>
+    <a href="#addAll">clone</a>
+    <a href="#contains">finalize</a>
+   </p>
+   <p class="inherited">
+    <span class="header">Methods inherited from interface java.util.<a
+   href="List.html">List</a></span>
+    <a href="#addAll">addAll</a>
+    <a href="#contains">contains</a>
+   </p>
+-->
+
+
+
+   <h2><a name="field_detail" id="field_detail">Field Detail</a></h2>
+
+   <h3><a name="messages" id="messages">messages</a></h3>
+   <div class="memberName">private List messages</div>
+   <div class="memberDescription"> The (warning) messages.</div>
+
+
+   <h3><a name="verificationResult" id="verificationResult">verificationResult</a></h3>
+   <div class="memberName">private <a href="VerificationResult.html" class="classRef">VerificationResult</a> verificationResult</div>
+   <div class="memberDescription"> The VerificationResult cache.</div>
+
+
+
+
+
+
+   <h2><a name="method_detail" id="method_detail">Method Detail</a></h2>
+
+   <h3><a name="addMessage(<unknown>.String)" id="addMessage(<unknown>.String)">addMessage</a></h3>
+   <div class="memberName">public  void addMessage(String message)</div>
+   <div class="memberDescription">
+ This method adds a (warning) message to the message pool of this
+ PassVerifier. This method is normally only internally used by
+ BCEL's class file verifier "JustIce" and should not be used from
+ the outside. 
+<p class="tag tag_see"><span class="tagName">See Also:</span> <span class="tagContents"><a href="#getMessages()" class="methodRef">getMessages</a></span> </p>
+</div>
+
+
+   <h3><a name="do_verify()" id="do_verify()">do_verify</a></h3>
+   <div class="memberName">public abstract  <a href="VerificationResult.html" class="classRef">VerificationResult</a> do_verify()</div>
+   <div class="memberDescription"> Does the real verification work, uncached.</div>
+
+
+   <h3><a name="getMessages()" id="getMessages()">getMessages</a></h3>
+   <div class="memberName">public  String[] getMessages()</div>
+   <div class="memberDescription">
+ Returns the (warning) messages that this PassVerifier accumulated
+ during its do_verify()ing work.
+<p class="tag tag_see"><span class="tagName">See Also:</span> <span class="tagContents"><a href="#addMessage(<unknown>.String)" class="methodRef">addMessage</a></span> <span class="tagContents"><a href="#do_verify()" class="methodRef">do_verify</a></span> </p>
+</div>
+
+
+   <h3><a name="verify()" id="verify()">verify</a></h3>
+   <div class="memberName">public  <a href="VerificationResult.html" class="classRef">VerificationResult</a> verify()</div>
+   <div class="memberDescription">
+ This method runs a verification pass conforming to the
+ Java Virtual Machine Specification, 2nd edition, on a
+ class file.
+ PassVerifier instances perform caching;
+ i.e. if the verify() method once determined a VerificationResult,
+ then this result may be returned after every invocation of this
+ method instead of running the verification pass anew; likewise with
+ the result of getMessages().
+<p class="tag tag_see"><span class="tagName">See Also:</span> <span class="tagContents"><a href="#getMessages()" class="methodRef">getMessages</a></span> <span class="tagContents"><a href="#addMessage(<unknown>.String)" class="methodRef">addMessage</a></span> </p>
+</div>
+
+   
+   <div class="navbar">
+    <p class="nav navtop">
+      <span class="over"><a href="../../../../overview-summary.html">Overview</a></span>
+      <span class="package"><a href="package-summary.html">Package</a></span>
+      <span class="class selected">Class</span>
+      <span class="use"><a href="class-use/PassVerifier.html">Use</a></span>
+      <span class="tree"><a href="package-tree.html">Tree</a></span>
+      <span class="deprecated"><a href="../../../../deprecated-list.html">Deprecated</a></span>
+      <span class="index"><a href="../../../../index-all.html">Index</a></span>
+      <span class="help"><a href="../../../../help-doc.html">Help</a></span>
+    </p>
+    <p class="nav navmid">
+      <span class="prevnext">
+       <span class="prev">Prev Class</span>
+       <span class="next">Next Class</span>
+      </span>
+      <span class="framesel">
+       <span class="frames"><a href="../../../../index.html" target="_top">Frames</a></span>
+       <span class="noframes"><a href="PassVerifier.html" target="_top">NoFrames</a></span>
+      </span>
+      <span class="allclasses"><a href="../../../../allclasses-noframe.html">All Classes</a></span>
+   </p>
+   <p class="nav navbot">
+      <span class="summary">Summary:
+       <span class="nested">Nested</span>
+       <span class="field"><a href="#field_summary">Field</a></span>
+       <span class="constr">Constr</span>
+       <span class="method"><a href="#method_summary">Method</a></span>
+      </span>
+      <span class="detail">Detail:
+       <span class="field"><a href="#field_detail">Field</a></span>
+       <span class="constr">Constr</span>
+       <span class="method"><a href="#method_detail">Method</a></span>
+      </span>
+   </p>
+    <div class="navtitle">
+     
+    </div>
+    <p class="clear"><!--empty--></p>
+   </div>
+   <div class="bottom"></div>
+   </body>
+</html>

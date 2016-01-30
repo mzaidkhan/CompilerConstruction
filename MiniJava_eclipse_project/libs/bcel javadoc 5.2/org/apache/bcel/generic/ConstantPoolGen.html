@@ -1,0 +1,853 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>ConstantPoolGen</title>
+    <meta name="keywords" content="org.apache.bcel.generic.ConstantPoolGen,ConstantPoolGen class" />
+    <meta name="generator" content="SinjDoc 0.5" />
+    <link href="../../../../stylesheet.css" rel="stylesheet" type="text/css" />
+    <link rel="Index" href="../../../../index-all.html" />
+    <link rel="Start" href="../../../../overview-summary.html" />
+    <link rel="Up" href="package-summary.html" />
+    <link rel="Help" href="../../../../help-doc.html" />
+  </head>
+  <body class="classPage bigframe">
+   <div class="navbar">
+    <p class="nav navtop">
+      <span class="over"><a href="../../../../overview-summary.html">Overview</a></span>
+      <span class="package"><a href="package-summary.html">Package</a></span>
+      <span class="class selected">Class</span>
+      <span class="use"><a href="class-use/ConstantPoolGen.html">Use</a></span>
+      <span class="tree"><a href="package-tree.html">Tree</a></span>
+      <span class="deprecated"><a href="../../../../deprecated-list.html">Deprecated</a></span>
+      <span class="index"><a href="../../../../index-all.html">Index</a></span>
+      <span class="help"><a href="../../../../help-doc.html">Help</a></span>
+    </p>
+    <p class="nav navmid">
+      <span class="prevnext">
+       <span class="prev">Prev Class</span>
+       <span class="next">Next Class</span>
+      </span>
+      <span class="framesel">
+       <span class="frames"><a href="../../../../index.html" target="_top">Frames</a></span>
+       <span class="noframes"><a href="ConstantPoolGen.html" target="_top">NoFrames</a></span>
+      </span>
+      <span class="allclasses"><a href="../../../../allclasses-noframe.html">All Classes</a></span>
+   </p>
+   <p class="nav navbot">
+      <span class="summary">Summary:
+       <span class="nested"><a href="#nested_class_summary">Nested</a></span>
+       <span class="field"><a href="#field_summary">Field</a></span>
+       <span class="constr"><a href="#constructor_summary">Constr</a></span>
+       <span class="method"><a href="#method_summary">Method</a></span>
+      </span>
+      <span class="detail">Detail:
+       <span class="field"><a href="#field_detail">Field</a></span>
+       <span class="constr"><a href="#constructor_detail">Constr</a></span>
+       <span class="method"><a href="#method_detail">Method</a></span>
+      </span>
+   </p>
+    <div class="navtitle">
+     
+    </div>
+    <p class="clear"><!--empty--></p>
+   </div>
+   <p class="packageName">org.apache.bcel.generic</p>
+   <h1>  Class  ConstantPoolGen</h1>
+<!--
+   <p class="enclosing">
+   Enclosing class/interface: @OUTER@
+   </p>
+-->
+
+
+   <!-- XXX class hierarchy diagram goes here -->
+<!--
+   
+   <p class="implementedInterfaces">
+   All implemented interfaces: @ALL_SUPERINTERFACES@
+   </p>
+   
+   <p class="directSubclasses">
+   Direct known subclasses: @ALL_SUBCLASSES@
+   </p>
+-->
+
+
+   <p class="declaration">public
+     class 
+   <span class="className">ConstantPoolGen</span>
+   
+   
+      
+      <span class="extends">extends Object</span>
+      
+      
+        <span class="implements">implements Serializable</span>
+      
+   
+   </p>
+
+   <div class="description">
+    
+ This class is used to build up a constant pool. The user adds
+ constants via `addXXX' methods, `addString', `addClass',
+ etc.. These methods return an index into the constant
+ pool. Finally, `getFinalConstantPool()' returns the constant pool
+ built up. Intermediate versions of the constant pool can be
+ obtained with `getConstantPool()'. A constant pool has capacity for
+ Constants.MAX_SHORT entries. Note that the first (0) is used by the
+ JVM and that Double and Long constants need two slots.
+<p class="tag tag_version"><span class="tagName">Version:</span> <span class="tagContents">$Id: ConstantPoolGen.java 386056 2006-03-15 11:31:56Z tcurdt $</span> </p>
+<p class="tag tag_author"><span class="tagName">Author:</span> <span class="tagContents"><A HREF="mailto:m.dahm@gmx.de">M. Dahm</A></span> </p>
+<p class="tag tag_see"><span class="tagName">See Also:</span> <span class="tagContents"><a href="../classfile/Constant.html" class="classRef">Constant</a></span> </p>
+
+   </div>
+
+
+
+   <table class="nested_class_summary summary">
+     <tr><th colspan="2"><a name="nested_class_summary" id="nested_class_summary">Nested Class Summary</a></th></tr>
+
+     <tr><td>static class</td><td><span class="memberName"><a href="ConstantPoolGen.Index.html" class="classRef">ConstantPoolGen.Index</a></span><div class="memberDescription"></div></td></tr>
+
+   </table>
+
+
+
+
+   <table class="field_summary summary">
+     <tr><th colspan="2"><a name="field_summary" id="field_summary">Field Summary</a></th></tr>
+
+     <tr><td> Map</td><td><span class="memberName"><a href="#class_table" class="fieldRef">class_table</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>protected <a href="../classfile/Constant.html" class="classRef">Constant</a>[]</td><td><span class="memberName"><a href="#constants" class="fieldRef">constants</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td> Map</td><td><span class="memberName"><a href="#cp_table" class="fieldRef">cp_table</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static String</td><td><span class="memberName"><a href="#FIELDREF_DELIM" class="fieldRef">FIELDREF_DELIM</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>protected int</td><td><span class="memberName"><a href="#index" class="fieldRef">index</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static String</td><td><span class="memberName"><a href="#IMETHODREF_DELIM" class="fieldRef">IMETHODREF_DELIM</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static String</td><td><span class="memberName"><a href="#METHODREF_DELIM" class="fieldRef">METHODREF_DELIM</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td> Map</td><td><span class="memberName"><a href="#n_a_t_table" class="fieldRef">n_a_t_table</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static String</td><td><span class="memberName"><a href="#NAT_DELIM" class="fieldRef">NAT_DELIM</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>protected int</td><td><span class="memberName"><a href="#size" class="fieldRef">size</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td> Map</td><td><span class="memberName"><a href="#string_table" class="fieldRef">string_table</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td> Map</td><td><span class="memberName"><a href="#utf8_table" class="fieldRef">utf8_table</a></span><div class="memberDescription"></div></td></tr>
+
+   </table>
+
+
+
+
+   <table class="constructor_summary summary">
+     <tr><th colspan="2"><a name="constructor_summary" id="constructor_summary">Constructor Summary</a></th></tr>
+
+     <tr><td> </td><td><span class="memberName"><a href="#ConstantPoolGen(org.apache.bcel.classfile.Constant[])" class="constructorRef">ConstantPoolGen</a>(<a href="../classfile/Constant.html" class="classRef">Constant</a>[] cs)</span><div class="memberDescription">
+ Initialize with given array of constants.
+</div></td></tr>
+
+
+
+     <tr><td> </td><td><span class="memberName"><a href="#ConstantPoolGen(org.apache.bcel.classfile.ConstantPool)" class="constructorRef">ConstantPoolGen</a>(<a href="../classfile/ConstantPool.html" class="classRef">ConstantPool</a> cp)</span><div class="memberDescription">
+ Initialize with given constant pool.</div></td></tr>
+
+
+
+     <tr><td> </td><td><span class="memberName"><a href="#ConstantPoolGen()" class="constructorRef">ConstantPoolGen</a>()</span><div class="memberDescription">
+ Create empty constant pool.</div></td></tr>
+
+   </table>
+
+
+
+
+   <table class="method_summary summary">
+     <tr><th colspan="2"><a name="method_summary" id="method_summary">Method Summary</a></th></tr>
+
+     <tr><td>  int</td><td><span class="memberName"><a href="#addArrayClass(org.apache.bcel.generic.ArrayType)" class="methodRef">addArrayClass</a>(<a href="ArrayType.html" class="classRef">ArrayType</a> type)</span><div class="memberDescription">
+ Add a reference to an array class (e.g. </div></td></tr>
+
+
+
+     <tr><td>  int</td><td><span class="memberName"><a href="#addClass(<unknown>.String)" class="methodRef">addClass</a>(String str)</span><div class="memberDescription">
+ Add a new Class reference to the ConstantPool, if it is not already in there.
+</div></td></tr>
+
+
+
+     <tr><td>  int</td><td><span class="memberName"><a href="#addClass(org.apache.bcel.generic.ObjectType)" class="methodRef">addClass</a>(<a href="ObjectType.html" class="classRef">ObjectType</a> type)</span><div class="memberDescription">
+ Add a new Class reference to the ConstantPool for a given type.
+</div></td></tr>
+
+
+
+     <tr><td>  int</td><td><span class="memberName"><a href="#addClass_(<unknown>.String)" class="methodRef">addClass_</a>(String clazz)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  int</td><td><span class="memberName"><a href="#addConstant(org.apache.bcel.classfile.Constant,org.apache.bcel.generic.ConstantPoolGen)" class="methodRef">addConstant</a>(<a href="../classfile/Constant.html" class="classRef">Constant</a> c, <a href="ConstantPoolGen.html" class="classRef">ConstantPoolGen</a> cp)</span><div class="memberDescription"> Import constant from another ConstantPool and return new index.</div></td></tr>
+
+
+
+     <tr><td>  int</td><td><span class="memberName"><a href="#addDouble(double)" class="methodRef">addDouble</a>(double n)</span><div class="memberDescription">
+ Add a new double constant to the ConstantPool, if it is not already in there.
+</div></td></tr>
+
+
+
+     <tr><td>  int</td><td><span class="memberName"><a href="#addFieldref(<unknown>.String,<unknown>.String,<unknown>.String)" class="methodRef">addFieldref</a>(String class_name, String field_name, String signature)</span><div class="memberDescription">
+ Add a new Fieldref constant to the ConstantPool, if it is not already 
+ in there.
+</div></td></tr>
+
+
+
+     <tr><td>  int</td><td><span class="memberName"><a href="#addFloat(float)" class="methodRef">addFloat</a>(float n)</span><div class="memberDescription">
+ Add a new Float constant to the ConstantPool, if it is not already in there.
+</div></td></tr>
+
+
+
+     <tr><td>  int</td><td><span class="memberName"><a href="#addInteger(int)" class="methodRef">addInteger</a>(int n)</span><div class="memberDescription">
+ Add a new Integer constant to the ConstantPool, if it is not already in there.
+</div></td></tr>
+
+
+
+     <tr><td>  int</td><td><span class="memberName"><a href="#addInterfaceMethodref(<unknown>.String,<unknown>.String,<unknown>.String)" class="methodRef">addInterfaceMethodref</a>(String class_name, String method_name, String signature)</span><div class="memberDescription">
+ Add a new InterfaceMethodref constant to the ConstantPool, if it is not already 
+ in there.
+</div></td></tr>
+
+
+
+     <tr><td>  int</td><td><span class="memberName"><a href="#addInterfaceMethodref(org.apache.bcel.generic.MethodGen)" class="methodRef">addInterfaceMethodref</a>(<a href="MethodGen.html" class="classRef">MethodGen</a> method)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  int</td><td><span class="memberName"><a href="#addLong(long)" class="methodRef">addLong</a>(long n)</span><div class="memberDescription">
+ Add a new long constant to the ConstantPool, if it is not already in there.
+</div></td></tr>
+
+
+
+     <tr><td>  int</td><td><span class="memberName"><a href="#addMethodref(<unknown>.String,<unknown>.String,<unknown>.String)" class="methodRef">addMethodref</a>(String class_name, String method_name, String signature)</span><div class="memberDescription">
+ Add a new Methodref constant to the ConstantPool, if it is not already 
+ in there.
+</div></td></tr>
+
+
+
+     <tr><td>  int</td><td><span class="memberName"><a href="#addMethodref(org.apache.bcel.generic.MethodGen)" class="methodRef">addMethodref</a>(<a href="MethodGen.html" class="classRef">MethodGen</a> method)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  int</td><td><span class="memberName"><a href="#addNameAndType(<unknown>.String,<unknown>.String)" class="methodRef">addNameAndType</a>(String name, String signature)</span><div class="memberDescription">
+ Add a new NameAndType constant to the ConstantPool if it is not already 
+ in there.
+</div></td></tr>
+
+
+
+     <tr><td>  int</td><td><span class="memberName"><a href="#addString(<unknown>.String)" class="methodRef">addString</a>(String str)</span><div class="memberDescription">
+ Add a new String constant to the ConstantPool, if it is not already in there.
+</div></td></tr>
+
+
+
+     <tr><td>  int</td><td><span class="memberName"><a href="#addUtf8(<unknown>.String)" class="methodRef">addUtf8</a>(String n)</span><div class="memberDescription">
+ Add a new Utf8 constant to the ConstantPool, if it is not already in there.
+</div></td></tr>
+
+
+
+     <tr><td>protected  void</td><td><span class="memberName"><a href="#adjustSize()" class="methodRef">adjustSize</a>()</span><div class="memberDescription"> Resize internal array of constants.</div></td></tr>
+
+
+
+     <tr><td>  <a href="../classfile/Constant.html" class="classRef">Constant</a></td><td><span class="memberName"><a href="#getConstant(int)" class="methodRef">getConstant</a>(int i)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  <a href="../classfile/ConstantPool.html" class="classRef">ConstantPool</a></td><td><span class="memberName"><a href="#getConstantPool()" class="methodRef">getConstantPool</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  <a href="../classfile/ConstantPool.html" class="classRef">ConstantPool</a></td><td><span class="memberName"><a href="#getFinalConstantPool()" class="methodRef">getFinalConstantPool</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  int</td><td><span class="memberName"><a href="#getSize()" class="methodRef">getSize</a>()</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  int</td><td><span class="memberName"><a href="#lookupClass(<unknown>.String)" class="methodRef">lookupClass</a>(String str)</span><div class="memberDescription">
+ Look for ConstantClass in ConstantPool named `str'.
+</div></td></tr>
+
+
+
+     <tr><td>  int</td><td><span class="memberName"><a href="#lookupDouble(double)" class="methodRef">lookupDouble</a>(double n)</span><div class="memberDescription"> 
+ Look for ConstantDouble in ConstantPool.
+</div></td></tr>
+
+
+
+     <tr><td>  int</td><td><span class="memberName"><a href="#lookupFieldref(<unknown>.String,<unknown>.String,<unknown>.String)" class="methodRef">lookupFieldref</a>(String class_name, String field_name, String signature)</span><div class="memberDescription"> 
+ Look for ConstantFieldref in ConstantPool.
+</div></td></tr>
+
+
+
+     <tr><td>  int</td><td><span class="memberName"><a href="#lookupFloat(float)" class="methodRef">lookupFloat</a>(float n)</span><div class="memberDescription"> 
+ Look for ConstantFloat in ConstantPool.
+</div></td></tr>
+
+
+
+     <tr><td>  int</td><td><span class="memberName"><a href="#lookupInteger(int)" class="methodRef">lookupInteger</a>(int n)</span><div class="memberDescription"> 
+ Look for ConstantInteger in ConstantPool.
+</div></td></tr>
+
+
+
+     <tr><td>  int</td><td><span class="memberName"><a href="#lookupInterfaceMethodref(<unknown>.String,<unknown>.String,<unknown>.String)" class="methodRef">lookupInterfaceMethodref</a>(String class_name, String method_name, String signature)</span><div class="memberDescription"> 
+ Look for ConstantInterfaceMethodref in ConstantPool.
+</div></td></tr>
+
+
+
+     <tr><td>  int</td><td><span class="memberName"><a href="#lookupInterfaceMethodref(org.apache.bcel.generic.MethodGen)" class="methodRef">lookupInterfaceMethodref</a>(<a href="MethodGen.html" class="classRef">MethodGen</a> method)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  int</td><td><span class="memberName"><a href="#lookupLong(long)" class="methodRef">lookupLong</a>(long n)</span><div class="memberDescription"> 
+ Look for ConstantLong in ConstantPool.
+</div></td></tr>
+
+
+
+     <tr><td>  int</td><td><span class="memberName"><a href="#lookupMethodref(<unknown>.String,<unknown>.String,<unknown>.String)" class="methodRef">lookupMethodref</a>(String class_name, String method_name, String signature)</span><div class="memberDescription"> 
+ Look for ConstantMethodref in ConstantPool.
+</div></td></tr>
+
+
+
+     <tr><td>  int</td><td><span class="memberName"><a href="#lookupMethodref(org.apache.bcel.generic.MethodGen)" class="methodRef">lookupMethodref</a>(<a href="MethodGen.html" class="classRef">MethodGen</a> method)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>  int</td><td><span class="memberName"><a href="#lookupNameAndType(<unknown>.String,<unknown>.String)" class="methodRef">lookupNameAndType</a>(String name, String signature)</span><div class="memberDescription"> 
+ Look for ConstantNameAndType in ConstantPool.
+</div></td></tr>
+
+
+
+     <tr><td>  int</td><td><span class="memberName"><a href="#lookupString(<unknown>.String)" class="methodRef">lookupString</a>(String str)</span><div class="memberDescription"> 
+ Look for ConstantString in ConstantPool containing String `str'.
+</div></td></tr>
+
+
+
+     <tr><td>  int</td><td><span class="memberName"><a href="#lookupUtf8(<unknown>.String)" class="methodRef">lookupUtf8</a>(String n)</span><div class="memberDescription"> 
+ Look for ConstantUtf8 in ConstantPool.
+</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#setConstant(int,org.apache.bcel.classfile.Constant)" class="methodRef">setConstant</a>(int i, <a href="../classfile/Constant.html" class="classRef">Constant</a> c)</span><div class="memberDescription">
+ Use with care!
+</div></td></tr>
+
+
+
+     <tr><td>  String</td><td><span class="memberName"><a href="#toString()" class="methodRef">toString</a>()</span><div class="memberDescription"></div></td></tr>
+
+   </table>
+
+
+
+<!--
+   <p class="inherited">
+    <span class="header">Methods inherited from class java.util.<a
+   href="AbstractCollection.html">AbstractCollection</a></span>
+    <a href="#addAll">addAll</a>
+    <a href="#contains">contains</a>
+   </p>
+   <p class="inherited">
+    <span class="header">Methods inherited from class java.lang.<a
+   href="Object.html">Object</a></span>
+    <a href="#addAll">clone</a>
+    <a href="#contains">finalize</a>
+   </p>
+   <p class="inherited">
+    <span class="header">Methods inherited from interface java.util.<a
+   href="List.html">List</a></span>
+    <a href="#addAll">addAll</a>
+    <a href="#contains">contains</a>
+   </p>
+-->
+
+
+
+   <h2><a name="field_detail" id="field_detail">Field Detail</a></h2>
+
+   <h3><a name="class_table" id="class_table">class_table</a></h3>
+   <div class="memberName">private Map class_table</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="constants" id="constants">constants</a></h3>
+   <div class="memberName">protected <a href="../classfile/Constant.html" class="classRef">Constant</a>[] constants</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="cp_table" id="cp_table">cp_table</a></h3>
+   <div class="memberName">private Map cp_table</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="FIELDREF_DELIM" id="FIELDREF_DELIM">FIELDREF_DELIM</a></h3>
+   <div class="memberName">private static final String FIELDREF_DELIM</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="index" id="index">index</a></h3>
+   <div class="memberName">protected int index</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="IMETHODREF_DELIM" id="IMETHODREF_DELIM">IMETHODREF_DELIM</a></h3>
+   <div class="memberName">private static final String IMETHODREF_DELIM</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="METHODREF_DELIM" id="METHODREF_DELIM">METHODREF_DELIM</a></h3>
+   <div class="memberName">private static final String METHODREF_DELIM</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="n_a_t_table" id="n_a_t_table">n_a_t_table</a></h3>
+   <div class="memberName">private Map n_a_t_table</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="NAT_DELIM" id="NAT_DELIM">NAT_DELIM</a></h3>
+   <div class="memberName">private static final String NAT_DELIM</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="size" id="size">size</a></h3>
+   <div class="memberName">protected int size</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="string_table" id="string_table">string_table</a></h3>
+   <div class="memberName">private Map string_table</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="utf8_table" id="utf8_table">utf8_table</a></h3>
+   <div class="memberName">private Map utf8_table</div>
+   <div class="memberDescription"></div>
+
+
+
+
+   <h2><a name="constructor_detail" id="constructor_detail">Constructor Detail</a></h2>
+
+   <h3><a name="ConstantPoolGen(org.apache.bcel.classfile.Constant[])" id="ConstantPoolGen(org.apache.bcel.classfile.Constant[])">ConstantPoolGen</a></h3>
+   <div class="memberName">public  ConstantPoolGen(<a href="../classfile/Constant.html" class="classRef">Constant</a>[] cs)</div>
+   <div class="memberDescription">
+ Initialize with given array of constants.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">cs array of given constants, new ones will be appended</span> </p>
+</div>
+
+
+   <h3><a name="ConstantPoolGen(org.apache.bcel.classfile.ConstantPool)" id="ConstantPoolGen(org.apache.bcel.classfile.ConstantPool)">ConstantPoolGen</a></h3>
+   <div class="memberName">public  ConstantPoolGen(<a href="../classfile/ConstantPool.html" class="classRef">ConstantPool</a> cp)</div>
+   <div class="memberDescription">
+ Initialize with given constant pool.</div>
+
+
+   <h3><a name="ConstantPoolGen()" id="ConstantPoolGen()">ConstantPoolGen</a></h3>
+   <div class="memberName">public  ConstantPoolGen()</div>
+   <div class="memberDescription">
+ Create empty constant pool.</div>
+
+
+
+
+   <h2><a name="method_detail" id="method_detail">Method Detail</a></h2>
+
+   <h3><a name="addArrayClass(org.apache.bcel.generic.ArrayType)" id="addArrayClass(org.apache.bcel.generic.ArrayType)">addArrayClass</a></h3>
+   <div class="memberName">public  int addArrayClass(<a href="ArrayType.html" class="classRef">ArrayType</a> type)</div>
+   <div class="memberDescription">
+ Add a reference to an array class (e.g. String[][]) as needed by MULTIANEWARRAY
+ instruction, e.g. to the ConstantPool.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">type type of array class</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">index of entry</span> </p>
+</div>
+
+
+   <h3><a name="addClass(<unknown>.String)" id="addClass(<unknown>.String)">addClass</a></h3>
+   <div class="memberName">public  int addClass(String str)</div>
+   <div class="memberDescription">
+ Add a new Class reference to the ConstantPool, if it is not already in there.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">str Class to add</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">index of entry</span> </p>
+</div>
+
+
+   <h3><a name="addClass(org.apache.bcel.generic.ObjectType)" id="addClass(org.apache.bcel.generic.ObjectType)">addClass</a></h3>
+   <div class="memberName">public  int addClass(<a href="ObjectType.html" class="classRef">ObjectType</a> type)</div>
+   <div class="memberDescription">
+ Add a new Class reference to the ConstantPool for a given type.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">type Class to add</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">index of entry</span> </p>
+</div>
+
+
+   <h3><a name="addClass_(<unknown>.String)" id="addClass_(<unknown>.String)">addClass_</a></h3>
+   <div class="memberName">private  int addClass_(String clazz)</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="addConstant(org.apache.bcel.classfile.Constant,org.apache.bcel.generic.ConstantPoolGen)" id="addConstant(org.apache.bcel.classfile.Constant,org.apache.bcel.generic.ConstantPoolGen)">addConstant</a></h3>
+   <div class="memberName">public  int addConstant(<a href="../classfile/Constant.html" class="classRef">Constant</a> c, <a href="ConstantPoolGen.html" class="classRef">ConstantPoolGen</a> cp)</div>
+   <div class="memberDescription"> Import constant from another ConstantPool and return new index.</div>
+
+
+   <h3><a name="addDouble(double)" id="addDouble(double)">addDouble</a></h3>
+   <div class="memberName">public  int addDouble(double n)</div>
+   <div class="memberDescription">
+ Add a new double constant to the ConstantPool, if it is not already in there.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">n Double number to add</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">index of entry</span> </p>
+</div>
+
+
+   <h3><a name="addFieldref(<unknown>.String,<unknown>.String,<unknown>.String)" id="addFieldref(<unknown>.String,<unknown>.String,<unknown>.String)">addFieldref</a></h3>
+   <div class="memberName">public  int addFieldref(String class_name, String field_name, String signature)</div>
+   <div class="memberDescription">
+ Add a new Fieldref constant to the ConstantPool, if it is not already 
+ in there.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">class_name class name string to add</span> <span class="tagContents">field_name field name string to add</span> <span class="tagContents">signature signature string to add</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">index of entry</span> </p>
+</div>
+
+
+   <h3><a name="addFloat(float)" id="addFloat(float)">addFloat</a></h3>
+   <div class="memberName">public  int addFloat(float n)</div>
+   <div class="memberDescription">
+ Add a new Float constant to the ConstantPool, if it is not already in there.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">n Float number to add</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">index of entry</span> </p>
+</div>
+
+
+   <h3><a name="addInteger(int)" id="addInteger(int)">addInteger</a></h3>
+   <div class="memberName">public  int addInteger(int n)</div>
+   <div class="memberDescription">
+ Add a new Integer constant to the ConstantPool, if it is not already in there.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">n integer number to add</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">index of entry</span> </p>
+</div>
+
+
+   <h3><a name="addInterfaceMethodref(<unknown>.String,<unknown>.String,<unknown>.String)" id="addInterfaceMethodref(<unknown>.String,<unknown>.String,<unknown>.String)">addInterfaceMethodref</a></h3>
+   <div class="memberName">public  int addInterfaceMethodref(String class_name, String method_name, String signature)</div>
+   <div class="memberDescription">
+ Add a new InterfaceMethodref constant to the ConstantPool, if it is not already 
+ in there.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">class_name class name string to add</span> <span class="tagContents">method_name method name string to add</span> <span class="tagContents">signature signature string to add</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">index of entry</span> </p>
+</div>
+
+
+   <h3><a name="addInterfaceMethodref(org.apache.bcel.generic.MethodGen)" id="addInterfaceMethodref(org.apache.bcel.generic.MethodGen)">addInterfaceMethodref</a></h3>
+   <div class="memberName">public  int addInterfaceMethodref(<a href="MethodGen.html" class="classRef">MethodGen</a> method)</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="addLong(long)" id="addLong(long)">addLong</a></h3>
+   <div class="memberName">public  int addLong(long n)</div>
+   <div class="memberDescription">
+ Add a new long constant to the ConstantPool, if it is not already in there.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">n Long number to add</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">index of entry</span> </p>
+</div>
+
+
+   <h3><a name="addMethodref(<unknown>.String,<unknown>.String,<unknown>.String)" id="addMethodref(<unknown>.String,<unknown>.String,<unknown>.String)">addMethodref</a></h3>
+   <div class="memberName">public  int addMethodref(String class_name, String method_name, String signature)</div>
+   <div class="memberDescription">
+ Add a new Methodref constant to the ConstantPool, if it is not already 
+ in there.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">class_name class name string to add</span> <span class="tagContents">method_name method name string to add</span> <span class="tagContents">signature method signature string to add</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">index of entry</span> </p>
+</div>
+
+
+   <h3><a name="addMethodref(org.apache.bcel.generic.MethodGen)" id="addMethodref(org.apache.bcel.generic.MethodGen)">addMethodref</a></h3>
+   <div class="memberName">public  int addMethodref(<a href="MethodGen.html" class="classRef">MethodGen</a> method)</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="addNameAndType(<unknown>.String,<unknown>.String)" id="addNameAndType(<unknown>.String,<unknown>.String)">addNameAndType</a></h3>
+   <div class="memberName">public  int addNameAndType(String name, String signature)</div>
+   <div class="memberDescription">
+ Add a new NameAndType constant to the ConstantPool if it is not already 
+ in there.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">name Name string to add</span> <span class="tagContents">signature signature string to add</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">index of entry</span> </p>
+</div>
+
+
+   <h3><a name="addString(<unknown>.String)" id="addString(<unknown>.String)">addString</a></h3>
+   <div class="memberName">public  int addString(String str)</div>
+   <div class="memberDescription">
+ Add a new String constant to the ConstantPool, if it is not already in there.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">str String to add</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">index of entry</span> </p>
+</div>
+
+
+   <h3><a name="addUtf8(<unknown>.String)" id="addUtf8(<unknown>.String)">addUtf8</a></h3>
+   <div class="memberName">public  int addUtf8(String n)</div>
+   <div class="memberDescription">
+ Add a new Utf8 constant to the ConstantPool, if it is not already in there.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">n Utf8 string to add</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">index of entry</span> </p>
+</div>
+
+
+   <h3><a name="adjustSize()" id="adjustSize()">adjustSize</a></h3>
+   <div class="memberName">protected  void adjustSize()</div>
+   <div class="memberDescription"> Resize internal array of constants.</div>
+
+
+   <h3><a name="getConstant(int)" id="getConstant(int)">getConstant</a></h3>
+   <div class="memberName">public  <a href="../classfile/Constant.html" class="classRef">Constant</a> getConstant(int i)</div>
+   <div class="memberDescription"><p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">i index in constant pool</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">constant pool entry at index i</span> </p>
+</div>
+
+
+   <h3><a name="getConstantPool()" id="getConstantPool()">getConstantPool</a></h3>
+   <div class="memberName">public  <a href="../classfile/ConstantPool.html" class="classRef">ConstantPool</a> getConstantPool()</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">intermediate constant pool</span> </p>
+</div>
+
+
+   <h3><a name="getFinalConstantPool()" id="getFinalConstantPool()">getFinalConstantPool</a></h3>
+   <div class="memberName">public  <a href="../classfile/ConstantPool.html" class="classRef">ConstantPool</a> getFinalConstantPool()</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">constant pool with proper length</span> </p>
+</div>
+
+
+   <h3><a name="getSize()" id="getSize()">getSize</a></h3>
+   <div class="memberName">public  int getSize()</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">current size of constant pool</span> </p>
+</div>
+
+
+   <h3><a name="lookupClass(<unknown>.String)" id="lookupClass(<unknown>.String)">lookupClass</a></h3>
+   <div class="memberName">public  int lookupClass(String str)</div>
+   <div class="memberDescription">
+ Look for ConstantClass in ConstantPool named `str'.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">str String to search for</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">index on success, -1 otherwise</span> </p>
+</div>
+
+
+   <h3><a name="lookupDouble(double)" id="lookupDouble(double)">lookupDouble</a></h3>
+   <div class="memberName">public  int lookupDouble(double n)</div>
+   <div class="memberDescription"> 
+ Look for ConstantDouble in ConstantPool.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">n Double number to look for</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">index on success, -1 otherwise</span> </p>
+</div>
+
+
+   <h3><a name="lookupFieldref(<unknown>.String,<unknown>.String,<unknown>.String)" id="lookupFieldref(<unknown>.String,<unknown>.String,<unknown>.String)">lookupFieldref</a></h3>
+   <div class="memberName">public  int lookupFieldref(String class_name, String field_name, String signature)</div>
+   <div class="memberDescription"> 
+ Look for ConstantFieldref in ConstantPool.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">class_name Where to find method</span> <span class="tagContents">field_name Guess what</span> <span class="tagContents">signature return and argument types</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">index on success, -1 otherwise</span> </p>
+</div>
+
+
+   <h3><a name="lookupFloat(float)" id="lookupFloat(float)">lookupFloat</a></h3>
+   <div class="memberName">public  int lookupFloat(float n)</div>
+   <div class="memberDescription"> 
+ Look for ConstantFloat in ConstantPool.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">n Float number to look for</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">index on success, -1 otherwise</span> </p>
+</div>
+
+
+   <h3><a name="lookupInteger(int)" id="lookupInteger(int)">lookupInteger</a></h3>
+   <div class="memberName">public  int lookupInteger(int n)</div>
+   <div class="memberDescription"> 
+ Look for ConstantInteger in ConstantPool.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">n integer number to look for</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">index on success, -1 otherwise</span> </p>
+</div>
+
+
+   <h3><a name="lookupInterfaceMethodref(<unknown>.String,<unknown>.String,<unknown>.String)" id="lookupInterfaceMethodref(<unknown>.String,<unknown>.String,<unknown>.String)">lookupInterfaceMethodref</a></h3>
+   <div class="memberName">public  int lookupInterfaceMethodref(String class_name, String method_name, String signature)</div>
+   <div class="memberDescription"> 
+ Look for ConstantInterfaceMethodref in ConstantPool.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">class_name Where to find method</span> <span class="tagContents">method_name Guess what</span> <span class="tagContents">signature return and argument types</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">index on success, -1 otherwise</span> </p>
+</div>
+
+
+   <h3><a name="lookupInterfaceMethodref(org.apache.bcel.generic.MethodGen)" id="lookupInterfaceMethodref(org.apache.bcel.generic.MethodGen)">lookupInterfaceMethodref</a></h3>
+   <div class="memberName">public  int lookupInterfaceMethodref(<a href="MethodGen.html" class="classRef">MethodGen</a> method)</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="lookupLong(long)" id="lookupLong(long)">lookupLong</a></h3>
+   <div class="memberName">public  int lookupLong(long n)</div>
+   <div class="memberDescription"> 
+ Look for ConstantLong in ConstantPool.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">n Long number to look for</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">index on success, -1 otherwise</span> </p>
+</div>
+
+
+   <h3><a name="lookupMethodref(<unknown>.String,<unknown>.String,<unknown>.String)" id="lookupMethodref(<unknown>.String,<unknown>.String,<unknown>.String)">lookupMethodref</a></h3>
+   <div class="memberName">public  int lookupMethodref(String class_name, String method_name, String signature)</div>
+   <div class="memberDescription"> 
+ Look for ConstantMethodref in ConstantPool.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">class_name Where to find method</span> <span class="tagContents">method_name Guess what</span> <span class="tagContents">signature return and argument types</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">index on success, -1 otherwise</span> </p>
+</div>
+
+
+   <h3><a name="lookupMethodref(org.apache.bcel.generic.MethodGen)" id="lookupMethodref(org.apache.bcel.generic.MethodGen)">lookupMethodref</a></h3>
+   <div class="memberName">public  int lookupMethodref(<a href="MethodGen.html" class="classRef">MethodGen</a> method)</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="lookupNameAndType(<unknown>.String,<unknown>.String)" id="lookupNameAndType(<unknown>.String,<unknown>.String)">lookupNameAndType</a></h3>
+   <div class="memberName">public  int lookupNameAndType(String name, String signature)</div>
+   <div class="memberDescription"> 
+ Look for ConstantNameAndType in ConstantPool.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">name of variable/method</span> <span class="tagContents">signature of variable/method</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">index on success, -1 otherwise</span> </p>
+</div>
+
+
+   <h3><a name="lookupString(<unknown>.String)" id="lookupString(<unknown>.String)">lookupString</a></h3>
+   <div class="memberName">public  int lookupString(String str)</div>
+   <div class="memberDescription"> 
+ Look for ConstantString in ConstantPool containing String `str'.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">str String to search for</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">index on success, -1 otherwise</span> </p>
+</div>
+
+
+   <h3><a name="lookupUtf8(<unknown>.String)" id="lookupUtf8(<unknown>.String)">lookupUtf8</a></h3>
+   <div class="memberName">public  int lookupUtf8(String n)</div>
+   <div class="memberDescription"> 
+ Look for ConstantUtf8 in ConstantPool.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">n Utf8 string to look for</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">index on success, -1 otherwise</span> </p>
+</div>
+
+
+   <h3><a name="setConstant(int,org.apache.bcel.classfile.Constant)" id="setConstant(int,org.apache.bcel.classfile.Constant)">setConstant</a></h3>
+   <div class="memberName">public  void setConstant(int i, <a href="../classfile/Constant.html" class="classRef">Constant</a> c)</div>
+   <div class="memberDescription">
+ Use with care!
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">i index in constant pool</span> <span class="tagContents">c new constant pool entry at index i</span> </p>
+</div>
+
+
+   <h3><a name="toString()" id="toString()">toString</a></h3>
+   <div class="memberName">public  String toString()</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">String representation.</span> </p>
+</div>
+
+   
+   <div class="navbar">
+    <p class="nav navtop">
+      <span class="over"><a href="../../../../overview-summary.html">Overview</a></span>
+      <span class="package"><a href="package-summary.html">Package</a></span>
+      <span class="class selected">Class</span>
+      <span class="use"><a href="class-use/ConstantPoolGen.html">Use</a></span>
+      <span class="tree"><a href="package-tree.html">Tree</a></span>
+      <span class="deprecated"><a href="../../../../deprecated-list.html">Deprecated</a></span>
+      <span class="index"><a href="../../../../index-all.html">Index</a></span>
+      <span class="help"><a href="../../../../help-doc.html">Help</a></span>
+    </p>
+    <p class="nav navmid">
+      <span class="prevnext">
+       <span class="prev">Prev Class</span>
+       <span class="next">Next Class</span>
+      </span>
+      <span class="framesel">
+       <span class="frames"><a href="../../../../index.html" target="_top">Frames</a></span>
+       <span class="noframes"><a href="ConstantPoolGen.html" target="_top">NoFrames</a></span>
+      </span>
+      <span class="allclasses"><a href="../../../../allclasses-noframe.html">All Classes</a></span>
+   </p>
+   <p class="nav navbot">
+      <span class="summary">Summary:
+       <span class="nested"><a href="#nested_class_summary">Nested</a></span>
+       <span class="field"><a href="#field_summary">Field</a></span>
+       <span class="constr"><a href="#constructor_summary">Constr</a></span>
+       <span class="method"><a href="#method_summary">Method</a></span>
+      </span>
+      <span class="detail">Detail:
+       <span class="field"><a href="#field_detail">Field</a></span>
+       <span class="constr"><a href="#constructor_detail">Constr</a></span>
+       <span class="method"><a href="#method_detail">Method</a></span>
+      </span>
+   </p>
+    <div class="navtitle">
+     
+    </div>
+    <p class="clear"><!--empty--></p>
+   </div>
+   <div class="bottom"></div>
+   </body>
+</html>

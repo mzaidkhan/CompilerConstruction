@@ -1,0 +1,891 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>Utility</title>
+    <meta name="keywords" content="org.apache.bcel.classfile.Utility,Utility class" />
+    <meta name="generator" content="SinjDoc 0.5" />
+    <link href="../../../../stylesheet.css" rel="stylesheet" type="text/css" />
+    <link rel="Index" href="../../../../index-all.html" />
+    <link rel="Start" href="../../../../overview-summary.html" />
+    <link rel="Up" href="package-summary.html" />
+    <link rel="Help" href="../../../../help-doc.html" />
+  </head>
+  <body class="classPage bigframe">
+   <div class="navbar">
+    <p class="nav navtop">
+      <span class="over"><a href="../../../../overview-summary.html">Overview</a></span>
+      <span class="package"><a href="package-summary.html">Package</a></span>
+      <span class="class selected">Class</span>
+      <span class="use"><a href="class-use/Utility.html">Use</a></span>
+      <span class="tree"><a href="package-tree.html">Tree</a></span>
+      <span class="deprecated"><a href="../../../../deprecated-list.html">Deprecated</a></span>
+      <span class="index"><a href="../../../../index-all.html">Index</a></span>
+      <span class="help"><a href="../../../../help-doc.html">Help</a></span>
+    </p>
+    <p class="nav navmid">
+      <span class="prevnext">
+       <span class="prev">Prev Class</span>
+       <span class="next">Next Class</span>
+      </span>
+      <span class="framesel">
+       <span class="frames"><a href="../../../../index.html" target="_top">Frames</a></span>
+       <span class="noframes"><a href="Utility.html" target="_top">NoFrames</a></span>
+      </span>
+      <span class="allclasses"><a href="../../../../allclasses-noframe.html">All Classes</a></span>
+   </p>
+   <p class="nav navbot">
+      <span class="summary">Summary:
+       <span class="nested"><a href="#nested_class_summary">Nested</a></span>
+       <span class="field"><a href="#field_summary">Field</a></span>
+       <span class="constr">Constr</span>
+       <span class="method"><a href="#method_summary">Method</a></span>
+      </span>
+      <span class="detail">Detail:
+       <span class="field"><a href="#field_detail">Field</a></span>
+       <span class="constr">Constr</span>
+       <span class="method"><a href="#method_detail">Method</a></span>
+      </span>
+   </p>
+    <div class="navtitle">
+     
+    </div>
+    <p class="clear"><!--empty--></p>
+   </div>
+   <p class="packageName">org.apache.bcel.classfile</p>
+   <h1>  Class  Utility</h1>
+<!--
+   <p class="enclosing">
+   Enclosing class/interface: @OUTER@
+   </p>
+-->
+
+
+   <!-- XXX class hierarchy diagram goes here -->
+<!--
+   
+   <p class="directSubclasses">
+   Direct known subclasses: @ALL_SUBCLASSES@
+   </p>
+-->
+
+
+   <p class="declaration">public abstract
+     class 
+   <span class="className">Utility</span>
+   
+   
+      
+      <span class="extends">extends Object</span>
+      
+      
+   
+   </p>
+
+   <div class="description">
+   
+ Utility functions that do not really belong to any class in particular.
+<p class="tag tag_version"><span class="tagName">Version:</span> <span class="tagContents">$Id: Utility.java 386056 2006-03-15 11:31:56Z tcurdt $</span> </p>
+<p class="tag tag_author"><span class="tagName">Author:</span> <span class="tagContents"><A HREF="mailto:m.dahm@gmx.de">M. Dahm</A></span> </p>
+
+   </div>
+
+
+
+   <table class="nested_class_summary summary">
+     <tr><th colspan="2"><a name="nested_class_summary" id="nested_class_summary">Nested Class Summary</a></th></tr>
+
+     <tr><td>static class</td><td><span class="memberName"><a href="Utility.JavaReader.html" class="classRef">Utility.JavaReader</a></span><div class="memberDescription"> Decode characters into bytes.
+ </div></td></tr>
+
+
+
+     <tr><td>static class</td><td><span class="memberName"><a href="Utility.JavaWriter.html" class="classRef">Utility.JavaWriter</a></span><div class="memberDescription"> Encode bytes into valid java identifier characters.
+ </div></td></tr>
+
+   </table>
+
+
+
+
+   <table class="field_summary summary">
+     <tr><th colspan="2"><a name="field_summary" id="field_summary">Field Summary</a></th></tr>
+
+     <tr><td>static ThreadLocal</td><td><span class="memberName"><a href="#consumed_chars" class="fieldRef">consumed_chars</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static int[]</td><td><span class="memberName"><a href="#CHAR_MAP" class="fieldRef">CHAR_MAP</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static char</td><td><span class="memberName"><a href="#ESCAPE_CHAR" class="fieldRef">ESCAPE_CHAR</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static int</td><td><span class="memberName"><a href="#FREE_CHARS" class="fieldRef">FREE_CHARS</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static int[]</td><td><span class="memberName"><a href="#MAP_CHAR" class="fieldRef">MAP_CHAR</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static boolean</td><td><span class="memberName"><a href="#wide" class="fieldRef">wide</a></span><div class="memberDescription"></div></td></tr>
+
+   </table>
+
+
+
+
+
+   <table class="method_summary summary">
+     <tr><th colspan="2"><a name="method_summary" id="method_summary">Method Summary</a></th></tr>
+
+     <tr><td>static  String</td><td><span class="memberName"><a href="#accessToString(int)" class="methodRef">accessToString</a>(int access_flags)</span><div class="memberDescription">
+ Convert bit field of flags into string such as `static final'.
+</div></td></tr>
+
+
+
+     <tr><td>static  String</td><td><span class="memberName"><a href="#accessToString(int,boolean)" class="methodRef">accessToString</a>(int access_flags, boolean for_class)</span><div class="memberDescription">
+ Convert bit field of flags into string such as `static final'.
+
+ </div></td></tr>
+
+
+
+     <tr><td>static  short</td><td><span class="memberName"><a href="#byteToShort(byte)" class="methodRef">byteToShort</a>(byte b)</span><div class="memberDescription">
+ Convert (signed) byte to (unsigned) short value, i.e., all negative
+ values become positive.</div></td></tr>
+
+
+
+     <tr><td>static  String</td><td><span class="memberName"><a href="#classOrInterface(int)" class="methodRef">classOrInterface</a>(int access_flags)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static  int</td><td><span class="memberName"><a href="#clearBit(int,int)" class="methodRef">clearBit</a>(int flag, int i)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static  String</td><td><span class="memberName"><a href="#codeToString(byte[],org.apache.bcel.classfile.ConstantPool,int,int,boolean)" class="methodRef">codeToString</a>(byte[] code, <a href="ConstantPool.html" class="classRef">ConstantPool</a> constant_pool, int index, int length, boolean verbose)</span><div class="memberDescription">
+ Disassemble a byte array of JVM byte codes starting from code line 
+ `index' and return the disassembled string representation. </div></td></tr>
+
+
+
+     <tr><td>static  String</td><td><span class="memberName"><a href="#codeToString(byte[],org.apache.bcel.classfile.ConstantPool,int,int)" class="methodRef">codeToString</a>(byte[] code, <a href="ConstantPool.html" class="classRef">ConstantPool</a> constant_pool, int index, int length)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static  String</td><td><span class="memberName"><a href="#codeToString(org.apache.bcel.util.ByteSequence,org.apache.bcel.classfile.ConstantPool,boolean)" class="methodRef">codeToString</a>(<a href="../util/ByteSequence.html" class="classRef">ByteSequence</a> bytes, <a href="ConstantPool.html" class="classRef">ConstantPool</a> constant_pool, boolean verbose)</span><div class="memberDescription">
+ Disassemble a stream of byte codes and return the
+ string representation.
+</div></td></tr>
+
+
+
+     <tr><td>static  String</td><td><span class="memberName"><a href="#codeToString(org.apache.bcel.util.ByteSequence,org.apache.bcel.classfile.ConstantPool)" class="methodRef">codeToString</a>(<a href="../util/ByteSequence.html" class="classRef">ByteSequence</a> bytes, <a href="ConstantPool.html" class="classRef">ConstantPool</a> constant_pool)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static  String</td><td><span class="memberName"><a href="#compactClassName(<unknown>.String)" class="methodRef">compactClassName</a>(String str)</span><div class="memberDescription">
+ Shorten long class names, <em>java/lang/String</em> becomes 
+ <em>String</em>.
+</div></td></tr>
+
+
+
+     <tr><td>static  String</td><td><span class="memberName"><a href="#compactClassName(<unknown>.String,<unknown>.String,boolean)" class="methodRef">compactClassName</a>(String str, String prefix, boolean chopit)</span><div class="memberDescription">
+ Shorten long class name <em>str</em>, i.e., chop off the <em>prefix</em>,
+ if the
+ class name starts with this string and the flag <em>chopit</em> is true.
+ </div></td></tr>
+
+
+
+     <tr><td>static  String</td><td><span class="memberName"><a href="#compactClassName(<unknown>.String,boolean)" class="methodRef">compactClassName</a>(String str, boolean chopit)</span><div class="memberDescription">
+ Shorten long class names, <em>java/lang/String</em> becomes 
+ <em>java.lang.String</em>,
+ e.g.. </div></td></tr>
+
+
+
+     <tr><td>static  String</td><td><span class="memberName"><a href="#convertString(<unknown>.String)" class="methodRef">convertString</a>(String label)</span><div class="memberDescription">
+ Escape all occurences of newline chars '\n', quotes \", etc.</div></td></tr>
+
+
+
+     <tr><td>static  int</td><td><span class="memberName"><a href="#countBrackets(<unknown>.String)" class="methodRef">countBrackets</a>(String brackets)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static  byte[]</td><td><span class="memberName"><a href="#decode(<unknown>.String,boolean)" class="methodRef">decode</a>(String s, boolean uncompress)</span><div class="memberDescription"> Decode a string back to a byte array.
+</div></td></tr>
+
+
+
+     <tr><td>static  String</td><td><span class="memberName"><a href="#encode(byte[],boolean)" class="methodRef">encode</a>(byte[] bytes, boolean compress)</span><div class="memberDescription"> Encode byte array it into Java identifier string, i.e., a string
+ that only contains the following characters: (a, ... z, A, ... </div></td></tr>
+
+
+
+     <tr><td>static  boolean</td><td><span class="memberName"><a href="#equals(byte[],byte[])" class="methodRef">equals</a>(byte[] a, byte[] b)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static  String</td><td><span class="memberName"><a href="#fillup(<unknown>.String,int,boolean,char)" class="methodRef">fillup</a>(String str, int length, boolean left_justify, char fill)</span><div class="memberDescription">
+ Fillup char with up to length characters with char `fill' and justify it left or right.
+</div></td></tr>
+
+
+
+     <tr><td>static  String</td><td><span class="memberName"><a href="#format(int,int,boolean,char)" class="methodRef">format</a>(int i, int length, boolean left_justify, char fill)</span><div class="memberDescription">
+ Return a string for an integer justified left or right and filled up with
+ `fill' characters if necessary.
+</div></td></tr>
+
+
+
+     <tr><td>static  String</td><td><span class="memberName"><a href="#getSignature(<unknown>.String)" class="methodRef">getSignature</a>(String type)</span><div class="memberDescription"> Parse Java type such as "char", or "java.lang.String[]" and return the
+ signature in byte code format, e.g. </div></td></tr>
+
+
+
+     <tr><td>static  boolean</td><td><span class="memberName"><a href="#isJavaIdentifierPart(char)" class="methodRef">isJavaIdentifierPart</a>(char ch)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static  boolean</td><td><span class="memberName"><a href="#isSet(int,int)" class="methodRef">isSet</a>(int flag, int i)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static  String[]</td><td><span class="memberName"><a href="#methodSignatureArgumentTypes(<unknown>.String)" class="methodRef">methodSignatureArgumentTypes</a>(String signature)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static  String[]</td><td><span class="memberName"><a href="#methodSignatureArgumentTypes(<unknown>.String,boolean)" class="methodRef">methodSignatureArgumentTypes</a>(String signature, boolean chopit)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static  String</td><td><span class="memberName"><a href="#methodSignatureReturnType(<unknown>.String)" class="methodRef">methodSignatureReturnType</a>(String signature)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static  String</td><td><span class="memberName"><a href="#methodSignatureReturnType(<unknown>.String,boolean)" class="methodRef">methodSignatureReturnType</a>(String signature, boolean chopit)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static  String</td><td><span class="memberName"><a href="#methodSignatureToString(<unknown>.String,<unknown>.String,<unknown>.String)" class="methodRef">methodSignatureToString</a>(String signature, String name, String access)</span><div class="memberDescription">
+ Converts method signature to string with all class names compacted.
+</div></td></tr>
+
+
+
+     <tr><td>static  String</td><td><span class="memberName"><a href="#methodSignatureToString(<unknown>.String,<unknown>.String,<unknown>.String,boolean)" class="methodRef">methodSignatureToString</a>(String signature, String name, String access, boolean chopit)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static  String</td><td><span class="memberName"><a href="#methodSignatureToString(<unknown>.String,<unknown>.String,<unknown>.String,boolean,org.apache.bcel.classfile.LocalVariableTable)" class="methodRef">methodSignatureToString</a>(String signature, String name, String access, boolean chopit, <a href="LocalVariableTable.html" class="classRef">LocalVariableTable</a> vars)</span><div class="memberDescription">
+ A return-type signature represents the return value from a method.
+ </div></td></tr>
+
+
+
+     <tr><td>static  String</td><td><span class="memberName"><a href="#methodTypeToSignature(<unknown>.String,<unknown>.String[])" class="methodRef">methodTypeToSignature</a>(String ret, String[] argv)</span><div class="memberDescription">
+ Converts string containing the method return and argument types 
+ to a byte code method signature.
+</div></td></tr>
+
+
+
+     <tr><td>static  int</td><td><span class="memberName"><a href="#pow2(int)" class="methodRef">pow2</a>(int n)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static  void</td><td><span class="memberName"><a href="#printArray(java.io.PrintStream,<unknown>.Object[])" class="methodRef">printArray</a>(PrintStream out, Object[] obj)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static  void</td><td><span class="memberName"><a href="#printArray(java.io.PrintWriter,<unknown>.Object[])" class="methodRef">printArray</a>(PrintWriter out, Object[] obj)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static  String</td><td><span class="memberName"><a href="#printArray(<unknown>.Object[])" class="methodRef">printArray</a>(Object[] obj)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static  String</td><td><span class="memberName"><a href="#printArray(<unknown>.Object[],boolean)" class="methodRef">printArray</a>(Object[] obj, boolean braces)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static  String</td><td><span class="memberName"><a href="#printArray(<unknown>.Object[],boolean,boolean)" class="methodRef">printArray</a>(Object[] obj, boolean braces, boolean quote)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static  String</td><td><span class="memberName"><a href="#replace(<unknown>.String,<unknown>.String,<unknown>.String)" class="methodRef">replace</a>(String str, String old, String new_)</span><div class="memberDescription">
+ Replace all occurences of <em>old</em> in <em>str</em> with <em>new</em>.
+</div></td></tr>
+
+
+
+     <tr><td>static  short</td><td><span class="memberName"><a href="#searchOpcode(<unknown>.String)" class="methodRef">searchOpcode</a>(String name)</span><div class="memberDescription"> Map opcode names to opcode numbers. </div></td></tr>
+
+
+
+     <tr><td>static  int</td><td><span class="memberName"><a href="#setBit(int,int)" class="methodRef">setBit</a>(int flag, int i)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static  String</td><td><span class="memberName"><a href="#signatureToString(<unknown>.String)" class="methodRef">signatureToString</a>(String signature)</span><div class="memberDescription">
+ Converts signature to string with all class names compacted.
+</div></td></tr>
+
+
+
+     <tr><td>static  String</td><td><span class="memberName"><a href="#signatureToString(<unknown>.String,boolean)" class="methodRef">signatureToString</a>(String signature, boolean chopit)</span><div class="memberDescription">
+ The field signature represents the value of an argument to a function or 
+ the value of a variable. </div></td></tr>
+
+
+
+     <tr><td>static  String</td><td><span class="memberName"><a href="#toHexString(byte[])" class="methodRef">toHexString</a>(byte[] bytes)</span><div class="memberDescription"> Convert bytes into hexidecimal string
+</div></td></tr>
+
+
+
+     <tr><td>static  byte</td><td><span class="memberName"><a href="#typeOfMethodSignature(<unknown>.String)" class="methodRef">typeOfMethodSignature</a>(String signature)</span><div class="memberDescription">
+ Return type of method signature as a byte value as defined in <em>Constants</em>
+</div></td></tr>
+
+
+
+     <tr><td>static  byte</td><td><span class="memberName"><a href="#typeOfSignature(<unknown>.String)" class="methodRef">typeOfSignature</a>(String signature)</span><div class="memberDescription">
+ Return type of signature as a byte value as defined in <em>Constants</em>
+</div></td></tr>
+
+
+
+     <tr><td>static  int</td><td><span class="memberName"><a href="#unwrap(<unknown>.ThreadLocal)" class="methodRef">unwrap</a>(ThreadLocal tl)</span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td>static  void</td><td><span class="memberName"><a href="#wrap(<unknown>.ThreadLocal,int)" class="methodRef">wrap</a>(ThreadLocal tl, int value)</span><div class="memberDescription"></div></td></tr>
+
+   </table>
+
+
+
+<!--
+   <p class="inherited">
+    <span class="header">Methods inherited from class java.util.<a
+   href="AbstractCollection.html">AbstractCollection</a></span>
+    <a href="#addAll">addAll</a>
+    <a href="#contains">contains</a>
+   </p>
+   <p class="inherited">
+    <span class="header">Methods inherited from class java.lang.<a
+   href="Object.html">Object</a></span>
+    <a href="#addAll">clone</a>
+    <a href="#contains">finalize</a>
+   </p>
+   <p class="inherited">
+    <span class="header">Methods inherited from interface java.util.<a
+   href="List.html">List</a></span>
+    <a href="#addAll">addAll</a>
+    <a href="#contains">contains</a>
+   </p>
+-->
+
+
+
+   <h2><a name="field_detail" id="field_detail">Field Detail</a></h2>
+
+   <h3><a name="consumed_chars" id="consumed_chars">consumed_chars</a></h3>
+   <div class="memberName">private static ThreadLocal consumed_chars</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="CHAR_MAP" id="CHAR_MAP">CHAR_MAP</a></h3>
+   <div class="memberName">static int[] CHAR_MAP</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="ESCAPE_CHAR" id="ESCAPE_CHAR">ESCAPE_CHAR</a></h3>
+   <div class="memberName">private static final char ESCAPE_CHAR</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="FREE_CHARS" id="FREE_CHARS">FREE_CHARS</a></h3>
+   <div class="memberName">private static final int FREE_CHARS</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="MAP_CHAR" id="MAP_CHAR">MAP_CHAR</a></h3>
+   <div class="memberName">static int[] MAP_CHAR</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="wide" id="wide">wide</a></h3>
+   <div class="memberName">private static boolean wide</div>
+   <div class="memberDescription"></div>
+
+
+
+
+
+
+   <h2><a name="method_detail" id="method_detail">Method Detail</a></h2>
+
+   <h3><a name="accessToString(int)" id="accessToString(int)">accessToString</a></h3>
+   <div class="memberName">public static final  String accessToString(int access_flags)</div>
+   <div class="memberDescription">
+ Convert bit field of flags into string such as `static final'.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">access_flags Access flags</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">String representation of flags</span> </p>
+</div>
+
+
+   <h3><a name="accessToString(int,boolean)" id="accessToString(int,boolean)">accessToString</a></h3>
+   <div class="memberName">public static final  String accessToString(int access_flags, boolean for_class)</div>
+   <div class="memberDescription">
+ Convert bit field of flags into string such as `static final'.
+
+ Special case: Classes compiled with new compilers and with the
+ `ACC_SUPER' flag would be said to be "synchronized". This is
+ because SUN used the same value for the flags `ACC_SUPER' and
+ `ACC_SYNCHRONIZED'. 
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">access_flags Access flags</span> <span class="tagContents">for_class access flags are for class qualifiers ?</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">String representation of flags</span> </p>
+</div>
+
+
+   <h3><a name="byteToShort(byte)" id="byteToShort(byte)">byteToShort</a></h3>
+   <div class="memberName">private static final  short byteToShort(byte b)</div>
+   <div class="memberDescription">
+ Convert (signed) byte to (unsigned) short value, i.e., all negative
+ values become positive.</div>
+
+
+   <h3><a name="classOrInterface(int)" id="classOrInterface(int)">classOrInterface</a></h3>
+   <div class="memberName">public static final  String classOrInterface(int access_flags)</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">"class" or "interface", depending on the ACC_INTERFACE flag</span> </p>
+</div>
+
+
+   <h3><a name="clearBit(int,int)" id="clearBit(int,int)">clearBit</a></h3>
+   <div class="memberName">public static final  int clearBit(int flag, int i)</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">`flag' with bit `i' set to 0</span> </p>
+</div>
+
+
+   <h3><a name="codeToString(byte[],org.apache.bcel.classfile.ConstantPool,int,int,boolean)" id="codeToString(byte[],org.apache.bcel.classfile.ConstantPool,int,int,boolean)">codeToString</a></h3>
+   <div class="memberName">public static final  String codeToString(byte[] code, <a href="ConstantPool.html" class="classRef">ConstantPool</a> constant_pool, int index, int length, boolean verbose)</div>
+   <div class="memberDescription">
+ Disassemble a byte array of JVM byte codes starting from code line 
+ `index' and return the disassembled string representation. Decode only
+ `num' opcodes (including their operands), use -1 if you want to
+ decompile everything.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">code byte code array</span> <span class="tagContents">constant_pool Array of constants</span> <span class="tagContents">index offset in `code' array
+ <EM>(number of opcodes, not bytes!)</EM></span> <span class="tagContents">length number of opcodes to decompile, -1 for all</span> <span class="tagContents">verbose be verbose, e.g. print constant pool index</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">String representation of byte codes</span> </p>
+</div>
+
+
+   <h3><a name="codeToString(byte[],org.apache.bcel.classfile.ConstantPool,int,int)" id="codeToString(byte[],org.apache.bcel.classfile.ConstantPool,int,int)">codeToString</a></h3>
+   <div class="memberName">public static final  String codeToString(byte[] code, <a href="ConstantPool.html" class="classRef">ConstantPool</a> constant_pool, int index, int length)</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="codeToString(org.apache.bcel.util.ByteSequence,org.apache.bcel.classfile.ConstantPool,boolean)" id="codeToString(org.apache.bcel.util.ByteSequence,org.apache.bcel.classfile.ConstantPool,boolean)">codeToString</a></h3>
+   <div class="memberName">public static final  String codeToString(<a href="../util/ByteSequence.html" class="classRef">ByteSequence</a> bytes, <a href="ConstantPool.html" class="classRef">ConstantPool</a> constant_pool, boolean verbose)</div>
+   <div class="memberDescription">
+ Disassemble a stream of byte codes and return the
+ string representation.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">bytes stream of bytes</span> <span class="tagContents">constant_pool Array of constants</span> <span class="tagContents">verbose be verbose, e.g. print constant pool index</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">String representation of byte code</span> </p>
+</div>
+
+
+   <h3><a name="codeToString(org.apache.bcel.util.ByteSequence,org.apache.bcel.classfile.ConstantPool)" id="codeToString(org.apache.bcel.util.ByteSequence,org.apache.bcel.classfile.ConstantPool)">codeToString</a></h3>
+   <div class="memberName">public static final  String codeToString(<a href="../util/ByteSequence.html" class="classRef">ByteSequence</a> bytes, <a href="ConstantPool.html" class="classRef">ConstantPool</a> constant_pool)</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="compactClassName(<unknown>.String)" id="compactClassName(<unknown>.String)">compactClassName</a></h3>
+   <div class="memberName">public static final  String compactClassName(String str)</div>
+   <div class="memberDescription">
+ Shorten long class names, <em>java/lang/String</em> becomes 
+ <em>String</em>.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">str The long class name</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">Compacted class name</span> </p>
+</div>
+
+
+   <h3><a name="compactClassName(<unknown>.String,<unknown>.String,boolean)" id="compactClassName(<unknown>.String,<unknown>.String,boolean)">compactClassName</a></h3>
+   <div class="memberName">public static final  String compactClassName(String str, String prefix, boolean chopit)</div>
+   <div class="memberDescription">
+ Shorten long class name <em>str</em>, i.e., chop off the <em>prefix</em>,
+ if the
+ class name starts with this string and the flag <em>chopit</em> is true.
+ Slashes <em>/</em> are converted to dots <em>.</em>.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">str The long class name</span> <span class="tagContents">prefix The prefix the get rid off</span> <span class="tagContents">chopit Flag that determines whether chopping is executed or not</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">Compacted class name</span> </p>
+</div>
+
+
+   <h3><a name="compactClassName(<unknown>.String,boolean)" id="compactClassName(<unknown>.String,boolean)">compactClassName</a></h3>
+   <div class="memberName">public static final  String compactClassName(String str, boolean chopit)</div>
+   <div class="memberDescription">
+ Shorten long class names, <em>java/lang/String</em> becomes 
+ <em>java.lang.String</em>,
+ e.g.. If <em>chopit</em> is <em>true</em> the prefix <em>java.lang</em>
+ is also removed.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">str The long class name</span> <span class="tagContents">chopit Flag that determines whether chopping is executed or not</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">Compacted class name</span> </p>
+</div>
+
+
+   <h3><a name="convertString(<unknown>.String)" id="convertString(<unknown>.String)">convertString</a></h3>
+   <div class="memberName">public static final  String convertString(String label)</div>
+   <div class="memberDescription">
+ Escape all occurences of newline chars '\n', quotes \", etc.</div>
+
+
+   <h3><a name="countBrackets(<unknown>.String)" id="countBrackets(<unknown>.String)">countBrackets</a></h3>
+   <div class="memberName">private static  int countBrackets(String brackets)</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="decode(<unknown>.String,boolean)" id="decode(<unknown>.String,boolean)">decode</a></h3>
+   <div class="memberName">public static  byte[] decode(String s, boolean uncompress)</div>
+   <div class="memberDescription"> Decode a string back to a byte array.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">s the string to convert</span> <span class="tagContents">uncompress use gzip to uncompress the stream of bytes</span> </p>
+</div>
+
+
+   <h3><a name="encode(byte[],boolean)" id="encode(byte[],boolean)">encode</a></h3>
+   <div class="memberName">public static  String encode(byte[] bytes, boolean compress)</div>
+   <div class="memberDescription"> Encode byte array it into Java identifier string, i.e., a string
+ that only contains the following characters: (a, ... z, A, ... Z,
+ 0, ... 9, _, $).  The encoding algorithm itself is not too
+ clever: if the current byte's ASCII value already is a valid Java
+ identifier part, leave it as it is. Otherwise it writes the
+ escape character($) followed by <p><ul><li> the ASCII value as a
+ hexadecimal string, if the value is not in the range
+ 200..247</li> <li>a Java identifier char not used in a lowercase
+ hexadecimal string, if the value is in the range
+ 200..247</li><ul></p>
+
+ <p>This operation inflates the original byte array by roughly 40-50%</p>
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">bytes the byte array to convert</span> <span class="tagContents">compress use gzip to minimize string</span> </p>
+</div>
+
+
+   <h3><a name="equals(byte[],byte[])" id="equals(byte[],byte[])">equals</a></h3>
+   <div class="memberName">static final  boolean equals(byte[] a, byte[] b)</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="fillup(<unknown>.String,int,boolean,char)" id="fillup(<unknown>.String,int,boolean,char)">fillup</a></h3>
+   <div class="memberName">public static final  String fillup(String str, int length, boolean left_justify, char fill)</div>
+   <div class="memberDescription">
+ Fillup char with up to length characters with char `fill' and justify it left or right.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">str string to format</span> <span class="tagContents">length length of desired string</span> <span class="tagContents">left_justify format left or right</span> <span class="tagContents">fill fill character</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">formatted string</span> </p>
+</div>
+
+
+   <h3><a name="format(int,int,boolean,char)" id="format(int,int,boolean,char)">format</a></h3>
+   <div class="memberName">public static final  String format(int i, int length, boolean left_justify, char fill)</div>
+   <div class="memberDescription">
+ Return a string for an integer justified left or right and filled up with
+ `fill' characters if necessary.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">i integer to format</span> <span class="tagContents">length length of desired string</span> <span class="tagContents">left_justify format left or right</span> <span class="tagContents">fill fill character</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">formatted int</span> </p>
+</div>
+
+
+   <h3><a name="getSignature(<unknown>.String)" id="getSignature(<unknown>.String)">getSignature</a></h3>
+   <div class="memberName">public static  String getSignature(String type)</div>
+   <div class="memberDescription"> Parse Java type such as "char", or "java.lang.String[]" and return the
+ signature in byte code format, e.g. "C" or "[Ljava/lang/String;" respectively.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">type Java type</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">byte code signature</span> </p>
+</div>
+
+
+   <h3><a name="isJavaIdentifierPart(char)" id="isJavaIdentifierPart(char)">isJavaIdentifierPart</a></h3>
+   <div class="memberName">public static  boolean isJavaIdentifierPart(char ch)</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">true, if character is one of (a, ... z, A, ... Z, 0, ... 9, _)</span> </p>
+</div>
+
+
+   <h3><a name="isSet(int,int)" id="isSet(int,int)">isSet</a></h3>
+   <div class="memberName">public static final  boolean isSet(int flag, int i)</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">true, if bit `i' in `flag' is set</span> </p>
+</div>
+
+
+   <h3><a name="methodSignatureArgumentTypes(<unknown>.String)" id="methodSignatureArgumentTypes(<unknown>.String)">methodSignatureArgumentTypes</a></h3>
+   <div class="memberName">public static final  String[] methodSignatureArgumentTypes(String signature)</div>
+   <div class="memberDescription"><p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">signature    Method signature</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">Array of argument types</span> </p>
+<p class="tag tag_throws"><span class="tagName">Throws:</span> <span class="tagContents">ClassFormatException</span> </p>
+</div>
+
+
+   <h3><a name="methodSignatureArgumentTypes(<unknown>.String,boolean)" id="methodSignatureArgumentTypes(<unknown>.String,boolean)">methodSignatureArgumentTypes</a></h3>
+   <div class="memberName">public static final  String[] methodSignatureArgumentTypes(String signature, boolean chopit)</div>
+   <div class="memberDescription"><p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">signature    Method signature</span> <span class="tagContents">chopit Shorten class names ?</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">Array of argument types</span> </p>
+<p class="tag tag_throws"><span class="tagName">Throws:</span> <span class="tagContents">ClassFormatException</span> </p>
+</div>
+
+
+   <h3><a name="methodSignatureReturnType(<unknown>.String)" id="methodSignatureReturnType(<unknown>.String)">methodSignatureReturnType</a></h3>
+   <div class="memberName">public static final  String methodSignatureReturnType(String signature)</div>
+   <div class="memberDescription"><p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">signature    Method signature</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">return type of method</span> </p>
+<p class="tag tag_throws"><span class="tagName">Throws:</span> <span class="tagContents">ClassFormatException</span> </p>
+</div>
+
+
+   <h3><a name="methodSignatureReturnType(<unknown>.String,boolean)" id="methodSignatureReturnType(<unknown>.String,boolean)">methodSignatureReturnType</a></h3>
+   <div class="memberName">public static final  String methodSignatureReturnType(String signature, boolean chopit)</div>
+   <div class="memberDescription"><p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">signature    Method signature</span> <span class="tagContents">chopit Shorten class names ?</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">return type of method</span> </p>
+<p class="tag tag_throws"><span class="tagName">Throws:</span> <span class="tagContents">ClassFormatException</span> </p>
+</div>
+
+
+   <h3><a name="methodSignatureToString(<unknown>.String,<unknown>.String,<unknown>.String)" id="methodSignatureToString(<unknown>.String,<unknown>.String,<unknown>.String)">methodSignatureToString</a></h3>
+   <div class="memberName">public static final  String methodSignatureToString(String signature, String name, String access)</div>
+   <div class="memberDescription">
+ Converts method signature to string with all class names compacted.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">signature to convert</span> <span class="tagContents">name of method</span> <span class="tagContents">access flags of method</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">Human readable signature</span> </p>
+</div>
+
+
+   <h3><a name="methodSignatureToString(<unknown>.String,<unknown>.String,<unknown>.String,boolean)" id="methodSignatureToString(<unknown>.String,<unknown>.String,<unknown>.String,boolean)">methodSignatureToString</a></h3>
+   <div class="memberName">public static final  String methodSignatureToString(String signature, String name, String access, boolean chopit)</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="methodSignatureToString(<unknown>.String,<unknown>.String,<unknown>.String,boolean,org.apache.bcel.classfile.LocalVariableTable)" id="methodSignatureToString(<unknown>.String,<unknown>.String,<unknown>.String,boolean,org.apache.bcel.classfile.LocalVariableTable)">methodSignatureToString</a></h3>
+   <div class="memberName">public static final  String methodSignatureToString(String signature, String name, String access, boolean chopit, <a href="LocalVariableTable.html" class="classRef">LocalVariableTable</a> vars)</div>
+   <div class="memberDescription">
+ A return-type signature represents the return value from a method.
+ It is a series of bytes in the following grammar:
+
+ <return_signature> ::= <field_type> | V
+
+ The character V indicates that the method returns no value. Otherwise, the
+ signature indicates the type of the return value.
+ An argument signature represents an argument passed to a method:
+
+ <argument_signature> ::= <field_type>
+
+ A method signature represents the arguments that the method expects, and
+ the value that it returns.
+ <method_signature> ::= (<arguments_signature>) <return_signature>
+ <arguments_signature>::= <argument_signature>*
+
+ This method converts such a string into a Java type declaration like
+ `void main(String[])' and throws a `ClassFormatException' when the parsed 
+ type is invalid.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">signature    Method signature</span> <span class="tagContents">name         Method name</span> <span class="tagContents">access       Method access rights</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">Java type declaration</span> </p>
+<p class="tag tag_throws"><span class="tagName">Throws:</span> <span class="tagContents">ClassFormatException</span> </p>
+</div>
+
+
+   <h3><a name="methodTypeToSignature(<unknown>.String,<unknown>.String[])" id="methodTypeToSignature(<unknown>.String,<unknown>.String[])">methodTypeToSignature</a></h3>
+   <div class="memberName">public static final  String methodTypeToSignature(String ret, String[] argv)</div>
+   <div class="memberDescription">
+ Converts string containing the method return and argument types 
+ to a byte code method signature.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">ret Return type of method</span> <span class="tagContents">argv Types of method arguments</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">Byte code representation of method signature</span> </p>
+</div>
+
+
+   <h3><a name="pow2(int)" id="pow2(int)">pow2</a></h3>
+   <div class="memberName">private static final  int pow2(int n)</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="printArray(java.io.PrintStream,<unknown>.Object[])" id="printArray(java.io.PrintStream,<unknown>.Object[])">printArray</a></h3>
+   <div class="memberName">public static final  void printArray(PrintStream out, Object[] obj)</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="printArray(java.io.PrintWriter,<unknown>.Object[])" id="printArray(java.io.PrintWriter,<unknown>.Object[])">printArray</a></h3>
+   <div class="memberName">public static final  void printArray(PrintWriter out, Object[] obj)</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="printArray(<unknown>.Object[])" id="printArray(<unknown>.Object[])">printArray</a></h3>
+   <div class="memberName">public static final  String printArray(Object[] obj)</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="printArray(<unknown>.Object[],boolean)" id="printArray(<unknown>.Object[],boolean)">printArray</a></h3>
+   <div class="memberName">public static final  String printArray(Object[] obj, boolean braces)</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="printArray(<unknown>.Object[],boolean,boolean)" id="printArray(<unknown>.Object[],boolean,boolean)">printArray</a></h3>
+   <div class="memberName">public static final  String printArray(Object[] obj, boolean braces, boolean quote)</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="replace(<unknown>.String,<unknown>.String,<unknown>.String)" id="replace(<unknown>.String,<unknown>.String,<unknown>.String)">replace</a></h3>
+   <div class="memberName">public static final  String replace(String str, String old, String new_)</div>
+   <div class="memberDescription">
+ Replace all occurences of <em>old</em> in <em>str</em> with <em>new</em>.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">str String to permute</span> <span class="tagContents">old String to be replaced</span> <span class="tagContents">new_ Replacement string</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">new String object</span> </p>
+</div>
+
+
+   <h3><a name="searchOpcode(<unknown>.String)" id="searchOpcode(<unknown>.String)">searchOpcode</a></h3>
+   <div class="memberName">public static  short searchOpcode(String name)</div>
+   <div class="memberDescription"> Map opcode names to opcode numbers. E.g., return Constants.ALOAD for "aload"</div>
+
+
+   <h3><a name="setBit(int,int)" id="setBit(int,int)">setBit</a></h3>
+   <div class="memberName">public static final  int setBit(int flag, int i)</div>
+   <div class="memberDescription"><p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">`flag' with bit `i' set to 1</span> </p>
+</div>
+
+
+   <h3><a name="signatureToString(<unknown>.String)" id="signatureToString(<unknown>.String)">signatureToString</a></h3>
+   <div class="memberName">public static final  String signatureToString(String signature)</div>
+   <div class="memberDescription">
+ Converts signature to string with all class names compacted.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">signature to convert</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">Human readable signature</span> </p>
+</div>
+
+
+   <h3><a name="signatureToString(<unknown>.String,boolean)" id="signatureToString(<unknown>.String,boolean)">signatureToString</a></h3>
+   <div class="memberName">public static final  String signatureToString(String signature, boolean chopit)</div>
+   <div class="memberDescription">
+ The field signature represents the value of an argument to a function or 
+ the value of a variable. It is a series of bytes generated by the 
+ following grammar:
+
+ <PRE>
+ <field_signature> ::= <field_type>
+ <field_type>      ::= <base_type>|<object_type>|<array_type>
+ <base_type>       ::= B|C|D|F|I|J|S|Z
+ <object_type>     ::= L<fullclassname>;
+ <array_type>      ::= [<field_type>
+
+ The meaning of the base types is as follows:
+ B byte signed byte
+ C char character
+ D double double precision IEEE float
+ F float single precision IEEE float
+ I int integer
+ J long long integer
+ L<fullclassname>; ... an object of the given class
+ S short signed short
+ Z boolean true or false
+ [<field sig> ... array
+ </PRE>
+
+ This method converts this string into a Java type declaration such as
+ `String[]' and throws a `ClassFormatException' when the parsed type is 
+ invalid.
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">signature  Class signature</span> <span class="tagContents">chopit Flag that determines whether chopping is executed or not</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">Java type declaration</span> </p>
+<p class="tag tag_throws"><span class="tagName">Throws:</span> <span class="tagContents">ClassFormatException</span> </p>
+</div>
+
+
+   <h3><a name="toHexString(byte[])" id="toHexString(byte[])">toHexString</a></h3>
+   <div class="memberName">public static final  String toHexString(byte[] bytes)</div>
+   <div class="memberDescription"> Convert bytes into hexidecimal string
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">bytes as hexidecimal string, e.g. 00 FA 12 ...</span> </p>
+</div>
+
+
+   <h3><a name="typeOfMethodSignature(<unknown>.String)" id="typeOfMethodSignature(<unknown>.String)">typeOfMethodSignature</a></h3>
+   <div class="memberName">public static final  byte typeOfMethodSignature(String signature)</div>
+   <div class="memberDescription">
+ Return type of method signature as a byte value as defined in <em>Constants</em>
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">signature in format described above</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">type of method signature</span> </p>
+<p class="tag tag_see"><span class="tagName">See Also:</span> <span class="tagContents"><a href="../Constants.html" class="interfaceRef">Constants</a></span> </p>
+</div>
+
+
+   <h3><a name="typeOfSignature(<unknown>.String)" id="typeOfSignature(<unknown>.String)">typeOfSignature</a></h3>
+   <div class="memberName">public static final  byte typeOfSignature(String signature)</div>
+   <div class="memberDescription">
+ Return type of signature as a byte value as defined in <em>Constants</em>
+<p class="tag tag_param"><span class="tagName">Parameters:</span> <span class="tagContents">signature in format described above</span> </p>
+<p class="tag tag_return"><span class="tagName">Returns:</span> <span class="tagContents">type of signature</span> </p>
+<p class="tag tag_see"><span class="tagName">See Also:</span> <span class="tagContents"><a href="../Constants.html" class="interfaceRef">Constants</a></span> </p>
+</div>
+
+
+   <h3><a name="unwrap(<unknown>.ThreadLocal)" id="unwrap(<unknown>.ThreadLocal)">unwrap</a></h3>
+   <div class="memberName">private static  int unwrap(ThreadLocal tl)</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="wrap(<unknown>.ThreadLocal,int)" id="wrap(<unknown>.ThreadLocal,int)">wrap</a></h3>
+   <div class="memberName">private static  void wrap(ThreadLocal tl, int value)</div>
+   <div class="memberDescription"></div>
+
+   
+   <div class="navbar">
+    <p class="nav navtop">
+      <span class="over"><a href="../../../../overview-summary.html">Overview</a></span>
+      <span class="package"><a href="package-summary.html">Package</a></span>
+      <span class="class selected">Class</span>
+      <span class="use"><a href="class-use/Utility.html">Use</a></span>
+      <span class="tree"><a href="package-tree.html">Tree</a></span>
+      <span class="deprecated"><a href="../../../../deprecated-list.html">Deprecated</a></span>
+      <span class="index"><a href="../../../../index-all.html">Index</a></span>
+      <span class="help"><a href="../../../../help-doc.html">Help</a></span>
+    </p>
+    <p class="nav navmid">
+      <span class="prevnext">
+       <span class="prev">Prev Class</span>
+       <span class="next">Next Class</span>
+      </span>
+      <span class="framesel">
+       <span class="frames"><a href="../../../../index.html" target="_top">Frames</a></span>
+       <span class="noframes"><a href="Utility.html" target="_top">NoFrames</a></span>
+      </span>
+      <span class="allclasses"><a href="../../../../allclasses-noframe.html">All Classes</a></span>
+   </p>
+   <p class="nav navbot">
+      <span class="summary">Summary:
+       <span class="nested"><a href="#nested_class_summary">Nested</a></span>
+       <span class="field"><a href="#field_summary">Field</a></span>
+       <span class="constr">Constr</span>
+       <span class="method"><a href="#method_summary">Method</a></span>
+      </span>
+      <span class="detail">Detail:
+       <span class="field"><a href="#field_detail">Field</a></span>
+       <span class="constr">Constr</span>
+       <span class="method"><a href="#method_detail">Method</a></span>
+      </span>
+   </p>
+    <div class="navtitle">
+     
+    </div>
+    <p class="clear"><!--empty--></p>
+   </div>
+   <div class="bottom"></div>
+   </body>
+</html>

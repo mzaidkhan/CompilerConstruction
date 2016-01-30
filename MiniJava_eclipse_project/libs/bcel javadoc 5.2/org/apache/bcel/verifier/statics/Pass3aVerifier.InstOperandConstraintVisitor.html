@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>Pass3aVerifier.InstOperandConstraintVisitor</title>
+    <meta name="keywords" content="org.apache.bcel.verifier.statics.Pass3aVerifier.InstOperandConstraintVisitor,Pass3aVerifier.InstOperandConstraintVisitor class" />
+    <meta name="generator" content="SinjDoc 0.5" />
+    <link href="../../../../../stylesheet.css" rel="stylesheet" type="text/css" />
+    <link rel="Index" href="../../../../../index-all.html" />
+    <link rel="Start" href="../../../../../overview-summary.html" />
+    <link rel="Up" href="package-summary.html" />
+    <link rel="Help" href="../../../../../help-doc.html" />
+  </head>
+  <body class="classPage bigframe">
+   <div class="navbar">
+    <p class="nav navtop">
+      <span class="over"><a href="../../../../../overview-summary.html">Overview</a></span>
+      <span class="package"><a href="package-summary.html">Package</a></span>
+      <span class="class selected">Class</span>
+      <span class="use"><a href="class-use/Pass3aVerifier.InstOperandConstraintVisitor.html">Use</a></span>
+      <span class="tree"><a href="package-tree.html">Tree</a></span>
+      <span class="deprecated"><a href="../../../../../deprecated-list.html">Deprecated</a></span>
+      <span class="index"><a href="../../../../../index-all.html">Index</a></span>
+      <span class="help"><a href="../../../../../help-doc.html">Help</a></span>
+    </p>
+    <p class="nav navmid">
+      <span class="prevnext">
+       <span class="prev">Prev Class</span>
+       <span class="next">Next Class</span>
+      </span>
+      <span class="framesel">
+       <span class="frames"><a href="../../../../../index.html" target="_top">Frames</a></span>
+       <span class="noframes"><a href="Pass3aVerifier.InstOperandConstraintVisitor.html" target="_top">NoFrames</a></span>
+      </span>
+      <span class="allclasses"><a href="../../../../../allclasses-noframe.html">All Classes</a></span>
+   </p>
+   <p class="nav navbot">
+      <span class="summary">Summary:
+       <span class="nested">Nested</span>
+       <span class="field"><a href="#field_summary">Field</a></span>
+       <span class="constr"><a href="#constructor_summary">Constr</a></span>
+       <span class="method"><a href="#method_summary">Method</a></span>
+      </span>
+      <span class="detail">Detail:
+       <span class="field"><a href="#field_detail">Field</a></span>
+       <span class="constr"><a href="#constructor_detail">Constr</a></span>
+       <span class="method"><a href="#method_detail">Method</a></span>
+      </span>
+   </p>
+    <div class="navtitle">
+     
+    </div>
+    <p class="clear"><!--empty--></p>
+   </div>
+   <p class="packageName">org.apache.bcel.verifier.statics</p>
+   <h1>  Class  Pass3aVerifier.InstOperandConstraintVisitor</h1>
+<!--
+   <p class="enclosing">
+   Enclosing class/interface: @OUTER@
+   </p>
+-->
+
+
+   <!-- XXX class hierarchy diagram goes here -->
+<!--
+   
+   <p class="directSubclasses">
+   Direct known subclasses: @ALL_SUBCLASSES@
+   </p>
+-->
+
+
+   <p class="declaration">private
+     class 
+   <span class="className">Pass3aVerifier.InstOperandConstraintVisitor</span>
+   
+   
+      
+      <span class="extends">extends <a href="../../generic/EmptyVisitor.html" class="classRef">EmptyVisitor</a></span>
+      
+      
+   
+   </p>
+
+   <div class="description">
+   
+ This visitor class does the actual checking for the instruction
+ operand's constraints.
+   </div>
+
+
+
+
+   <table class="field_summary summary">
+     <tr><th colspan="2"><a name="field_summary" id="field_summary">Field Summary</a></th></tr>
+
+     <tr><td> <a href="../../generic/ConstantPoolGen.html" class="classRef">ConstantPoolGen</a></td><td><span class="memberName"><a href="#cpg" class="fieldRef">cpg</a></span><div class="memberDescription"> The ConstantPoolGen instance this Visitor operates on.</div></td></tr>
+
+   </table>
+
+
+
+
+   <table class="constructor_summary summary">
+     <tr><th colspan="2"><a name="constructor_summary" id="constructor_summary">Constructor Summary</a></th></tr>
+
+     <tr><td> </td><td><span class="memberName"><a href="#InstOperandConstraintVisitor(org.apache.bcel.generic.ConstantPoolGen)" class="constructorRef">InstOperandConstraintVisitor</a>(<a href="../../generic/ConstantPoolGen.html" class="classRef">ConstantPoolGen</a> cpg)</span><div class="memberDescription"> The only Constructor.</div></td></tr>
+
+   </table>
+
+
+
+
+   <table class="method_summary summary">
+     <tr><th colspan="2"><a name="method_summary" id="method_summary">Method Summary</a></th></tr>
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#constraintViolated(org.apache.bcel.generic.Instruction,<unknown>.String)" class="methodRef">constraintViolated</a>(<a href="../../generic/Instruction.html" class="classRef">Instruction</a> i, String message)</span><div class="memberDescription">
+ A utility method to always raise an exeption.</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#indexValid(org.apache.bcel.generic.Instruction,int)" class="methodRef">indexValid</a>(<a href="../../generic/Instruction.html" class="classRef">Instruction</a> i, int idx)</span><div class="memberDescription">
+ A utility method to raise an exception if the index is not
+ a valid constant pool index.</div></td></tr>
+
+
+
+     <tr><td>  int</td><td><span class="memberName"><a href="#max_locals()" class="methodRef">max_locals</a>()</span><div class="memberDescription">
+ Utility method to return the max_locals value of the method verified
+ by the surrounding Pass3aVerifier instance.</div></td></tr>
+
+
+
+     <tr><td>  boolean</td><td><span class="memberName"><a href="#objarrayequals(<unknown>.Object[],<unknown>.Object[])" class="methodRef">objarrayequals</a>(Object[] o, Object[] p)</span><div class="memberDescription">
+ A utility method like equals(Object) for arrays.
+ </div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#visitALOAD(org.apache.bcel.generic.ALOAD)" class="methodRef">visitALOAD</a>(<a href="../../generic/ALOAD.html" class="classRef">ALOAD</a> o)</span><div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#visitANEWARRAY(org.apache.bcel.generic.ANEWARRAY)" class="methodRef">visitANEWARRAY</a>(<a href="../../generic/ANEWARRAY.html" class="classRef">ANEWARRAY</a> o)</span><div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#visitASTORE(org.apache.bcel.generic.ASTORE)" class="methodRef">visitASTORE</a>(<a href="../../generic/ASTORE.html" class="classRef">ASTORE</a> o)</span><div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#visitCHECKCAST(org.apache.bcel.generic.CHECKCAST)" class="methodRef">visitCHECKCAST</a>(<a href="../../generic/CHECKCAST.html" class="classRef">CHECKCAST</a> o)</span><div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#visitDLOAD(org.apache.bcel.generic.DLOAD)" class="methodRef">visitDLOAD</a>(<a href="../../generic/DLOAD.html" class="classRef">DLOAD</a> o)</span><div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#visitDSTORE(org.apache.bcel.generic.DSTORE)" class="methodRef">visitDSTORE</a>(<a href="../../generic/DSTORE.html" class="classRef">DSTORE</a> o)</span><div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#visitFieldInstruction(org.apache.bcel.generic.FieldInstruction)" class="methodRef">visitFieldInstruction</a>(<a href="../../generic/FieldInstruction.html" class="classRef">FieldInstruction</a> o)</span><div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#visitFLOAD(org.apache.bcel.generic.FLOAD)" class="methodRef">visitFLOAD</a>(<a href="../../generic/FLOAD.html" class="classRef">FLOAD</a> o)</span><div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#visitFSTORE(org.apache.bcel.generic.FSTORE)" class="methodRef">visitFSTORE</a>(<a href="../../generic/FSTORE.html" class="classRef">FSTORE</a> o)</span><div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#visitGETSTATIC(org.apache.bcel.generic.GETSTATIC)" class="methodRef">visitGETSTATIC</a>(<a href="../../generic/GETSTATIC.html" class="classRef">GETSTATIC</a> o)</span><div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#visitIINC(org.apache.bcel.generic.IINC)" class="methodRef">visitIINC</a>(<a href="../../generic/IINC.html" class="classRef">IINC</a> o)</span><div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#visitILOAD(org.apache.bcel.generic.ILOAD)" class="methodRef">visitILOAD</a>(<a href="../../generic/ILOAD.html" class="classRef">ILOAD</a> o)</span><div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#visitInvokeInstruction(org.apache.bcel.generic.InvokeInstruction)" class="methodRef">visitInvokeInstruction</a>(<a href="../../generic/InvokeInstruction.html" class="classRef">InvokeInstruction</a> o)</span><div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#visitINSTANCEOF(org.apache.bcel.generic.INSTANCEOF)" class="methodRef">visitINSTANCEOF</a>(<a href="../../generic/INSTANCEOF.html" class="classRef">INSTANCEOF</a> o)</span><div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#visitINVOKEINTERFACE(org.apache.bcel.generic.INVOKEINTERFACE)" class="methodRef">visitINVOKEINTERFACE</a>(<a href="../../generic/INVOKEINTERFACE.html" class="classRef">INVOKEINTERFACE</a> o)</span><div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#visitINVOKESPECIAL(org.apache.bcel.generic.INVOKESPECIAL)" class="methodRef">visitINVOKESPECIAL</a>(<a href="../../generic/INVOKESPECIAL.html" class="classRef">INVOKESPECIAL</a> o)</span><div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#visitINVOKESTATIC(org.apache.bcel.generic.INVOKESTATIC)" class="methodRef">visitINVOKESTATIC</a>(<a href="../../generic/INVOKESTATIC.html" class="classRef">INVOKESTATIC</a> o)</span><div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#visitINVOKEVIRTUAL(org.apache.bcel.generic.INVOKEVIRTUAL)" class="methodRef">visitINVOKEVIRTUAL</a>(<a href="../../generic/INVOKEVIRTUAL.html" class="classRef">INVOKEVIRTUAL</a> o)</span><div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#visitISTORE(org.apache.bcel.generic.ISTORE)" class="methodRef">visitISTORE</a>(<a href="../../generic/ISTORE.html" class="classRef">ISTORE</a> o)</span><div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#visitLDC(org.apache.bcel.generic.LDC)" class="methodRef">visitLDC</a>(<a href="../../generic/LDC.html" class="classRef">LDC</a> o)</span><div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#visitLDC2_W(org.apache.bcel.generic.LDC2_W)" class="methodRef">visitLDC2_W</a>(<a href="../../generic/LDC2_W.html" class="classRef">LDC2_W</a> o)</span><div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#visitLLOAD(org.apache.bcel.generic.LLOAD)" class="methodRef">visitLLOAD</a>(<a href="../../generic/LLOAD.html" class="classRef">LLOAD</a> o)</span><div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#visitLoadClass(org.apache.bcel.generic.LoadClass)" class="methodRef">visitLoadClass</a>(<a href="../../generic/LoadClass.html" class="interfaceRef">LoadClass</a> o)</span><div class="memberDescription">
+ Assures the generic preconditions of a LoadClass instance.
+ </div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#visitLOOKUPSWITCH(org.apache.bcel.generic.LOOKUPSWITCH)" class="methodRef">visitLOOKUPSWITCH</a>(<a href="../../generic/LOOKUPSWITCH.html" class="classRef">LOOKUPSWITCH</a> o)</span><div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#visitLSTORE(org.apache.bcel.generic.LSTORE)" class="methodRef">visitLSTORE</a>(<a href="../../generic/LSTORE.html" class="classRef">LSTORE</a> o)</span><div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#visitMULTIANEWARRAY(org.apache.bcel.generic.MULTIANEWARRAY)" class="methodRef">visitMULTIANEWARRAY</a>(<a href="../../generic/MULTIANEWARRAY.html" class="classRef">MULTIANEWARRAY</a> o)</span><div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#visitNEW(org.apache.bcel.generic.NEW)" class="methodRef">visitNEW</a>(<a href="../../generic/NEW.html" class="classRef">NEW</a> o)</span><div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#visitNEWARRAY(org.apache.bcel.generic.NEWARRAY)" class="methodRef">visitNEWARRAY</a>(<a href="../../generic/NEWARRAY.html" class="classRef">NEWARRAY</a> o)</span><div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#visitPUTSTATIC(org.apache.bcel.generic.PUTSTATIC)" class="methodRef">visitPUTSTATIC</a>(<a href="../../generic/PUTSTATIC.html" class="classRef">PUTSTATIC</a> o)</span><div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#visitRET(org.apache.bcel.generic.RET)" class="methodRef">visitRET</a>(<a href="../../generic/RET.html" class="classRef">RET</a> o)</span><div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#visitTABLESWITCH(org.apache.bcel.generic.TABLESWITCH)" class="methodRef">visitTABLESWITCH</a>(<a href="../../generic/TABLESWITCH.html" class="classRef">TABLESWITCH</a> o)</span><div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div></td></tr>
+
+   </table>
+
+
+
+<!--
+   <p class="inherited">
+    <span class="header">Methods inherited from class java.util.<a
+   href="AbstractCollection.html">AbstractCollection</a></span>
+    <a href="#addAll">addAll</a>
+    <a href="#contains">contains</a>
+   </p>
+   <p class="inherited">
+    <span class="header">Methods inherited from class java.lang.<a
+   href="Object.html">Object</a></span>
+    <a href="#addAll">clone</a>
+    <a href="#contains">finalize</a>
+   </p>
+   <p class="inherited">
+    <span class="header">Methods inherited from interface java.util.<a
+   href="List.html">List</a></span>
+    <a href="#addAll">addAll</a>
+    <a href="#contains">contains</a>
+   </p>
+-->
+
+
+
+   <h2><a name="field_detail" id="field_detail">Field Detail</a></h2>
+
+   <h3><a name="cpg" id="cpg">cpg</a></h3>
+   <div class="memberName">private <a href="../../generic/ConstantPoolGen.html" class="classRef">ConstantPoolGen</a> cpg</div>
+   <div class="memberDescription"> The ConstantPoolGen instance this Visitor operates on.</div>
+
+
+
+
+   <h2><a name="constructor_detail" id="constructor_detail">Constructor Detail</a></h2>
+
+   <h3><a name="InstOperandConstraintVisitor(org.apache.bcel.generic.ConstantPoolGen)" id="InstOperandConstraintVisitor(org.apache.bcel.generic.ConstantPoolGen)">InstOperandConstraintVisitor</a></h3>
+   <div class="memberName">  InstOperandConstraintVisitor(<a href="../../generic/ConstantPoolGen.html" class="classRef">ConstantPoolGen</a> cpg)</div>
+   <div class="memberDescription"> The only Constructor.</div>
+
+
+
+
+   <h2><a name="method_detail" id="method_detail">Method Detail</a></h2>
+
+   <h3><a name="constraintViolated(org.apache.bcel.generic.Instruction,<unknown>.String)" id="constraintViolated(org.apache.bcel.generic.Instruction,<unknown>.String)">constraintViolated</a></h3>
+   <div class="memberName">private  void constraintViolated(<a href="../../generic/Instruction.html" class="classRef">Instruction</a> i, String message)</div>
+   <div class="memberDescription">
+ A utility method to always raise an exeption.</div>
+
+
+   <h3><a name="indexValid(org.apache.bcel.generic.Instruction,int)" id="indexValid(org.apache.bcel.generic.Instruction,int)">indexValid</a></h3>
+   <div class="memberName">private  void indexValid(<a href="../../generic/Instruction.html" class="classRef">Instruction</a> i, int idx)</div>
+   <div class="memberDescription">
+ A utility method to raise an exception if the index is not
+ a valid constant pool index.</div>
+
+
+   <h3><a name="max_locals()" id="max_locals()">max_locals</a></h3>
+   <div class="memberName">private  int max_locals()</div>
+   <div class="memberDescription">
+ Utility method to return the max_locals value of the method verified
+ by the surrounding Pass3aVerifier instance.</div>
+
+
+   <h3><a name="objarrayequals(<unknown>.Object[],<unknown>.Object[])" id="objarrayequals(<unknown>.Object[],<unknown>.Object[])">objarrayequals</a></h3>
+   <div class="memberName">private  boolean objarrayequals(Object[] o, Object[] p)</div>
+   <div class="memberDescription">
+ A utility method like equals(Object) for arrays.
+ The equality of the elements is based on their equals(Object)
+ method instead of their object identity.</div>
+
+
+   <h3><a name="visitALOAD(org.apache.bcel.generic.ALOAD)" id="visitALOAD(org.apache.bcel.generic.ALOAD)">visitALOAD</a></h3>
+   <div class="memberName">public  void visitALOAD(<a href="../../generic/ALOAD.html" class="classRef">ALOAD</a> o)</div>
+   <div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div>
+
+
+   <h3><a name="visitANEWARRAY(org.apache.bcel.generic.ANEWARRAY)" id="visitANEWARRAY(org.apache.bcel.generic.ANEWARRAY)">visitANEWARRAY</a></h3>
+   <div class="memberName">public  void visitANEWARRAY(<a href="../../generic/ANEWARRAY.html" class="classRef">ANEWARRAY</a> o)</div>
+   <div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div>
+
+
+   <h3><a name="visitASTORE(org.apache.bcel.generic.ASTORE)" id="visitASTORE(org.apache.bcel.generic.ASTORE)">visitASTORE</a></h3>
+   <div class="memberName">public  void visitASTORE(<a href="../../generic/ASTORE.html" class="classRef">ASTORE</a> o)</div>
+   <div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div>
+
+
+   <h3><a name="visitCHECKCAST(org.apache.bcel.generic.CHECKCAST)" id="visitCHECKCAST(org.apache.bcel.generic.CHECKCAST)">visitCHECKCAST</a></h3>
+   <div class="memberName">public  void visitCHECKCAST(<a href="../../generic/CHECKCAST.html" class="classRef">CHECKCAST</a> o)</div>
+   <div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div>
+
+
+   <h3><a name="visitDLOAD(org.apache.bcel.generic.DLOAD)" id="visitDLOAD(org.apache.bcel.generic.DLOAD)">visitDLOAD</a></h3>
+   <div class="memberName">public  void visitDLOAD(<a href="../../generic/DLOAD.html" class="classRef">DLOAD</a> o)</div>
+   <div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div>
+
+
+   <h3><a name="visitDSTORE(org.apache.bcel.generic.DSTORE)" id="visitDSTORE(org.apache.bcel.generic.DSTORE)">visitDSTORE</a></h3>
+   <div class="memberName">public  void visitDSTORE(<a href="../../generic/DSTORE.html" class="classRef">DSTORE</a> o)</div>
+   <div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div>
+
+
+   <h3><a name="visitFieldInstruction(org.apache.bcel.generic.FieldInstruction)" id="visitFieldInstruction(org.apache.bcel.generic.FieldInstruction)">visitFieldInstruction</a></h3>
+   <div class="memberName">public  void visitFieldInstruction(<a href="../../generic/FieldInstruction.html" class="classRef">FieldInstruction</a> o)</div>
+   <div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div>
+
+
+   <h3><a name="visitFLOAD(org.apache.bcel.generic.FLOAD)" id="visitFLOAD(org.apache.bcel.generic.FLOAD)">visitFLOAD</a></h3>
+   <div class="memberName">public  void visitFLOAD(<a href="../../generic/FLOAD.html" class="classRef">FLOAD</a> o)</div>
+   <div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div>
+
+
+   <h3><a name="visitFSTORE(org.apache.bcel.generic.FSTORE)" id="visitFSTORE(org.apache.bcel.generic.FSTORE)">visitFSTORE</a></h3>
+   <div class="memberName">public  void visitFSTORE(<a href="../../generic/FSTORE.html" class="classRef">FSTORE</a> o)</div>
+   <div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div>
+
+
+   <h3><a name="visitGETSTATIC(org.apache.bcel.generic.GETSTATIC)" id="visitGETSTATIC(org.apache.bcel.generic.GETSTATIC)">visitGETSTATIC</a></h3>
+   <div class="memberName">public  void visitGETSTATIC(<a href="../../generic/GETSTATIC.html" class="classRef">GETSTATIC</a> o)</div>
+   <div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div>
+
+
+   <h3><a name="visitIINC(org.apache.bcel.generic.IINC)" id="visitIINC(org.apache.bcel.generic.IINC)">visitIINC</a></h3>
+   <div class="memberName">public  void visitIINC(<a href="../../generic/IINC.html" class="classRef">IINC</a> o)</div>
+   <div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div>
+
+
+   <h3><a name="visitILOAD(org.apache.bcel.generic.ILOAD)" id="visitILOAD(org.apache.bcel.generic.ILOAD)">visitILOAD</a></h3>
+   <div class="memberName">public  void visitILOAD(<a href="../../generic/ILOAD.html" class="classRef">ILOAD</a> o)</div>
+   <div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div>
+
+
+   <h3><a name="visitInvokeInstruction(org.apache.bcel.generic.InvokeInstruction)" id="visitInvokeInstruction(org.apache.bcel.generic.InvokeInstruction)">visitInvokeInstruction</a></h3>
+   <div class="memberName">public  void visitInvokeInstruction(<a href="../../generic/InvokeInstruction.html" class="classRef">InvokeInstruction</a> o)</div>
+   <div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div>
+
+
+   <h3><a name="visitINSTANCEOF(org.apache.bcel.generic.INSTANCEOF)" id="visitINSTANCEOF(org.apache.bcel.generic.INSTANCEOF)">visitINSTANCEOF</a></h3>
+   <div class="memberName">public  void visitINSTANCEOF(<a href="../../generic/INSTANCEOF.html" class="classRef">INSTANCEOF</a> o)</div>
+   <div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div>
+
+
+   <h3><a name="visitINVOKEINTERFACE(org.apache.bcel.generic.INVOKEINTERFACE)" id="visitINVOKEINTERFACE(org.apache.bcel.generic.INVOKEINTERFACE)">visitINVOKEINTERFACE</a></h3>
+   <div class="memberName">public  void visitINVOKEINTERFACE(<a href="../../generic/INVOKEINTERFACE.html" class="classRef">INVOKEINTERFACE</a> o)</div>
+   <div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div>
+
+
+   <h3><a name="visitINVOKESPECIAL(org.apache.bcel.generic.INVOKESPECIAL)" id="visitINVOKESPECIAL(org.apache.bcel.generic.INVOKESPECIAL)">visitINVOKESPECIAL</a></h3>
+   <div class="memberName">public  void visitINVOKESPECIAL(<a href="../../generic/INVOKESPECIAL.html" class="classRef">INVOKESPECIAL</a> o)</div>
+   <div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div>
+
+
+   <h3><a name="visitINVOKESTATIC(org.apache.bcel.generic.INVOKESTATIC)" id="visitINVOKESTATIC(org.apache.bcel.generic.INVOKESTATIC)">visitINVOKESTATIC</a></h3>
+   <div class="memberName">public  void visitINVOKESTATIC(<a href="../../generic/INVOKESTATIC.html" class="classRef">INVOKESTATIC</a> o)</div>
+   <div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div>
+
+
+   <h3><a name="visitINVOKEVIRTUAL(org.apache.bcel.generic.INVOKEVIRTUAL)" id="visitINVOKEVIRTUAL(org.apache.bcel.generic.INVOKEVIRTUAL)">visitINVOKEVIRTUAL</a></h3>
+   <div class="memberName">public  void visitINVOKEVIRTUAL(<a href="../../generic/INVOKEVIRTUAL.html" class="classRef">INVOKEVIRTUAL</a> o)</div>
+   <div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div>
+
+
+   <h3><a name="visitISTORE(org.apache.bcel.generic.ISTORE)" id="visitISTORE(org.apache.bcel.generic.ISTORE)">visitISTORE</a></h3>
+   <div class="memberName">public  void visitISTORE(<a href="../../generic/ISTORE.html" class="classRef">ISTORE</a> o)</div>
+   <div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div>
+
+
+   <h3><a name="visitLDC(org.apache.bcel.generic.LDC)" id="visitLDC(org.apache.bcel.generic.LDC)">visitLDC</a></h3>
+   <div class="memberName">public  void visitLDC(<a href="../../generic/LDC.html" class="classRef">LDC</a> o)</div>
+   <div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div>
+
+
+   <h3><a name="visitLDC2_W(org.apache.bcel.generic.LDC2_W)" id="visitLDC2_W(org.apache.bcel.generic.LDC2_W)">visitLDC2_W</a></h3>
+   <div class="memberName">public  void visitLDC2_W(<a href="../../generic/LDC2_W.html" class="classRef">LDC2_W</a> o)</div>
+   <div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div>
+
+
+   <h3><a name="visitLLOAD(org.apache.bcel.generic.LLOAD)" id="visitLLOAD(org.apache.bcel.generic.LLOAD)">visitLLOAD</a></h3>
+   <div class="memberName">public  void visitLLOAD(<a href="../../generic/LLOAD.html" class="classRef">LLOAD</a> o)</div>
+   <div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div>
+
+
+   <h3><a name="visitLoadClass(org.apache.bcel.generic.LoadClass)" id="visitLoadClass(org.apache.bcel.generic.LoadClass)">visitLoadClass</a></h3>
+   <div class="memberName">public  void visitLoadClass(<a href="../../generic/LoadClass.html" class="interfaceRef">LoadClass</a> o)</div>
+   <div class="memberDescription">
+ Assures the generic preconditions of a LoadClass instance.
+ The referenced class is loaded and pass2-verified.</div>
+
+
+   <h3><a name="visitLOOKUPSWITCH(org.apache.bcel.generic.LOOKUPSWITCH)" id="visitLOOKUPSWITCH(org.apache.bcel.generic.LOOKUPSWITCH)">visitLOOKUPSWITCH</a></h3>
+   <div class="memberName">public  void visitLOOKUPSWITCH(<a href="../../generic/LOOKUPSWITCH.html" class="classRef">LOOKUPSWITCH</a> o)</div>
+   <div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div>
+
+
+   <h3><a name="visitLSTORE(org.apache.bcel.generic.LSTORE)" id="visitLSTORE(org.apache.bcel.generic.LSTORE)">visitLSTORE</a></h3>
+   <div class="memberName">public  void visitLSTORE(<a href="../../generic/LSTORE.html" class="classRef">LSTORE</a> o)</div>
+   <div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div>
+
+
+   <h3><a name="visitMULTIANEWARRAY(org.apache.bcel.generic.MULTIANEWARRAY)" id="visitMULTIANEWARRAY(org.apache.bcel.generic.MULTIANEWARRAY)">visitMULTIANEWARRAY</a></h3>
+   <div class="memberName">public  void visitMULTIANEWARRAY(<a href="../../generic/MULTIANEWARRAY.html" class="classRef">MULTIANEWARRAY</a> o)</div>
+   <div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div>
+
+
+   <h3><a name="visitNEW(org.apache.bcel.generic.NEW)" id="visitNEW(org.apache.bcel.generic.NEW)">visitNEW</a></h3>
+   <div class="memberName">public  void visitNEW(<a href="../../generic/NEW.html" class="classRef">NEW</a> o)</div>
+   <div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div>
+
+
+   <h3><a name="visitNEWARRAY(org.apache.bcel.generic.NEWARRAY)" id="visitNEWARRAY(org.apache.bcel.generic.NEWARRAY)">visitNEWARRAY</a></h3>
+   <div class="memberName">public  void visitNEWARRAY(<a href="../../generic/NEWARRAY.html" class="classRef">NEWARRAY</a> o)</div>
+   <div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div>
+
+
+   <h3><a name="visitPUTSTATIC(org.apache.bcel.generic.PUTSTATIC)" id="visitPUTSTATIC(org.apache.bcel.generic.PUTSTATIC)">visitPUTSTATIC</a></h3>
+   <div class="memberName">public  void visitPUTSTATIC(<a href="../../generic/PUTSTATIC.html" class="classRef">PUTSTATIC</a> o)</div>
+   <div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div>
+
+
+   <h3><a name="visitRET(org.apache.bcel.generic.RET)" id="visitRET(org.apache.bcel.generic.RET)">visitRET</a></h3>
+   <div class="memberName">public  void visitRET(<a href="../../generic/RET.html" class="classRef">RET</a> o)</div>
+   <div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div>
+
+
+   <h3><a name="visitTABLESWITCH(org.apache.bcel.generic.TABLESWITCH)" id="visitTABLESWITCH(org.apache.bcel.generic.TABLESWITCH)">visitTABLESWITCH</a></h3>
+   <div class="memberName">public  void visitTABLESWITCH(<a href="../../generic/TABLESWITCH.html" class="classRef">TABLESWITCH</a> o)</div>
+   <div class="memberDescription"> Checks if the constraints of operands of the said instruction(s) are satisfied.</div>
+
+   
+   <div class="navbar">
+    <p class="nav navtop">
+      <span class="over"><a href="../../../../../overview-summary.html">Overview</a></span>
+      <span class="package"><a href="package-summary.html">Package</a></span>
+      <span class="class selected">Class</span>
+      <span class="use"><a href="class-use/Pass3aVerifier.InstOperandConstraintVisitor.html">Use</a></span>
+      <span class="tree"><a href="package-tree.html">Tree</a></span>
+      <span class="deprecated"><a href="../../../../../deprecated-list.html">Deprecated</a></span>
+      <span class="index"><a href="../../../../../index-all.html">Index</a></span>
+      <span class="help"><a href="../../../../../help-doc.html">Help</a></span>
+    </p>
+    <p class="nav navmid">
+      <span class="prevnext">
+       <span class="prev">Prev Class</span>
+       <span class="next">Next Class</span>
+      </span>
+      <span class="framesel">
+       <span class="frames"><a href="../../../../../index.html" target="_top">Frames</a></span>
+       <span class="noframes"><a href="Pass3aVerifier.InstOperandConstraintVisitor.html" target="_top">NoFrames</a></span>
+      </span>
+      <span class="allclasses"><a href="../../../../../allclasses-noframe.html">All Classes</a></span>
+   </p>
+   <p class="nav navbot">
+      <span class="summary">Summary:
+       <span class="nested">Nested</span>
+       <span class="field"><a href="#field_summary">Field</a></span>
+       <span class="constr"><a href="#constructor_summary">Constr</a></span>
+       <span class="method"><a href="#method_summary">Method</a></span>
+      </span>
+      <span class="detail">Detail:
+       <span class="field"><a href="#field_detail">Field</a></span>
+       <span class="constr"><a href="#constructor_detail">Constr</a></span>
+       <span class="method"><a href="#method_detail">Method</a></span>
+      </span>
+   </p>
+    <div class="navtitle">
+     
+    </div>
+    <p class="clear"><!--empty--></p>
+   </div>
+   <div class="bottom"></div>
+   </body>
+</html>

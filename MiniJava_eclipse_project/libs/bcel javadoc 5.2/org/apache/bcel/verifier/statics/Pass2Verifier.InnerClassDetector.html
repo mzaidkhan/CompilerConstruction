@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>Pass2Verifier.InnerClassDetector</title>
+    <meta name="keywords" content="org.apache.bcel.verifier.statics.Pass2Verifier.InnerClassDetector,Pass2Verifier.InnerClassDetector class" />
+    <meta name="generator" content="SinjDoc 0.5" />
+    <link href="../../../../../stylesheet.css" rel="stylesheet" type="text/css" />
+    <link rel="Index" href="../../../../../index-all.html" />
+    <link rel="Start" href="../../../../../overview-summary.html" />
+    <link rel="Up" href="package-summary.html" />
+    <link rel="Help" href="../../../../../help-doc.html" />
+  </head>
+  <body class="classPage bigframe">
+   <div class="navbar">
+    <p class="nav navtop">
+      <span class="over"><a href="../../../../../overview-summary.html">Overview</a></span>
+      <span class="package"><a href="package-summary.html">Package</a></span>
+      <span class="class selected">Class</span>
+      <span class="use"><a href="class-use/Pass2Verifier.InnerClassDetector.html">Use</a></span>
+      <span class="tree"><a href="package-tree.html">Tree</a></span>
+      <span class="deprecated"><a href="../../../../../deprecated-list.html">Deprecated</a></span>
+      <span class="index"><a href="../../../../../index-all.html">Index</a></span>
+      <span class="help"><a href="../../../../../help-doc.html">Help</a></span>
+    </p>
+    <p class="nav navmid">
+      <span class="prevnext">
+       <span class="prev">Prev Class</span>
+       <span class="next">Next Class</span>
+      </span>
+      <span class="framesel">
+       <span class="frames"><a href="../../../../../index.html" target="_top">Frames</a></span>
+       <span class="noframes"><a href="Pass2Verifier.InnerClassDetector.html" target="_top">NoFrames</a></span>
+      </span>
+      <span class="allclasses"><a href="../../../../../allclasses-noframe.html">All Classes</a></span>
+   </p>
+   <p class="nav navbot">
+      <span class="summary">Summary:
+       <span class="nested">Nested</span>
+       <span class="field"><a href="#field_summary">Field</a></span>
+       <span class="constr"><a href="#constructor_summary">Constr</a></span>
+       <span class="method"><a href="#method_summary">Method</a></span>
+      </span>
+      <span class="detail">Detail:
+       <span class="field"><a href="#field_detail">Field</a></span>
+       <span class="constr"><a href="#constructor_detail">Constr</a></span>
+       <span class="method"><a href="#method_detail">Method</a></span>
+      </span>
+   </p>
+    <div class="navtitle">
+     
+    </div>
+    <p class="clear"><!--empty--></p>
+   </div>
+   <p class="packageName">org.apache.bcel.verifier.statics</p>
+   <h1>  Class  Pass2Verifier.InnerClassDetector</h1>
+<!--
+   <p class="enclosing">
+   Enclosing class/interface: @OUTER@
+   </p>
+-->
+
+
+   <!-- XXX class hierarchy diagram goes here -->
+<!--
+   
+   <p class="directSubclasses">
+   Direct known subclasses: @ALL_SUBCLASSES@
+   </p>
+-->
+
+
+   <p class="declaration">private static
+     class 
+   <span class="className">Pass2Verifier.InnerClassDetector</span>
+   
+   
+      
+      <span class="extends">extends <a href="../../classfile/EmptyVisitor.html" class="classRef">EmptyVisitor</a></span>
+      
+      
+   
+   </p>
+
+   <div class="description">
+   
+ This class serves for finding out if a given JavaClass' ConstantPool
+ references an Inner Class.
+ The Java Virtual Machine Specification, Second Edition is not very precise
+ about when an "InnerClasses" attribute has to appear. However, it states that
+ there has to be exactly one InnerClasses attribute in the ClassFile structure
+ if the constant pool of a class or interface refers to any class or interface
+ "that is not a member of a package". Sun does not mean "member of the default
+ package". In "Inner Classes Specification" they point out how a "bytecode name"
+ is derived so one has to deduce what a class name of a class "that is not a
+ member of a package" looks like: there is at least one character in the byte-
+ code name that cannot be part of a legal Java Language Class name (and not equal
+ to '/'). This assumption is wrong as the delimiter is '$' for which
+ Character.isJavaIdentifierPart() == true.
+ Hence, you really run into trouble if you have a toplevel class called
+ "A$XXX" and another toplevel class called "A" with in inner class called "XXX".
+ JustIce cannot repair this; please note that existing verifiers at this
+ time even fail to detect missing InnerClasses attributes in pass 2.
+   </div>
+
+
+
+
+   <table class="field_summary summary">
+     <tr><th colspan="2"><a name="field_summary" id="field_summary">Field Summary</a></th></tr>
+
+     <tr><td> <a href="../../classfile/ConstantPool.html" class="classRef">ConstantPool</a></td><td><span class="memberName"><a href="#cp" class="fieldRef">cp</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td> boolean</td><td><span class="memberName"><a href="#hasInnerClass" class="fieldRef">hasInnerClass</a></span><div class="memberDescription"></div></td></tr>
+
+
+
+     <tr><td> <a href="../../classfile/JavaClass.html" class="classRef">JavaClass</a></td><td><span class="memberName"><a href="#jc" class="fieldRef">jc</a></span><div class="memberDescription"></div></td></tr>
+
+   </table>
+
+
+
+
+   <table class="constructor_summary summary">
+     <tr><th colspan="2"><a name="constructor_summary" id="constructor_summary">Constructor Summary</a></th></tr>
+
+     <tr><td> </td><td><span class="memberName"><a href="#InnerClassDetector(org.apache.bcel.classfile.JavaClass)" class="constructorRef">InnerClassDetector</a>(<a href="../../classfile/JavaClass.html" class="classRef">JavaClass</a> _jc)</span><div class="memberDescription"> Constructs an InnerClassDetector working on the JavaClass _jc.</div></td></tr>
+
+   </table>
+
+
+
+
+   <table class="method_summary summary">
+     <tr><th colspan="2"><a name="method_summary" id="method_summary">Method Summary</a></th></tr>
+
+     <tr><td>  boolean</td><td><span class="memberName"><a href="#innerClassReferenced()" class="methodRef">innerClassReferenced</a>()</span><div class="memberDescription">
+ Returns if the JavaClass this InnerClassDetector is working on
+ has an Inner Class reference in its constant pool.</div></td></tr>
+
+
+
+     <tr><td>  void</td><td><span class="memberName"><a href="#visitConstantClass(org.apache.bcel.classfile.ConstantClass)" class="methodRef">visitConstantClass</a>(<a href="../../classfile/ConstantClass.html" class="classRef">ConstantClass</a> obj)</span><div class="memberDescription"> This method casually visits ConstantClass references.</div></td></tr>
+
+   </table>
+
+
+
+<!--
+   <p class="inherited">
+    <span class="header">Methods inherited from class java.util.<a
+   href="AbstractCollection.html">AbstractCollection</a></span>
+    <a href="#addAll">addAll</a>
+    <a href="#contains">contains</a>
+   </p>
+   <p class="inherited">
+    <span class="header">Methods inherited from class java.lang.<a
+   href="Object.html">Object</a></span>
+    <a href="#addAll">clone</a>
+    <a href="#contains">finalize</a>
+   </p>
+   <p class="inherited">
+    <span class="header">Methods inherited from interface java.util.<a
+   href="List.html">List</a></span>
+    <a href="#addAll">addAll</a>
+    <a href="#contains">contains</a>
+   </p>
+-->
+
+
+
+   <h2><a name="field_detail" id="field_detail">Field Detail</a></h2>
+
+   <h3><a name="cp" id="cp">cp</a></h3>
+   <div class="memberName">private <a href="../../classfile/ConstantPool.html" class="classRef">ConstantPool</a> cp</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="hasInnerClass" id="hasInnerClass">hasInnerClass</a></h3>
+   <div class="memberName">private boolean hasInnerClass</div>
+   <div class="memberDescription"></div>
+
+
+   <h3><a name="jc" id="jc">jc</a></h3>
+   <div class="memberName">private <a href="../../classfile/JavaClass.html" class="classRef">JavaClass</a> jc</div>
+   <div class="memberDescription"></div>
+
+
+
+
+   <h2><a name="constructor_detail" id="constructor_detail">Constructor Detail</a></h2>
+
+   <h3><a name="InnerClassDetector(org.apache.bcel.classfile.JavaClass)" id="InnerClassDetector(org.apache.bcel.classfile.JavaClass)">InnerClassDetector</a></h3>
+   <div class="memberName">public  InnerClassDetector(<a href="../../classfile/JavaClass.html" class="classRef">JavaClass</a> _jc)</div>
+   <div class="memberDescription"> Constructs an InnerClassDetector working on the JavaClass _jc.</div>
+
+
+
+
+   <h2><a name="method_detail" id="method_detail">Method Detail</a></h2>
+
+   <h3><a name="innerClassReferenced()" id="innerClassReferenced()">innerClassReferenced</a></h3>
+   <div class="memberName">public  boolean innerClassReferenced()</div>
+   <div class="memberDescription">
+ Returns if the JavaClass this InnerClassDetector is working on
+ has an Inner Class reference in its constant pool.</div>
+
+
+   <h3><a name="visitConstantClass(org.apache.bcel.classfile.ConstantClass)" id="visitConstantClass(org.apache.bcel.classfile.ConstantClass)">visitConstantClass</a></h3>
+   <div class="memberName">public  void visitConstantClass(<a href="../../classfile/ConstantClass.html" class="classRef">ConstantClass</a> obj)</div>
+   <div class="memberDescription"> This method casually visits ConstantClass references.</div>
+
+   
+   <div class="navbar">
+    <p class="nav navtop">
+      <span class="over"><a href="../../../../../overview-summary.html">Overview</a></span>
+      <span class="package"><a href="package-summary.html">Package</a></span>
+      <span class="class selected">Class</span>
+      <span class="use"><a href="class-use/Pass2Verifier.InnerClassDetector.html">Use</a></span>
+      <span class="tree"><a href="package-tree.html">Tree</a></span>
+      <span class="deprecated"><a href="../../../../../deprecated-list.html">Deprecated</a></span>
+      <span class="index"><a href="../../../../../index-all.html">Index</a></span>
+      <span class="help"><a href="../../../../../help-doc.html">Help</a></span>
+    </p>
+    <p class="nav navmid">
+      <span class="prevnext">
+       <span class="prev">Prev Class</span>
+       <span class="next">Next Class</span>
+      </span>
+      <span class="framesel">
+       <span class="frames"><a href="../../../../../index.html" target="_top">Frames</a></span>
+       <span class="noframes"><a href="Pass2Verifier.InnerClassDetector.html" target="_top">NoFrames</a></span>
+      </span>
+      <span class="allclasses"><a href="../../../../../allclasses-noframe.html">All Classes</a></span>
+   </p>
+   <p class="nav navbot">
+      <span class="summary">Summary:
+       <span class="nested">Nested</span>
+       <span class="field"><a href="#field_summary">Field</a></span>
+       <span class="constr"><a href="#constructor_summary">Constr</a></span>
+       <span class="method"><a href="#method_summary">Method</a></span>
+      </span>
+      <span class="detail">Detail:
+       <span class="field"><a href="#field_detail">Field</a></span>
+       <span class="constr"><a href="#constructor_detail">Constr</a></span>
+       <span class="method"><a href="#method_detail">Method</a></span>
+      </span>
+   </p>
+    <div class="navtitle">
+     
+    </div>
+    <p class="clear"><!--empty--></p>
+   </div>
+   <div class="bottom"></div>
+   </body>
+</html>
